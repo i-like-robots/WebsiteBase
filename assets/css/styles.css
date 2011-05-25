@@ -1,0 +1,478 @@
+﻿@charset "UTF-8";
+
+/**
+ * Created by: Matt Hinchliffe, www.maketea.co.uk
+ * Date:       12/01/2011
+ * Modified:   24/05/2011
+ *
+ * DON NOT JUST COPY AND PASTE THIS BLINDLY.
+ *
+ * Contents:
+ * 1.	Reset
+ * 2.	HTML, Body
+ * 3.	Base elements
+ * 4.	Common classes
+ * 5.	Forms
+ * 6.	Layout
+ */
+
+/**
+ * 1. Reset
+ */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+dl, dt, dd, ol, ul, li,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+table, caption, tbody, tfoot, thead, tr, th, td,
+fieldset, form, label, legend, input, textarea, button {
+	margin:0;
+	padding:0;
+	font-size:100%;
+	vertical-align:baseline;
+}
+
+fieldset, img {
+	border:none;
+}
+
+blockquote, q {
+	quotes:none;
+}
+	blockquote:before, blockquote:after, q:before, q:after {
+		content:none;
+		content:'';
+	}
+
+abbr, acronym, dfn, var {
+	font-style:normal;
+	font-variant:normal;
+}
+	abbr[title], acronym[title], dfn[title] {
+		border-bottom:1px dotted;
+		cursor:help;
+	}
+
+address {
+	font-style:normal;
+}
+	address span {
+		display:block;
+	}
+
+/* UA can take precedence on form elements, so extra selector specificity is required. */
+html input, html select, html textarea, html button {
+	margin:0;
+	padding:0;
+	line-height:1.214 !important; /* Gecko declares 'line-height:normal', roughly 1.214 at 14px <http://bit.ly/9BFPzL> */
+	font-size:1em;
+	box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;
+}
+	input:focus, select:focus, textarea:focus, button:focus {
+		z-index:1; /* For Opera */
+	}
+	input.file, input[type=file] {
+		border:0;
+	}
+	select {
+		vertical-align:middle;
+		-webkit-appearance:none;
+	}
+
+	button, input.button, input[type=button], input[type=submit], input[type=reset] {
+		display:inline;
+		width:auto;
+		white-space:nowrap;
+		cursor:pointer;
+		border:0;
+		-webkit-appearance:none;
+	}
+		button::-moz-focus-inner, input::-moz-focus-inner {
+			padding:0;
+			border:none;
+		}
+
+	textarea {
+		display:block;
+		height:auto;
+		resize:none;
+	}
+
+	input.checkbox, input.radio, input[type=checkbox], input[type=radio] {
+		width:auto;
+		height:auto;
+		padding:0;
+		border:none;
+	}
+
+/**
+ * 2. HTML, Body
+ */
+html, body {
+	height:100%;
+}
+	body {
+		font-size:0.875em; /* 14px */
+		background:#fff;
+	}
+
+body, select, input, textarea {
+	font-family:Arial, sans-serif;
+	color:#000;
+}
+
+::-moz-selection {
+	background:#444;
+	color:#eee;
+	text-shadow:none;
+}
+::-webkit-selection {
+	background:#444;
+	color:#eee;
+	text-shadow:none;
+}
+::selection {
+	background:#444;
+	color:#eee;
+	text-shadow:none;
+}
+
+/**
+ * 3. Base elements
+ */
+
+/* Headers, paragraphs, lists */
+h1, h2, h3, h4, h5, h6 {
+	line-height:1;
+}
+	h1 {
+		margin-bottom:0.656em;
+		font-size:2.286em; /* 32px */
+	}
+	h2 {
+		margin-bottom:0.875em;
+		font-size:1.714em; /* 24px */
+	}
+	h3 {
+		margin-bottom:1.167em;
+		font-size:1.286em; /* 18px */
+	}
+	h4, h5, h6 {
+		line-height:1.4;
+		font-size:1.071em; /* 15px */
+	}
+
+p, ul, ol, dl {
+	margin-bottom:1.5em;
+}
+
+p, li, dt, dd {
+	line-height:1.5; /* 21px */
+	word-wrap:break-word;
+}
+
+ul, ol {
+	list-style-position:inside;
+	margin-left:20px;
+}
+
+/* Quotes */
+blockquote, q, cite {
+	font-family:Georgia, Times, Times New Roman, serif;
+}
+	blockquote {
+		margin-bottom:1.5em;
+	}
+		blockquote p {
+			font-size:1.071em; /* 15px */
+			line-height:1.4;
+			margin-bottom:1.4em;
+			font-style:italic;
+		}
+			blockquote p:before, q:before {
+				content:'\201C';
+			}
+			blockquote p:after, q:after {
+				content:'\201D';
+			}
+	q {
+		font-style:italic;
+	}
+
+/* Monospace */
+pre, code, kbd, var {
+	font-family:Consolas, "Lucida Console", Monaco, monospace;
+}
+	pre {
+		overflow:auto;
+	}
+
+/* Links */
+a {
+	color:#1A54E1;
+	text-decoration:none;
+}
+	a:visited {
+		color:#36C;
+	}
+	a:hover {
+		text-decoration:underline;
+	}
+	a:active, a:focus, button:active, button:focus, .buttons input:active, .buttons input:focus {
+		outline:1px dotted #ccc;
+	}
+
+/* Tables */
+table {
+	border-collapse:collapse;
+	width:100%;
+	max-width:100%;
+	margin-bottom:1.5em;
+	line-height:1.5;
+	border-spacing:0;
+}
+	caption, th, td {
+		text-align:left;
+		vertical-align:top;
+	}
+		caption {
+			padding-bottom:1em;
+		}
+		th, td {
+			padding:0 12px;
+		}
+			th {
+				font-weight:bold;
+			}
+				th:empty {
+					border:none;
+				}
+
+/**
+ * 4. Common classes
+ */
+
+/* Alternatively coloured links */
+a.alt, .alt-links a {
+	color:#454545;
+	text-decoration:none;
+}
+	a.alt:visited, .alt-links a:visited {
+		color:#666;
+	}
+	a.alt:hover, .alt-links a:hover {
+		color:#000;
+		text-decoration:underline;
+	}
+
+/* Text alignment */
+.align-left {
+	text-align:left;
+}
+.align-centre {
+	text-align:center;
+}
+.align-right {
+	text-align:right;
+}
+
+/* Font size variations */
+p.small-text, p.medium-text, p.large-text, p.super-text {
+	line-height:1;
+}
+	.small-text {
+		font-size:0.786em; /* 11px */
+	}
+		p.small-text {
+			margin-bottom:0.909em;
+		}
+	.medium-text {
+		font-size:1.071em; /* 15px */
+	}
+		p.medium-text {
+			margin-bottom:0.4em;
+		}
+	.large-text {
+		font-size:1.286em; /* 18px */
+	}
+		p.large-text {
+			margin-bottom:0.167em;
+		}
+
+/* Background image text replacement */
+.replace {
+	display:block;
+	overflow:hidden;
+	text-indent:-9999px;
+	background:no-repeat 0 0;
+}
+
+/* Floats and clearfix (try to use for content only) */
+.left {
+	float:left;
+}
+	img.left {
+		display:block;
+		margin-right:15px;
+	}
+
+.right {
+	float:right;
+}
+	img.right {
+		display:block;
+		margin-left:15px;
+	}
+
+.clearfix:after {
+	content:".";
+	display:block;
+	clear:both;
+	visibility:hidden;
+	line-height:0;
+	height:0;
+}
+
+/* Un-styled lists */
+ul.base, ol.base, ul.inline, ol.inline, dl.inline {
+	margin:0;
+	list-style-type:none;
+}
+	ul.inline li, ol.inline li, dl.inline dt, dl.inline dd {
+		float:left;
+		margin:0;
+	}
+		dl.inline dt {
+			clear:left;
+		}
+			dl.inline dt:after {
+				content:':';
+			}
+			dl.inline dt::after { /* Correct CSS3 double colon syntax to dentote a pseudo-element <http://bit.ly/cVk4DA>  */
+				content:':';
+			}
+
+/* Numbered definition lists */
+dl.numbered {
+	counter-reset:numbered;
+}
+	dl.numbered dt:before {
+		counter-increment:numbered;
+		content:counter(numbered) ". ";
+	}
+	dl.numbered dt::before {
+		counter-increment:numbered;
+		content:counter(numbered) ". ";
+	}
+
+/* Comma seperated list (Inuit CSS) <http://bit.ly/jSmZvz> */
+.keywords {
+	list-style:none;
+	margin:0 0 1.5em;
+}
+	.keywords li {
+		display:inline;
+		text-transform:lowercase;
+	}
+		.keywords li:first-of-type {
+			text-transform:capitalize;
+		}
+		.keywords li:after {
+			content:", ";
+		}
+		.keywords li::after {
+			content:", ";
+		}
+			.keywords li:last-of-type:after {
+				content:".";
+			}
+			.keywords li:last-of-type::after {
+				content:".";
+			}
+
+
+/**
+ * 5. Forms
+ */
+
+/* Form structure */
+fieldset {
+	overflow:hidden;
+}
+	fieldset .row {
+		padding-bottom:1em;
+	}
+
+/* Labels */
+label {
+	display:block;
+	line-height:1.214; /* Match form inputs */
+	white-space:nowrap;
+}
+	label dfn {
+		font-size:0.857em;
+		color:#ccc;
+	}
+		label dfn[title] {
+			border:none;
+		}
+	.inline label, .checkbox label, .radio label {
+		display:inline;
+		padding-top:5px; /* Input padding + border */
+		padding-bottom:5px;
+	}
+
+/* Text inputs, text areas and select boxes */
+form input, form select, form textarea, form button { /* See comment above about specificity */
+	height:1.214em;
+	font:inherit;
+}
+	::-webkit-input-placeholder {
+		color:#888;
+	}
+	input:-moz-placeholder {
+		color:#888;
+	}
+	form input, form select, form textarea {
+		width:300px;
+		color:#555;
+		border:1px solid #555;
+	}
+		form input:focus, form select:focus, form textarea:focus {
+			color:#000;
+			border-color:#000;
+		}
+		form input, form textarea {
+			padding:4px 5px;
+		}
+		form textarea {
+			height:6em;
+		}
+		form select {
+			height:1.667em;
+			padding:2px;
+		}
+		input.file { /* Go native */
+			height:auto;
+			padding:0;
+		}
+
+	/* Buttons */
+	form button, .buttons input {
+		padding:5px 6px;
+	}
+
+/**
+ * 6. Layout
+ */
+#container {
+	width:960px;
+	margin:0 auto;
+}
+
+.column {
+	float:left;
+	width:450px;
+	margin:0 15px;
+}

@@ -1,0 +1,30 @@
+/* Blockquotes */
+blockquote {
+	display:block;
+}
+
+/* Form checkboxes and radio buttons alignment, align checkboxes, radios, text inputs with their label */
+input.radio {
+	vertical-align:text-bottom;
+}
+input.checkbox {
+	vertical-align:bottom;
+}
+
+/* IE 7 borks up box model for buttons */
+html button, input.button {
+	width:0;
+}
+
+/* Clearfix fix */
+.clearfix {
+	overflow:hidden;
+}
+
+/* Lists display margin bug */
+ul.base, ol.base {
+	list-style-position:outside;
+}
+	ul.base li, ol.base li {
+		display:block;
+	}
