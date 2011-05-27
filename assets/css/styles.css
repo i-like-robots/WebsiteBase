@@ -1,9 +1,7 @@
-﻿@charset "UTF-8";
-
-/**
+﻿/**
  * Created by: Matt Hinchliffe, www.maketea.co.uk
  * Date:       12/01/2011
- * Modified:   24/05/2011
+ * Modified:   27/05/2011
  *
  * DON NOT JUST COPY AND PASTE THIS BLINDLY.
  *
@@ -65,7 +63,7 @@ address {
 html input, html select, html textarea, html button {
 	margin:0;
 	padding:0;
-	line-height:1.214 !important; /* Gecko declares 'line-height:normal', roughly 1.214 at 14px <http://bit.ly/9BFPzL> */
+	line-height:1.143 !important; /* Gecko declares 'line-height:normal', roughly 1.214 at 14px <http://bit.ly/9BFPzL> */
 	font-size:1em;
 	box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;
 }
@@ -75,7 +73,9 @@ html input, html select, html textarea, html button {
 	input.file, input[type=file] {
 		border:0;
 	}
-	select {
+	form select {
+		height:1.143em; /* To match line height */
+		line-height:0;
 		vertical-align:middle;
 		-webkit-appearance:none;
 	}
@@ -86,6 +86,7 @@ html input, html select, html textarea, html button {
 		white-space:nowrap;
 		cursor:pointer;
 		border:0;
+		-moz-appearance:none;
 		-webkit-appearance:none;
 	}
 		button::-moz-focus-inner, input::-moz-focus-inner {
@@ -425,7 +426,6 @@ label {
 
 /* Text inputs, text areas and select boxes */
 form input, form select, form textarea, form button { /* See comment above about specificity */
-	height:1.214em;
 	font:inherit;
 }
 	::-webkit-input-placeholder {
@@ -434,7 +434,7 @@ form input, form select, form textarea, form button { /* See comment above about
 	input:-moz-placeholder {
 		color:#888;
 	}
-	form input, form select, form textarea {
+	input, select, form textarea {
 		width:300px;
 		color:#555;
 		border:1px solid #555;
@@ -443,15 +443,11 @@ form input, form select, form textarea, form button { /* See comment above about
 			color:#000;
 			border-color:#000;
 		}
-		form input, form textarea {
+		form input, form textarea, form select {
 			padding:4px 5px;
 		}
 		form textarea {
 			height:6em;
-		}
-		form select {
-			height:1.667em;
-			padding:2px;
 		}
 		input.file { /* Go native */
 			height:auto;
