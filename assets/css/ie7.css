@@ -4,6 +4,11 @@ blockquote {
 }
 
 /* Form checkboxes and radio buttons alignment, align checkboxes, radios, text inputs with their label */
+button, input.button {
+	zoom:1;
+	display:inline;
+}
+
 input.radio {
 	vertical-align:text-bottom;
 }
