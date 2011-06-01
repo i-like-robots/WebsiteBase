@@ -1,9 +1,9 @@
 ﻿/**
  * Created by: Matt Hinchliffe, www.maketea.co.uk
  * Date:       12/01/2011
- * Modified:   27/05/2011
+ * Modified:   01/06/2011
  *
- * DON NOT JUST COPY AND PASTE THIS BLINDLY.
+ * DON NOT JUST COPY AND PASTE THIS BLINDLY. IT MUST BE 'TAILORED' TO FIT YOUR FAT WEBSITE.
  *
  * Contents:
  * 1.	Reset
@@ -11,7 +11,6 @@
  * 3.	Base elements
  * 4.	Common classes
  * 5.	Forms
- * 6.	Layout
  */
 
 /**
@@ -66,7 +65,7 @@ address {
 html input, html select, html textarea, html button {
 	margin:0;
 	padding:0;
-	line-height:1.143 !important; /* Gecko declares 'line-height:normal', roughly 1.214 at 14px <http://bit.ly/9BFPzL> */
+	line-height:1.143; /* Gecko declares 'line-height:normal', roughly 1.214 at 14px <http://bit.ly/9BFPzL> */
 	font-size:1em;
 	box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;
 }
@@ -82,7 +81,7 @@ html input, html select, html textarea, html button {
 		-webkit-appearance:none;
 	}
 	select, button {
-		height:1.143em; /* To match line height in Opera and <IE8 */
+		height:1.143em; /* To match line height for buttons in Opera/Firefox and select boxes in <IE8 */
 	}
 	button, input.button, input[type=button], input[type=submit], input[type=reset] {
 		display:-moz-inline-stack;
@@ -115,13 +114,10 @@ html input, html select, html textarea, html button {
 /**
  * 2. HTML, Body
  */
-html, body {
-	height:100%;
+body {
+	font-size:0.875em; /* 14px */
+	background:#fff;
 }
-	body {
-		font-size:0.875em; /* 14px */
-		background:#fff;
-	}
 
 body, select, input, textarea {
 	font-family:Arial, sans-serif;
@@ -463,17 +459,3 @@ form input, form select, form textarea, form button { /* See comment above about
 	form button, .buttons input {
 		padding:5px 6px;
 	}
-
-/**
- * 6. Layout
- */
-#container {
-	width:960px;
-	margin:0 auto;
-}
-
-.column {
-	float:left;
-	width:450px;
-	margin:0 15px;
-}
