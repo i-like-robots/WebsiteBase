@@ -1,7 +1,7 @@
 ﻿/**
  * Created by: Matt Hinchliffe, www.maketea.co.uk
  * Date:       12/01/2011
- * Modified:   01/06/2011
+ * Modified:   13/06/2011
  *
  * DON NOT JUST COPY AND PASTE THIS BLINDLY. IT MUST BE 'TAILORED' TO FIT YOUR FAT WEBSITE.
  *
@@ -11,6 +11,18 @@
  * 3.	Base elements
  * 4.	Common classes
  * 5.	Forms
+ *
+ * Font stacks:
+ * Normal: Clarendon, Cambria, Georgia, Times, 'Times New Roman', serif
+ * Bold: 'Clarendon Bold', Cambria, Georgia, Times, 'Times New Roman', serif (+ weight: bold)
+ *
+ * Naming conventions:
+ * - Hyphens are used for easily readable names. E.G. '#home-page-tabs'
+ * - Underscores denote an extended class. E.G. '.large_button' extends '.button'
+ *
+ * Formatting:
+ * - Keep selectors as short as possible. IDs and classes are much faster and more maintainable than traversing
+ * - Indentation (using tabs only) is denotes a child element or class is extension of previous.
  */
 
 /**
@@ -65,26 +77,20 @@ address {
 html input, html select, html textarea, html button {
 	margin:0;
 	padding:0;
-	line-height:1.143; /* Gecko declares 'line-height:normal', roughly 1.214 at 14px <http://bit.ly/9BFPzL> */
 	font-size:1em;
 	box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;
 }
 	input:focus, select:focus, textarea:focus, button:focus {
 		z-index:1; /* For Opera */
 	}
-	input.file, input[type=file] {
+	input.file {
 		border:0;
 	}
 	form select {
-		line-height:0;
 		vertical-align:middle;
 		-webkit-appearance:none;
 	}
-	select, button {
-		height:1.143em; /* To match line height for buttons in Opera/Firefox and select boxes in <IE8 */
-	}
-	button, input.button, input[type=button], input[type=submit], input[type=reset] {
-		display:-moz-inline-stack;
+	button, input.button {
 		display:inline-block;
 		width:auto;
 		white-space:nowrap;
@@ -97,14 +103,12 @@ html input, html select, html textarea, html button {
 			padding:0;
 			border:none;
 		}
-
 	textarea {
 		display:block;
 		height:auto;
 		resize:none;
 	}
-
-	input.checkbox, input.radio, input[type=checkbox], input[type=radio] {
+	input.checkbox, input.radio {
 		width:auto;
 		height:auto;
 		padding:0;
@@ -115,7 +119,7 @@ html input, html select, html textarea, html button {
  * 2. HTML, Body
  */
 body {
-	font-size:0.875em; /* 14px */
+	font-size:87.5%; /* 14px, set in % for IE resize consistency */
 	background:#fff;
 }
 
@@ -144,23 +148,23 @@ body, select, input, textarea {
  * 3. Base elements
  */
 
-/* Headers, paragraphs, lists */
-h1, h2, h3, h4, h5, h6 {
+/* Headers, paragraphs, lists (Copying Nicole Sullivan's OOCSS headings.css a bit here) */
+h1, h2, h3, h4, h5, h6, .pseudo-heading {
 	line-height:1;
 }
-	h1 {
+	h1, .h1 {
 		margin-bottom:0.656em;
 		font-size:2.286em; /* 32px */
 	}
-	h2 {
+	h2, .h2 {
 		margin-bottom:0.875em;
 		font-size:1.714em; /* 24px */
 	}
-	h3 {
+	h3, .h3 {
 		margin-bottom:1.167em;
 		font-size:1.286em; /* 18px */
 	}
-	h4, h5, h6 {
+	h4, .h4, h5, .h5, h6, .h6 {
 		line-height:1.4;
 		font-size:1.071em; /* 15px */
 	}
@@ -354,6 +358,9 @@ ul.base, ol.base, ul.inline, ol.inline, dl.inline {
 			dl.inline dt::after { /* Correct CSS3 double colon syntax to dentote a pseudo-element <http://bit.ly/cVk4DA>  */
 				content:':';
 			}
+	ul.base li, ol.base li { /* Soft reset if within .inline lists */
+		float:none;
+	}
 
 /* Numbered definition lists */
 dl.numbered {
@@ -393,7 +400,6 @@ dl.numbered {
 				content:".";
 			}
 
-
 /**
  * 5. Forms
  */
@@ -426,8 +432,10 @@ label {
 	}
 
 /* Text inputs, text areas and select boxes */
-form input, form select, form textarea, form button { /* See comment above about specificity */
-	font:inherit;
+html input, html select, html textarea, html button { /* See comment above about specificity */
+	font-family:Arial, Helvetica, sans-serif; /* Always use sans-serif or monospaced fonts for inputs */
+	height:1.214em; /* For browsers that do not recognise line-heigh on these elements */
+	line-height:1.214; /* Gecko defines line-height as 'normal', roughly 17px at 14px <http://bit.ly/9BFPzL> */
 }
 	::-webkit-input-placeholder {
 		color:#888;
@@ -435,19 +443,23 @@ form input, form select, form textarea, form button { /* See comment above about
 	input:-moz-placeholder {
 		color:#888;
 	}
-	input, select, form textarea {
+	html input, html select, html textarea {
 		width:300px;
+		padding:4px;
 		color:#555;
 		border:1px solid #555;
 	}
-		form input:focus, form select:focus, form textarea:focus {
+		html input:focus, html select:focus, html textarea:focus {
 			color:#000;
 			border-color:#000;
 		}
-		form input, form textarea, form select {
-			padding:4px 5px;
+		html select {
+			background-image:url('../img/icons/arrows.png');
+			background-repeat:no-repeat;
+			background-position:right center;
+			cursor:pointer;
 		}
-		form textarea {
+		html textarea {
 			height:6em;
 		}
 		input.file { /* Go native */
@@ -456,6 +468,7 @@ form input, form select, form textarea, form button { /* See comment above about
 		}
 
 	/* Buttons */
-	form button, .buttons input {
+	html button, .buttons input, a.button {
 		padding:5px 6px;
+		height:1.214em; /* To match line height for buttons in Opera/Firefox and select boxes in <IE8 */
 	}
