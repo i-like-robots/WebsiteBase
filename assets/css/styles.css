@@ -12,17 +12,13 @@
  * 4.	Common classes
  * 5.	Forms
  *
- * Font stacks:
- * Normal: Clarendon, Cambria, Georgia, Times, 'Times New Roman', serif
- * Bold: 'Clarendon Bold', Cambria, Georgia, Times, 'Times New Roman', serif (+ weight: bold)
- *
  * Naming conventions:
  * - Hyphens are used for easily readable names. E.G. '#home-page-tabs'
  * - Underscores denote an extended class. E.G. '.large_button' extends '.button'
  *
  * Formatting:
  * - Keep selectors as short as possible. IDs and classes are much faster and more maintainable than traversing
- * - Indentation (using tabs only) is denotes a child element or class is extension of previous.
+ * - Indentation (using tabs only) denotes that the selector is a child element or an extension of the previous
  */
 
 /**
@@ -49,7 +45,7 @@ fieldset, img {
 blockquote, q {
 	quotes:none;
 }
-	blockquote:before, blockquote:after, q:before, q:after {
+	blockquote:before, blockquote:after {
 		content:none;
 		content:'';
 	}
@@ -83,9 +79,6 @@ html input, html select, html textarea, html button {
 	input:focus, select:focus, textarea:focus, button:focus {
 		z-index:1; /* For Opera */
 	}
-	input.file {
-		border:0;
-	}
 	form select {
 		vertical-align:middle;
 		-webkit-appearance:none;
@@ -95,7 +88,7 @@ html input, html select, html textarea, html button {
 		width:auto;
 		white-space:nowrap;
 		cursor:pointer;
-		border:0;
+		border:none;
 		-moz-appearance:none;
 		-webkit-appearance:none;
 	}
@@ -107,12 +100,6 @@ html input, html select, html textarea, html button {
 		display:block;
 		height:auto;
 		resize:none;
-	}
-	input.checkbox, input.radio {
-		width:auto;
-		height:auto;
-		padding:0;
-		border:none;
 	}
 
 /**
@@ -191,15 +178,21 @@ blockquote, q, cite {
 		margin-bottom:1.5em;
 	}
 		blockquote p {
+			margin-bottom:1.4em;
 			font-size:1.071em; /* 15px */
 			line-height:1.4;
-			margin-bottom:1.4em;
 			font-style:italic;
 		}
 			blockquote p:before, q:before {
 				content:'\201C';
 			}
+			blockquote p::before, q::before { /* Correct CSS3 double colon syntax to dentote a pseudo-element <http://bit.ly/cVk4DA>  */
+				content:'\201C';
+			}
 			blockquote p:after, q:after {
+				content:'\201D';
+			}
+			blockquote p::after, q::after {
 				content:'\201D';
 			}
 	q {
@@ -225,7 +218,7 @@ a {
 	a:hover {
 		text-decoration:underline;
 	}
-	a:active, a:focus, button:active, button:focus, .buttons input:active, .buttons input:focus {
+	a:active, a:focus {
 		outline:1px dotted #ccc;
 	}
 
@@ -355,10 +348,10 @@ ul.base, ol.base, ul.inline, ol.inline, dl.inline {
 			dl.inline dt:after {
 				content:':';
 			}
-			dl.inline dt::after { /* Correct CSS3 double colon syntax to dentote a pseudo-element <http://bit.ly/cVk4DA>  */
+			dl.inline dt::after {
 				content:':';
 			}
-	ul.base li, ol.base li { /* Soft reset if within .inline lists */
+	ul.base li, ol.base li { /* Soft reset for use within .inline lists */
 		float:none;
 	}
 
@@ -403,14 +396,20 @@ dl.numbered {
 /**
  * 5. Forms
  */
-
-/* Form structure */
 fieldset {
 	overflow:hidden;
 }
-	fieldset .row {
-		padding-bottom:1em;
-	}
+
+/* Form layout */
+.row {
+	padding-bottom:1em;
+}
+.buttons {
+	text-align:right;
+}
+.inline label, .inline input, .inline select, .inline button {
+	float:left;
+}
 
 /* Labels */
 label {
@@ -424,18 +423,15 @@ label {
 		label dfn[title] {
 			border:none;
 		}
-	.inline label, .checkbox label, .radio label {
-		display:inline;
-		padding-top:5px; /* Input padding + border */
-		padding-bottom:5px;
-		line-height:1.143; /* Match form input */
+	.inline label {
+		padding-top:5px; /* To match input padding + border width */
+		line-height:1.214; /* Match form input leading */
 	}
 
 /* Text inputs, text areas and select boxes */
 html input, html select, html textarea, html button { /* See comment above about specificity */
-	font-family:Arial, Helvetica, sans-serif; /* Always use sans-serif or monospaced fonts for inputs */
-	height:1.214em; /* For browsers that do not recognise line-heigh on these elements */
-	line-height:1.214; /* Gecko defines line-height as 'normal', roughly 17px at 14px <http://bit.ly/9BFPzL> */
+	height:1.214em; /* For browsers that do not recognise line-height on these elements */
+	line-height:1.214; /* Gecko defines line-height as 'normal', roughly 17px (1.214em) at 14px <http://bit.ly/9BFPzL> */
 }
 	::-webkit-input-placeholder {
 		color:#888;
@@ -446,6 +442,7 @@ html input, html select, html textarea, html button { /* See comment above about
 	html input, html select, html textarea {
 		width:300px;
 		padding:4px;
+		font-family:Arial, Helvetica, sans-serif; /* Always use sans-serif or monospaced fonts for inputs to avoid issues with descending letters */
 		color:#555;
 		border:1px solid #555;
 	}
@@ -454,7 +451,7 @@ html input, html select, html textarea, html button { /* See comment above about
 			border-color:#000;
 		}
 		html select {
-			background-image:url('../img/icons/arrows.png');
+			background-image:url('../img/select-arrow.png'); /* -webkit-appearance strips the toggle arrow */
 			background-repeat:no-repeat;
 			background-position:right center;
 			cursor:pointer;
@@ -462,13 +459,19 @@ html input, html select, html textarea, html button { /* See comment above about
 		html textarea {
 			height:6em;
 		}
-		input.file { /* Go native */
+		input.checkbox, input.radio {
+			width:auto;
 			height:auto;
 			padding:0;
+			border:none;
+		}
+		input.file { /* Go native, otherwise build a new input with visibility:hidden */
+			height:auto;
+			padding:0;
+			border:none;
 		}
 
 	/* Buttons */
-	html button, .buttons input, a.button {
+	html button, .buttons input {
 		padding:5px 6px;
-		height:1.214em; /* To match line height for buttons in Opera/Firefox and select boxes in <IE8 */
 	}
