@@ -1,0 +1,16 @@
+@import '../../assets/css/styles.css';
+
+body {
+	background:url(../img/baseline.png);
+}
+
+#container {
+	width:960px;
+	margin:0 auto;
+}
+	.column {
+		float:left;
+		width:450px;
+		margin:0 15px;
+	}
+

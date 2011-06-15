@@ -1,9 +1,10 @@
 ﻿/**
  * Created by: Matt Hinchliffe, www.maketea.co.uk
  * Date:       12/01/2011
- * Modified:   13/06/2011
+ * Modified:   15/06/2011
  *
- * DON NOT JUST COPY AND PASTE THIS BLINDLY. IT MUST BE 'TAILORED' TO FIT YOUR FAT WEBSITE.
+ * DO NOT JUST COPY AND PASTE THIS BLINDLY. IT MUST BE 'TAILORED' TO FIT YOUR FAT WEBSITE. THIS IS BASED ON SIZE
+ * 14px FONTS AND 22px BASELINE.
  *
  * Contents:
  * 1.	Reset
@@ -19,6 +20,11 @@
  * Formatting:
  * - Keep selectors as short as possible. IDs and classes are much faster and more maintainable than traversing
  * - Indentation (using tabs only) denotes that the selector is a child element or an extension of the previous
+ *
+ * TODO:
+ * - Extend inline row form classes for check and radio boxes
+ * - Maintain constant baseline (22px?)
+ * - Test double colon pseudo-element selector
  */
 
 /**
@@ -38,7 +44,7 @@ fieldset, form, label, legend, input, textarea, button {
 	vertical-align:baseline;
 }
 
-fieldset, img {
+fieldset, table, img {
 	border:none;
 }
 
@@ -66,10 +72,7 @@ address {
 		display:block;
 	}
 
-/**
- * UA can take precedence on form elements, so extra selector specificity is required. Heights and line-heights are based on a font size of 14px. Check a Gecko
- * based browser for calculation of 'line-height:normal' for your given font size.
- */
+/* Browser styles can take precedence on form elements, so extra selector specificity is required. */
 html input, html select, html textarea, html button {
 	margin:0;
 	padding:0;
@@ -105,14 +108,15 @@ html input, html select, html textarea, html button {
 /**
  * 2. HTML, Body
  */
-body {
-	font-size:87.5%; /* 14px, set in % for IE resize consistency */
-	background:#fff;
+html, body {
+	min-height:100%;
 }
 
-body, select, input, textarea {
+body {
+	font-size:87.5%; /* 14px, set in % for IE resize consistency */
 	font-family:Arial, sans-serif;
 	color:#000;
+	background:#fff;
 }
 
 ::-moz-selection {
@@ -220,6 +224,7 @@ a {
 	}
 	a:active, a:focus {
 		outline:1px dotted #ccc;
+		outline-offset:1px;
 	}
 
 /* Tables */
@@ -429,18 +434,11 @@ label {
 	}
 
 /* Text inputs, text areas and select boxes */
-html input, html select, html textarea, html button { /* See comment above about specificity */
+html input, html select, html textarea, html button { /* See comment in reset about specificity */
 	height:1.214em; /* For browsers that do not recognise line-height on these elements */
 	line-height:1.214; /* Gecko defines line-height as 'normal', roughly 17px (1.214em) at 14px <http://bit.ly/9BFPzL> */
 }
-	::-webkit-input-placeholder {
-		color:#888;
-	}
-	input:-moz-placeholder {
-		color:#888;
-	}
 	html input, html select, html textarea {
-		width:300px;
 		padding:4px;
 		font-family:Arial, Helvetica, sans-serif; /* Always use sans-serif or monospaced fonts for inputs to avoid issues with descending letters */
 		color:#555;
@@ -449,6 +447,12 @@ html input, html select, html textarea, html button { /* See comment above about
 		html input:focus, html select:focus, html textarea:focus {
 			color:#000;
 			border-color:#000;
+		}
+		input.checkbox, input.radio, input.file { /* Go native, otherwise build a new input with visibility:hidden and a little JS */
+			width:auto;
+			height:auto;
+			padding:0;
+			border:none;
 		}
 		html select {
 			background-image:url('../img/select-arrow.png'); /* -webkit-appearance strips the toggle arrow */
@@ -459,17 +463,13 @@ html input, html select, html textarea, html button { /* See comment above about
 		html textarea {
 			height:6em;
 		}
-		input.checkbox, input.radio {
-			width:auto;
-			height:auto;
-			padding:0;
-			border:none;
-		}
-		input.file { /* Go native, otherwise build a new input with visibility:hidden */
-			height:auto;
-			padding:0;
-			border:none;
-		}
+
+	::-webkit-input-placeholder {
+		color:#666;
+	}
+	input:-moz-placeholder, textarea:-moz-placeholder {
+		color:#666;
+	}
 
 	/* Buttons */
 	html button, .buttons input {
