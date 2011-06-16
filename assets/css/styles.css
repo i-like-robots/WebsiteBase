@@ -1,7 +1,7 @@
 ﻿/**
  * Created by: Matt Hinchliffe, www.maketea.co.uk
  * Date:       12/01/2011
- * Modified:   15/06/2011
+ * Modified:   16/06/2011
  *
  * DO NOT JUST COPY AND PASTE THIS BLINDLY. IT MUST BE 'TAILORED' TO FIT YOUR FAT WEBSITE. THIS IS BASED ON SIZE
  * 14px FONTS AND 22px BASELINE.
@@ -41,7 +41,6 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 fieldset, form, label, legend, input, textarea, button {
 	margin:0;
 	padding:0;
-	font-size:100%;
 	vertical-align:baseline;
 }
 
@@ -77,17 +76,13 @@ address {
 html input, html select, html textarea, html button {
 	margin:0;
 	padding:0;
-	font-size:1em;
 	-moz-box-sizing:content-box; -webkit-box-sizing:content-box; box-sizing:content-box;
 }
-	input:focus, select:focus, textarea:focus, button:focus {
-		z-index:1; /* For Opera */
-	}
 	form select {
 		vertical-align:middle;
-		-moz-appearance:none; -webkit-appearance:none; appeareance:none;
+		-moz-appearance:none; -webkit-appearance:none; appearance:none;
 	}
-	button, input.button {
+	button, input[type=button], input[type=submit] {
 		display:inline-block;
 		width:auto;
 		white-space:nowrap;
@@ -190,13 +185,7 @@ blockquote, q, cite {
 			blockquote p:before, q:before {
 				content:'\201C';
 			}
-			blockquote p::before, q::before { /* Correct CSS3 double colon syntax to dentote a pseudo-element <http://bit.ly/cVk4DA>  */
-				content:'\201C';
-			}
 			blockquote p:after, q:after {
-				content:'\201D';
-			}
-			blockquote p::after, q::after {
 				content:'\201D';
 			}
 	q {
@@ -256,14 +245,14 @@ table {
  */
 
 /* Alternatively coloured links */
-.alt, .alt-links a {
+.alt-link, .alt-links a {
 	color:#454545;
 	text-decoration:none;
 }
-	.alt:visited, .alt-links a:visited {
+	.alt-link:visited, .alt-links a:visited {
 		color:#666;
 	}
-	.alt:hover, .alt-links a:hover {
+	.alt-link:hover, .alt-links a:hover {
 		color:#000;
 		text-decoration:underline;
 	}
@@ -307,7 +296,7 @@ table {
 	display:block;
 	overflow:hidden;
 	text-indent:-9999px;
-	background:no-repeat 0 0;
+	background:transparent no-repeat 0 0;
 }
 
 /* Floats and clearfix (try to use for content only) */
@@ -327,6 +316,10 @@ table {
 		margin-left:15px;
 	}
 
+.clear { /* clear:right may leave elements 'stranded' if your baseline breaks */
+	clear:left;
+}
+
 .clearfix:after {
 	content:".";
 	display:block;
@@ -341,36 +334,35 @@ table {
 	margin:0;
 	list-style-type:none;
 }
-	dl.inline-list {
-		overflow:hidden;
-	}
-	.inline-list li, .inline-list dt {
+	.inline-list li {
 		float:left;
 		margin:0;
 	}
-		.inline-list dt {
-			clear:left;
-			padding-right:0.214em;
-		}
-			.inline-list dt:after {
-				content:': ';
-			}
-		.inline-list dd {
-			margin:0;
-		}
-	.base-list li, .base-list dt, .base-list dd { /* Soft reset if within .inline lists */
+	.base-list li { /* Soft reset if within .inline lists */
 		float:none;
 	}
-	
+
+/* Inline definition list */
+.inline-definitions {
+	overflow:hidden;
+}
+	.inline-definitions, .inline-definitions dt, .inline-definitions dd {
+		margin:0;
+	}
+	.inline-definitions dt {
+		float:left;
+		clear:left;
+		padding-right:0.214em;
+	}
+		.inline-definitions dt:after {
+			content:': '
+		}
+
 /* Numbered definition lists */
-dl.numbered {
+.numbered {
 	counter-reset:numbered;
 }
-	dl.numbered dt:before {
-		counter-increment:numbered;
-		content:counter(numbered) ". ";
-	}
-	dl.numbered dt::before {
+	.numbered dt:before {
 		counter-increment:numbered;
 		content:counter(numbered) ". ";
 	}
@@ -389,16 +381,26 @@ dl.numbered {
 		}
 		.keywords li:after {
 			content:", ";
-		}
-		.keywords li::after {
-			content:", ";
-		}
+		}}
 			.keywords li:last-of-type:after {
 				content:".";
 			}
-			.keywords li:last-of-type::after {
-				content:".";
-			}
+
+/* Pipe separated list */
+.separated li {
+	display:block;
+	padding-left:5px;
+}
+	.separated li:before {
+		content:'|';
+	}
+		.separated li:first-child:before {
+			content:'';
+		}
+	.separated li a {
+		display:inline-block;
+		padding-left:5px;
+	}
 
 /**
  * 5. Forms
@@ -438,15 +440,17 @@ label {
 /* Text inputs, text areas and select boxes */
 html input, html select, html textarea, html button { /* See comment in reset about specificity */
 	height:1.214em; /* For browsers that do not recognise line-height on these elements */
-	line-height:1.214; /* Gecko defines line-height as 'normal', roughly 17px (1.214em) at 14px <http://bit.ly/9BFPzL> */
+
+	/* Gecko defines line-height as 'normal', roughly 17px (1.214em) at 14px <http://bit.ly/9BFPzL> */
+	font:normal 1em/1.214 Arial, Helvetica, sans-serif; /* Try to use sans-serif or monospaced fonts for inputs to avoid issues with descending letters */
 }
 	html input, html select, html textarea {
 		padding:4px;
-		font-family:Arial, Helvetica, sans-serif; /* Always use sans-serif or monospaced fonts for inputs to avoid issues with descending letters */
 		color:#555;
 		border:1px solid #555;
 	}
 		html input:focus, html select:focus, html textarea:focus {
+			z-index:1;
 			color:#000;
 			border-color:#000;
 		}
@@ -474,6 +478,6 @@ html input, html select, html textarea, html button { /* See comment in reset ab
 	}
 
 	/* Buttons */
-	html button, html input[type=button], input[type=submit] {
+	html button, html input[type=button], input[type=submit], .button {
 		padding:5px 6px;
 	}
