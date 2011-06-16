@@ -25,6 +25,7 @@
  * - Extend inline row form classes for check and radio boxes
  * - Maintain constant baseline (22px?)
  * - Test double colon pseudo-element selector
+ * - Sort out .inline lists
  */
 
 /**
@@ -77,14 +78,14 @@ html input, html select, html textarea, html button {
 	margin:0;
 	padding:0;
 	font-size:1em;
-	box-sizing:content-box; -moz-box-sizing:content-box; -webkit-box-sizing:content-box;
+	-moz-box-sizing:content-box; -webkit-box-sizing:content-box; box-sizing:content-box;
 }
 	input:focus, select:focus, textarea:focus, button:focus {
 		z-index:1; /* For Opera */
 	}
 	form select {
 		vertical-align:middle;
-		-webkit-appearance:none;
+		-moz-appearance:none; -webkit-appearance:none; appeareance:none;
 	}
 	button, input.button {
 		display:inline-block;
@@ -92,8 +93,7 @@ html input, html select, html textarea, html button {
 		white-space:nowrap;
 		cursor:pointer;
 		border:none;
-		-moz-appearance:none;
-		-webkit-appearance:none;
+		-moz-appearance:none; -webkit-appearance:none; appearance:none;
 	}
 		button::-moz-focus-inner, input::-moz-focus-inner {
 			padding:0;
@@ -140,25 +140,25 @@ body {
  */
 
 /* Headers, paragraphs, lists (Copying Nicole Sullivan's OOCSS headings.css a bit here) */
-h1, h2, h3, h4, h5, h6, .pseudo-heading {
+h1, .h1 {
+	margin-bottom:0.656em;
+	font-size:2.286em; /* 32px */
 	line-height:1;
 }
-	h1, .h1 {
-		margin-bottom:0.656em;
-		font-size:2.286em; /* 32px */
-	}
-	h2, .h2 {
-		margin-bottom:0.875em;
-		font-size:1.714em; /* 24px */
-	}
-	h3, .h3 {
-		margin-bottom:1.167em;
-		font-size:1.286em; /* 18px */
-	}
-	h4, .h4, h5, .h5, h6, .h6 {
-		line-height:1.4;
-		font-size:1.071em; /* 15px */
-	}
+h2, .h2 {
+	margin-bottom:0.875em;
+	font-size:1.714em; /* 24px */
+	line-height:1;
+}
+h3, .h3 {
+	margin-bottom:1.167em;
+	font-size:1.286em; /* 18px */
+	line-height:1;
+}
+h4, .h4, h5, .h5, h6, .h6 {
+	line-height:1.4;
+	font-size:1.071em; /* 15px */
+}
 
 p, ul, ol, dl {
 	margin-bottom:1.5em;
@@ -230,8 +230,6 @@ a {
 /* Tables */
 table {
 	border-collapse:collapse;
-	width:100%;
-	max-width:100%;
 	margin-bottom:1.5em;
 	line-height:1.5;
 	border-spacing:0;
@@ -258,14 +256,14 @@ table {
  */
 
 /* Alternatively coloured links */
-a.alt, .alt-links a {
+.alt, .alt-links a {
 	color:#454545;
 	text-decoration:none;
 }
-	a.alt:visited, .alt-links a:visited {
+	.alt:visited, .alt-links a:visited {
 		color:#666;
 	}
-	a.alt:hover, .alt-links a:hover {
+	.alt:hover, .alt-links a:hover {
 		color:#000;
 		text-decoration:underline;
 	}
@@ -282,27 +280,27 @@ a.alt, .alt-links a {
 }
 
 /* Font size variations */
-p.small-text, p.medium-text, p.large-text, p.super-text {
-	line-height:1;
+.small-text {
+	font-size:0.786em; /* 11px */
 }
-	.small-text {
-		font-size:0.786em; /* 11px */
+	p.small-text {
+		margin-bottom:0.909em;
+		line-height:1;
 	}
-		p.small-text {
-			margin-bottom:0.909em;
-		}
-	.medium-text {
-		font-size:1.071em; /* 15px */
+.medium-text {
+	font-size:1.071em; /* 15px */
+}
+	p.medium-text {
+		margin-bottom:0.4em;
+		line-height:1;
 	}
-		p.medium-text {
-			margin-bottom:0.4em;
-		}
-	.large-text {
-		font-size:1.286em; /* 18px */
+.large-text {
+	font-size:1.286em; /* 18px */
+}
+	p.large-text {
+		margin-bottom:0.167em;
+		line-height:1;
 	}
-		p.large-text {
-			margin-bottom:0.167em;
-		}
 
 /* Background image text replacement */
 .replace {
@@ -339,27 +337,31 @@ p.small-text, p.medium-text, p.large-text, p.super-text {
 }
 
 /* Un-styled lists */
-ul.base, ol.base, ul.inline, ol.inline, dl.inline {
+.base-list, .inline-list {
 	margin:0;
 	list-style-type:none;
 }
-	ul.inline li, ol.inline li, dl.inline dt, dl.inline dd {
+	dl.inline-list {
+		overflow:hidden;
+	}
+	.inline-list li, .inline-list dt {
 		float:left;
 		margin:0;
 	}
-		dl.inline dt {
+		.inline-list dt {
 			clear:left;
+			padding-right:0.214em;
 		}
-			dl.inline dt:after {
-				content:':';
+			.inline-list dt:after {
+				content:': ';
 			}
-			dl.inline dt::after {
-				content:':';
-			}
-	ul.base li, ol.base li { /* Soft reset for use within .inline lists */
+		.inline-list dd {
+			margin:0;
+		}
+	.base-list li, .base-list dt, .base-list dd { /* Soft reset if within .inline lists */
 		float:none;
 	}
-
+	
 /* Numbered definition lists */
 dl.numbered {
 	counter-reset:numbered;
@@ -448,7 +450,7 @@ html input, html select, html textarea, html button { /* See comment in reset ab
 			color:#000;
 			border-color:#000;
 		}
-		input.checkbox, input.radio, input.file { /* Go native, otherwise build a new input with visibility:hidden and a little JS */
+		html input[type=checkbox], html input[type=radio], html input[type=file] { /* Go native, otherwise build a new input with visibility:hidden and a little JS */
 			width:auto;
 			height:auto;
 			padding:0;
@@ -472,6 +474,6 @@ html input, html select, html textarea, html button { /* See comment in reset ab
 	}
 
 	/* Buttons */
-	html button, .buttons input {
+	html button, html input[type=button], input[type=submit] {
 		padding:5px 6px;
 	}
