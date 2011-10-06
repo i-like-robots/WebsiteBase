@@ -580,11 +580,12 @@ input, select, textarea, button, .button {
 		line-height:1.7rem;
 	}
 
-	.checkbox label, .radio label { /* Extends .inline */
-		margin-left:1em;
-		line-height:1;
-	}
-	.checkbox input, .radio input {
-		margin-top:5px; /* Match .inline label */
-		background:none;
-	}
+/* Checkboxes and radio buttons */
+.checkbox input, .radio input {
+	background:none;
+	vertical-align:baseline;
+}
+.checkbox label, .radio label {
+	display:inline;
+	padding:0 0.25em;
+}
