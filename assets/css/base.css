@@ -1,0 +1,590 @@
+﻿/**
+ * Created by: Matt Hinchliffe, www.maketea.co.uk
+ * Date:       12/01/2011
+ * Modified:   06/10/2011
+ *
+ * Contents:
+ * 1.	Reset
+ * 2.	HTML, body, fonts
+ * 3.	Base elements
+ * 4.	Common classes
+ * 5.	Forms
+ *
+ * Naming conventions:
+ * - Hyphens are used for easily readable names. E.G. '#home-page-tabs'
+ * - Underscores denote an extended class. E.G. '.large_button' extends '.button'
+ *
+ * Formatting:
+ * - Keep selectors as short as possible. IDs and classes are much faster and more maintainable than traversing
+ * - Indentation (using tabs only) denotes that the selector is a child element or an extension of the previous
+ *
+ * Font stacks:
+ * Normal: Arial, Helvetica, sans-serif
+ * Alternate: Georgia, Times, Times New Roman, serif
+ * Mono: Consolas, "Lucida Console", Monaco, monospace
+ *
+ * A note on font units:
+ * Root em or 'rem' units are relative to the root (<html>) element. When used in correspondence with a base
+ * 10px font size this gives you the flexibility of predictable, resizable font without lots of rounding errors.
+ * This unit requires a fallback for < IE 9 and < Opera 12. Rounding differences between rendering engines will
+ * mean your design will never be pixel perfect when using relative units.
+ *
+ * Colours:
+ * Dark grey	#333
+ * Grey			#666
+ * Light grey	#999
+ */
+
+/**
+ * 1. Reset
+ */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+dl, dt, dd, ol, ul, li,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+table, caption, tbody, tfoot, thead, tr, th, td,
+fieldset, form, label, legend, input, textarea, button {
+	margin:0;
+	padding:0;
+	vertical-align:baseline;
+}
+
+fieldset, img {
+	border:none;
+}
+
+ul, ol {
+	list-style-position:inside;
+}
+
+blockquote, q {
+	quotes:none;
+}
+	blockquote:before, blockquote:after {
+		content:none;
+		content:'';
+	}
+
+abbr, acronym, dfn, var {
+	font-style:normal;
+	font-variant:normal;
+}
+
+address {
+	font-style:normal;
+}
+	address span {
+		display:block;
+	}
+
+input, select, textarea, button {
+	outline:none;
+	-webkit-box-sizing:content-box;
+	   -moz-box-sizing:content-box;
+	        box-sizing:content-box;
+}
+	legend {
+		-webkit-margin-collapse:separate;
+	}
+	select {
+		vertical-align:middle;
+		cursor:pointer;
+	}
+	button, .button {
+		display:inline-block;
+		width:auto;
+		white-space:nowrap;
+		cursor:pointer;
+		border:none;
+		-webkit-appearance:normal;
+		   -moz-appearance:normal;
+		        appearance:normal;
+	}
+		button::-moz-focus-inner, input::-moz-focus-inner {
+			padding:0;
+			border:none;
+		}
+	textarea {
+		display:block;
+		height:auto;
+		resize:none;
+	}
+
+/**
+ * 2. HTML, Body
+ */
+html, body {
+	min-height:100%;
+}
+	html {
+		font-size:62.5%; /* 10px, set in % for IE resize consistency */
+	}
+	body {
+		line-height:24px;
+		font-size:14px; /* Fallback for rem unit */
+
+		line-height:2.4rem;
+		font-size:1.4rem;
+
+		font-family:Arial, Helvetica, sans-serif;
+		color:#000;
+		background:#fff;
+	}
+
+::-webkit-selection {
+	color:#fff;
+	background:rgba(0, 0, 0, 0.5);
+	text-shadow:none;
+}
+::-moz-selection {
+	color:#fff;
+	background:rgba(0, 0, 0, 0.5);
+	text-shadow:none;
+}
+::selection {
+	color:#fff;
+	background:rgba(0, 0, 0, 0.5);
+	text-shadow:none;
+}
+
+/**
+ * 3. Base elements
+ */
+
+/* Headers, paragraphs, lists */
+
+/**
+ * I took the idea of using duplicate class names from OOCSS, it allows your markup to define
+ * the correct structure when the design does not take this into account. For this reason it is
+ * safer to use padding rather than margins so that the classes can be used on elements with
+ * margins that collapse such as <legend>.
+ */
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5 {
+	font-weight:normal;
+	font-family:Georgia, Times, Times New Roman, serif;
+}
+	h1, .h1 {
+		padding-bottom:14px;
+		line-height:58px;
+		font-size:48px;
+
+		padding-bottom:1.4rem;
+		line-height:5.8rem;
+		font-size:4.8rem;
+	}
+	h2, .h2 {
+		padding-bottom:10px;
+		line-height:44px;
+		font-size:36px;
+
+		padding-bottom:1rem;
+		line-height:4.4rem;
+		font-size:3.6rem;
+	}
+	h3, .h3 {
+		padding-bottom:6px;
+		line-height:30px;
+		font-size:24px;
+
+		padding-bottom:0.6rem;
+		line-height:3rem;
+		font-size:2.4rem;
+	}
+	h4, .h4 {
+		padding-bottom:6px;
+		line-height:30px;
+		font-size:21px;
+
+		padding-bottom:0.6rem;
+		line-height:3rem;
+		font-size:2.1rem;
+	}
+	h5, .h5 {
+		padding-bottom:10px;
+		line-height:20px;
+		font-size:18px;
+
+		padding-bottom:1rem;
+		line-height:2rem;
+		font-size:1.8rem;
+	}
+	h6, .h6 {
+		padding-bottom:0;
+		font-weight:bold;
+		line-height:24px;
+		font-size:1em;
+
+		line-height:2.4rem;
+	}
+
+p, ul, ol, dd {
+	margin-bottom:24px;
+	margin-bottom:2.4rem;
+}
+
+ul, ol {
+	margin-left:20px;
+}
+
+/* Quotes */
+blockquote, q, cite {
+	font-style:italic;
+	font-family:Georgia, Times, Times New Roman, serif;
+}
+	blockquote {
+		margin:0 40px 1.5em;
+	}
+		blockquote .quotation:before, q:before {
+			content:'\201C';
+		}
+		blockquote .quotation:after, q:after {
+			content:'\201D';
+		}
+	cite {
+		font-weight:bold;
+	}
+
+/* Monospace */
+pre, code, kbd, var {
+	font-family:Consolas, "Lucida Console", Monaco, monospace;
+}
+	pre {
+		overflow:auto;
+	}
+	code, kbd, var {
+		line-height:1;
+	}
+
+/* Help */
+abbr[title], acronym[title], dfn[title] {
+	border-bottom:1px dotted;
+	cursor:help;
+}
+
+/* Links */
+a {
+	color:#1A54E1;
+	text-decoration:none;
+}
+	a:visited {
+		color:#36C;
+	}
+	a:hover, .selected a {
+		text-decoration:underline;
+	}
+	a:active, a:focus {
+		outline:1px dotted #ccc;
+		outline-offset:1px;
+	}
+
+/* Tables */
+table {
+	border-collapse:collapse;
+	margin-bottom:1.5em;
+	line-height:1.5;
+	border:none;
+	border-spacing:0;
+}
+	caption, th, td {
+		text-align:left;
+		vertical-align:top;
+	}
+
+/**
+ * 4. Common classes
+ */
+
+/* Alternatively coloured links */
+.alt-link, .alt-links a {
+	color:#454545;
+	text-decoration:none;
+}
+	.alt-link:visited, .alt-links a:visited {
+		color:#666;
+	}
+	.alt-link:hover, .alt-links a:hover {
+		color:#000;
+		text-decoration:underline;
+	}
+
+/* Text alignment */
+.align-left {
+	text-align:left;
+}
+.align-centre {
+	text-align:center;
+}
+.align-right {
+	text-align:right;
+}
+
+/* Font size variations */
+.small-text {
+	font-size:0.786em; /* 11px */
+}
+	p.small-text {
+		margin-bottom:0.909em;
+		line-height:1;
+	}
+.medium-text {
+	font-size:1.071em; /* 15px */
+}
+	p.medium-text {
+		margin-bottom:0.4em;
+		line-height:1;
+	}
+.large-text {
+	font-size:1.286em; /* 18px */
+}
+	p.large-text {
+		margin-bottom:0.167em;
+		line-height:1;
+	}
+
+/* Text colours */
+.black {
+	color:#000;
+}
+.dark-grey {
+	color:#333;
+}
+.grey {
+	color:#666;
+}
+.light-grey {
+	color:#999;
+}
+.white {
+	color:#fff;
+}
+
+/* Utility classes */
+.replace {
+	display:block;
+	overflow:hidden;
+	text-indent:-9999px;
+	background:transparent no-repeat 0 0;
+}
+
+.hidden {
+	left:-9999px;
+}
+
+.base {
+	margin:0;
+	padding:0;
+}
+	ul.base {
+		list-style-type:none;
+	}
+	img.base {
+		display:block;
+	}
+
+/* Floats and clearfix */
+.left {
+	float:left;
+}
+	img.left {
+		display:block;
+		margin:0 15px 1.5em 0;
+	}
+
+.right {
+	float:right;
+}
+	img.right {
+		display:block;
+		margin:0 0 1.5em 15px;
+	}
+
+.clear { /* clear:right may leave elements 'stranded' if your baseline breaks */
+	clear:left;
+}
+
+.clearfix:after {
+	content:".";
+	display:block;
+	clear:both;
+	visibility:hidden;
+	line-height:0;
+	height:0;
+}
+
+/* Inline list */
+.inline-list {
+	margin-left:0;
+	list-style-type:none;
+}
+	.inline-list > li {
+		display:inline;
+		margin:0;
+	}
+
+/* Block list */
+.block-list {
+	margin-left:0;
+	list-style-type:none;
+}
+	.block-list li {
+		float:left;
+	}
+		.block-list a {
+			display:block;
+			margin-right:1px;
+			padding:3px 10px;
+			background-color:#eee;
+		}
+			.block-list a:hover {
+				background-color:#ddd;
+			}
+
+/* Inline definition list */
+.inline-definitions {
+	overflow:hidden;
+}
+	.inline-definitions dt, .inline-definitions dd {
+		margin:0;
+	}
+	.inline-definitions dt {
+		float:left;
+		clear:left;
+		padding-right:5px;
+	}
+		.inline-definitions dt:after {
+			content:':'
+		}
+
+/* Numbered definition lists */
+.numbered-definitions {
+	counter-reset:numbered;
+}
+	.numbered-definitions dt:before {
+		counter-increment:numbered;
+		content:counter(numbered) '. ';
+	}
+
+/* Comma separated list */
+.tag-list {
+	margin-left:0;
+	text-transform:capitalize;
+}
+	.tag-list li {
+		float:left;
+		display:block;
+	}
+		.tag-list li:before {
+			content:',\0000a0'; /* Non-breaking space */
+		}
+			.tag-list li:first-child:before {
+				content:'';
+			}
+
+/* Pipe separated list */
+.separated-list {
+	margin-left:0;
+	text-transform:capitalize;
+}
+	.separated-list li {
+		float:left;
+		display:block;
+	}
+		.separated-list li:before {
+			content:'\0000a0|\0000a0'; /* Non-breaking space */
+		}
+			.separated-list li:first-child:before {
+				content:'';
+			}
+/**
+ * 5. Forms
+ */
+fieldset {
+	overflow:hidden;
+}
+
+/* Labels */
+label, .label {
+	display:block;
+	white-space:nowrap;
+}
+	label dfn {
+		font-size:0.857em;
+	}
+		label dfn[title] {
+			border:none;
+		}
+
+/* Text inputs, text areas and select boxes */
+input, select, textarea, button, .button {
+	height:17px; /* To match the line-height for browsers that do not recognise line-height property on form elements */
+	padding:5px;
+	font:normal 1em/17px Arial, Helvetica, sans-serif; /* Gecko defines line-height as 'normal', roughly 17px relative to 14px <http://bit.ly/9BFPzL> */
+	background:#eee;
+	border:none;
+}
+	input:focus, select:focus, textarea:focus {
+		z-index:1; /* For Opera */
+		color:#454545;
+		-webkit-box-shadow:0 0 15px rgba(0, 0, 0, 0.1) inset;
+		   -moz-box-shadow:0 0 15px rgba(0, 0, 0, 0.1) inset;
+		        box-shadow:0 0 15px rgba(0, 0, 0, 0.1) inset; /* Inset shadows won't display in Opera. There is a hack (apply a border-radius) but that sucks; don't use it */
+	}
+	input[type=checkbox], html input[type=radio], html input[type=file] { /* Go native, otherwise build a new input with a little JS <http://bit.ly/qM8FYC> */
+		width:auto;
+		height:auto;
+		padding:0;
+		background:none;
+	}
+	textarea {
+		height:6em;
+	}
+
+	/* Placeholders */
+	::-webkit-input-placeholder {
+		color:#666;
+	}
+	input:-moz-placeholder, textarea:-moz-placeholder {
+		color:#666;
+	}
+
+	/* Buttons */
+	button, .button { /* See text inputs/textarea/select boxes above */
+		color:#fff;
+		background:#1A54E1;
+	}
+		a.button:hover, a.button:visited {
+			text-decoration:none;
+			color:#fff;
+			background:#36C;
+		}
+
+/* Form layout */
+.row {
+	margin-bottom:1em;
+}
+
+/* Inline labels (requires .clearfix) */
+.inline label, .inline .label, .inline input, .inline select, .inline button, .inline .button { /* Extends .row */
+	float:left;
+}
+	.inline label, .inline .label {
+		width:120px;
+		padding-top:5px; /* To match input padding (and border width if necessary) */
+		line-height:17px; /* Match input/select line height */
+		line-height:1.7rem;
+	}
+
+	.checkbox label, .radio label { /* Extends .inline */
+		margin-left:1em;
+		line-height:1;
+	}
+	.checkbox input, .radio input {
+		margin-top:5px; /* Match .inline label */
+		background:none;
+	}

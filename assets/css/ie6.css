@@ -1,0 +1,9 @@
+/* Float double margin fix */
+.left, .right {
+	display:inline;
+}
+
+/* Clearfix fix */
+.clearfix {
+	zoom:1;
+}

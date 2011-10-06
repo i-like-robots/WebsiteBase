@@ -1,0 +1,54 @@
+/* Blockquotes */
+blockquote {
+	display:block;
+}
+
+/* No in-line block but applying 'layout' to an inline element contrives it, use this where necessary */
+.inline-block {
+	zoom:1;
+	display:inline;
+}
+
+/* Select boxes. Padding cannot be applied to a select box so add it to the height */
+select {
+	height:27px; /* 17px line-height + 5px padding */
+}
+
+/* Buttons render terribly due to a forced border-box style layout */
+button {
+	zoom:1;
+	display:inline;
+	overflow:visible;
+	height:auto !important;
+	padding-top:4px;
+	line-height:1;
+}
+.button {
+	display:inline;
+	zoom:1;
+}
+
+/* Form checkboxes and radio buttons alignment, align checkboxes, radios, text inputs with their label */
+.radio input {
+	vertical-align:text-top;
+}
+.checkbox input {
+	vertical-align:bottom;
+}
+
+/* Clearfix fix */
+.clearfix {
+	overflow:hidden;
+}
+
+/* Lists display margin bug */
+ul.base, ol.base {
+	list-style-position:outside;
+}
+	ul.base li, ol.base li {
+		display:block;
+	}
+
+.separated-list li, .tag-list li {
+	margin-right:0.5em; /* No pseudo elements so just add a gap, it doesn't really matter anyway */
+}
