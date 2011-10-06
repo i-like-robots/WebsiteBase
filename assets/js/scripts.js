@@ -1,11 +1,21 @@
 /**
  * @author Matt Hinchliffe <http://www.maketea.co.uk>
  * @created 12/01/2011
- * @modified 08/06/2011
- * @fileOverview Executes page onLoad methods when ready
+ * @modified 06/10/2011
+ * @package yourProject
  */
 
-var Website = {};
+// Project namespace and version number
+if (!window.yourProject) var yourProject = {
+	_autoload: [],
+	version: '0.0.1'
+};
+
+/**
+ * Replace no-js
+ */
+var body = document.documentElement;
+body.className = body.className.replace(/\bno-js\b/, '');
 
 /**
  * Quick wrapper for a missing console
@@ -14,7 +24,7 @@ if (!window.console)
 {
 	var console = {};
 	console.history = [];
-	
+
 	console.log = function(i)
 	{
 		console.history.push(i);
@@ -22,25 +32,27 @@ if (!window.console)
 }
 
 /**
- * Methods to execute automatically on page load
+ * Prototypal inheritance operator support
+ * Douglas Crockford <http://javascript.crockford.com/prototypal.html>
  */
-Website.load = {
-
-	/**
-	 * Something
-	 *
-	 * @description This does nothing
-	 */
-	something: function ()
-	{
-		return;
-	}
-};
+if (typeof Object.create !== 'function') {
+	Object.create = function(o) {
+		function F() {}
+		F.prototype = o;
+		return new F();
+	};
+}
 
 /**
- * Execute methods within Website.load
+ * Execute methods within objects registered within yourProject._autoload in reverse order.
  */
 $(function()
 {
-	for (var method in Website['load']) Website.load[method]();
+	for (var i = 0; i < yourProject._autoload.length; i++)
+	{
+		for (var method in yourProject[yourProject._autoload[i]])
+		{
+			if (typeof yourProject[yourProject._autoload[i]][method] == 'function') yourProject[yourProject._autoload[i]][method]();
+		}
+	}
 });

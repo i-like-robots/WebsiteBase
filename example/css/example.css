@@ -1,16 +1,36 @@
-@import '../../assets/css/styles.css';
-
 body {
-	background:url(../img/baseline.png);
+	background:#eee url(../img/body_bg.png) repeat top;
 }
 
+/* layout */
 #container {
-	width:960px;
-	margin:0 auto;
+	width:800px;
+	margin:40px auto;
+	padding:50px 80px;
+	background:#fff url(../img/baseline.png) repeat;
+	-webkit-border-radius:8px;
+	   -moz-border-radius:8px;
+	        border-radius:8px;
+	-webkit-box-shadow:0 0 15px rgba(0, 0, 0, 0.1);
+	   -moz-box-shadow:0 0 15px rgba(0, 0, 0, 0.1);
+	        box-shadow:0 0 15px rgba(0, 0, 0, 0.1);
 }
-	.column {
-		float:left;
-		width:450px;
-		margin:0 15px;
-	}
 
+/* Examples */
+.example {
+	position:relative;
+	margin-bottom:24px;
+	margin-bottom:2.4rem;
+}
+	.example aside {
+		position:absolute;
+		top:0;
+		right:0;
+		padding:0 5px;
+		color:#293134;
+		background:#eee;
+		-webkit-border-radius:5px;
+		   -moz-border-radius:5px;
+		        border-radius:5px;
+		cursor:help;
+	}

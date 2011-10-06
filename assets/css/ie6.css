@@ -1,8 +1,3 @@
-/* Form checkboxes and radio buttons alignment, align checkboxes, radios, text inputs with their label */
-input.checkbox {
-	vertical-align:baseline;
-}
-
 /* Float double margin fix */
 .left, .right {
 	display:inline;
@@ -11,9 +6,4 @@ input.checkbox {
 /* Clearfix fix */
 .clearfix {
 	zoom:1;
-}
-
-/* Layout */
-.column {
-	display:inline;
 }
