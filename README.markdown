@@ -1,14 +1,14 @@
-# Not total boilerplate overkill, more than a reset.
+# WebsiteBase
 
-[Examples and Documentation](http://i-like-robots.github.com/Website-base)
+[WebsiteBase](http://i-like-robots.github.com/Website-base) is a solid project starting point, defining code organisation and formatting along with useful classes, cross-browser form layouts and text content baseline. WebsiteBase should make starting a project much less of a pain.
 
-is a solid project starting point defining code organisation and style with a whole bunch of useful classes and corrected caveats to make starting a project less of a pain.
+## Not an over-engineeered boilerplate and more than a reset.
 
-## WebsiteBase features
+WebsiteBase features:
 
 * Well documented
-* Content baseline
-* Consistant form layouts
+* Text content baseline
+* Cross-browser form layouts
 * Useful formatting classes
 * Basic IE6/7 fixes
 
