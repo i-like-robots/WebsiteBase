@@ -1,22 +1,20 @@
 All:
-- Indent work with tabs. No spaces unless lining up variables or objects vertically.
-- View your whitespace and make sure your editor cleans it up.
-- Use UTF-8 encoding with UNIX line endings. No exceptions.
+- Indent work with tabs. No spaces unless vertically aligning for readability.
+- Do not leave trailing whitespace or whitespace on empty lines.
+- Use UTF-8 encoding with UNIX line endings for consistancy.
 
 CSS:
-- Indent your CSS to denote selector is a child of or extends the previous selector. Comment extensions.
+- Indent your CSS to denote a selector is a child of or extends a previous selector. Comment extensions.
 - Name classes sensibly using hyphens if necessary. No CamelCase.
-- Order properties sensibly - 1. layout 2. text 3. backgrounds - is a common pattern.
-- No inline hacks or parsing bugs; put it in to the right stylesheet.
-- Enhance sensibly. Use duplicate rules that will fall back; A CSS parser ignores what it doesn't understand.
+- Order and group properties sensibly, I suggest: 1. layout 2. text 3. backgrounds 4. fluffy stuff
+- No inline hacks or parsing bugs for IE specific rules; put it in to the right stylesheet.
+- Enhance sensibly. Use duplicate rules that will fall back (A CSS parser ignores what it doesn't understand).
 - Run test code through CSSLint or Page Speed to pick out obvious bugs (this also means keeping selectors short and using pre-defined font sizes and colours as much as possible)
-- If you over-specify or use pseudo-element or  attribute selectors leave a comment to explain why it is necessary.
+- If you over-specify or use pseudo-element or attribute selectors leave a comment to explain why it is necessary.
 
 Javascript:
 - Keep jQuery factory selectors as simple as possible (IDs, tags and classes) and use traverse methods when necessary E.G. $this.find('.something')
-- Cache jQuery objects if you need to access them more than once.
-- Prefix jQuery object variables with a dollar sign E.G. $this = $(this), that = 'that';
-- Use the most efficient method for binding data and events in context (usually $.delegate and $.data).
+- Cache jQuery objects if you need to access them more than once and prefix with a dollar sign E.G. $this = $(this), that = 'that';
 - Test using JSHint to avoid obvious bugs.
-- Use JSDoc to comment methods and provide an example if relying on existing or building a new markup structure.
-- Don't just throw a plug-in at a page to solve a problem. Any plug-ins used must be evaluated and agreed by all developers.
+- Use JSDoc to comment methods and provide an example if relying on existing or building new markup.
+- Don't just throw a plug-in at a page to solve a problem. Use of a plug-in should be evaluated and agreed upon by all developers.
