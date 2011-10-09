@@ -413,7 +413,7 @@ table {
 	clear:left;
 }
 
-.clearfix:after {
+.cf:after {
 	content:".";
 	display:block;
 	clear:both;
@@ -574,7 +574,7 @@ input, select, textarea, button, .button {
 	margin-bottom:1em;
 }
 
-/* Inline labels (requires .clearfix) */
+/* Inline labels (requires .cf) */
 .inline label, .inline .label, .inline input, .inline select, .inline button, .inline .button { /* Extends .row */
 	float:left;
 }

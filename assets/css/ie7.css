@@ -37,7 +37,7 @@ button {
 }
 
 /* Clearfix fix */
-.clearfix {
+.cf {
 	overflow:hidden;
 }
 
