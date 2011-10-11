@@ -5,23 +5,23 @@ blockquote {
 
 /* No in-line block but applying 'layout' to an inline element contrives it, use this where necessary */
 .inline-block {
-	zoom:1;
 	display:inline;
+	zoom:1;
 }
 
 /* Select boxes. Padding cannot be applied to a select box so add it to the height */
 select {
-	height:27px; /* 17px line-height + 5px padding */
+	height:27px; /* 17px 'normal' line-height + padding */
 }
 
 /* Buttons render terribly due to a forced border-box style layout */
 button {
-	zoom:1;
 	display:inline;
-	overflow:visible;
 	height:auto !important;
 	padding-top:4px;
+	overflow:visible;
 	line-height:1;
+	zoom:1;
 }
 .button {
 	display:inline;

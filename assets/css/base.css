@@ -1,7 +1,7 @@
 ﻿/**
  * Created by: Matt Hinchliffe, www.maketea.co.uk
  * Date:       12/01/2011
- * Modified:   07/10/2011
+ * Modified:   11/10/2011
  *
  * Contents:
  * 1.	Reset
@@ -17,11 +17,15 @@
  * Formatting:
  * - Keep selectors as short as possible. IDs and classes are much faster and more maintainable than traversing
  * - Indentation (using tabs only) denotes that the selector is a child element or an extension of the previous
+ * - Property and value pairs on new lines
+ * - Line up vendor prefixes with spaces
  *
- * Font stacks:
- * Normal: Arial, Helvetica, sans-serif
- * Alternate: Georgia, Times, Times New Roman, serif
- * Mono: Consolas, "Lucida Console", Monaco, monospace
+ * Property order:
+ * It is best to group properties by type and order them in a consistant way...
+ *  - Layout box (E.G. float, display, box sizing, width, height, padding, margin, border)
+ *  - Text (E.G. weight/style, line height, text size, font face, color, decoration)
+ *  - Backgrounds
+ *  - Other stuff (E.G. Box shadow, cursor, opacity, z-index)
  *
  * A note on font units:
  * Root em or 'rem' units are relative to the root (<html>) element. When used in correspondence with a base
@@ -29,10 +33,15 @@
  * This unit requires a fallback for < IE 9 and < Opera 12. Rounding differences between rendering engines will
  * mean your design will never be pixel perfect when using relative units.
  *
+ * Font stacks:
+ *  - Normal: Arial, Helvetica, sans-serif
+ *  - Alternate: Georgia, Times, Times New Roman, serif
+ *  - Mono: Consolas, "Lucida Console", Monaco, monospace
+ *
  * Colours:
- * Dark grey	#333
- * Grey			#666
- * Light grey	#999
+ * - Dark grey  #333
+ * - Grey       #666
+ * - Light grey #999
  */
 
 /**
@@ -80,10 +89,10 @@ address {
 	}
 
 input, select, textarea, button {
-	outline:none;
 	-webkit-box-sizing:content-box;
 	   -moz-box-sizing:content-box;
 	        box-sizing:content-box;
+	outline:none;
 }
 	legend {
 		-webkit-margin-collapse:separate;
@@ -95,9 +104,9 @@ input, select, textarea, button {
 	button, .button {
 		display:inline-block;
 		width:auto;
+		border:none;
 		white-space:nowrap;
 		cursor:pointer;
-		border:none;
 		-webkit-appearance:normal;
 		   -moz-appearance:normal;
 		        appearance:normal;
@@ -217,10 +226,12 @@ h5, .h5 {
 	h6, .h6 {
 		padding-bottom:0;
 		font-weight:bold;
+
 		line-height:24px;
-		font-size:1em;
+		font-size:14px;
 
 		line-height:2.4rem;
+		font-size:1.4rem;
 	}
 
 p, ul, ol, dd {
@@ -285,11 +296,11 @@ a {
 
 /* Tables */
 table {
-	border-collapse:collapse;
 	margin-bottom:1.5em;
-	line-height:1.5;
 	border:none;
+	border-collapse:collapse;
 	border-spacing:0;
+	line-height:1.5;
 }
 	caption, th, td {
 		text-align:left;
@@ -385,7 +396,7 @@ table {
 	margin:0;
 	padding:0;
 }
-	ul.base {
+	ul.base, ol.base {
 		list-style-type:none;
 	}
 	img.base {
@@ -414,12 +425,12 @@ table {
 }
 
 .cf:after {
-	content:".";
-	display:block;
 	clear:both;
-	visibility:hidden;
-	line-height:0;
+	display:block;
 	height:0;
+	line-height:0;
+	visibility:hidden;
+	content:".";
 }
 
 /* Inline list */
@@ -529,13 +540,13 @@ label, .label {
 input, select, textarea, button, .button {
 	height:17px; /* To match the line-height for browsers that do not recognise line-height property on form elements */
 	padding:5px;
+	border:none;
 	font:normal 1em/17px Arial, Helvetica, sans-serif; /* Gecko defines line-height as 'normal', roughly 17px relative to 14px <http://bit.ly/9BFPzL> */
 	background:#eee;
-	border:none;
 }
 	input:focus, select:focus, textarea:focus {
-		z-index:1; /* For Opera */
 		color:#454545;
+		z-index:1; /* For Opera */
 		-webkit-box-shadow:0 0 15px rgba(0, 0, 0, 0.1) inset;
 		   -moz-box-shadow:0 0 15px rgba(0, 0, 0, 0.1) inset;
 		        box-shadow:0 0 15px rgba(0, 0, 0, 0.1) inset; /* Inset shadows won't display in Opera. There is a hack (apply a border-radius) but that sucks; don't use it */
@@ -547,11 +558,11 @@ input, select, textarea, button, .button {
 		background:none;
 	}
 	textarea {
-		height:6em;
+		height:8em;
 	}
 
 	/* Placeholders */
-	::-webkit-input-placeholder {
+	input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
 		color:#666;
 	}
 	input:-moz-placeholder, textarea:-moz-placeholder {
@@ -564,8 +575,8 @@ input, select, textarea, button, .button {
 		background:#1A54E1;
 	}
 		a.button:hover, a.button:visited {
-			text-decoration:none;
 			color:#fff;
+			text-decoration:none;
 			background:#36C;
 		}
 
@@ -581,14 +592,14 @@ input, select, textarea, button, .button {
 	.inline label, .inline .label {
 		width:120px;
 		padding-top:5px; /* To match input padding (and border width if necessary) */
-		line-height:17px; /* Match input/select line height */
+		line-height:17px; /* Match input/select 'normal' line height */
 		line-height:1.7rem;
 	}
 
 /* Checkboxes and radio buttons */
 .checkbox input, .radio input {
-	background:none;
 	vertical-align:baseline;
+	background:none;
 }
 .checkbox label, .radio label {
 	display:inline;
