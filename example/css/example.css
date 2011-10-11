@@ -8,20 +8,22 @@ body {
 	margin:40px auto;
 	padding:50px 80px;
 	background:#fff url(../img/baseline.png) repeat;
-	-webkit-border-radius:8px;
-	   -moz-border-radius:8px;
-	        border-radius:8px;
-	-webkit-box-shadow:0 0 15px rgba(0, 0, 0, 0.1);
-	   -moz-box-shadow:0 0 15px rgba(0, 0, 0, 0.1);
-	        box-shadow:0 0 15px rgba(0, 0, 0, 0.1);
+	-webkit-border-radius:18px;
+	   -moz-border-radius:18px;
+	        border-radius:18px;
+	-webkit-box-shadow:0 0 15px rgba(0, 0, 0, 0.15);
+	   -moz-box-shadow:0 0 15px rgba(0, 0, 0, 0.15);
+	        box-shadow:0 0 15px rgba(0, 0, 0, 0.15);
 }
 
 /* Examples */
 .example {
 	position:relative;
-	margin-bottom:24px;
-	margin-bottom:2.4rem;
 }
+	dd.example {
+		margin-bottom:24px;
+		margin-bottom:2.4rem;
+	}
 	.example aside {
 		position:absolute;
 		top:0;
