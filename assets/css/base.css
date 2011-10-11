@@ -35,7 +35,7 @@
  *
  * Font stacks:
  *  - Normal: Arial, Helvetica, sans-serif
- *  - Alternate: Georgia, Times, Times New Roman, serif
+ *  - Alternate: Cambria, Georgia, Times, 'Times New Roman', serif
  *  - Mono: Consolas, "Lucida Console", Monaco, monospace
  *
  * Colours:
@@ -168,15 +168,16 @@ html, body {
  * I took the idea of using duplicate class names from OOCSS, it allows your markup to define
  * the correct structure when the design does not take this into account. For this reason it is
  * safer to use padding rather than margins so that the classes can be used on elements with
- * margins that collapse such as <legend>.
+ * margins that collapse such as <legend> or within tables (<th>).
  */
 h1, .h1,
 h2, .h2,
 h3, .h3,
 h4, .h4,
-h5, .h5 {
-	font-weight:normal;
-	font-family:Georgia, Times, Times New Roman, serif;
+h5, .h5,
+h6, .h6 {
+	font-weight:bold;
+	font-family:Cambria, Georgia, Times, 'Times New Roman', serif;
 }
 	h1, .h1 {
 		padding-bottom:14px;
@@ -225,13 +226,14 @@ h5, .h5 {
 	}
 	h6, .h6 {
 		padding-bottom:0;
-		font-weight:bold;
 
 		line-height:24px;
 		font-size:14px;
 
 		line-height:2.4rem;
 		font-size:1.4rem;
+
+		font-family:Arial, Helvetica, sans-serif;
 	}
 
 p, ul, ol, dd {
