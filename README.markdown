@@ -1,6 +1,6 @@
 # WebsiteBase
 
-[WebsiteBase](http://i-like-robots.github.com/Website-base) is a solid project starting point, defining code organisation and formatting along with useful classes, cross-browser form layouts and text content baseline. WebsiteBase should make starting a project much less of a pain.
+[WebsiteBase](http://i-like-robots.github.com/WebsiteBase) is a solid project starting point, defining code organisation and formatting along with useful classes, cross-browser form layouts and text content baseline. WebsiteBase should make starting a project much less of a pain.
 
 ## Not an over-engineeered boilerplate and more than a reset.
 
