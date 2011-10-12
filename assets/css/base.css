@@ -1,7 +1,9 @@
 ﻿/**
- * Created by: Matt Hinchliffe, www.maketea.co.uk
- * Date:       12/01/2011
- * Modified:   11/10/2011
+ * Author:   Matt Hinchliffe <www.maketea.co.uk>
+ * Created:  12/01/2011
+ * Modified: 12/10/2011
+ * 
+ * Find out more about this stylesheet at <https://github.com/i-like-robots/WebsiteBase>
  *
  * Contents:
  * 1.	Reset
@@ -22,7 +24,8 @@
  *
  * Property order:
  * It is best to group properties by type and order them in a consistant way...
- *  - Layout box (E.G. float, display, box sizing, width, height, padding, margin, border)
+ *  - Position (E.G. position, top, left, float)
+ *  - Layout box (E.G. display, box sizing, width, height, padding, margin, borders)
  *  - Text (E.G. weight/style, line height, text size, font face, color, decoration)
  *  - Backgrounds
  *  - Other stuff (E.G. Box shadow, cursor, opacity, z-index)
@@ -34,7 +37,7 @@
  * mean your design will never be pixel perfect when using relative units.
  *
  * Font stacks:
- *  - Normal: Arial, Helvetica, sans-serif
+ *  - Normal: Arial, sans-serif
  *  - Alternate: Cambria, Georgia, Times, 'Times New Roman', serif
  *  - Mono: Consolas, "Lucida Console", Monaco, monospace
  *
@@ -137,7 +140,7 @@ html, body {
 		line-height:2.4rem;
 		font-size:1.4rem;
 
-		font-family:Arial, Helvetica, sans-serif;
+		font-family:Arial, sans-serif;
 		color:#000;
 		background:#fff;
 	}
@@ -181,10 +184,10 @@ h6, .h6 {
 }
 	h1, .h1 {
 		padding-bottom:14px;
-		line-height:58px;
+		line-height:58px; /* You could easily work out line heights as a unit-less, relative number in your project */
 		font-size:48px;
 
-		padding-bottom:1.4rem;
+		padding-bottom:1.4rem; /* There's no harm in defining padding in pixels only */
 		line-height:5.8rem;
 		font-size:4.8rem;
 	}
@@ -253,6 +256,9 @@ blockquote, q, cite {
 	blockquote {
 		margin:0 40px;
 	}
+		blockquote .quotation { /* Defined using a class as citations must also be within a paragraph */
+			text-indent:-0.5em;
+		}
 		blockquote .quotation:before, q:before {
 			content:'\201C';
 		}
@@ -391,6 +397,7 @@ table {
 }
 
 .hidden {
+	position:absolute;
 	left:-9999px;
 }
 
