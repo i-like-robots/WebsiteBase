@@ -1,7 +1,7 @@
 ﻿/**
  * Author:   Matt Hinchliffe <www.maketea.co.uk>
  * Created:  12/01/2011
- * Modified: 12/10/2011
+ * Modified: 26/10/2011
  * 
  * Find out more about this stylesheet at <https://github.com/i-like-robots/WebsiteBase>
  *
@@ -131,7 +131,7 @@ html, body {
 	min-height:100%;
 }
 	html {
-		font-size:62.5%; /* 10px, set in % for IE resize consistency */
+		font-size:62.5%; /* 10px, set in % for IE consistency */
 	}
 	body {
 		line-height:24px;
@@ -144,22 +144,6 @@ html, body {
 		color:#000;
 		background:#fff;
 	}
-
-::-webkit-selection {
-	color:#fff;
-	background:rgba(0, 0, 0, 0.5);
-	text-shadow:none;
-}
-::-moz-selection {
-	color:#fff;
-	background:rgba(0, 0, 0, 0.5);
-	text-shadow:none;
-}
-::selection {
-	color:#fff;
-	background:rgba(0, 0, 0, 0.5);
-	text-shadow:none;
-}
 
 /**
  * 3. Base elements
@@ -269,6 +253,11 @@ blockquote, q, cite {
 		font-weight:bold;
 	}
 
+/* Font size */
+small, big {
+	line-height:1;
+}
+
 /* Monospace */
 pre, code, kbd, var {
 	font-family:Consolas, "Lucida Console", Monaco, monospace;
@@ -322,14 +311,12 @@ table {
 /* Alternatively coloured links */
 .alt-link, .alt-links a {
 	color:#454545;
-	text-decoration:none;
 }
 	.alt-link:visited, .alt-links a:visited {
 		color:#666;
 	}
 	.alt-link:hover, .alt-links a:hover {
 		color:#000;
-		text-decoration:underline;
 	}
 
 /* Text alignment */
@@ -371,7 +358,7 @@ table {
 		margin-bottom:3rem;
 	}
 
-/* Text colours */
+/* Explicit text colours */
 .black {
 	color:#000;
 }
@@ -392,6 +379,7 @@ table {
 .replace {
 	display:block;
 	overflow:hidden;
+	direction:ltr;
 	text-indent:-9999px;
 	background:transparent no-repeat 0 0;
 }
@@ -452,21 +440,21 @@ table {
 		margin:0;
 	}
 
-/* Block list */
-.block-list {
+/* Block links */
+.block-links {
 	margin-left:0;
 	list-style-type:none;
 }
-	.block-list li {
+	.block-links li {
 		float:left;
 	}
-		.block-list a {
+		.block-links a {
 			display:block;
 			margin-right:1px;
 			padding:3px 10px;
 			background-color:#eee;
 		}
-			.block-list a:hover {
+			.block-links a:hover {
 				background-color:#ddd;
 			}
 
@@ -532,6 +520,9 @@ table {
 fieldset {
 	overflow:hidden;
 }
+	fieldset legend {
+		color:inherit; /* <= IE8 over-specifies text colour */
+	}
 
 /* Labels */
 label, .label {
@@ -564,6 +555,7 @@ input, select, textarea, button, .button {
 		width:auto;
 		height:auto;
 		padding:0;
+		border:none;
 		background:none;
 	}
 	textarea {
@@ -581,11 +573,11 @@ input, select, textarea, button, .button {
 	/* Buttons */
 	button, .button { /* See text inputs/textarea/select boxes above */
 		color:#fff;
+		text-decoration:none;
 		background:#1A54E1;
 	}
 		a.button:hover, a.button:visited {
 			color:#fff;
-			text-decoration:none;
 			background:#36C;
 		}
 
@@ -608,7 +600,6 @@ input, select, textarea, button, .button {
 /* Checkboxes and radio buttons */
 .checkbox input, .radio input {
 	vertical-align:baseline;
-	background:none;
 }
 .checkbox label, .radio label {
 	display:inline;

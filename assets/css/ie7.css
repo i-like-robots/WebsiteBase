@@ -3,8 +3,8 @@ blockquote {
 	display:block;
 }
 
-/* No in-line block but applying 'layout' to an inline element contrives it, use this where necessary */
-.inline-block {
+/* No in-line block but applying 'layout' to an inline element contrives it */
+.make-an-inline-block-example {
 	display:inline;
 	zoom:1;
 }
