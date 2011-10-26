@@ -1,15 +1,18 @@
 /**
  * @author Matt Hinchliffe <http://www.maketea.co.uk>
  * @created 12/01/2011
- * @modified 06/10/2011
+ * @modified 17/10/2011
  * @package yourProject
  */
 
 // Project namespace and version number
-if (!window.yourProject) var yourProject = {
-	_autoload: [],
-	version: '0.0.1'
-};
+if (!window.yourProject)
+{
+	var yourProject = {
+		_autoload: [],
+		version: '0.0.1'
+	};
+}
 
 /**
  * Replace no-js
