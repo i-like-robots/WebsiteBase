@@ -1,0 +1,45 @@
+/**
+ * Author:      Matt Hinchliffe <www.maketea.co.uk>
+ * Created:     12/01/2011
+ * Modified:    13/12/2011
+ * Description: Classes for laying out usable forms.
+
+ * Contents:
+ * 1.	Basic layout
+ * 2.	
+ */
+
+/**
+ * 1. Basic layouts
+ */
+.row {
+	margin-bottom:1em;
+}
+
+/* Checkboxes and radio buttons */
+.radio input,
+.checkbox input {
+	vertical-align:baseline;
+}
+.radio label,
+.checkbox label {
+	display:inline;
+	padding:0 0.25em;
+}
+
+/* Inline labels*/
+.inline label,
+.inline input,
+.inline select,
+.inline textarea {
+	display:inline-block;
+}
+	.inline label {
+		padding-top:5px; /* 4 + 1 (input/select/textarea padding + border width) */
+		padding-right:15px;
+		line-height:normal; /* Match input/select 'normal' line height */
+	}
+
+/**
+ * 2.
+ */

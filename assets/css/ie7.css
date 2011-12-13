@@ -3,10 +3,14 @@ blockquote {
 	display:block;
 }
 
-/* No in-line block but applying 'layout' to an inline element contrives it */
+/* No 'inline-block' but applying 'layout' to an inline element contrives it */
 .make-an-inline-block-example {
 	display:inline;
 	zoom:1;
+}
+
+input, select, textarea, button {
+	vertical-align:middle;
 }
 
 /* Select boxes. Padding cannot be applied to a select box so add it to the height */
@@ -18,7 +22,6 @@ select {
 button {
 	display:inline;
 	height:auto !important;
-	padding-top:4px;
 	overflow:visible;
 	line-height:1;
 	zoom:1;
@@ -41,14 +44,11 @@ button {
 	overflow:hidden;
 }
 
-/* Lists display margin bug */
-ul.base, ol.base {
-	list-style-position:outside;
+/* Lists item margin cannot be removed */
+ul.base li, ol.base li {
+	display:block;
 }
-	ul.base li, ol.base li {
-		display:block;
-	}
 
 .separated-list li, .tag-list li {
-	margin-right:0.5em; /* No pseudo elements so just add a gap, it doesn't really matter anyway */
+	margin-right:0.5em; /* No pseudo elements so just add a gap, it's only presentational */
 }

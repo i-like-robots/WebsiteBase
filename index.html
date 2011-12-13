@@ -1,26 +1,22 @@
-﻿<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
 	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
 
-	<!-- Meta -->
 	<title>WebsiteBase</title>
 	<meta name="description" content="" />
 
-	<!-- Stylesheets -->
 	<link rel="stylesheet" href="assets/css/base.css" />
-	<link rel="stylesheet" href="example/css/example.css" />
 	<!--[if lte IE 7]><link rel="stylesheet" href="assets/css/ie7.css"/><![endif]-->
 	<!--[if lte IE 6]><link rel="stylesheet" href="assets/css/ie6.css"/><![endif]-->
 
-	<!-- Favicons -->
 	<![if (!IE)|(lt IE 9)]><link rel="Shortcut Icon" type="image/png" href="assets/img/favicon.ico" /><![endif]>
-	<!--[if gte IE 9]><link rel="shortcut icon" type="image/ico" href="assets/img/favicon_ie9.ico" /><![endif]-->
-	<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
-	<link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-touch-icon-ipad.png" />
-	<link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-touch-icon-iphone4.png" />
+	<!--[if gte IE 9]><link rel="shortcut icon" type="image/ico" href="assets/img/favicon_ie.ico" /><![endif]-->
+	<link rel="apple-touch-icon" href="assets/img/favicon_touch.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicon_ipad.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon_retina.png" />
 
 	<!-- WebsiteBase by Matt Hinchliffe <http://www.maketea.co.uk>, Find out more at GitHub <https://github.com/i-like-robots/WebsiteBase> -->
 
@@ -32,25 +28,28 @@
 		<h1>WebsiteBase</h1>
 
 		<p>
-			<a href="http://i-like-robots.github.com/WebsiteBase/">WebsiteBase</a> is a solid project starting point, defining code organisation and 
-			formatting along with useful classes, cross-browser form layouts and text content baseline. WebsiteBase should make starting a project much 
-			less of a pain. <a href="https://github.com/i-like-robots/WebsiteBase/blob/master/assets/css/base.css">View the source code</a>
-		</p>
-
-		<h2 class="h4">Not an over-engineeered boilerplate and more than a reset.</h2>
-
-		<p>
-			WebsiteBase features:
+			<a href="http://i-like-robots.github.com/WebsiteBase/">WebsiteBase</a> is more than a boilerplate. As well as normalising and 
+			fixing inconsistant browser styles it attempts to add common sense and boundries to your code. WebsiteBase attempts to keep 
+			everyone on the same page over the life of a project as well as helping developers hit the ground running.
 		</p>
 
 		<ul>
-			<li>Well documented</li>
-			<li>Text content baseline</li>
-			<li>Cross-browser form layouts</li>
-			<li>Useful formatting classes</li>
-			<li>Basic IE6/7 fixes</li>
+			<li>Documented CSS caveats and code notes</li>
+			<li>Very organised project structure</li>
+			<li>Guidelines for stylesheet and Javascript coding style</li>
+			<li>Cross-browser form elements</li>
+			<li>Useful layout classes to get stuff done</li>
+			<li>Basic Internet Explorer 6/7 fixes</li>
 		</ul>
 
+		<p class="large-text align-centre">
+			<a href="example.html">View example file</a>
+		</p>
+		
+		
+		
+		
+		
 		<h3 class="h2">Text content</h3>
 
 		<p class="small-text">
@@ -278,12 +277,12 @@
 					<input type="text" name="e-mail" id="email" />
 				</div>
 
-				<div class="cf row inline">
+				<div class="row inline">
 					<label for="street">Street name</label>
 					<input type="text" name="street" id="street" />
 				</div>
 
-				<div class="cf row inline">
+				<div class="row inline">
 					<label for="city">City</label>
 					<select name="city" id="city">
 						<option value="1">London</option>
@@ -294,7 +293,7 @@
 
 				<div class="example">
 
-					<div class="cf row inline">
+					<div class="row inline">
 						<label for="inline">Inline buttons</label>
 						<input type="text" name="inline" id="inline" />
 						<button type="button">Inline</button>
@@ -326,23 +325,25 @@
 
 				<div class="example">
 
-					<ul class="base row radio">
-						<li>
-							<input type="radio" name="radios" id="radio1" />
-							<label for="radio1">Radio 1</label>
-						</li>
-						<li>
-							<input type="radio" name="radios" id="radio2" />
-							<label for="radio2">Radio 2</label>
-						</li>
-						<li>
-							<input type="radio" name="radios" id="radio3" />
-							<label for="radio3">Radio 3</label>
-						</li>
-					</ul>
+					<div class="row radio">
+						<ul class="base">
+							<li>
+								<input type="radio" name="radios" id="radio1" />
+								<label for="radio1">Radio 1</label>
+							</li>
+							<li>
+								<input type="radio" name="radios" id="radio2" />
+								<label for="radio2">Radio 2</label>
+							</li>
+							<li>
+								<input type="radio" name="radios" id="radio3" />
+								<label for="radio3">Radio 3</label>
+							</li>
+						</ul>
+					</div>
 
 					<aside>
-						<code>&lt;ul class="base row radio"&gt;</code>
+						<code>&lt;div class="row radio"&gt;&lt;ul&gt;</code>
 					</aside>
 
 				</div>
