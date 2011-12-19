@@ -44,11 +44,15 @@ button {
 	overflow:hidden;
 }
 
-/* Lists item margin cannot be removed */
+/* Lists item margin may not be removed from display:list-item */
 ul.base li, ol.base li {
 	display:block;
 }
 
+/* No pseudo elements */
 .separated-list li, .tag-list li {
-	margin-right:0.5em; /* No pseudo elements so just add a gap, it's only presentational */
+	float:left;
+	display:list-item;
+	margin-left:1em;
+	list-style-type:disc;
 }

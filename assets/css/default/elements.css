@@ -1,8 +1,7 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Created:     12/01/2011
  * Modified:    13/12/2011
- * Description: Styling for default elements.
+ * Description: Styling for default elements
  *
  * Font stacks:
  *     - Sans: Arial, sans-serif
@@ -144,14 +143,9 @@ a {
 table {
 	margin-bottom:1.5em;
 	border:none;
-	border-collapse:collapse;
-	border-spacing:0;
 }
 	caption, th, td {
 		text-align:left;
 		vertical-align:top;
 		padding:5px 10px;
-	}
-	table form {
-		display:inline;
 	}

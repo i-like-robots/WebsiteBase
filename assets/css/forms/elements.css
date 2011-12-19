@@ -1,7 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Created:     12/01/2011
- * Modified:    13/12/2011
+ * Modified:    16/12/2011
  * Description: Styling for default form elements such as inputs, select boxes and buttons.
  *
  * A note on styling form elements:
@@ -10,8 +9,10 @@
  * standardise inputs, select boxes, text areas and buttons behaviour there is no way to style native HTML form elements consistantly.
  */
 
-fieldset legend {
-	color:inherit; /* <= IE8 user-agent styles over-specifies, inherit is not a valid value in <= IE 7 */
+/* Add margin to top of first element following legend element for Webkit */
+fieldset > div:first-of-type {
+	-webkit-margin-top-collapse:separate;
+	margin-top:1.5em;
 }
 
 /* Labels */
@@ -25,9 +26,11 @@ label {
 
 /* Consistant fonts and height */
 input, select, button, textarea {
-	height:1.222em;
 	font:normal 1em/normal sans-serif;
 }
+	select {
+		height:normal;
+	}
 
 /* Text inputs, text areas and select boxes */
 input,

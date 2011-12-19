@@ -1,3 +1,6 @@
+/**
+ * Just some really basic styles to lay out the demo
+ */ 
 body {
 	background:#eee url(../../../example/img/body_bg.png) repeat top;
 }

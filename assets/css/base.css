@@ -1,29 +1,36 @@
 ﻿/**
- * Author:   Matt Hinchliffe <www.maketea.co.uk>
- * Created:  12/01/2011
- * Modified: 13/12/2011
- * 
- * Find out more about this stylesheet at <https://github.com/i-like-robots/WebsiteBase>
+ * Author:      Matt Hinchliffe <www.maketea.co.uk>
+ * Modified:    15/12/2011
+ * Description: Find out more about this stylesheet at <https://github.com/i-like-robots/WebsiteBase>
  */
 
 /* Default elements */
 @import url('default/reset.css');
 @import url('default/elements.css');
 
-/* Basic classes */
+/* Content styles */
 @import url('content/text.css');
 @import url('content/media.css');
+@import url('content/formatting.css');
 
 /* Forms */
 @import url('forms/elements.css');
 @import url('forms/layouts.css');
 
 /* Layout */
-@import url('layout/common.css');
+@import url('layout/utilities.css');
 @import url('layout/grid.css');
-@import url('layout/theme.css');
+/* @import url('layout/adaptive.css'); */
+
+/* Re-usable content blocks */
+/* @import url('blocks/media.css'); */
+/* @import url('blocks/article.css'); */
+/* @import url('blocks/media.css'); */
 
 /* Plugins */
 /* @import url('plugins/tabs.css'); */
 /* @import url('plugins/accordion.css'); */
 /* @import url('plugins/modal.css'); */
+
+/* Website theme */
+@import url('theme/theme.css');

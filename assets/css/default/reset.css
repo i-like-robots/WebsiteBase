@@ -1,7 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Created:     12/01/2011
- * Modified:    13/12/2011
+ * Modified:    19/12/2011
  * Description: Element specific reset and mixed with sensible defaults from normalize.css <http://github.com/necolas/normalize.css>
  */
 
@@ -14,17 +13,14 @@ html, body {
 }
 
 /*
- * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
- *    http://clagnut.com/blog/348/#c790
- * 2. Keeps page centred in all browsers regardless of content height
- * 3. Prevents iOS text size adjust after orientation change, without disabling user zoom
+ * 1. Keeps page centred in all browsers regardless of content height
+ * 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
  *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
  */
 html {
-	font-size:100%; /* 1 */
-	overflow-y:scroll; /* 2 */
-	-webkit-text-size-adjust:100%; /* 3 */
-	-ms-text-size-adjust:100%; /* 3 */
+	overflow-y:scroll; /* 1 */
+	-webkit-text-size-adjust:100%; /* 2 */
+	-ms-text-size-adjust:100%; /* 2 */
 }
 
 /**
@@ -65,19 +61,16 @@ mark {
  * en.wikipedia.org/wiki/User:Davidgothberg/Test59
  */
 pre, code, kbd, samp {
-	font-family:monospace, serif;
-	_font-family:'courier new', monospace;
 	font-size:1em;
 }
-
-/*
- * Improves readability of pre-formatted text in all browsers
- */
-pre {
-	white-space:pre;
-	white-space:pre-wrap;
-	word-wrap:break-word;
-}
+	/*
+	 * Improves readability of pre-formatted text in all browsers
+	 */
+	pre {
+		white-space:pre;
+		white-space:pre-wrap;
+		word-wrap:break-word;
+	}
 
 /*
  * 1. Addresses CSS quotes not supported in IE6/7
@@ -94,6 +87,10 @@ q {
 		content:none;
 	}
 
+large {
+	font-size:125%;
+}
+
 small {
 	font-size:75%;
 }
@@ -102,31 +99,18 @@ small {
  * Prevents sub and sup affecting line-height in all browsers
  * gist.github.com/413930
  */
-sub,
-sup {
+sub, sup {
 	font-size:75%;
 	line-height:0;
 	position:relative;
 	vertical-align:baseline;
 }
-
-sup {
-	top:-0.5em;
-}
-
-sub {
-	bottom:-0.25em;
-}
-
-/*
- * Corrects font family set oddly in IE6, S4/5, Chrome
- * en.wikipedia.org/wiki/User:Davidgothberg/Test59
- */
-pre, code, kbd, samp {
-	font-family:monospace, serif;
-	_font-family:'courier new', monospace;
-	font-size:1em;
-}
+	sup {
+		top:-0.5em;
+	}
+	sub {
+		bottom:-0.25em;
+	}
 
 /**
  * Lists
@@ -155,6 +139,20 @@ img {
 }
 
 /**
+ * Tables
+ */
+
+/*
+ * 1. Remove most extra spacing between table cells
+ * 2. Corrects font sizing inconsistancies in IE6/7 <http://clagnut.com/blog/348/#c790>
+ */
+table {
+	border-collapse:collapse; /* 1 */
+	border-spacing:0; /* 1 */
+	font-size:100%; /* 2 */
+}
+
+/**
  * Form elements
  */
 
@@ -169,25 +167,31 @@ form {
  * Define consistent border, margin, and padding
  */
 fieldset {
-	border:1px solid #c0c0c0;
-	margin:0 1px;
-	padding:0.25em 0.625em 0.5em;
+	border:none;
+	margin:0;
+	padding:0;
 }
 
 /*
  * 1. Corrects color not being inherited in IE6/7/8/9
  * 2. Corrects alignment displayed oddly in IE6/7
- * 3. Allows padding to be applied
+ * 3. Allows padding box to be honoured in Webkit
  */
 legend {
-	border: 0; /* 1 */
-	*margin-left: -7px; /* 2 */
-	-webkit-margin-collapse:separate; /* 3. */
+	border:0; /* 1 */
+	*margin-left:-7px; /* 2 */
+	-webkit-margin-collapse:separate; /* 3 */
 }
+	/* Force 'proper' block-level width */
+	fieldset legend {
+		box-sizing:border-box;
+		width:-moz-available; /* Overrides -moz-fit-content */
+		-webkit-min-logical-width:100%;
+	}
 
 /*
  * 1. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
- * 2. Allows consistant standard box model sizing
+ * 2. Force content box for consistant sizing
  * 3. Improves appearance and consistency in all browsers
  * 4. Corrects font size not being inherited in all browsers
  * 5. Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
@@ -205,10 +209,29 @@ input, select, textarea, button {
 	outline:none; /* 6 */
 }
 	/*
-	 * 
+	 * 1. Addresses box sizing set to content-box in IE8/9
+	 * 2. Removes excess padding in IE8/9
 	 */
-	button, select {
-		cursor:pointer;
+	input[type="checkbox"],
+	input[type="radio"] {
+		box-sizing:border-box; /* 1 */
+		padding:0; /* 2 */
+	}
+
+	/* Remove extra height forced by select button in FF */
+	/*select > {
+		???
+	}*/
+
+	/*
+	 * 1. Removes default vertical scrollbar in IE6/7/8/9
+	 * 2. Improves readability and alignment in all browsers
+	 * 3. Remove mouse resizing
+	 */
+	textarea {
+		overflow:auto; /* 1 */
+		vertical-align:top; /* 2 */
+		resize:none; /* 3 */
 	}
 
 	/*
@@ -229,28 +252,7 @@ input, select, textarea, button {
 		 * Removes inner padding and border in FF3+
 		 * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
 		 */
-		button::-moz-focus-inner, input::-moz-focus-inner {
+		button::-moz-focus-inner, input::-moz-focus-inner, select::-moz-focus-inner {
 			padding:0;
 			border:none;
 		}
-
-	/*
-	 * 1. Addresses box sizing set to content-box in IE8/9
-	 * 2. Removes excess padding in IE8/9
-	 */
-	input[type="checkbox"],
-	input[type="radio"] {
-		box-sizing:border-box; /* 1 */
-		padding:0; /* 2 */
-	}
-
-	/*
-	 * 1. Removes default vertical scrollbar in IE6/7/8/9
-	 * 2. Improves readability and alignment in all browsers
-	 * 3. Remove mouse resizing
-	 */
-	textarea {
-		overflow:auto; /* 1 */
-		vertical-align:top; /* 2 */
-		resize:none; /* 3 */
-	}
