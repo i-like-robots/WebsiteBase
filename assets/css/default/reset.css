@@ -116,7 +116,7 @@ sub, sup {
  * Lists
  */
 ul, ol {
-	margin-left:0;
+	margin:0;
 	padding:0 0 0 1.5em;
 }
 
@@ -184,9 +184,11 @@ legend {
 }
 	/* Force 'proper' block-level width */
 	fieldset legend {
-		box-sizing:border-box;
-		width:-moz-available; /* Overrides -moz-fit-content */
-		-webkit-min-logical-width:100%;
+		width:100%;
+
+		/* The following can be used if you wish to directly style the legend element */
+		/*width:-moz-available;
+		-webkit-min-logical-width:100%;*/
 	}
 
 /*

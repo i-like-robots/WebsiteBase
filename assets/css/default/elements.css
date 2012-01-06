@@ -41,6 +41,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
+	margin:0;
 	font-weight:bold;
 	font-family:Cambria, Georgia, serif;
 }
@@ -77,7 +78,7 @@ h6, .h6 {
 	}
 
 p, ul, ol, dd {
-	margin-bottom:1em;
+	margin:0 0 1em;
 }
 
 /* Quotes */

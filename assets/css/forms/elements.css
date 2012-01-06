@@ -1,6 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    16/12/2011
+ * Modified:    05/01/2012
  * Description: Styling for default form elements such as inputs, select boxes and buttons.
  *
  * A note on styling form elements:
@@ -8,12 +8,6 @@
  * interface components of the browser or (fingers crossed) implemented via the shadow DOM. Though attempts are made within the reset to 
  * standardise inputs, select boxes, text areas and buttons behaviour there is no way to style native HTML form elements consistantly.
  */
-
-/* Add margin to top of first element following legend element for Webkit */
-fieldset > div:first-of-type {
-	-webkit-margin-top-collapse:separate;
-	margin-top:1.5em;
-}
 
 /* Labels */
 label {
