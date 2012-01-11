@@ -1,6 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    05/01/2012
+ * Modified:    11/01/2012
  * Description: Styling for default form elements such as inputs, select boxes and buttons.
  *
  * A note on styling form elements:
@@ -19,7 +19,10 @@ label {
 	}
 
 /* Consistant fonts and height */
-input, select, button, textarea {
+input,
+select,
+button,
+textarea {
 	font:normal 1em/normal sans-serif;
 }
 	select {
@@ -35,6 +38,16 @@ textarea {
 	color:#888;
 	background:#fff;
 }
+	/* Size attribute should always override width */
+	input[size] {
+		width:auto !important;
+	}
+
+	/* 'Fix' extra height forced by the button inside select boxes in FF */
+	select:not([size]):-moz-system-metric(windows-default-theme) {
+		height:1.222em;
+	}
+
 	textarea {
 		height:8em;
 	}
@@ -59,6 +72,7 @@ textarea {
 
 /* Buttons */
 button,
+input[type=reset],
 input[type=button],
 input[type=submit],
 a.button {

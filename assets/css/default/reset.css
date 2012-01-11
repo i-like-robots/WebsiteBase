@@ -1,13 +1,14 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    10/01/2012
+ * Modified:    11/01/2012
  * Description: Element specific reset and mixed with sensible defaults from normalize.css <http://github.com/necolas/normalize.css>
  */
 
 /**
  * 1. Document
  */
-html, body {
+html,
+body {
 	margin:0;
 	padding:0;
 }
@@ -15,7 +16,7 @@ html, body {
 /*
  * 1. Keeps page centred in all browsers regardless of content height
  * 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
- *    www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/
+ *    <http://www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/>
  */
 html {
 	overflow-y:scroll; /* 1 */
@@ -58,9 +59,12 @@ mark {
 
 /*
  * Corrects font family set oddly in IE6, S4/5, Chrome
- * en.wikipedia.org/wiki/User:Davidgothberg/Test59
+ * <http://en.wikipedia.org/wiki/User:Davidgothberg/Test59>
  */
-pre, code, kbd, samp {
+pre,
+code,
+kbd,
+samp {
 	font-size:1em;
 }
 	/*
@@ -99,7 +103,8 @@ small {
  * Prevents sub and sup affecting line-height in all browsers
  * gist.github.com/413930
  */
-sub, sup {
+sub,
+sup {
 	font-size:75%;
 	line-height:0;
 	position:relative;
@@ -131,7 +136,7 @@ dd {
 /*
  * 1. Removes border when inside 'a' element in IE6/7/8/9, FF3
  * 2. Improves image quality when scaled in IE7
- *    code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/
+ *    <http://code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/>
  */
 img {
 	border:0; /* 1 */
@@ -186,9 +191,13 @@ legend {
 	fieldset legend {
 		width:100%;
 
-		/* The following can be used if you wish to directly style the legend element in FF and S5 */
-		/*width:-moz-available;
-		-webkit-min-logical-width:100%;*/
+		/*
+		 * The following can be used instead of specifying a width if you wish 
+		 * to directly style the legend element in FF and S5
+		 *
+		 * width:-moz-available;
+		 * -webkit-min-logical-width:100%;
+		 */
 	}
 
 /*
@@ -199,7 +208,10 @@ legend {
  * 5. Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
  * 6. Remove unwanted highlights from Chrome/S3+
  */
-input, select, textarea, button {
+input,
+select,
+textarea,
+button {
 	margin:0; /* 1 */
 	-webkit-box-sizing:content-box; /* 2 */
 	   -moz-box-sizing:content-box; /* 2 */
@@ -220,11 +232,6 @@ input, select, textarea, button {
 		padding:0; /* 2 */
 	}
 
-	/* 'Fix' extra height forced by the button inside select boxes in FF */
-	select:not([size]):-moz-system-metric(windows-default-theme) {
-		height:1.222em;
-	}
-
 	/*
 	 * 1. Removes default vertical scrollbar in IE6/7/8/9
 	 * 2. Improves readability and alignment in all browsers
@@ -242,7 +249,10 @@ input, select, textarea, button {
 	 *    Known issue: inner spacing remains in IE6
 	 * 3. Improves usability and consistency of cursor style between image-type 'input' and others
 	 */
-	button, input[type=button], input[type=submit] {
+	button,
+	input[type=reset],
+	input[type=button],
+	input[type=submit] {
 		width:auto;
 		border:none;
 		white-space:nowrap;
@@ -252,9 +262,10 @@ input, select, textarea, button {
 	}
 		/*
 		 * Removes inner padding and border in FF3+
-		 * www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/
+		 * <http://www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/>
 		 */
-		button::-moz-focus-inner, input::-moz-focus-inner {
+		button::-moz-focus-inner,
+		input::-moz-focus-inner {
 			padding:0;
 			border:0;
 		}
