@@ -43,20 +43,16 @@ textarea {
 		width:auto !important;
 	}
 
-	/* 'Fix' extra height forced by the button inside select boxes in FF */
+	/* 'Fix' extra height forced by the button inside select boxes in FF
 	select:not([size]):-moz-system-metric(windows-default-theme) {
 		height:1.222em;
+	}*/
+	select {
+		padding:3px;
 	}
 
 	textarea {
 		height:8em;
-	}
-	input:focus,
-	select:focus,
-	textarea:focus {
-		border-color:#000;
-		color:#000;
-		z-index:1; /* For Opera */
 	}
 
 	/* Go native, else build a new input with a little JS <http://bit.ly/qM8FYC> */
@@ -70,9 +66,25 @@ textarea {
 		background:none;
 	}
 
+	/* Disabled */
+	input[disabled],
+	select[disabled],
+	textarea[disabled] {
+		border-color:#ccc;
+		background:#eee;
+	}
+
+	/* Focus */
+	input:focus,
+	select:focus,
+	textarea:focus {
+		border-color:#000;
+		color:#000;
+		z-index:1; /* For Opera */
+	}
+
 /* Buttons */
 button,
-input[type=reset],
 input[type=button],
 input[type=submit],
 a.button {
@@ -93,4 +105,13 @@ a.button {
 	input[type=submit]:active,
 	a.button:active {
 		box-shadow:0 0 5px #ccc;
+	}
+
+	button[disabled],
+	input[type=button][disabled],
+	input[type=submit][disabled],
+	a.button.disabled {
+		border-color:#999;
+		color:#eee;
+		background:#ccc;
 	}

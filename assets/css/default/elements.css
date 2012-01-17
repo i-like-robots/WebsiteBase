@@ -1,6 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    13/12/2011
+ * Modified:    17/01/2012
  * Description: Styling for default elements
  *
  * Font stacks:
@@ -43,7 +43,6 @@ h5, .h5,
 h6, .h6 {
 	margin:0;
 	font-weight:bold;
-	font-family:Cambria, Georgia, serif;
 }
 	h1, .h1 {
 		padding-bottom:12px;
@@ -139,6 +138,15 @@ a {
 		outline:1px dotted #ccc;
 		outline-offset:1px;
 	}
+
+/* Horizontal rules */
+hr {
+	height:1px;
+	padding:0;
+	margin:0 0 1em;
+	border:0;
+	background:#ccc;
+}
 
 /* Tables */
 table {

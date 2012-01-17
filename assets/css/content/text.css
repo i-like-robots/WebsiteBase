@@ -1,6 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    13/12/2011
+ * Modified:    17/01/2012
  * Description: Classes for text content.
  *
  * A note on semantic class names:
@@ -51,18 +51,18 @@
 
 /* Font size variations */
 .small-text {
-	line-height:1.5;
 	font-size:12px;
+	line-height:1.5;
 }
 
 .medium-text {
-	line-height:24px;
 	font-size:18px;
+	line-height:24px;
 }
 
 .large-text {
-	line-height:30px;
 	font-size:22px;
+	line-height:30px;
 }
 
 /* Font face variations */

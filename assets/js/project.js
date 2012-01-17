@@ -1,17 +1,16 @@
 /**
  * @author Matt Hinchliffe <http://www.maketea.co.uk>
  * @created 12/01/2011
- * @modified 17/10/2011
+ * @modified 16/01/2012
  * @package yourProject
  */
 
+var project = 'yourProject';
+
 // Project namespace and version number
-if (!window.yourProject)
+if (!window[project])
 {
-	var yourProject = {
-		_autoload: [],
-		version: '0.0.1'
-	};
+	window[project] = { _autoload: [] };
 }
 
 /**
@@ -47,15 +46,18 @@ if (typeof Object.create !== 'function') {
 }
 
 /**
- * Execute methods within objects registered within yourProject._autoload in reverse order.
+ * Execute methods registered within [project]._autoload in reverse order.
  */
-$(function()
+jQuery(function()
 {
-	for (var i = 0; i < yourProject._autoload.length; i++)
+	for (var i = 0; i < window[project]._autoload.length; i++)
 	{
-		for (var method in yourProject[yourProject._autoload[i]])
+		for (var method in window[project][ window[project]._autoload[i] ])
 		{
-			if (typeof yourProject[yourProject._autoload[i]][method] == 'function') yourProject[yourProject._autoload[i]][method]();
+			if (typeof window[project][ window[project]._autoload[i] ][method] == 'function')
+			{
+				window[project][ window[project]._autoload[i] ][method]();
+			}
 		}
 	}
 });

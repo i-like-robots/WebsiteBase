@@ -1,6 +1,6 @@
 ﻿/**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    15/12/2011
+ * Modified:    17/01/2012
  * Description: Find out more about this stylesheet at <https://github.com/i-like-robots/WebsiteBase>
  */
 
@@ -22,7 +22,7 @@
 @import url('layout/grid.css');
 /* @import url('layout/adaptive.css'); */
 
-/* Re-usable content blocks */
+/* Re-usable content layout blocks */
 /* @import url('blocks/media.css'); */
 /* @import url('blocks/article.css'); */
 /* @import url('blocks/media.css'); */

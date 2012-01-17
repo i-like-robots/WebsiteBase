@@ -1,6 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    15/12/2011
+ * Modified:    17/01/2012
  * Description: Useful classes for formatting content
  */
 
@@ -16,7 +16,7 @@
 
 /* Block links */
 .block-links {
-	margin-left:0;
+	padding-left:0;
 	list-style-type:none;
 }
 	.block-links li {
@@ -24,6 +24,9 @@
 	}
 		.block-links a {
 			display:block;
+			margin-right:1px;
+			padding:5px;
+			background:#eee;
 		}
 
 /* Inline definition list */
@@ -70,7 +73,6 @@
 /* Pipe separated list */
 .separated-list {
 	padding-left:0;
-	text-transform:capitalize;
 }
 	.separated-list li {
 		float:left;
