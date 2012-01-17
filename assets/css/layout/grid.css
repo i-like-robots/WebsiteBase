@@ -1,0 +1,57 @@
+/**
+ * Author:      Matt Hinchliffe <www.maketea.co.uk>
+ * Modified:    15/12/2011
+ * Description: Based on 1k grid <http://www.1kbgrid.com>
+ * 
+ * Layout sizes:
+ *     - Site width             = 960
+ *         - Grid column        = 60  (+10 right and left margin)
+ *             - Two columns    = 140
+ *             - Twelve columns = 940
+ *         - Sidebar            = 200 (+10 padding)
+ *         - Main content       = 680 (+10 padding)
+ */
+
+.website-width {
+	width:960px;
+	margin:0 auto;
+}
+
+/* 12 columns, 60 pixels each, with 20 pixel gutter */
+.column {
+	float:left;
+	margin:0 10px;
+}
+
+.grid_1  { width:60px; }
+.grid_2  { width:140px; }
+.grid_3  { width:220px; }
+.grid_4  { width:300px; }
+.grid_5  { width:380px; }
+.grid_6  { width:460px; }
+.grid_7  { width:540px; }
+.grid_8  { width:620px; }
+.grid_9  { width:700px; }
+.grid_10 { width:780px; }
+.grid_11 { width:860px; }
+.grid_12 { width:940px; }
+
+.header {
+	padding:10px;
+}
+
+.main-content {
+	float:right;
+	width:680px;
+	padding:10px;
+}
+
+.sidebar {
+	float:left;
+	width:200px;
+	padding:10px;
+}
+
+.footer {
+	padding:10px 20px;
+}

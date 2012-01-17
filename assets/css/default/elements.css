@@ -1,0 +1,160 @@
+/**
+ * Author:      Matt Hinchliffe <www.maketea.co.uk>
+ * Modified:    17/01/2012
+ * Description: Styling for default elements
+ *
+ * Font stacks:
+ *     - Sans: Arial, sans-serif
+ *     - Serif: Cambria, Georgia, serif
+ *     - Mono: Consolas, "Lucida Console", Monaco, monospace
+ *     - Small text: Verdana, Geneva, Tahoma, sans-serif
+ *
+ * Font sizes:
+ *     - Root font size   = 10
+ *     - Body font size   = 16
+ *     - Content baseline = 24
+ */
+
+html, body {
+	min-height:100%;
+}
+	html {
+		overflow-y:scroll; /* Maintain scroll bar to avoid page jumping */
+		font-size:62.5%; /* 10px, set in % for consistency in IE6/7 <http://clagnut.com/blog/348/#c790> and useful if you decide to use rem units */
+	}
+	body {
+		font:normal 1.6em/1.5 Arial, sans-serif;
+		color:#000;
+		background:#fff;
+	}
+
+/**
+ * Headers as class names:
+ * I took the idea of using duplicate class names from OOCSS, it allows your markup to define
+ * the correct structure when the design does not take this into account. For this reason it is
+ * safer to use padding rather than margins so that the classes can be used on elements with
+ * margins that collapse such as <legend> or table layout (<th>).
+ */
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	margin:0;
+	font-weight:bold;
+}
+	h1, .h1 {
+		padding-bottom:12px;
+		font-size:48px;
+		line-height:1.25; /* 60/48 */
+	}
+	h2, .h2 {
+		padding-bottom:15px;
+		font-size:36px;
+		line-height:1.25; /* 45/36 */
+	}
+	h3, .h3 {
+		padding-bottom:6px;
+		font-size:24px;
+		line-height:1.25; /* 30/24 */
+	}
+	h4, .h4 {
+		padding-bottom:6px;
+		font-size:20px;
+		line-height:1.5; /* 30/20 */
+	}
+	h5, .h5 {
+		padding-bottom:12px;
+		font-size:16px;
+		line-height:1.5; /* 24/16 */
+	}
+	h6, .h6 {
+		padding-bottom:6px;
+		font-weight:bold;
+		font-size:inherit;
+		line-height:inherit;
+	}
+
+p, ul, ol, dd {
+	margin:0 0 1em;
+}
+
+/* Quotes */
+blockquote, q, cite {
+	font-style:italic;
+	font-family:Cambria, Georgia, serif;
+}
+	blockquote {
+		margin:0 40px;
+	}
+		blockquote .quotation { /* Defined using a class as citations must also be within a paragraph */
+			text-indent:-0.5em;
+		}
+		blockquote .quotation::before, q::before { /* Correct CSS3 (::) pseudo-elements */
+			content:'\201C';
+		}
+		blockquote .quotation::after, q::after {
+			content:'\201D';
+		}
+	cite {
+		font-weight:bold;
+	}
+
+/* Font size */
+small, big {
+	line-height:1;
+}
+
+/* Monospace */
+pre, code, kbd, var {
+	font-family:Consolas, "Lucida Console", Monaco, monospace;
+}
+	pre {
+		overflow:auto;
+	}
+	code, kbd, var {
+		line-height:1;
+	}
+
+/* Help */
+abbr[title], acronym[title], dfn[title] {
+	border-bottom:1px dotted;
+	cursor:help;
+}
+
+/* Links */
+a {
+	text-decoration:underline;
+	color:#4bb461;
+}
+	a:visited {
+		color:#428b4c;
+	}
+	a:hover, .selected a {
+		color:#428b4c;
+	}
+	a:active, a:focus {
+		outline:1px dotted #ccc;
+		outline-offset:1px;
+	}
+
+/* Horizontal rules */
+hr {
+	height:1px;
+	padding:0;
+	margin:0 0 1em;
+	border:0;
+	background:#ccc;
+}
+
+/* Tables */
+table {
+	margin-bottom:1.5em;
+	border:none;
+}
+	caption, th, td {
+		text-align:left;
+		vertical-align:top;
+		padding:5px 10px;
+	}

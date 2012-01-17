@@ -1,0 +1,35 @@
+/**
+ * Just some really basic styles to lay out the demo
+ */ 
+body {
+	background:#eee;
+}
+
+/* headers */
+h1, .h1 {
+	letter-spacing:-1px;
+	text-shadow:0 1px 1px #fff;
+}
+h2, .h2 {
+	letter-spacing:-0.5px;
+}
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	letter-spacing:0;
+}
+
+/* layout */
+#container {
+	width:800px;
+	margin:40px auto;
+	padding:50px 80px;
+	background:#fff;
+	-webkit-border-radius:16px;
+	   -moz-border-radius:16px;
+	        border-radius:16px;
+	-webkit-box-shadow:0 3px 12px rgba(0, 0, 0, 0.15);
+	   -moz-box-shadow:0 3px 12px rgba(0, 0, 0, 0.15);
+	        box-shadow:0 3px 12px rgba(0, 0, 0, 0.15);
+}

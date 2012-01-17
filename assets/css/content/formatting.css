@@ -1,0 +1,86 @@
+/**
+ * Author:      Matt Hinchliffe <www.maketea.co.uk>
+ * Modified:    17/01/2012
+ * Description: Useful classes for formatting content
+ */
+
+/* Inline list */
+.inline-list {
+	padding-left:0;
+	list-style-type:none;
+}
+	.inline-list > li {
+		display:inline;
+		margin:0;
+	}
+
+/* Block links */
+.block-links {
+	padding-left:0;
+	list-style-type:none;
+}
+	.block-links li {
+		float:left;
+	}
+		.block-links a {
+			display:block;
+			margin-right:1px;
+			padding:5px;
+			background:#eee;
+		}
+
+/* Inline definition list */
+.inline-definitions {
+	overflow:hidden;
+}
+	.inline-definitions dt,
+	.inline-definitions dd {
+		margin:0;
+	}
+	.inline-definitions dt {
+		float:left;
+		clear:left;
+		padding-right:5px;
+	}
+		.inline-definitions dt::after {
+			content:':'
+		}
+
+/* Numbered definition lists */
+.numbered-definitions {
+	counter-reset:numbered;
+}
+	.numbered-definitions dt::before {
+		counter-increment:numbered;
+		content:counter(numbered) '. ';
+	}
+
+/* Comma separated list */
+.tag-list {
+	padding-left:0;
+	text-transform:capitalize;
+}
+	.tag-list li {
+		display:inline;
+	}
+		.tag-list li::after {
+			content:',\0000a0'; /* Non-breaking space */
+		}
+			.tag-list li:last-child::after {
+				content:normal;
+			}
+
+/* Pipe separated list */
+.separated-list {
+	padding-left:0;
+}
+	.separated-list li {
+		float:left;
+		display:block;
+	}
+		.separated-list li::before {
+			content:'\0000a0\0000a0|\0000a0\0000a0'; /* Non-breaking space */
+		}
+			.separated-list li:first-child::before {
+				content:normal;
+			}
