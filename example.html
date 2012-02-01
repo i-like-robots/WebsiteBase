@@ -189,10 +189,10 @@
 			<h1>Forms</h1>
 
 			<form method="post" action="">
-				<fieldset>
 
+				<fieldset>
 					<legend>
-						<span class="h6">Legend</span>
+						<span class="h6">Contact details</span>
 					</legend>
 
 					<div class="row">
@@ -204,19 +204,25 @@
 						<label for="email">Email <dfn title="required">*</dfn></label>
 						<input type="email" name="e-mail" id="email" required />
 					</div>
+				</fieldset>
 
-					<div class="row inline">
+				<fieldset>
+					<legend>
+						<span class="h6">Delivery details</span>
+					</legend>
+
+					<div class="row inline justified">
 						<label for="postcode">Postcode</label>
-						<input type="text" name="postcode" id="postcode" />
-						<button type="button">Lookup address</button>
+						<input type="text" name="postcode" id="postcode" size="7" />
+						<input type="button" name="postcode-lookup" value="Lookup" />
 					</div>
 
-					<div class="row inline">
+					<div class="row inline justified">
 						<label for="street">Street address <dfn title="required">*</dfn></label>
 						<input type="text" name="street" id="street" required />
 					</div>
 
-					<div class="row inline">
+					<div class="row inline justified">
 						<label for="city">City</label>
 						<select name="city" id="city">
 							<option value="1">London</option>
@@ -225,13 +231,15 @@
 						</select>
 					</div>
 
-					<div class="row inline">
+					<div class="row inline justified">
 						<label for="country">Country</label>
 						<select name="country" id="country" disabled>
 							<option value="UK">United Kingdom</option>
 						</select>
 					</div>
+				</fieldset>
 
+				<fieldset>
 					<div class="row">
 						<label for="message">Message</label>
 						<textarea name="message" id="message" rows="20" cols="85"></textarea>
@@ -259,11 +267,27 @@
 						</ul>
 					</div>
 
-					<div class="row buttons">
-						<button type="reset" name="reset" disabled>Clear form</button>
-						<button type="submit" name="submit">Send form</button>
+					<div class="row checkbox">
+						<ul class="base inline-list cf">
+							<li>
+								<input type="checkbox" name="spam1" id="spam1" checked />
+								<label for="spam1">Spam 1</label>
+							</li>
+							<li>
+								<input type="checkbox" name="spam2" id="spam2" />
+								<label for="spam2">Spam 2</label>
+							</li>
+							<li>
+								<input type="checkbox" name="spam3" id="spam3" />
+								<label for="spam3">Spam 3</label>
+							</li>
+						</ul>
 					</div>
 
+					<div class="row buttons">
+						<input type="reset" name="reset" disabled value="Clear form" />
+						<input type="submit" name="submit" value="Send form" />
+					</div>
 				</fieldset>
 			</form>
 
