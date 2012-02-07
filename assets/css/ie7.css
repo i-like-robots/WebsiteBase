@@ -1,0 +1,9 @@
+blockquote{display:block;}
+input,select,textarea,button{vertical-align:middle;}
+select{height:27px;}
+button,input[type=button],input[type=submit],input[type=reset],a.button{display:inline;zoom:1;height:auto !important;overflow:visible;line-height:1;}
+.radio input{vertical-align:text-top;}
+.checkbox input{vertical-align:bottom;}
+.cf{overflow:hidden;}
+ul.base li,ol.base li{display:block;}
+.separated-list li,.tag-list li{float:left;display:list-item;margin-left:1em;list-style-type:disc;}
