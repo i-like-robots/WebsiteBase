@@ -1,21 +1,16 @@
-/**
- * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    01/02/2012
- * Description: Styles for laying out consistent forms
+// Author:      Matt Hinchliffe <www.maketea.co.uk>
+// Modified:    07/02/2012
+// Description: Styles for laying out consistent forms
 
- * Contents:
- * 1.	Basic layout
- * 2.	Justified layout
- */
-
-/**
- * 1. Basic layouts
- */
+// form ( > fieldset ) > div.row/li.row > input/select/textarea
 .row {
 	margin-bottom:1em;
 }
+.row.buttons {
+	text-align:right;
+}
 
-/* Checkboxes and radio buttons */
+// Checkboxes and radio buttons
 .radio input,
 .checkbox input {
 	vertical-align:baseline;
@@ -25,13 +20,13 @@
 	display:inline;
 	padding:0 0.25em;
 }
-	/* inline lists */
+	// inline lists
 	.radio .inline-list li ,
 	.checkbox .inline-list li {
 		margin-right:1.5em;
 	}
 
-/* Inline labels (extends .row) */
+// Inline labels (extends .row)
 .inline.row label,
 .inline.row input,
 .inline.row select,
@@ -39,14 +34,12 @@
 	display:inline-block;
 }
 	.inline.row label {
-		padding-top:5px; /* 4 + 1 (input/select/textarea padding top + border width) */
+		padding-top:@formInputPadding + @formInputBorderWidth;
 		padding-right:15px;
-		line-height:normal; /* Match input/select 'normal' line height */
+		line-height:normal; // Match input/select 'normal' line height
 	}
 
-/**
- * 2. Justified layout
- */
+// Justified layout
 .justified.row {
 	margin-right:25%;
 }

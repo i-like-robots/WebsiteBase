@@ -1,0 +1,123 @@
+// Author:      Matt Hinchliffe <www.maketea.co.uk>
+// Modified:    07/02/2012
+// Description: Styling for default form elements such as inputs, select boxes and buttons.
+//
+// A note on styling form elements:
+// Form elements are a law unto themselves. Depending on their implementation they may be rendered from the underlying OS, un-touchable 
+// interface components of the browser or (fingers crossed) implemented via the shadow DOM. Though attempts are made within the reset to 
+// standardise inputs, select boxes, text areas and buttons behaviour there is no way to style native HTML form elements consistantly.
+
+// Legends - do not style the legend element directly but inline children
+legend > span {
+	display:block;
+}
+
+// Labels
+label {
+	display:block;
+	white-space:nowrap;
+}
+	label dfn[title] {
+		border:none;
+	}
+
+// Consistant fonts and height
+input,
+select,
+button,
+textarea {
+	font:normal 1em/normal sans-serif;
+}
+	select {
+		height:auto;
+	}
+
+// Text inputs, text areas and select boxes
+input,
+select,
+textarea {
+	padding:@formInputPadding;
+	border:@formInputBorderWidth solid #888;
+	color:#888;
+	background:#fff;
+}
+	// Size attribute should always override width
+	input[size] {
+		width:auto !important;
+	}
+
+	// 'Fix' extra height forced by the button inside select boxes in FF
+	// select:not([size]):-moz-system-metric(windows-default-theme) {
+	//     height:1.222em;
+	// }
+	select {
+		padding:@formInputPadding - 1px;
+	}
+
+	textarea {
+		height:8em;
+	}
+
+	// Go native, else build a new input with a little JS <http://bit.ly/qM8FYC>
+	input[type=file],
+	input[type=radio],
+	input[type=checkbox] {
+		width:auto;
+		height:auto;
+		padding:0;
+		border:none;
+		background:none;
+	}
+
+	// Disabled
+	input[disabled],
+	select[disabled],
+	textarea[disabled] {
+		border-color:darken(@formInputDisabled, 25%);
+		color:darken(@formInputDisabled, 25%);
+		background:@formInputDisabled;
+	}
+
+	// Focus
+	input:focus,
+	select:focus,
+	textarea:focus {
+		border-color:#000;
+		color:#000;
+		z-index:1; // For Opera
+	}
+
+// Buttons
+button,
+input[type=button],
+input[type=submit],
+input[type=reset],
+a.button {
+	padding:@formInputPadding + @formInputBorderWidth;
+	text-decoration:none;
+	color:@colourReverse;
+	background:@colourLink;
+}
+	button:hover,
+	input[type=button]:hover,
+	input[type=submit]:hover,
+	input[type=reset]:hover,
+	a.button:hover {
+		background:darken(@colourLink, 25%);
+	}
+	button:active,
+	input[type=button]:active,
+	input[type=submit]:active,
+	input[type=reset]:active,
+	a.button:active {
+		.box-shadow(0, 0, 5px, #ccc)
+	}
+
+	button[disabled],
+	input[type=button][disabled],
+	input[type=submit][disabled],
+	input[type=reset][disabled],
+	a.button.disabled {
+		color:darken(@formInputDisabled, 25%);
+		background:@formInputDisabled;
+	}

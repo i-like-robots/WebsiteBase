@@ -1,0 +1,51 @@
+// Blockquotes
+blockquote {
+	display:block;
+}
+
+input, select, textarea, button {
+	vertical-align:middle;
+}
+
+// Select boxes. Padding cannot be applied to a select box so add it to the height
+select {
+	height:27px; // 17px 'normal' line-height + padding
+}
+
+// Buttons render terribly due to a forced border-box style layout
+button,
+input[type=button],
+input[type=submit],
+input[type=reset],
+a.button {
+	.ie-inline-block();
+	height:auto !important;
+	overflow:visible;
+	line-height:1;
+}
+
+// Form checkboxes and radio buttons alignment, align checkboxes, radios, text inputs with their label
+.radio input {
+	vertical-align:text-top;
+}
+.checkbox input {
+	vertical-align:bottom;
+}
+
+// Clearfix fix
+.cf {
+	overflow:hidden;
+}
+
+// Lists item margin may not be removed from display:list-item
+ul.base li, ol.base li {
+	display:block;
+}
+
+// No pseudo elements so just add extra spacing
+.separated-list li, .tag-list li {
+	float:left;
+	display:list-item;
+	margin-left:1em;
+	list-style-type:disc;
+}

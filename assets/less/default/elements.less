@@ -1,0 +1,148 @@
+// Author:      Matt Hinchliffe <www.maketea.co.uk>
+// Modified:    06/02/2012
+// Description: Styling for default elements
+
+html, body {
+	min-height:100%;
+}
+	html {
+		overflow-y:scroll; // Maintain scroll bar to avoid page jumping
+		font-size:62.5%; // 10px, set in % for consistency in IE6/7 <http://clagnut.com/blog/348/#c790> and useful if you decide to use rem units
+	}
+	body {
+		.em( @typeSize, 10 );
+		line-height:@typeLeading;
+		font-family:@fontSansSerif;
+		color:#000;
+		background:#fff;
+	}
+
+// Headers as class names:
+// I took the idea of using duplicate class names from OOCSS, it allows your markup to define
+// the correct structure when the design does not take this into account.
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	margin:0;
+	font-weight:bold;
+}
+	h1, .h1 {
+		margin-bottom:12px;
+		font-size:48px;
+		line-height:1.25; // 60
+	}
+	h2, .h2 {
+		margin-bottom:15px;
+		font-size:36px;
+		line-height:1.25; // 45
+	}
+	h3, .h3 {
+		margin-bottom:6px;
+		font-size:24px;
+		line-height:1.25; // 30
+	}
+	h4, .h4 {
+		margin-bottom:6px;
+		font-size:20px;
+		line-height:1.5; // 30
+	}
+	h5, .h5 {
+		margin-bottom:1em;
+		font-size:1em;
+		line-height:@typeLeading; // 24
+	}
+	h6, .h6 {
+		margin-bottom:0.25em;
+		font-weight:bold;
+		font-size:1em;
+		line-height:@typeLeading; // 24
+	}
+
+dl {
+	margin:0;
+}
+p, ul, ol, dd {
+	margin:0 0 1em;
+}
+
+// Quotes
+blockquote, q, cite {
+	font-style:italic;
+	font-family:@fontSerif;
+}
+	blockquote {
+		margin:0 40px;
+	}
+		blockquote .quotation { // Defined using a class as citations must also be within a paragraph
+			text-indent:-0.5em;
+		}
+		blockquote .quotation::before, q::before { // Correct CSS3 (::) pseudo-elements
+			content:'\201C';
+		}
+		blockquote .quotation::after, q::after {
+			content:'\201D';
+		}
+	cite {
+		font-weight:bold;
+	}
+
+// Font size
+small, big {
+	line-height:1;
+}
+
+// Monospace
+pre, code, kbd, var {
+	font-family:@fontMonospace;
+}
+	pre {
+		overflow:auto;
+	}
+	code, kbd, var {
+		line-height:1;
+	}
+
+// Help
+abbr[title], acronym[title], dfn[title] {
+	border-bottom:1px dotted;
+	cursor:help;
+}
+
+// Links
+a {
+	text-decoration:underline;
+	color:@colourLink;
+}
+	a:visited {
+		color:desaturate(@colourLink, 25%);
+	}
+	a:hover, .selected a {
+		color:darken(@colourLink, 25%);
+	}
+	a:active, a:focus {
+		outline:1px dotted @colourKeyline;
+		outline-offset:1px;
+	}
+
+// Horizontal rules
+hr {
+	height:1px;
+	padding:0;
+	margin:0 0 1em;
+	border:0;
+	background:@colourKeyline;
+}
+
+// Tables
+table {
+	margin-bottom:1.5em;
+	border:none;
+}
+	caption, th, td {
+		text-align:left;
+		vertical-align:top;
+		padding:5px 10px;
+	}
