@@ -1,13 +1,15 @@
-// Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    07/02/2012
-// Description: Styles for laying out consistent forms
+/**
+ * Author:      Matt Hinchliffe <www.maketea.co.uk>
+ * Modified:    07/02/2012
+ * Description: Styles for laying out consistent forms
+ */
 
-// form ( > fieldset ) > div.row/li.row > input/select/textarea
+/* form ( > fieldset ) > div.row/li.row > input/select/textarea */
 .row {
 	margin-bottom:1em;
 }
 
-// Checkboxes and radio buttons
+/* Checkboxes and radio buttons */
 .radio input,
 .checkbox input {
 	vertical-align:baseline;
@@ -17,13 +19,13 @@
 	display:inline;
 	padding:0 0.25em;
 }
-	// inline lists
+	/* inline lists */
 	.radio .inline-list li ,
 	.checkbox .inline-list li {
 		margin-right:1.5em;
 	}
 
-// Inline labels (extends .row)
+/* Inline labels (extends .row) */
 .inline.row label,
 .inline.row input,
 .inline.row select,
@@ -33,10 +35,10 @@
 	.inline.row label {
 		padding-top:@formInputPadding + @formInputBorderWidth;
 		padding-right:15px;
-		line-height:normal; // Match input/select 'normal' line height
+		line-height:normal; /* Match input/select 'normal' line height */
 	}
 
-// Justified layout
+/* Justified layout */
 .justified.row label {
 	width:140px;
 	padding-right:20px;

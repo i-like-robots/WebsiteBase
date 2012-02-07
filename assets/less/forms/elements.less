@@ -1,18 +1,20 @@
-// Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    07/02/2012
-// Description: Styling for default form elements such as inputs, select boxes and buttons.
-//
-// A note on styling form elements:
-// Form elements are a law unto themselves. Depending on their implementation they may be rendered from the underlying OS, un-touchable 
-// interface components of the browser or (fingers crossed) implemented via the shadow DOM. Though attempts are made within the reset to 
-// standardise inputs, select boxes, text areas and buttons behaviour there is no way to style native HTML form elements consistantly.
+/**
+ * Author:      Matt Hinchliffe <www.maketea.co.uk>
+ * Modified:    07/02/2012
+ * Description: Styling for default form elements such as inputs, select boxes and buttons.
+ *
+ * A note on styling form elements:
+ * Form elements are a law unto themselves. Depending on their implementation they may be rendered from the underlying OS, un-touchable
+ * interface components of the browser or (fingers crossed) implemented via the shadow DOM. Though attempts are made within the reset to
+ * standardise inputs, select boxes, text areas and buttons behaviour there is no way to style native HTML form elements consistently.
+ */
 
-// Legends - do not style the legend element directly but inline children
+/* Legends - do not style the legend element directly but inline children */
 legend > span {
 	display:block;
 }
 
-// Labels
+/* Labels */
 label {
 	display:block;
 	white-space:nowrap;
@@ -21,7 +23,7 @@ label {
 		border:none;
 	}
 
-// Consistant fonts and height
+/* Consistant fonts and height */
 input,
 select,
 button,
@@ -32,7 +34,7 @@ textarea {
 		height:auto;
 	}
 
-// Text inputs, text areas and select boxes
+/* Text inputs, text areas and select boxes */
 input,
 select,
 textarea {
@@ -41,15 +43,15 @@ textarea {
 	color:#888;
 	background:#fff;
 }
-	// Size attribute should always override width
+	/* Size attribute should always override width */
 	input[size] {
 		width:auto !important;
 	}
 
-	// 'Fix' extra height forced by the button inside select boxes in FF
-	// select:not([size]):-moz-system-metric(windows-default-theme) {
-	//     height:1.222em;
-	// }
+	/* 'Fix' extra height forced by the button inside select boxes in FF */
+	/* select:not([size]):-moz-system-metric(windows-default-theme) { */
+	/*     height:1.222em; */
+	/* } */
 	select {
 		padding:@formInputPadding - 1px;
 	}
@@ -58,7 +60,7 @@ textarea {
 		height:8em;
 	}
 
-	// Go native, else build a new input with a little JS <http://bit.ly/qM8FYC>
+	/* Go native, else build a new input with a little JS <http://bit.ly/qM8FYC> */
 	input[type=file],
 	input[type=radio],
 	input[type=checkbox] {
@@ -69,7 +71,7 @@ textarea {
 		background:none;
 	}
 
-	// Disabled
+	/* Disabled */
 	input[disabled],
 	select[disabled],
 	textarea[disabled] {
@@ -78,16 +80,16 @@ textarea {
 		background:@formInputDisabled;
 	}
 
-	// Focus
+	/* Focus */
 	input:focus,
 	select:focus,
 	textarea:focus {
 		border-color:#000;
 		color:#000;
-		z-index:1; // For Opera
+		z-index:1; /* For Opera */
 	}
 
-// Buttons
+/* Buttons */
 button,
 input[type=button],
 input[type=submit],

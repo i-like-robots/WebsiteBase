@@ -1,6 +1,8 @@
-// Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    07/02/2012
-// Description: Element specific reset and mixed with sensible defaults from normalize.css <http://github.com/necolas/normalize.css>
+/**
+ * Author:      Matt Hinchliffe <www.maketea.co.uk>
+ * Modified:    07/02/2012
+ * Description: Element specific reset and mixed with sensible defaults from normalize.css <http://github.com/necolas/normalize.css>
+ */
 
 html,
 body {
@@ -8,56 +10,79 @@ body {
 	padding:0;
 }
 
-// 1. Keeps page centred in all browsers regardless of content height
-// 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
-//    <http://www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/>
+/*
+ * 1. Keeps page centred in all browsers regardless of content height
+ * 2. Prevents iOS text size adjust after orientation change, without disabling user zoom
+ *    <http://www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/>
+ */
 html {
-	overflow-y:scroll; // 1
-	-webkit-text-size-adjust:100%; // 2
-	-ms-text-size-adjust:100%; // 2
+	overflow-y:scroll; /* 1 */
+	-webkit-text-size-adjust:100%; /* 2 */
+	-ms-text-size-adjust:100%; /* 2 */
 }
 
-// Addresses styling not present in IE7/8/9, S5, Chrome
+/**
+ * 2. Typography
+ */
+
+/*
+ * Addresses styling not present in IE7/8/9, S5, Chrome
+ */
 abbr[title] {
 	border-bottom:1px dotted;
 }
 
-// Addresses style set to 'bolder' in FF3+, S4/5, Chrome
-b, strong { 
-	font-weight:bold; 
+/*
+ * Addresses style set to 'bolder' in FF3+, S4/5, Chrome
+ */
+b, strong {
+	font-weight:bold;
 }
 
-// Addresses styling not present in S5, Chrome
+/*
+ * Addresses styling not present in S5, Chrome
+ */
 dfn {
 	font-style:italic;
 }
 
-// Addresses styling not present in IE6/7/8/9
+/*
+ * Addresses styling not present in IE6/7/8/9
+ */
 mark {
 	background:#ff0;
 	color:#000;
 }
 
-// Corrects font family set oddly in IE6, S4/5, Chrome
-// <http://en.wikipedia.org/wiki/User:Davidgothberg/Test59>
+/*
+ * Corrects font family set oddly in IE6, S4/5, Chrome
+ * <http://en.wikipedia.org/wiki/User:Davidgothberg/Test59>
+ */
 pre,
 code,
 kbd,
 samp {
 	font-size:1em;
 }
-	// Improves readability of pre-formatted text in all browsers
+	/*
+	 * Improves readability of pre-formatted text in all browsers
+	 */
 	pre {
 		white-space:pre;
 		white-space:pre-wrap;
 		word-wrap:break-word;
 	}
 
-// 1. Addresses CSS quotes not supported in IE6/7
+/*
+ * 1. Addresses CSS quotes not supported in IE6/7
+ * 2. Addresses quote property not supported in S4
+ */
+
+/* 1 */
 q {
 	quotes:none;
 }
-	// 2. Addresses quote property not supported in S4
+	/* 2 */
 	q:before, q:after {
 		content:'';
 		content:none;
@@ -67,7 +92,10 @@ small {
 	font-size:75%;
 }
 
-// Prevents sub and sup affecting line-height in all browsers <gist.github.com/413930>
+/*
+ * Prevents sub and sup affecting line-height in all browsers
+ * gist.github.com/413930
+ */
 sub,
 sup {
 	font-size:75%;
@@ -82,97 +110,137 @@ sup {
 		bottom:-0.25em;
 	}
 
-// Lists
+/**
+ * Lists
+ */
 ul, ol {
 	margin:0;
 	padding:0 0 0 1.75em;
 }
 
-// 1. Removes border when inside 'a' element in IE6/7/8/9, FF3
-// 2. Improves image quality when scaled in IE7
-//    <http://code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/>
+dd {
+	margin:0 0 0 1.75em;
+}
+
+/**
+ * Media
+ */
+
+/*
+ * 1. Removes border when inside 'a' element in IE6/7/8/9, FF3
+ * 2. Improves image quality when scaled in IE7
+ *    <http://code.flickr.com/blog/2008/11/12/on-ui-quality-the-little-things-client-side-image-resizing/>
+ */
 img {
-	border:0; // 1
-	-ms-interpolation-mode:bicubic; // 2
+	border:0; /* 1 */
+	-ms-interpolation-mode:bicubic; /* 2 */
 }
 
-// 1. Remove most extra spacing between table cells
-// 2. Corrects font sizing inconsistancies in IE6/7 <http://clagnut.com/blog/348/#c790>
+/**
+ * Tables
+ */
+
+/*
+ * 1. Remove most extra spacing between table cells
+ * 2. Corrects font sizing inconsistancies in IE6/7 <http://clagnut.com/blog/348/#c790>
+ */
 table {
-	border-collapse:collapse; // 1
-	border-spacing:0; // 1
-	font-size:100%; // 2
+	border-collapse:collapse; /* 1 */
+	border-spacing:0; /* 1 */
+	font-size:100%; /* 2 */
 }
 
-// Corrects margin displayed oddly in IE6/7
+/**
+ * Form elements
+ */
+
+/*
+ * Corrects margin displayed oddly in IE6/7
+ */
 form {
 	margin:0;
 }
 
-// Define consistent border, margin, and padding
+/*
+ * Define consistent border, margin, and padding
+ */
 fieldset {
 	border:none;
 	margin:0;
 	padding:0;
 }
 
-// 1. Corrects color not being inherited in IE6/7/8/9
-// 2. Corrects alignment displayed oddly in IE6/7
-// 3. Allows padding box to be honoured in Webkit
+/*
+ * 1. Corrects color not being inherited in IE6/7/8/9
+ * 2. Corrects alignment displayed oddly in IE6/7
+ * 3. Allows padding box to be honoured in Webkit
+ */
 legend {
-	border:0; // 1
-	*margin-left:-7px; // 2
-	-webkit-margin-collapse:separate; // 3
+	border:0; /* 1 */
+	*margin-left:-7px; /* 2 */
+	-webkit-margin-collapse:separate; /* 3 */
 }
-	// Force 'proper' block-level width
+	/* Force 'proper' block-level width */
 	fieldset legend {
 		width:100%;
-		// The following can be used instead of specifying a width if you wish
-		// to directly style the legend element in FF and S5
-		//
-		// width:-moz-available;
-		// -webkit-min-logical-width:100%;
+		/*
+		 * The following can be used instead of specifying a width if you wish
+		 * to directly style the legend element in FF and S5
+		 *
+		 * width:-moz-available;
+		 * -webkit-min-logical-width:100%;
+		 */
 	}
 
-// 1. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
-// 2. Force content box for consistant sizing
-// 3. Improves appearance and consistency in all browsers
-// 4. Corrects font size not being inherited in all browsers
-// 5. Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
-// 6. Remove unwanted highlights from Chrome/S3+
+/*
+ * 1. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
+ * 2. Force content box for consistant sizing
+ * 3. Improves appearance and consistency in all browsers
+ * 4. Corrects font size not being inherited in all browsers
+ * 5. Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
+ * 6. Remove unwanted highlights from Chrome/S3+
+ */
 input,
 select,
 textarea,
 button {
-	margin:0; // 1
-	.box-sizing(content-box); //2
-	vertical-align:baseline; // 3
-	*vertical-align:middle; // 3
-	font-size:100%; // 4
-	line-height:normal; // 5
-	outline:none; // 6
+	margin:0; /* 1 */
+	-webkit-box-sizing:content-box; /* 2 */
+	   -moz-box-sizing:content-box; /* 2 */
+	        box-sizing:content-box; /* 2 */
+	vertical-align:baseline; /* 3 */
+	*vertical-align:middle; /* 3 */
+	font-size:100%; /* 4 */
+	line-height:normal; /* 5 */
+	outline:none; /* 6 */
 }
-	// 1. Addresses box sizing set to content-box in IE8/9
-	// 2. Removes excess padding in IE8/9
+	/*
+	 * 1. Addresses box sizing set to content-box in IE8/9
+	 * 2. Removes excess padding in IE8/9
+	 */
 	input[type="checkbox"],
 	input[type="radio"] {
-		box-sizing:border-box; // 1
-		padding:0; // 2
+		box-sizing:border-box; /* 1 */
+		padding:0; /* 2 */
 	}
 
-	// 1. Removes default vertical scrollbar in IE6/7/8/9
-	// 2. Improves readability and alignment in all browsers
-	// 3. Remove mouse resizing
+	/*
+	 * 1. Removes default vertical scrollbar in IE6/7/8/9
+	 * 2. Improves readability and alignment in all browsers
+	 * 3. Remove mouse resizing
+	 */
 	textarea {
-		overflow:auto; // 1
-		vertical-align:top; // 2
-		resize:none; // 3
+		overflow:auto; /* 1 */
+		vertical-align:top; /* 2 */
+		resize:none; /* 3 */
 	}
 
-	// 1. Corrects inability to style clickable 'input' types in iOS#
-	// 2. Removes inner spacing in IE7 without affecting normal text inputs
-	//    Known issue: inner spacing remains in IE6
-	// 3. Improves usability and consistency of cursor style between image-type 'input' and others
+	/*
+	 * 1. Corrects inability to style clickable 'input' types in iOS#
+	 * 2. Removes inner spacing in IE7 without affecting normal text inputs
+	 *    Known issue: inner spacing remains in IE6
+	 * 3. Improves usability and consistency of cursor style between image-type 'input' and others
+	 */
 	button,
 	input[type=button],
 	input[type=submit],
@@ -180,12 +248,14 @@ button {
 		width:auto;
 		border:none;
 		white-space:nowrap;
-		-webkit-appearance:normal; // 1
-		*overflow: visible; // 2
-		cursor:pointer; // 3
+		-webkit-appearance:normal; /* 1 */
+		*overflow:visible;  /* 2 */
+		cursor:pointer; /* 3 */
 	}
-		// Removes inner padding and border in FF3+
-		// <http://www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/>
+		/*
+		 * Removes inner padding and border in FF3+
+		 * <http://www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/>
+		 */
 		button::-moz-focus-inner,
 		input::-moz-focus-inner {
 			padding:0;

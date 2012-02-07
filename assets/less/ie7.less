@@ -1,7 +1,7 @@
 @import "variables.less";
 @import "mixins.less";
 
-// Blockquotes
+/* Blockquotes */
 blockquote {
 	display:block;
 }
@@ -10,12 +10,12 @@ input, select, textarea, button {
 	vertical-align:middle;
 }
 
-// Select boxes. Padding cannot be applied to a select box so add it to the height
+/* Select boxes. Padding cannot be applied to a select box so add it to the height */
 select {
-	height:27px; // 17px 'normal' line-height + padding
+	height:27px; /* 17px 'normal' line-height + padding */
 }
 
-// Buttons render terribly due to a forced border-box style layout
+/* Buttons render terribly due to a forced border-box style layout */
 button,
 input[type=button],
 input[type=submit],
@@ -27,7 +27,7 @@ a.button {
 	line-height:1;
 }
 
-// Form checkboxes and radio buttons alignment, align checkboxes, radios, text inputs with their label
+/* Form checkboxes and radio buttons alignment, align checkboxes, radios, text inputs with their label */
 .radio input {
 	vertical-align:text-top;
 }
@@ -35,17 +35,17 @@ a.button {
 	vertical-align:bottom;
 }
 
-// Clearfix fix
+/* Clearfix fix */
 .cf {
 	overflow:hidden;
 }
 
-// Lists item margin may not be removed from display:list-item
+/* Lists item margin may not be removed from display:list-item */
 ul.base li, ol.base li {
 	display:block;
 }
 
-// No pseudo elements so just add extra spacing
+/* No pseudo elements so just add extra spacing */
 .separated-list li, .tag-list li {
 	float:left;
 	display:list-item;

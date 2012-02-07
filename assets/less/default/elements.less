@@ -1,13 +1,15 @@
-// Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    07/02/2012
-// Description: Styling for default elements
+/**
+ * Author:      Matt Hinchliffe <www.maketea.co.uk>
+ * Modified:    07/02/2012
+ * Description: Styling for default elements
+ */
 
 html, body {
 	min-height:100%;
 }
 	html {
-		overflow-y:scroll; // Maintain scroll bar to avoid page jumping
-		font-size:62.5%; // 10px, set in % for consistency in IE6/7 <http://clagnut.com/blog/348/#c790> and useful if you decide to use rem units
+		overflow-y:scroll; /* Maintain scroll bar to avoid page jumping */
+		font-size:62.5%; /* 10px, set in % for consistency in IE6/7 <http://clagnut.com/blog/348/#c790> and useful if you decide to use rem units */
 	}
 	body {
 		.em( @typeSize, 10 );
@@ -17,9 +19,9 @@ html, body {
 		background:#fff;
 	}
 
-// Headers as class names:
-// I took the idea of using duplicate class names from OOCSS, it allows your markup to define
-// the correct structure when the design does not take this into account.
+/* Headers as class names: */
+/* I took the idea of using duplicate class names from OOCSS, it allows your markup to define */
+/* the correct structure when the design does not take this into account. */
 .heading(@size, @leading: @typeLeading, @margin: @typeBlankline) {
 	margin-bottom:@margin / @size + 0em;
 	font-size:@size / @typeSize + 0em;
@@ -62,7 +64,7 @@ p, ul, ol, dd {
 	margin:0 0 @typeBlankline;
 }
 
-// Quotes
+/* Quotes */
 blockquote, q, cite {
 	font-style:italic;
 	font-family:@fontSerif;
@@ -70,10 +72,10 @@ blockquote, q, cite {
 	blockquote {
 		margin:0 40px;
 	}
-		blockquote .quotation { // Defined using a class as citations must also be within a paragraph
+		blockquote .quotation { /* Defined using a class as citations must also be within a paragraph */
 			text-indent:-0.5em;
 		}
-		blockquote .quotation::before, q::before { // Correct CSS3 (::) pseudo-elements
+		blockquote .quotation::before, q::before { /* Correct CSS3 (::) pseudo-elements */
 			content:'\201C';
 		}
 		blockquote .quotation::after, q::after {
@@ -83,12 +85,12 @@ blockquote, q, cite {
 		font-weight:bold;
 	}
 
-// Font size
+/* Font size */
 small, big {
 	line-height:1;
 }
 
-// Monospace
+/* Monospace */
 pre, code, kbd, var {
 	font-family:@fontMonospace;
 }
@@ -99,13 +101,13 @@ pre, code, kbd, var {
 		line-height:1;
 	}
 
-// Help
+/* Help */
 abbr[title], acronym[title], dfn[title] {
 	border-bottom:1px dotted;
 	cursor:help;
 }
 
-// Links
+/* Links */
 a {
 	text-decoration:underline;
 	color:@colourLink;
@@ -121,7 +123,7 @@ a {
 		outline-offset:1px;
 	}
 
-// Horizontal rules
+/* Horizontal rules */
 hr {
 	height:1px;
 	padding:0;
@@ -130,7 +132,7 @@ hr {
 	background:@colourKeyline;
 }
 
-// Tables
+/* Tables */
 table {
 	margin-bottom:@typeBlankline;
 	border:none;

@@ -1,8 +1,10 @@
-// Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    07/02/2012
-// Description: Useful classes for contructing page layout
+/**
+ * Author:      Matt Hinchliffe <www.maketea.co.uk>
+ * Modified:    07/02/2012
+ * Description: Useful classes for constructing page layout
+ */
 
-// Floats and clears (for content, not layout)
+/* Floats and clears (for content, not layout) */
 .left {
 	float:left;
 }
@@ -12,10 +14,10 @@
 }
 
 .clear {
-	clear:left; // clear:right may leave elements 'stranded' if your baseline or grid breaks. You cannot float + clear elements in IE6.
+	clear:left; /* clear:right may leave elements 'stranded' if your baseline or grid breaks. You cannot float + clear elements in IE6. */
 }
 
-// Text replacement */
+/* Text replacement */ */
 .replace {
 	display:block;
 	overflow:hidden;
@@ -24,13 +26,13 @@
 	background:transparent no-repeat 0 0;
 }
 
-// Hide but keep accessible to screen readers
+/* Hide but keep accessible to screen readers */
 .hidden {
 	position:absolute;
 	left:-9999px;
 }
 
-// Inline soft reset
+/* Inline soft reset */
 .base {
 	margin:0;
 	padding:0;
@@ -42,8 +44,8 @@
 		display:block;
 	}
 
-// Clearfix
-.cf:after { // Compatibility CSS 2.1 pseudo-element
+/* Clearfix */
+.cf:after { /* Compatibility CSS 2.1 pseudo-element */
 	clear:both;
 	display:block;
 	height:0;
