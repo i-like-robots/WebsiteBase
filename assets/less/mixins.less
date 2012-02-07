@@ -11,6 +11,13 @@
 	width:( @columns * @width ) + ( @gutter * ( @columns - 1 ) );
 }
 
+// Box sizing
+.box-sizing(@sizing) {
+	-webkit-box-sizing:@sizing;
+	   -moz-box-sizing:@sizing;
+	        box-sizing:@sizing;
+}
+
 // Border radius
 .border-radius(@radius) {
 	-webkit-border-radius:@radius;

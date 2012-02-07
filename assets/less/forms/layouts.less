@@ -6,9 +6,6 @@
 .row {
 	margin-bottom:1em;
 }
-.row.buttons {
-	text-align:right;
-}
 
 // Checkboxes and radio buttons
 .radio input,
@@ -40,14 +37,12 @@
 	}
 
 // Justified layout
-.justified.row {
-	margin-right:25%;
+.justified.row label {
+	width:140px;
+	padding-right:20px;
 }
-	.justified.row label {
-		width:25%;
-		margin-right:2.5%;
-	}
-	.justified.row input[type=text],
-	.justified.row textarea {
-		width:50%;
-	}
+.justified.row input[type=text],
+.justified.row textarea {
+	width:300px;
+	.box-sizing(border-box);
+}

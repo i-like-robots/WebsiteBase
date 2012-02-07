@@ -1,5 +1,5 @@
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    06/02/2012
+// Modified:    07/02/2012
 // Description: Styling for default elements
 
 html, body {
@@ -20,6 +20,12 @@ html, body {
 // Headers as class names:
 // I took the idea of using duplicate class names from OOCSS, it allows your markup to define
 // the correct structure when the design does not take this into account.
+.heading(@size, @leading: @typeLeading, @margin: @typeBlankline) {
+	margin-bottom:@margin / @size + 0em;
+	font-size:@size / @typeSize + 0em;
+	line-height:@leading / @size;
+}
+
 h1, .h1,
 h2, .h2,
 h3, .h3,
@@ -30,42 +36,30 @@ h6, .h6 {
 	font-weight:bold;
 }
 	h1, .h1 {
-		margin-bottom:12px;
-		font-size:48px;
-		line-height:1.25; // 60
+		.heading(48, 60, 12);
 	}
 	h2, .h2 {
-		margin-bottom:15px;
-		font-size:36px;
-		line-height:1.25; // 45
+		.heading(36, 45, 12);
 	}
 	h3, .h3 {
-		margin-bottom:6px;
-		font-size:24px;
-		line-height:1.25; // 30
+		.heading(24, 30, 6);
 	}
 	h4, .h4 {
-		margin-bottom:6px;
-		font-size:20px;
-		line-height:1.5; // 30
+		.heading(20, 30, 6);
 	}
 	h5, .h5 {
-		margin-bottom:1em;
-		font-size:1em;
-		line-height:@typeLeading; // 24
+		.heading(18, 24, 9);
 	}
 	h6, .h6 {
-		margin-bottom:0.25em;
 		font-weight:bold;
-		font-size:1em;
-		line-height:@typeLeading; // 24
+		.heading(16, 18, 6);
 	}
 
 dl {
 	margin:0;
 }
 p, ul, ol, dd {
-	margin:0 0 1em;
+	margin:0 0 @typeBlankline;
 }
 
 // Quotes
@@ -117,10 +111,10 @@ a {
 	color:@colourLink;
 }
 	a:visited {
-		color:desaturate(@colourLink, 25%);
+		color:desaturate(@colourLink, 15%);
 	}
 	a:hover, .selected a {
-		color:darken(@colourLink, 25%);
+		color:darken(@colourLink, 15%);
 	}
 	a:active, a:focus {
 		outline:1px dotted @colourKeyline;
@@ -131,14 +125,14 @@ a {
 hr {
 	height:1px;
 	padding:0;
-	margin:0 0 1em;
+	margin:0 0 @typeBlankline;
 	border:0;
 	background:@colourKeyline;
 }
 
 // Tables
 table {
-	margin-bottom:1.5em;
+	margin-bottom:@typeBlankline;
 	border:none;
 }
 	caption, th, td {

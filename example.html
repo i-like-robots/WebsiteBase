@@ -24,12 +24,22 @@
 </head>
 <body>
 
-	<div id="container" class="cf">
+	<div id="container" class="cf website-width">
+
+		<nav>
+			<ul class="cf block-links">
+				<li><a href="#text">Text</a></li>
+				<li><a href="#lists">Lists</a></li>
+				<li><a href="#forms">Forms</a></li>
+				<li><a href="#grid">Grid</a></li>
+			</ul>
+		</nav>
+
+		<hr />
 
 		<!-- text content -->
 		<section>
-
-			<h1>Text content</h1>
+			<h1 id="text">Text content</h1>
 
 			<p class="small-text">
 				Bacon ipsum dolor sit amet incididunt magna shank consequat 
@@ -38,9 +48,9 @@
 			</p>
 
 			<p>
-				Pork chop quis ham tenderloin short ribs excepteur spare ribs ut. 
-				Frankfurter aliqua ut eu turkey aute bacon, occaecat salami laboris 
-				jowl dolor quis. Commodo pork chop aliquip tempor, irure dolor 
+				Pork chop quis ham tenderloin short ribs excepteur spare ribs ut.
+				<q>officia meatloaf labore short ribs filet mignon flank pancetta bresaola</q>
+				jowl dolor quis. Commodo pork chop aliquip tempor, irure dolor
 				in qui quis magna meatball aute.
 			</p>
 
@@ -54,17 +64,6 @@
 				Quis t-bone prosciutto, incididunt ut ut corned beef shank et strip steak sausage pig. Laboris cillum enim nostrud, boudin bacon do.
 			</p>
 
-			<h1>Level 1 heading</h1>
-			<h2>Level 2 heading</h2>
-			<h3>Level 3 heading</h3>
-			<h4>Level 4 heading</h4>
-			<h5>Level 5 heading</h5>
-			<h6>Level 6 heading</h6>
-
-			<p>
-				Nulla ea pig, <q>officia meatloaf labore short ribs filet mignon flank pancetta bresaola</q>. Irure in incididunt, quis ea hamburger corned beef.
-			</p>
-
 			<blockquote>
 				<p class="quotation">
 					Biltong pork belly pancetta, tenderloin dolore velit kielbasa aliquip drumstick. Duis jowl dolor velit id occaecat. Voluptate pork chop quis
@@ -76,14 +75,20 @@
 				</p>
 			</blockquote>
 
+			<h1>Level 1 heading</h1>
+			<h2>Level 2 heading</h2>
+			<h3>Level 3 heading</h3>
+			<h4>Level 4 heading</h4>
+			<h5>Level 5 heading</h5>
+			<h6>Level 6 heading</h6>
+
 		</section>
 
 		<hr />
 
 		<!-- lists -->
 		<section>
-
-			<h1>Lists</h1>
+			<h1 id="lists">Lists</h1>
 
 			<ol>
 				<li>List item</li>
@@ -163,7 +168,7 @@
 				<dd>Definition data 3</dd>
 			</dl>
 
-			<dl class="cf inline-definitions">
+			<dl class="numbered-definitions">
 				<dt>Definition title 1</dt>
 				<dd>Definition data 1</dd>
 				<dt>Definition title 2</dt>
@@ -172,7 +177,7 @@
 				<dd>Definition data 3</dd>
 			</dl>
 
-			<dl class="numbered-definitions">
+			<dl class="cf inline-definitions">
 				<dt>Definition title 1</dt>
 				<dd>Definition data 1</dd>
 				<dt>Definition title 2</dt>
@@ -187,8 +192,7 @@
 
 		<!-- forms -->
 		<section>
-
-			<h1>Forms</h1>
+			<h1 id="forms">Forms</h1>
 
 			<form method="post" action="">
 
@@ -293,7 +297,36 @@
 				</fieldset>
 			</form>
 
-		</article>
+		</section>
+
+		<hr />
+
+		<!-- grid -->
+		<section>
+			<h1 id="grid">Grid</h1>
+
+			<div class="cf grid-example">
+
+				<div class="column grid_1"></div>
+				<div class="column grid_11"></div>
+
+				<div class="column grid_2"></div>
+				<div class="column grid_10"></div>
+
+				<div class="column grid_3"></div>
+				<div class="column grid_9"></div>
+
+				<div class="column grid_4"></div>
+				<div class="column grid_8"></div>
+
+				<div class="column grid_5"></div>
+				<div class="column grid_7"></div>
+
+				<div class="column grid_6"></div>
+				<div class="column grid_6"></div>
+
+			</div>
+		</section>
 
 	</div>
 
