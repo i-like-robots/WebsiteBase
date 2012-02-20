@@ -1,6 +1,12 @@
 @import "variables.less";
 @import "mixins.less";
 
+// No 'inline-block' in < IE8 but applying 'layout' to an inline element contrives it
+.ie-inline-block() {
+	display:inline;
+	zoom:1;
+}
+
 /* Blockquotes */
 blockquote {
 	display:block;
@@ -36,17 +42,20 @@ a.button {
 }
 
 /* Clearfix fix */
-.cf {
+.cf,
+.columns {
 	overflow:hidden;
 }
 
 /* Lists item margin may not be removed from display:list-item */
-ul.base li, ol.base li {
+ul.base li,
+ol.base li {
 	display:block;
 }
 
 /* No pseudo elements so just add extra spacing */
-.separated-list li, .tag-list li {
+.separated-list li,
+.tag-list li {
 	float:left;
 	display:list-item;
 	margin-left:1em;

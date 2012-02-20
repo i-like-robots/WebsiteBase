@@ -1,6 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    07/02/2012
+ * Modified:    20/02/2012
  * Description: Based on 1k grid <http://www.1kbgrid.com>
  *
  * Layout sizes:
@@ -8,27 +8,67 @@
  *         - Grid column        = 60  (+10 right and left margin)
  *             - Two columns    = 140
  *             - Twelve columns = 940
+ *
+ * Example:
+ * <div class="container">
+ *     <div class="column">
+ *         Full width column
+ *     </div>
+ *     <div class="columns">
+ *         <div class="column span-4>
+ *             Column 1
+ *         </div>
+ *         <div class="column span-4>
+ *             Column 2
+ *         </div>
+ *         <div class="column span-4>
+ *             Column 3
+ *         </div>
+ *     </div>
+ * </div>
  */
 
-.website-width {
+ // Grid column width calculation
+.grid-column(@columns: @gridColumns, @width: @gridColumnWidth, @gutter: @gridGutterWidth) {
+	width:( @columns * @width ) + ( @gutter * ( @columns - 1 ) );
+}
+ 
+.container {
 	width:@gridSiteWidth;
 	margin:0 auto;
 }
+	.column {
+		margin-left:@gridGutterWidth / 2;
+		margin-right:@gridGutterWidth / 2;
+	}
+		.column.first {
+			margin-left:0;
+		}
+		.column.last {
+			margin-right:0;
+		}
+	.columns {
+		clear:left;
+	}
+		.columns .column {
+			float:left;
+		}
+			.columns .span-1  { .grid-column(1) }
+			.columns .span-2  { .grid-column(2) }
+			.columns .span-3  { .grid-column(3) }
+			.columns .span-4  { .grid-column(4) }
+			.columns .span-5  { .grid-column(5) }
+			.columns .span-6  { .grid-column(6) }
+			.columns .span-7  { .grid-column(7) }
+			.columns .span-8  { .grid-column(8) }
+			.columns .span-9  { .grid-column(9) }
+			.columns .span-10 { .grid-column(10) }
+			.columns .span-11 { .grid-column(11) }
+			.columns .span-12 { .grid-column(12) }
 
-.column {
-	float:left;
-	margin:0 ( @gridGutterWidth / 2 );
-}
-
-.grid_1  { .grid-column(1) }
-.grid_2  { .grid-column(2) }
-.grid_3  { .grid-column(3) }
-.grid_4  { .grid-column(4) }
-.grid_5  { .grid-column(5) }
-.grid_6  { .grid-column(6) }
-.grid_7  { .grid-column(7) }
-.grid_8  { .grid-column(8) }
-.grid_9  { .grid-column(9) }
-.grid_10 { .grid-column(10) }
-.grid_11 { .grid-column(11) }
-.grid_12 { .grid-column(12) }
+		.columns:after {
+			.clearfix(); // Why bother adding clearfix class (.cf) all the time?
+		}
+		.columns.row {
+			margin-bottom:1em;
+		}

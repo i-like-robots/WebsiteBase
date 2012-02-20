@@ -1,6 +1,10 @@
 /**
  * Author:   Matt Hinchliffe <www.maketea.co.uk>
- * Modified: 07/02/2012
+ * Modified: 20/02/2012
+ */
+
+/**
+ * Layout
  */
 
 // Em calculation
@@ -8,10 +12,28 @@
 	font-size:@required / @context + 0em;
 }
 
-// Grid column width calculation
-.grid-column(@columns: @gridColumns, @width: @gridColumnWidth, @gutter: @gridGutterWidth) {
-	width:( @columns * @width ) + ( @gutter * ( @columns - 1 ) );
+// Replace text
+.replacetext() {
+	display:block;
+	overflow:hidden;
+	direction:ltr;
+	text-indent:-9999px;
+	background:transparent no-repeat 0 0;
 }
+
+// Clearfix
+.clearfix() {
+	clear:both;
+	display:block;
+	height:0;
+	line-height:0;
+	visibility:hidden;
+	content:".";
+}
+
+/**
+ * CSS 3
+ */
 
 // Box sizing
 .box-sizing(@sizing) {
@@ -33,7 +55,7 @@
 	   -moz-box-shadow:@x @y @blur @colour;
 	        box-shadow:@x @y @blur @colour;
 }
-.inner-shadow(@x, @y, @blur, @colour) {
+.inset-shadow(@x, @y, @blur, @colour) {
 	-webkit-box-shadow:inset @x @y @blur @colour;
 	   -moz-box-shadow:inset @x @y @blur @colour;
 	        box-shadow:inset @x @y @blur @colour;
@@ -47,10 +69,4 @@
 	background-image:    -ms-linear-gradient(@origin, @startColor, @endColor); // IE10
 	background-image:     -o-linear-gradient(@origin, @startColor, @endColor); // Opera 11.10
 	background-image:        linear-gradient(@origin, @startColor, @endColor);
-}
-
-// No 'inline-block' in < IE8 but applying 'layout' to an inline element contrives it
-.ie-inline-block() {
-	display:inline;
-	zoom:1;
 }

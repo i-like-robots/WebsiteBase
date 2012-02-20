@@ -1,6 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    07/02/2012
+ * Modified:    20/02/2012
  * Description: Useful classes for constructing page layout
  */
 
@@ -17,13 +17,9 @@
 	clear:left; /* clear:right may leave elements 'stranded' if your baseline or grid breaks. You cannot float + clear elements in IE6. */
 }
 
-/* Text replacement */ */
+/* Text replacement */
 .replace {
-	display:block;
-	overflow:hidden;
-	direction:ltr;
-	text-indent:-9999px;
-	background:transparent no-repeat 0 0;
+	.replacetext();
 }
 
 /* Hide but keep accessible to screen readers */
@@ -37,7 +33,8 @@
 	margin:0;
 	padding:0;
 }
-	ul.base, ol.base {
+	ul.base,
+	ol.base {
 		list-style-type:none;
 	}
 	img.base {
@@ -45,11 +42,6 @@
 	}
 
 /* Clearfix */
-.cf:after { /* Compatibility CSS 2.1 pseudo-element */
-	clear:both;
-	display:block;
-	height:0;
-	line-height:0;
-	visibility:hidden;
-	content:".";
+.cf:after {
+	.clearfix();
 }

@@ -1,6 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    07/02/2012
+ * Modified:    17/02/2012
  * Description: Styling for default elements
  */
 
@@ -23,7 +23,7 @@ html, body {
 /* I took the idea of using duplicate class names from OOCSS, it allows your markup to define */
 /* the correct structure when the design does not take this into account. */
 .heading(@size, @leading: @typeLeading, @margin: @typeBlankline) {
-	margin-bottom:@margin / @size + 0em;
+	margin:0 0 (@margin / @size + 0em);
 	font-size:@size / @typeSize + 0em;
 	line-height:@leading / @size;
 }
@@ -34,7 +34,6 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-	margin:0;
 	font-weight:bold;
 }
 	h1, .h1 {
