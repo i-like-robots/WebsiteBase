@@ -1,5 +1,5 @@
 @import "variables.less";
-@import "mixins.less";
+@import "mixins/utilities.less";
 
 // No 'inline-block' in < IE8 but applying 'layout' to an inline element contrives it
 .ie-inline-block() {
@@ -39,12 +39,6 @@ a.button {
 }
 .checkbox input {
 	vertical-align:bottom;
-}
-
-/* Clearfix fix */
-.cf,
-.columns {
-	overflow:hidden;
 }
 
 /* Lists item margin may not be removed from display:list-item */

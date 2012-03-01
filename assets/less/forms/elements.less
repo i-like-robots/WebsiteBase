@@ -1,6 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    07/02/2012
+ * Modified:    28/02/2012
  * Description: Styling for default form elements such as inputs, select boxes and buttons.
  *
  * A note on styling form elements:
@@ -38,8 +38,8 @@ textarea {
 input,
 select,
 textarea {
-	padding:@formInputPadding;
-	border:@formInputBorderWidth solid #888;
+	padding:@input-padding;
+	border:@input-borderwidth solid #888;
 	color:#888;
 	background:#fff;
 }
@@ -53,7 +53,7 @@ textarea {
 	/*     height:1.222em; */
 	/* } */
 	select {
-		padding:@formInputPadding - 1px;
+		padding:@input-padding - 1px;
 	}
 
 	textarea {
@@ -75,9 +75,9 @@ textarea {
 	input[disabled],
 	select[disabled],
 	textarea[disabled] {
-		border-color:darken(@formInputDisabled, 15%);
-		color:darken(@formInputDisabled, 15%);
-		background:@formInputDisabled;
+		border-color:darken(@input-disabled, 15%);
+		color:darken(@input-disabled, 15%);
+		background:@input-disabled;
 	}
 
 	/* Focus */
@@ -95,17 +95,17 @@ input[type=button],
 input[type=submit],
 input[type=reset],
 a.button {
-	padding:@formInputPadding + @formInputBorderWidth;
+	padding:@input-padding + @input-borderwidth;
 	text-decoration:none;
-	color:@colourReverse;
-	background:@colourLink;
+	color:@colour-reverse;
+	background:@colour-links;
 }
 	button:hover,
 	input[type=button]:hover,
 	input[type=submit]:hover,
 	input[type=reset]:hover,
 	a.button:hover {
-		background:darken(@colourLink, 15%);
+		background:darken(@colour-links, 15%);
 	}
 	button:active,
 	input[type=button]:active,
@@ -120,6 +120,6 @@ a.button {
 	input[type=submit][disabled],
 	input[type=reset][disabled],
 	a.button.disabled {
-		color:darken(@formInputDisabled, 15%);
-		background:@formInputDisabled;
+		color:darken(@input-disabled, 15%);
+		background:@input-disabled;
 	}

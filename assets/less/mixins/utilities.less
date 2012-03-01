@@ -1,0 +1,31 @@
+/**
+ * Author:   Matt Hinchliffe <www.maketea.co.uk>
+ * Modified: 01/03/2012
+ */
+
+// Em calculation
+.em(@required, @context) {
+	font-size:@required / @context + 0em;
+}
+
+// Replace text
+.replacetext() {
+	display:block;
+	overflow:hidden;
+	direction:ltr;
+	text-indent:-9999px;
+	background:transparent no-repeat 0 0;
+}
+
+// Clearfix
+.clearfix() {
+	*zoom: 1;
+	&:before,
+	&:after {
+		display:table;
+		content:"";
+	}
+	&:after {
+		clear:both;
+	}
+}

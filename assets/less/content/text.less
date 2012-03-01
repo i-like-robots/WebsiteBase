@@ -1,6 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    06/02/2012
+ * Modified:    28/02/2012
  * Description: Classes for text content.
  *
  * A note on semantic class names:
@@ -48,27 +48,27 @@
 
 /* Font face variations */
 .alt-text {
-	font-family:@fontSerif;
+	font-family:@font-serif;
 }
 
 /* Alternatively coloured links */
 a.alt, .alt-links a {
-	color:@colourAlternate;
+	color:@colour-alt;
 }
 	a.alt:visited, .alt-links a:visited {
-		color:desaturate(@colourAlternate, 15%);
+		color:desaturate(@colour-alt, 15%);
 	}
 	a.alt:hover, .alt-links a:hover {
-		color:darken(@colourAlternate, 15%);
+		color:darken(@colour-alt, 15%);
 	}
 
 /* User-feedback */
 .hint {
 	font-style:italic;
-	color:@colourAlternate;
+	color:@colour-alt;
 }
 
 .error {
 	font-weight:bold;
-	color:@colourWarning;
+	color:@colour-attention;
 }

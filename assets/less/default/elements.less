@@ -1,6 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    17/02/2012
+ * Modified:    28/02/2012
  * Description: Styling for default elements
  */
 
@@ -12,9 +12,9 @@ html, body {
 		font-size:62.5%; /* 10px, set in % for consistency in IE6/7 <http://clagnut.com/blog/348/#c790> and useful if you decide to use rem units */
 	}
 	body {
-		.em( @typeSize, 10 );
-		line-height:@typeLeading;
-		font-family:@fontSansSerif;
+		.em( @type-size, 10 );
+		line-height:@type-leading;
+		font-family:@font-sans;
 		color:#000;
 		background:#fff;
 	}
@@ -22,9 +22,9 @@ html, body {
 /* Headers as class names: */
 /* I took the idea of using duplicate class names from OOCSS, it allows your markup to define */
 /* the correct structure when the design does not take this into account. */
-.heading(@size, @leading: @typeLeading, @margin: @typeBlankline) {
+.heading(@size, @leading: @type-leading, @margin: @type-blankline) {
 	margin:0 0 (@margin / @size + 0em);
-	font-size:@size / @typeSize + 0em;
+	font-size:@size / @type-size + 0em;
 	line-height:@leading / @size;
 }
 
@@ -60,13 +60,13 @@ dl {
 	margin:0;
 }
 p, ul, ol, dd {
-	margin:0 0 @typeBlankline;
+	margin:0 0 @type-blankline;
 }
 
 /* Quotes */
 blockquote, q, cite {
 	font-style:italic;
-	font-family:@fontSerif;
+	font-family:@font-serif;
 }
 	blockquote {
 		margin:0 40px;
@@ -91,7 +91,7 @@ small, big {
 
 /* Monospace */
 pre, code, kbd, var {
-	font-family:@fontMonospace;
+	font-family:@font-mono;
 }
 	pre {
 		overflow:auto;
@@ -109,16 +109,16 @@ abbr[title], acronym[title], dfn[title] {
 /* Links */
 a {
 	text-decoration:underline;
-	color:@colourLink;
+	color:@colour-links;
 }
 	a:visited {
-		color:desaturate(@colourLink, 15%);
+		color:desaturate(@colour-links, 15%);
 	}
 	a:hover, .selected a {
-		color:darken(@colourLink, 15%);
+		color:darken(@colour-links, 15%);
 	}
 	a:active, a:focus {
-		outline:1px dotted @colourKeyline;
+		outline:1px dotted @colour-keyline;
 		outline-offset:1px;
 	}
 
@@ -126,14 +126,14 @@ a {
 hr {
 	height:1px;
 	padding:0;
-	margin:0 0 @typeBlankline;
+	margin:0 0 @type-blankline;
 	border:0;
-	background:@colourKeyline;
+	background:@colour-keyline;
 }
 
 /* Tables */
 table {
-	margin-bottom:@typeBlankline;
+	margin-bottom:@type-blankline;
 	border:none;
 }
 	caption, th, td {

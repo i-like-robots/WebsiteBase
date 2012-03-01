@@ -1,6 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    20/02/2012
+ * Modified:    01/03/2012
  * Description: Useful classes for constructing page layout
  */
 
@@ -28,6 +28,14 @@
 	left:-9999px;
 }
 
+/* Hidden when JS available */
+.js-hide {
+	display:none;
+}
+	.no-js .js-hide {
+		display:inherit;
+	}
+
 /* Inline soft reset */
 .base {
 	margin:0;
@@ -42,6 +50,6 @@
 	}
 
 /* Clearfix */
-.cf:after {
+.cf {
 	.clearfix();
 }
