@@ -1,14 +1,14 @@
 # WebsiteBase
 
-[WebsiteBase](http://i-like-robots.github.com/WebsiteBase) is more than a boilerplate. As well as normalising and fixing inconsistant browser styles it attempts to add common sense and boundries to your code. WebsiteBase attempts to keep everyone on the same page over the life of a project as well as helping developers hit the ground running.
+[WebsiteBase](http://i-like-robots.github.com/WebsiteBase) is more than a boilerplate. It combines ideas from [OOCSS](http://oocss.org/) and [SMACSS](http://smacss.com) to help create a maintainable code base for large scale websites.
 
 * Documented CSS caveats and code notes
-* Very organised project structure
-* Guidelines for stylesheet and Javascript coding style
+* Organised project structure
+* Guidelines for stylesheet and Javascript code style
 * Cross-browser form elements
+* Nestable grid
 * Useful layout classes to get stuff done
-* Basic Internet Explorer 6/7 fixes
-
+* Basic legacy Internet Explorer fixes
 
 Written by [Matt Hinchliffe](http://www.maketea.co.uk)
 
