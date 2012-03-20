@@ -1,6 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    28/02/2012
+ * Modified:    20/03/2012
  * Description: Useful classes for formatting content
  */
 
@@ -45,7 +45,7 @@
 		clear:left;
 		padding-right:5px;
 	}
-		.inline-definitions dt::after {
+		.inline-definitions dt:after {
 			content:':'
 		}
 
@@ -53,7 +53,7 @@
 .numbered-definitions {
 	counter-reset:numbered;
 }
-	.numbered-definitions dt::before {
+	.numbered-definitions dt:before {
 		counter-increment:numbered;
 		content:counter(numbered) '. ';
 	}
@@ -66,10 +66,10 @@
 	.tag-list li {
 		display:inline;
 	}
-		.tag-list li::after {
+		.tag-list li:after {
 			content:',\0000a0'; /* Non-breaking space */
 		}
-			.tag-list li:last-child::after {
+			.tag-list li:last-child:after {
 				content:normal;
 			}
 
@@ -81,9 +81,9 @@
 		float:left;
 		display:block;
 	}
-		.separated-list li::before {
+		.separated-list li:before {
 			content:'\0000a0\0000a0|\0000a0\0000a0'; /* Non-breaking space */
 		}
-			.separated-list li:first-child::before {
+			.separated-list li:first-child:before {
 				content:normal;
 			}

@@ -6,24 +6,24 @@
 
 /* base */
 .media {
-	.clearfix();
+	display:block;
+	overflow:hidden;
 }
 	.media .img {
 		float:left;
-		margin-right:10px;
+		margin-right:30px;
 	}
 	.media .img-ext {
 		float:right;
-		margin-right:0;
-		margin-left:10px;
+		margin-left:30px;
 	}
-		.media .img img {
+		.media .img img,
+		.media .img-ext img {
 			display:block;
 		}
 		.media .img .details {
 			padding:10px;
 		}
-
-	.modal-content .media {
-		margin:10px;
+	.media .body {
+		overflow:hidden; // Magic non-wrapping capabilities
 	}

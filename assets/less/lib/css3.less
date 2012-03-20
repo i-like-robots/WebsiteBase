@@ -1,0 +1,57 @@
+/**
+ * Author:   Matt Hinchliffe <www.maketea.co.uk>
+ * Modified: 20/03/2012
+ */
+
+// Box sizing
+.box-sizing(@sizing) {
+	-webkit-box-sizing:@sizing;
+	   -moz-box-sizing:@sizing;
+	        box-sizing:@sizing;
+}
+
+// Border radius
+.border-radius(@radius) {
+	-webkit-border-radius:@radius;
+	   -moz-border-radius:@radius;
+	        border-radius:@radius;
+}
+
+// Drop shadows
+.box-shadow(@x, @y, @blur, @colour) {
+	-webkit-box-shadow:@x @y @blur @colour;
+	   -moz-box-shadow:@x @y @blur @colour;
+	        box-shadow:@x @y @blur @colour;
+}
+.inset-shadow(@x, @y, @blur, @colour) {
+	-webkit-box-shadow:inset @x @y @blur @colour;
+	   -moz-box-shadow:inset @x @y @blur @colour;
+	        box-shadow:inset @x @y @blur @colour;
+}
+
+// Gradients
+.linear-gradient(@origin, @startColor, @endColor) {
+	background:mix(@startColor, @endColor, 50%) repeat-x;
+	background-image:-webkit-linear-gradient(@origin, @startColor, @endColor);
+	background-image:   -moz-linear-gradient(@origin, @startColor, @endColor);
+	background-image:    -ms-linear-gradient(@origin, @startColor, @endColor);
+	background-image:     -o-linear-gradient(@origin, @startColor, @endColor);
+	background-image:        linear-gradient(to @origin, @startColor, @endColor);
+}
+.radial-gradient(@startColor, @endColor, @shape: circle) {
+	background:mix(@startColor, @endColor, 50%) repeat-x;
+	background-image:-webkit-radial-gradient(center, @shape, @startColor, @endColor);
+	background-image:   -moz-radial-gradient(center, @shape, @startColor, @endColor);
+	background-image:    -ms-radial-gradient(center, @shape, @startColor, @endColor);
+	background-image:     -o-radial-gradient(center, @shape, @startColor, @endColor);
+	background-image:        radial-gradient(center, @shape, @startColor, @endColor);
+}
+
+// Transitions
+.transition(@property:all, @time:.25s, @easing:ease) {
+	-webkit-transition:@property @time @easing;
+	   -moz-transition:@property @time @easing;
+	    -ms-transition:@property @time @easing;
+	     -o-transition:@property @time @easing;
+	        transition:@property @time @easing;
+}

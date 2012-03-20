@@ -1,0 +1,66 @@
+/**
+ * Author:      Matt Hinchliffe <www.maketea.co.uk>
+ * Modified:    20/03/2012
+ * Description: Classes for styling text content.
+ */
+
+/* Webfonts */
+@font-face {
+	font-family:'';
+	font-weight:normal;
+	src:url('/assets/fonts/*.eot');
+	src:url('/assets/fonts/*.eot?#iefix') format('eot'),
+	    url('/assets/fonts/*.woff') format('woff'),
+	    url('/assets/fonts/*.ttf') format('truetype');
+}
+
+/* Text alignment */
+.align-left {
+	text-align:left;
+}
+.align-centre,
+.align-center {
+	text-align:center;
+}
+.align-right {
+	text-align:right;
+}
+
+/* Font size variations <http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/> */
+.nano {
+	.em(11);
+}
+.milli {
+	.em(12);
+}
+.kilo {
+	.em(18);
+}
+.mega {
+	.em(24, @type-size, 24);
+}
+.giga {
+	.em(30, @type-size, 30);
+}
+
+/* Font face variations */
+.alt-text { font-family:@font-serif; }
+
+/* Colour variations */
+.alpha {}
+.beta {}
+.gamma {}
+.delta {}
+.epsilon {}
+.zeta {}
+
+/* Alternatively coloured links */
+a.alt, .alt-links a {
+	color:@colour-alt;
+}
+	a.alt:visited, .alt-links a:visited {
+		color:desaturate(@colour-alt, 15%);
+	}
+	a.alt:hover, .alt-links a:hover {
+		color:darken(@colour-alt, 15%);
+	}

@@ -1,60 +1,19 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    28/02/2012
+ * Modified:    20/03/2012
  * Description: Styling for default elements
  */
 
-html, body {
-	min-height:100%;
+html {
+	font-size:62.5%; /* 10px, set in % for consistency in IE6/7 <http://clagnut.com/blog/348/#c790> and useful if you decide to use rem units */
 }
-	html {
-		overflow-y:scroll; /* Maintain scroll bar to avoid page jumping */
-		font-size:62.5%; /* 10px, set in % for consistency in IE6/7 <http://clagnut.com/blog/348/#c790> and useful if you decide to use rem units */
-	}
-	body {
-		.em( @type-size, 10 );
-		line-height:@type-leading;
-		font-family:@font-sans;
-		color:#000;
-		background:#fff;
-	}
-
-/* Headers as class names: */
-/* I took the idea of using duplicate class names from OOCSS, it allows your markup to define */
-/* the correct structure when the design does not take this into account. */
-.heading(@size, @leading: @type-leading, @margin: @type-blankline) {
-	margin:0 0 (@margin / @size + 0em);
-	font-size:@size / @type-size + 0em;
-	line-height:@leading / @size;
+body {
+	.em( @type-size, 10 );
+	line-height:@type-leading;
+	font-family:@font-sans;
+	color:#000;
+	background:#fff;
 }
-
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
-	font-weight:bold;
-}
-	h1, .h1 {
-		.heading(48, 60, 12);
-	}
-	h2, .h2 {
-		.heading(36, 45, 12);
-	}
-	h3, .h3 {
-		.heading(24, 30, 6);
-	}
-	h4, .h4 {
-		.heading(20, 30, 6);
-	}
-	h5, .h5 {
-		.heading(18, 24, 9);
-	}
-	h6, .h6 {
-		font-weight:bold;
-		.heading(16, 18, 6);
-	}
 
 dl {
 	margin:0;
@@ -74,10 +33,10 @@ blockquote, q, cite {
 		blockquote .quotation { /* Defined using a class as citations must also be within a paragraph */
 			text-indent:-0.5em;
 		}
-		blockquote .quotation::before, q::before { /* Correct CSS3 (::) pseudo-elements */
+		blockquote .quotation:before, q:before {
 			content:'\201C';
 		}
-		blockquote .quotation::after, q::after {
+		blockquote .quotation:after, q:after {
 			content:'\201D';
 		}
 	cite {
