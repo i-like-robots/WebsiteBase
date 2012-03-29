@@ -1,6 +1,6 @@
 /**
  * Author:   Matt Hinchliffe <www.maketea.co.uk>
- * Modified: 20/03/2012
+ * Modified: 29/03/2012
  */
 
 // Box sizing
@@ -30,13 +30,13 @@
 }
 
 // Gradients
-.linear-gradient(@origin, @startColor, @endColor) {
+.linear-gradient(@angle, @startColor, @endColor) {
 	background:mix(@startColor, @endColor, 50%) repeat-x;
-	background-image:-webkit-linear-gradient(@origin, @startColor, @endColor);
-	background-image:   -moz-linear-gradient(@origin, @startColor, @endColor);
-	background-image:    -ms-linear-gradient(@origin, @startColor, @endColor);
-	background-image:     -o-linear-gradient(@origin, @startColor, @endColor);
-	background-image:        linear-gradient(to @origin, @startColor, @endColor);
+	background-image:-webkit-linear-gradient(@angle, @startColor, @endColor);
+	background-image:   -moz-linear-gradient(@angle, @startColor, @endColor);
+	background-image:    -ms-linear-gradient(@angle, @startColor, @endColor);
+	background-image:     -o-linear-gradient(@angle, @startColor, @endColor);
+	background-image:        linear-gradient(@angle, @startColor, @endColor);
 }
 .radial-gradient(@startColor, @endColor, @shape: circle) {
 	background:mix(@startColor, @endColor, 50%) repeat-x;

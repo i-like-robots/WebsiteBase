@@ -1,6 +1,6 @@
 /**
  * Author:   Matt Hinchliffe <www.maketea.co.uk>
- * Modified: 20/03/2012
+ * Modified: 29/03/2012
  */
 
 // Grids container
@@ -8,7 +8,6 @@
 	width:@width - @gutter;
 	padding:0 (@gutter / 2);
 	margin:0 auto;
-	.clearfix();
 }
 
 // Grid
@@ -16,6 +15,7 @@
 	clear:both;
 	max-width:@width;
 	margin-left:@gutter * -1;
+	.clearfix();
 }
 
 // Grid column shared declarations

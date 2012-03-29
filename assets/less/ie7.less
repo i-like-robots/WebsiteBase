@@ -18,7 +18,7 @@ input, select, textarea, button {
 
 /* Select boxes. Padding cannot be applied to a select box so add it to the height */
 select {
-	height:27px; /* 17px 'normal' line-height + padding */
+	height:(@type-size * 1.2) + (@input-padding * 2); /* font size * 'normal' line-height + padding */
 }
 
 /* Buttons render terribly due to a forced border-box style layout */
@@ -41,17 +41,12 @@ a.button {
 	vertical-align:bottom;
 }
 
-/* Lists item margin may not be removed from display:list-item */
-ul.base li,
-ol.base li {
-	display:block;
-}
-
 /* No pseudo elements so just add extra spacing */
 .separated-list li,
 .tag-list li {
-	float:left;
-	display:list-item;
 	margin-left:1em;
-	list-style-type:disc;
 }
+	.tag-list li li:first-child,
+	.separated-list li:first-child {
+		margin-left:0;
+	}
