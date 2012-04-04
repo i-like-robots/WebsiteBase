@@ -18,7 +18,7 @@ input, select, textarea, button {
 
 /* Select boxes. Padding cannot be applied to a select box so add it to the height */
 select {
-	height:(@type-size * 1.2) + (@input-padding * 2); /* font size * 'normal' line-height + padding */
+	height:(@type-size * 1.2) + (@input-padding * 2) + 0px; /* font size * 'normal' line-height + padding */
 }
 
 /* Buttons render terribly due to a forced border-box style layout */
@@ -46,7 +46,7 @@ a.button {
 .tag-list li {
 	margin-left:1em;
 }
-	.tag-list li li:first-child,
+	.tag-list li:first-child,
 	.separated-list li:first-child {
 		margin-left:0;
 	}

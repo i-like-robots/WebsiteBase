@@ -1,7 +1,7 @@
 /**
  * @author Matt Hinchliffe <http://www.maketea.co.uk>
  * @created 12/01/2011
- * @modified 29/03/2012
+ * @modified 03/04/2012
  * @package Your project
  */
 
@@ -27,7 +27,7 @@ var _views = [], _autoload = function()
 }();
 
 
-// Execute methods registered within _views registered with _autoload.
+// Execute methods within _views registered with _autoload.
 jQuery(function()
 {
 	for (var i = 0; i < _autoload.length; i++)

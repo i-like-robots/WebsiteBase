@@ -45,6 +45,6 @@ a.button {
 .separated-list li, .tag-list li {
   margin-left: 1em;
 }
-.tag-list li li:first-child, .separated-list li:first-child {
+.tag-list li:first-child, .separated-list li:first-child {
   margin-left: 0;
 }

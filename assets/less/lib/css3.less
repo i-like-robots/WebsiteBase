@@ -1,6 +1,6 @@
 /**
  * Author:   Matt Hinchliffe <www.maketea.co.uk>
- * Modified: 29/03/2012
+ * Modified: 04/04/2012
  */
 
 // Box sizing
@@ -38,13 +38,13 @@
 	background-image:     -o-linear-gradient(@angle, @startColor, @endColor);
 	background-image:        linear-gradient(@angle, @startColor, @endColor);
 }
-.radial-gradient(@startColor, @endColor, @shape: circle) {
+.radial-gradient(@startColor, @endColor, @from: 0, @to: 100%, @shape: circle, @origin: center) {
 	background:mix(@startColor, @endColor, 50%) repeat-x;
-	background-image:-webkit-radial-gradient(center, @shape, @startColor, @endColor);
-	background-image:   -moz-radial-gradient(center, @shape, @startColor, @endColor);
-	background-image:    -ms-radial-gradient(center, @shape, @startColor, @endColor);
-	background-image:     -o-radial-gradient(center, @shape, @startColor, @endColor);
-	background-image:        radial-gradient(center, @shape, @startColor, @endColor);
+	background-image:-webkit-radial-gradient(@origin, @shape, @startColor @from, @endColor @to);
+	background-image:   -moz-radial-gradient(@origin, @shape, @startColor @from, @endColor @to);
+	background-image:    -ms-radial-gradient(@origin, @shape, @startColor @from, @endColor @to);
+	background-image:     -o-radial-gradient(@origin, @shape, @startColor @from, @endColor @to);
+	background-image:        radial-gradient(@origin, @shape, @startColor @from, @endColor @to);
 }
 
 // Transitions
