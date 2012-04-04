@@ -1,58 +1,49 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    01/03/2012
+ * Modified:    04/04/2012
  * Description: Styles for laying out consistent forms
  */
 
-/* form > ( fieldset > legend + ) ul.form-fields > li > label + input/select/textarea */
-.form-fields {
-	margin:0;
-	padding:0;
-	list-style-type:none;
-}
-	.form-fields > li {
-		margin-bottom:@type-blankline;
-	}
-
-/* Checkboxes and radio buttons */
-.radio-field input,
-.checkbox-field input {
-	vertical-align:baseline;
-}
-.radio-field label,
-.checkbox-field label {
-	display:inline;
-	padding:0 0.25em;
+/* form > ( fieldset > legend + ) ul[class=form-fields] > li > label + input/select/textarea */
+.form-fields > li {
+	margin-bottom:@type-blankline;
 }
 
-/* Inline labels */
-.inline-field label,
-.inline-field input,
-.inline-field select,
-.inline-field textarea {
-	display:inline-block;
-}
-	.inline-field label {
-		padding-top:@input-padding + @input-borderwidth;
-		padding-right:15px;
-		line-height:normal; /* Match input/select 'normal' line height */
+	/* Checkboxes and radio buttons */
+	.radio-field input,
+	.checkbox-field input {
+		vertical-align:baseline;
+	}
+	.radio-field label,
+	.checkbox-field label {
+		display:inline;
+		padding:0 0.25em;
 	}
 
-/* Multiple inputs on single line */
-.horizontal-fields {
-	margin:0;
-	padding:0;
-	list-style-type:none;
-	.clearfix();
-}
-	.horizontal-fields > li {
-		float:left;
-		margin-left:10px;
+	/* Inline labels */
+	.inline-field label,
+	.inline-field input,
+	.inline-field select,
+	.inline-field textarea {
+		display:inline-block;
 	}
-		.horizontal-fields > li:first-child {
-			margin-left:0;
+		.inline-field label {
+			padding-top:@input-padding + @input-borderwidth;
+			padding-right:15px;
+			line-height:normal; /* Match input/select 'normal' line height */
 		}
-		.horizontal-fields input,
-		.horizontal-fields select {
-			width:auto;
+
+	/* Multiple field */
+	.multi-field {
+		margin:0;
+		padding:0;
+		list-style-type:none;
+		overflow:hidden;
+	}
+		.multi-field li {
+			float:left;
+			padding-left:1em;
 		}
+			.multi-field li:first-child {
+				padding-left:0;
+			}
