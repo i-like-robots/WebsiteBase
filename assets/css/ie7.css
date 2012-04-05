@@ -1,54 +1,9 @@
-/**
- * Author:   Matt Hinchliffe <www.maketea.co.uk>
- * Modified: 29/03/2012
- */
-/**
- * Author:   Matt Hinchliffe <www.maketea.co.uk>
- * Modified: 20/03/2012
- */
-/* Forcing hasLayout fixes the gaps between list-items bug */
-li {
-  zoom: 1;
-}
-/* Blockquotes */
-blockquote {
-  display: block;
-}
-input,
-select,
-textarea,
-button {
-  vertical-align: middle;
-}
-/* Select boxes. Padding cannot be applied to a select box so add it to the height */
-select {
-  height: 27.2px;
-  /* font size * 'normal' line-height + padding */
-
-}
-/* Buttons render terribly due to a forced border-box style layout */
-button,
-input[type=button],
-input[type=submit],
-input[type=reset],
-a.button {
-  display: inline;
-  zoom: 1;
-  height: auto !important;
-  overflow: visible;
-  line-height: 1;
-}
-/* Form checkboxes and radio buttons alignment, align checkboxes, radios, text inputs with their label */
-.radio input {
-  vertical-align: text-top;
-}
-.checkbox input {
-  vertical-align: bottom;
-}
-/* No pseudo elements so just add extra spacing */
-.separated-list li, .tag-list li {
-  margin-left: 1em;
-}
-.tag-list li:first-child, .separated-list li:first-child {
-  margin-left: 0;
-}
+li{zoom:1;}
+blockquote{display:block;}
+input,select,textarea,button{vertical-align:middle;}
+select{height:27.2px;}
+button,input[type=button],input[type=submit],input[type=reset],a.button{display:inline;zoom:1;height:auto !important;overflow:visible;line-height:1;}
+.radio input{vertical-align:text-top;}
+.checkbox input{vertical-align:bottom;}
+.separated-list li,.tag-list li{margin-left:1em;}
+.tag-list li:first-child,.separated-list li:first-child{margin-left:0;}
