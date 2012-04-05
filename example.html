@@ -1,17 +1,19 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
 
-	<title>WebsiteBase</title>
+	<title>Example &mdash; WebsiteBase</title>
 
+	<!-- DEVELOPMENT ONLY
 	<link rel="stylesheet/less" href="assets/less/base.less" />
 	<script src="assets/js/utils/less-1.2.1.min.js"></script>
+	-->
+	<link rel="stylesheet" href="assets/css/base.css" />
 
 	<!--[if lte IE 7]><link rel="stylesheet" href="assets/css/ie7.css"/><![endif]-->
-	<!--[if lte IE 6]><link rel="stylesheet" href="assets/css/ie6.css"/><![endif]-->
 
 	<link rel="Shortcut Icon" type="image/png" href="assets/img/favicon.ico" />
 	<link rel="apple-touch-icon" href="assets/img/favicon_touch.png" />
@@ -24,7 +26,7 @@
 	-->
 
 </head>
-<body>
+<body data-views="">
 
 	<div id="container" class="container">
 
@@ -40,8 +42,8 @@
 		<hr />
 
 		<!-- text content -->
-		<section>
-			<h1 id="text">Text content</h1>
+		<section id="text">
+			<h1>Text content</h1>
 
 			<p class="small-text">
 				Bacon ipsum dolor sit amet incididunt magna shank consequat
@@ -193,8 +195,8 @@
 		<hr />
 
 		<!-- forms -->
-		<section>
-			<h1 id="forms">Forms</h1>
+		<section id="forms">
+			<h1>Forms</h1>
 
 			<form method="post" action="">
 
@@ -203,7 +205,7 @@
 						<span class="h6">Contact details</span>
 					</legend>
 
-					<ul class="form-fields">
+					<ul class="base form-fields">
 						<li>
 							<label for="name">Name <dfn title="required">*</dfn></label>
 							<input type="text" name="name" id="name" required />
@@ -220,7 +222,7 @@
 						<span class="h6">Delivery details</span>
 					</legend>
 
-					<ul class="form-fields">
+					<ul class="base form-fields">
 						<li>
 							<label for="postcode">Postcode</label>
 							<input type="text" name="postcode" id="postcode" size="7" />
@@ -231,37 +233,41 @@
 							<label for="street">Street address <dfn title="required">*</dfn></label>
 							<input type="text" name="street" id="street" required />
 						</li>
-					</ul>
-					<ul class="form-fields horizontal-fields">
 						<li>
-							<label for="city">City</label>
-							<select name="city" id="city">
-								<option value="1">London</option>
-								<option value="2">Paris</option>
-								<option value="3">Berlin</option>
-							</select>
-						</li>
-						<li>
-							<label for="country">Country</label>
-							<select name="country" id="country" disabled>
-								<option value="UK">United Kingdom</option>
-							</select>
+							<ul class="multi-field">
+								<li>
+									<label for="city">City</label>
+									<select name="city" id="city">
+										<option value="1">London</option>
+										<option value="2">Paris</option>
+										<option value="3">Berlin</option>
+									</select>
+								</li>
+								<li>
+									<label for="country">Country</label>
+									<select name="country" id="country" disabled>
+										<option value="UK">United Kingdom</option>
+									</select>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</fieldset>
 
 				<fieldset>
-					<ul class="form-fields">
+					<ul class="base form-fields">
 						<li>
 							<label for="message">Message</label>
 							<textarea name="message" id="message" rows="20" cols="85"></textarea>
 						</li>
 						<li class="checkbox-field">
-							<input type="checkbox" name="agree" id="agree" />
-							<label for="agree">Agree</label>
+							<label for="agree">
+								<input type="checkbox" name="agree" id="agree" />
+								Agree
+							</label>
 						</li>
 						<li class="radio-field">
-							<ul class="base">
+							<ul class="multi-field">
 								<li>
 									<label for="radio1">
 										<input type="radio" name="radios" id="radio1" />
@@ -276,24 +282,9 @@
 								</li>
 								<li>
 									<label for="radio3">
-									<input type="radio" name="radios" id="radio3" />
-									Radio 3</label>
-								</li>
-							</ul>
-						</li>
-						<li class="checkbox-field">
-							<ul class="horizontal-fields">
-								<li>
-									<input type="checkbox" name="spam1" id="spam1" checked />
-									<label for="spam1">Spam 1</label>
-								</li>
-								<li>
-									<input type="checkbox" name="spam2" id="spam2" />
-									<label for="spam2">Spam 2</label>
-								</li>
-								<li>
-									<input type="checkbox" name="spam3" id="spam3" />
-									<label for="spam3">Spam 3</label>
+										<input type="radio" name="radios" id="radio3" />
+										Radio 3
+									</label>
 								</li>
 							</ul>
 						</li>
@@ -310,57 +301,57 @@
 		<hr />
 
 		<!-- grid -->
-		<section>
-			<h1 id="grid">Grid</h1>
+		<section id="grid">
+			<h1>Grid</h1>
 
 			<div class="grid grid-example">
 
-				<div class="column span-1"></div>
-				<div class="column span-11"></div>
+				<div class="span-01"></div>
+				<div class="span-11"></div>
 
-				<div class="column span-2"></div>
-				<div class="column span-10"></div>
+				<div class="span-02"></div>
+				<div class="span-10"></div>
 
-				<div class="column span-3"></div>
-				<div class="column span-9"></div>
+				<div class="span-03"></div>
+				<div class="span-09"></div>
 
-				<div class="column span-4"></div>
-				<div class="column span-8"></div>
+				<div class="span-04"></div>
+				<div class="span-08"></div>
 
-				<div class="column span-5"></div>
-				<div class="column span-7"></div>
+				<div class="span-05"></div>
+				<div class="span-07"></div>
 
-				<div class="column span-6"></div>
-				<div class="column span-6"></div>
+				<div class="span-06"></div>
+				<div class="span-06"></div>
 			</div>
 
 			<h2>Nested grid</h2>
 
 			<div class="grid grid-example">
-				<div class="column span-6">
+				<div class="span-6">
 					<div class="grid">
-						<div class="column span-2"></div>
-						<div class="column span-2"></div>
-						<div class="column span-2"></div>
+						<div class="span-02"></div>
+						<div class="span-02"></div>
+						<div class="span-02"></div>
 					</div>
 				</div>
-				<div class="column span-6">
+				<div class="span-6">
 					<div class="grid">
-						<div class="column span-3"></div>
-						<div class="column span-3"></div>
+						<div class="span-03"></div>
+						<div class="span-03"></div>
 					</div>
 				</div>
-				<div class="column span-8">
+				<div class="span-8">
 					<div class="grid">
-						<div class="column span-4"></div>
-						<div class="column span-4"></div>
+						<div class="span-04"></div>
+						<div class="span-04"></div>
 					</div>
 				</div>
-				<div class="column span-4">
+				<div class="span-4">
 					<div class="grid">
-						<div class="column span-1"></div>
-						<div class="column span-1"></div>
-						<div class="column span-2"></div>
+						<div class="span-01"></div>
+						<div class="span-01"></div>
+						<div class="span-02"></div>
 					</div>
 				</div>
 
@@ -371,7 +362,7 @@
 
 	<!-- Scripts -->
 	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
-	<script>if (!window.jQuery) document.writeln('<scr' + 'ipt src="assets/js/jquery-1.7.1.min.js"></scr' + 'ipt>')</script>
+	<script>if (!window.jQuery) document.writeln('<scr' + 'ipt src="assets/js/lib/jquery-1.7.1.min.js"></scr' + 'ipt>')</script>
 	<script src="assets/js/project.js"></script>
 
 </body>

@@ -1,6 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    01/03/2012
+ * Modified:    20/03/2012
  * Description: based on Twitter Bootstrap grid. Allows nested grids, no first or last classes.
  *
  * Layout sizes:
@@ -12,19 +12,19 @@
  * Example:
  * <div class="container">
  *     <div class="grid">
- *         <div class="column span-4>
+ *         <div class="span-04>
  *             Column 1
  *         </div>
- *         <div class="column span-4>
+ *         <div class="span-04>
  *             Column 2
  *         </div>
- *         <div class="column span-4>
+ *         <div class="span-04>
  *             Column 3
  *             <div class="grid">
- *                 <div class="column span-2">
+ *                 <div class="span-02">
  *                     Nested column 1
  *                 </div>
- *                 <div class="column span-2">
+ *                 <div class="span-02">
  *                     Nested column 2
  *                 </div>
  *             </div>
@@ -34,28 +34,28 @@
  */
 
 .container {
-	.grid-container();
+	.grid-container()
 }
 	.grid {
-		.grid-declaration();
-		.clearfix();
+		.grid-declaration()
 	}
-		.column {
-			.grid-column-declaration();
+		.grid [class|="span"] {
+			.grid-column()
 		}
-		.span-1  { .grid-column-width(1) }
-		.span-2  { .grid-column-width(2) }
-		.span-3  { .grid-column-width(3) }
-		.span-4  { .grid-column-width(4) }
-		.span-5  { .grid-column-width(5) }
-		.span-6  { .grid-column-width(6) }
-		.span-7  { .grid-column-width(7) }
-		.span-8  { .grid-column-width(8) }
-		.span-9  { .grid-column-width(9) }
-		.span-10 { .grid-column-width(10) }
-		.span-11 { .grid-column-width(11) }
-		.span-12 { .grid-column-width(12) }
+		.span-01 { .grid-colwidth(01) }
+		.span-02 { .grid-colwidth(02) }
+		.span-03 { .grid-colwidth(03) }
+		.span-04 { .grid-colwidth(04) }
+		.span-05 { .grid-colwidth(05) }
+		.span-06 { .grid-colwidth(06) }
+		.span-07 { .grid-colwidth(07) }
+		.span-08 { .grid-colwidth(08) }
+		.span-09 { .grid-colwidth(09) }
+		.span-10 { .grid-colwidth(10) }
+		.span-11 { .grid-colwidth(11) }
+		.span-12 { .grid-colwidth(12) }
 
-	.row {
-		margin-bottom:@type-blankline;
-	}
+	.row { margin-bottom:@type-blankline; }
+
+@media only screen and (min-width:768px) and (max-width:959px) {}
+@media only screen and (max-width:767px) {}

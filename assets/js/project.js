@@ -1,17 +1,12 @@
 /**
  * @author Matt Hinchliffe <http://www.maketea.co.uk>
  * @created 12/01/2011
- * @modified 22/02/2012
- * @package yourProject
+ * @modified 03/04/2012
+ * @package Your project
  */
 
-var project = 'yourProject';
-
-// Project namespace and version number
-window[project] = window[project] || { _autoload: [] };
-
 // Replace no-js
-document.body.className = document.body.className.replace(/\bno-js\b/, '');
+document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, '');
 
 // Quick wrapper for a missing console
 if ( ! window.console)
@@ -24,16 +19,27 @@ if ( ! window.console)
 	}
 }
 
-// Execute methods registered within [project]._autoload in reverse order.
+// Get required views
+var _views = [], _autoload = function()
+{
+	var v = document.body.getAttribute('data-views');
+	return ['global'].concat( v && v.length ? v.split(' ') : [] );
+}();
+
+
+// Execute methods within _views registered with _autoload.
 jQuery(function()
 {
-	for (var i = 0; i < window[project]._autoload.length; i++)
+	for (var i = 0; i < _autoload.length; i++)
 	{
-		for (var method in window[project][ window[project]._autoload[i] ])
+		if ( _views[ _autoload[i] ] )
 		{
-			if (typeof window[project][ window[project]._autoload[i] ][method] == 'function')
+			for (var method in _views[ _autoload[i] ])
 			{
-				window[project][ window[project]._autoload[i] ][method]();
+				if ( typeof _views[ _autoload[i] ][method] === 'function' )
+				{
+					_views[ _autoload[i] ][method]();
+				}
 			}
 		}
 	}

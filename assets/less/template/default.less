@@ -31,8 +31,15 @@ h6, .h6 {
 	.box-shadow(0, 3px, 12px, rgba(0, 0, 0, 0.15));
 }
 
+.block-links a {
+	margin-right:1px;
+	padding:5px 5px 4px;
+	text-decoration:none;
+	background:@colour-highlight;
+}
+
 /* grid example */
-.grid-example .column {
+.grid-example [class|=span] {
 	min-height:2em;
 	margin-bottom:20px;
 	background-color:rgba(0, 0, 0, 0.1);

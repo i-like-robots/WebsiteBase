@@ -1,32 +1,36 @@
-﻿/**
+/**
  * Author:   Matt Hinchliffe <www.maketea.co.uk>
- * Modified: 28/02/2012
+ * Modified: 29/03/2012
  */
 
-// Vars
+// Global vars
 @import "variables.less";
 
-// Mixins
-@import "mixins/utilities.less";
-@import "mixins/css3.less";
-@import "mixins/grid.less";
-
-// Default elements
-@import "default/reset.less";
-@import "default/elements.less";
+// Base libraries
+@import "lib/utilities.less";
+@import "lib/css3.less";
+@import "lib/grid.less";
+@import "lib/normalize.less";
 
 // Content styles
-@import "content/text.less";
-@import "content/media.less";
-@import "content/formatting.less";
+@import "content/elements.less";
+@import "content/headings.less";
+@import "content/text-styles.less";
+@import "content/lists.less";
 
 // Forms
 @import "forms/elements.less";
 @import "forms/layouts.less";
 
+// Modules
+@import "modules/media.less";
+@import "modules/nameplate.less";
+
+// Plugins
+
 // Layout
-@import "layout/utilities.less";
+@import "layout/utils.less";
 @import "layout/grid.less";
 
 // Site skin
-@import "skin/skin.less";
+@import "template/default.less";

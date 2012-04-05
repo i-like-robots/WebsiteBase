@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 
 	<meta charset="utf-8" />
@@ -7,11 +7,13 @@
 
 	<title>WebsiteBase</title>
 
+	<!-- DEVELOPMENT ONLY
 	<link rel="stylesheet/less" href="assets/less/base.less" />
 	<script src="assets/js/utils/less-1.2.1.min.js"></script>
+	-->
+	<link rel="stylesheet" href="assets/css/base.css" />
 
 	<!--[if lte IE 7]><link rel="stylesheet" href="assets/css/ie7.css"/><![endif]-->
-	<!--[if lte IE 6]><link rel="stylesheet" href="assets/css/ie6.css"/><![endif]-->
 
 	<link rel="Shortcut Icon" type="image/png" href="assets/img/favicon.ico" />
 	<link rel="apple-touch-icon" href="assets/img/favicon_touch.png" />
@@ -24,7 +26,7 @@
 	-->
 
 </head>
-<body>
+<body data-views="">
 
 	<div id="container" class="container">
 
@@ -54,7 +56,7 @@
 
 	<!-- Scripts -->
 	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script>
-	<script>if (!window.jQuery) document.writeln('<scr' + 'ipt src="assets/js/jquery-1.7.1.min.js"></scr' + 'ipt>')</script>
+	<script>if (!window.jQuery) document.writeln('<scr' + 'ipt src="assets/js/lib/jquery-1.7.1.min.js"></scr' + 'ipt>')</script>
 	<script src="assets/js/project.js"></script>
 
 </body>

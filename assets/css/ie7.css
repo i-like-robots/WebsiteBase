@@ -1,8 +1,9 @@
+li{zoom:1;}
 blockquote{display:block;}
 input,select,textarea,button{vertical-align:middle;}
-select{height:27px;}
+select{height:27.2px;}
 button,input[type=button],input[type=submit],input[type=reset],a.button{display:inline;zoom:1;height:auto !important;overflow:visible;line-height:1;}
 .radio input{vertical-align:text-top;}
 .checkbox input{vertical-align:bottom;}
-ul.base li,ol.base li{display:block;}
-.separated-list li,.tag-list li{float:left;display:list-item;margin-left:1em;list-style-type:disc;}
+.separated-list li,.tag-list li{margin-left:1em;}
+.tag-list li:first-child,.separated-list li:first-child{margin-left:0;}
