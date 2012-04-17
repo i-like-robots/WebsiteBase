@@ -1,8 +1,7 @@
 /**
  * @author Matt Hinchliffe <http://www.maketea.co.uk>
  * @created 12/01/2011
- * @modified 03/04/2012
- * @package Your project
+ * @modified 05/04/2012
  */
 
 // Replace no-js
@@ -16,7 +15,7 @@ if ( ! window.console)
 	console.error = console.log = function(i)
 	{
 		console.history.push(i);
-	}
+	};
 }
 
 // Get required views
@@ -27,8 +26,8 @@ var _views = [], _autoload = function()
 }();
 
 
-// Execute methods within _views registered with _autoload.
-jQuery(function()
+// Execute methods registered within _views registered with _autoload.
+function _boot()
 {
 	for (var i = 0; i < _autoload.length; i++)
 	{
@@ -43,4 +42,6 @@ jQuery(function()
 			}
 		}
 	}
-});
+}
+
+jQuery(document).ready(_boot);

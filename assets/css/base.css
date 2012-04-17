@@ -67,7 +67,7 @@ a.alt,.alt-links a{color:#666666;}
 a.alt:visited,.alt-links a:visited{color:#666666;}
 a.alt:hover,.alt-links a:hover{color:#404040;}
 .inline-list{padding-left:0;list-style-type:none;}
-.inline-list li{display:inline;margin:0;}
+.inline-list li{display:inline;}
 .block-links{padding-left:0;list-style-type:none;}
 .block-links li{display:inline;}
 .block-links a{float:left;display:block;}
