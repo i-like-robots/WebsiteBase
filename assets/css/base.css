@@ -60,15 +60,15 @@ h6,.h6{font-weight:bold;margin:0 0 0.375em;font-size:1em;line-height:1.125;}
 .nano{font-size:0.6875em;}
 .milli{font-size:0.75em;}
 .kilo{font-size:1.125em;}
-.mega{font-size:1.5em;line-height:1em;}
-.giga{font-size:1.875em;line-height:1em;}
+.mega{font-size:1.5em;line-height:1;}
+.giga{font-size:1.875em;line-height:1;}
 .alt-text{font-family:Cambria,Georgia,serif;}
 a.alt,.alt-links a{color:#666666;}
 a.alt:visited,.alt-links a:visited{color:#666666;}
 a.alt:hover,.alt-links a:hover{color:#404040;}
-.inline-list{padding-left:0;list-style-type:none;}
+.inline-list{padding-left:0;list-style:none;}
 .inline-list li{display:inline;}
-.block-links{padding-left:0;list-style-type:none;}
+.block-links{padding-left:0;list-style:none;}
 .block-links li{display:inline;}
 .block-links a{float:left;display:block;}
 .inline-definitions{overflow:hidden;margin-bottom:1em;}
@@ -106,7 +106,7 @@ button[disabled],input[type=button][disabled],input[type=submit][disabled],input
 .radio-field label,.checkbox-field label{display:inline;padding:0 0.25em;}
 .inline-field label,.inline-field input,.inline-field select,.inline-field textarea{display:inline-block;}
 .inline-field label{padding-top:5px;padding-right:15px;line-height:normal;}
-.multi-field{margin:0;padding:0;list-style-type:none;overflow:hidden;}
+.multi-field{margin:0;padding:0;list-style:none;overflow:hidden;}
 .multi-field li{float:left;padding-left:1em;}
 .multi-field li:first-child{padding-left:0;}
 .media{display:block;overflow:hidden;}
@@ -127,7 +127,7 @@ button[disabled],input[type=button][disabled],input[type=submit][disabled],input
 .js-hide{display:none;}
 .no-js .js-hide{display:block;display:initial;}
 .base{margin:0;padding:0;}
-ul.base,ol.base{list-style-type:none;}
+ul.base,ol.base{list-style:none;}
 img.base{display:block;}
 .cf{*zoom:1;}.cf:before,.cf:after{display:table;content:"";}
 .cf:after{clear:both;}

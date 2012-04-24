@@ -1,6 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    20/03/2012
+ * Modified:    24/04/2012
  * Description: Classes for styling text content.
  */
 
@@ -28,19 +28,21 @@
 
 /* Font size variations <http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/> */
 .nano {
-	.em(11);
+	.em( font-size, 11 );
 }
 .milli {
-	.em(12);
+	.em( font-size, 12);
 }
 .kilo {
-	.em(18);
+	.em( font-size, 18);
 }
 .mega {
-	.em(24, @type-size, 24);
+	.em( font-size, 24 );
+	line-height:1;
 }
 .giga {
-	.em(30, @type-size, 30);
+	.em( font-size, 30 );
+	line-height:1;
 }
 
 /* Font face variations */
