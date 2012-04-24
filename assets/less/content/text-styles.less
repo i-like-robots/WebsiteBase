@@ -44,25 +44,34 @@
 	.em( font-size, 30 );
 	line-height:1;
 }
-
-/* Font face variations */
-.alt-text { font-family:@font-serif; }
+.accent {
+	font-weight:bold;
+	.em( font-size, 18 );
+	text-transform:uppercase;
+}
 
 /* Colour variations */
-.alpha {}
-.beta {}
-.gamma {}
-.delta {}
-.epsilon {}
-.zeta {}
-
-/* Alternatively coloured links */
-a.alt, .alt-links a {
-	color:@colour-alt;
+.alpha {
+	color:@color-alpha;
 }
-	a.alt:visited, .alt-links a:visited {
-		color:desaturate(@colour-alt, 15%);
-	}
-	a.alt:hover, .alt-links a:hover {
-		color:darken(@colour-alt, 15%);
-	}
+.beta {
+	color:@color-beta;
+}
+.gamma {
+	color:@color-gamma;
+}
+.delta {
+	color:@color-delta;
+}
+.epsilon {
+	color:@color-epsilon;
+}
+.brand {
+	color:@color-brand;
+}
+.highlight {
+	color:@color-highlight;
+}
+.attention {
+	color:@color-attention;
+}
