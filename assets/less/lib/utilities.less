@@ -1,17 +1,18 @@
 /**
  * Author:   Matt Hinchliffe <www.maketea.co.uk>
- * Modified: 20/03/2012
+ * Modified: 23/04/2012
  */
 
 // Em calculation
-.em(@required, @context: @type-size) {
+.em(font-size, @required, @context: @type-size) {
 	font-size:@required / @context + 0em;
 }
-.em(@required, @context, @leading) {
-	font-size:@required / @context + 0em;
-	line-height:@leading / @required + 0em;
+.em(height, @required, @context: @type-size) {
+	height:@required / @context + 0em;
 }
-
+.em(line-height, @required, @context: @type-size) {
+	line-height:@required / @context;
+}
 
 // Replace text
 .replacetext() {

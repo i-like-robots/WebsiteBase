@@ -1,6 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    20/03/2012
+ * Modified:    24/04/2012
  * Description: Classes for styling text content.
  */
 
@@ -28,39 +28,50 @@
 
 /* Font size variations <http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/> */
 .nano {
-	.em(11);
+	.em( font-size, 11 );
 }
 .milli {
-	.em(12);
+	.em( font-size, 12);
 }
 .kilo {
-	.em(18);
+	.em( font-size, 18);
 }
 .mega {
-	.em(24, @type-size, 24);
+	.em( font-size, 24 );
+	line-height:1;
 }
 .giga {
-	.em(30, @type-size, 30);
+	.em( font-size, 30 );
+	line-height:1;
 }
-
-/* Font face variations */
-.alt-text { font-family:@font-serif; }
+.accent {
+	font-weight:bold;
+	.em( font-size, 18 );
+	text-transform:uppercase;
+}
 
 /* Colour variations */
-.alpha {}
-.beta {}
-.gamma {}
-.delta {}
-.epsilon {}
-.zeta {}
-
-/* Alternatively coloured links */
-a.alt, .alt-links a {
-	color:@colour-alt;
+.alpha {
+	color:@color-alpha;
 }
-	a.alt:visited, .alt-links a:visited {
-		color:desaturate(@colour-alt, 15%);
-	}
-	a.alt:hover, .alt-links a:hover {
-		color:darken(@colour-alt, 15%);
-	}
+.beta {
+	color:@color-beta;
+}
+.gamma {
+	color:@color-gamma;
+}
+.delta {
+	color:@color-delta;
+}
+.epsilon {
+	color:@color-epsilon;
+}
+.brand {
+	color:@color-brand;
+}
+.highlight {
+	color:@color-highlight;
+}
+.attention {
+	color:@color-attention;
+}

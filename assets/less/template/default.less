@@ -3,8 +3,8 @@
  */
 
 body {
-	color:@colour-default;
-	background:#eee;
+	color:@color-delta;
+	background:@color-keyline;
 }
 
 /* headers */
@@ -12,7 +12,7 @@ h1, .h1 {
 	letter-spacing:-1px;
 }
 h2, .h2 {
-	letter-spacing:-0.5px;
+	letter-spacing:-.5px;
 }
 h3, .h3,
 h4, .h4,
@@ -26,22 +26,25 @@ h6, .h6 {
 	margin-top:2em;
 	margin-bottom:2em;
 	padding:1.5em 30px;
-	background:#fff;
+	background:@color-alpha;
 	.border-radius(16px);
-	.box-shadow(0, 3px, 12px, rgba(0, 0, 0, 0.15));
+	.box-shadow(0, 3px, 12px, rgba(0, 0, 0, .15));
 }
 
 .block-links a {
-	margin-right:1px;
-	padding:5px 5px 4px;
+	margin-right:.25em;
+	padding:0 .5em;
+	line-height:2;
 	text-decoration:none;
-	background:@colour-highlight;
+	color:@color-alpha;
+	background:@color-brand;
+	.border-radius(5px);
 }
 
 /* grid example */
 .grid-example [class|=span] {
 	min-height:2em;
 	margin-bottom:20px;
-	background-color:rgba(0, 0, 0, 0.1);
+	background-color:rgba(0, 0, 0, .1);
 	.border-radius(5px);
 }

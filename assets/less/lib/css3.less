@@ -1,6 +1,6 @@
 /**
  * Author:   Matt Hinchliffe <www.maketea.co.uk>
- * Modified: 04/04/2012
+ * Modified: 30/04/2012
  */
 
 // Box sizing
@@ -19,19 +19,42 @@
 
 // Drop shadows
 .box-shadow(@x, @y, @blur, @colour) {
-	-webkit-box-shadow:@x @y @blur @colour;
-	   -moz-box-shadow:@x @y @blur @colour;
-	        box-shadow:@x @y @blur @colour;
+	-webkit-box-shadow:@arguments;
+	   -moz-box-shadow:@arguments;
+	        box-shadow:@arguments;
 }
 .inset-shadow(@x, @y, @blur, @colour) {
-	-webkit-box-shadow:inset @x @y @blur @colour;
-	   -moz-box-shadow:inset @x @y @blur @colour;
-	        box-shadow:inset @x @y @blur @colour;
+	-webkit-box-shadow:inset @arguments;
+	   -moz-box-shadow:inset @arguments;
+	        box-shadow:inset @arguments;
 }
 
-// Gradients
+// Transforms <http://www.w3.org/TR/css3-2d-transforms/#transform-functions>
+.scale(@scale) {
+	-webkit-transform:scale(@scale);
+	   -moz-transform:scale(@scale);
+	    -ms-transform:scale(@scale);
+	     -o-transform:scale(@scale);
+	        transform:scale(@scale);
+}
+.rotate(@angle:90deg) {
+	-webkit-transform:rotate(@angle);
+	   -moz-transform:rotate(@angle);
+	    -ms-transform:rotate(@angle);
+	     -o-transform:rotate(@angle);
+	        transform:rotate(@angle);
+}
+.translate(@x, @y) {
+	-webkit-transform:translate(@x, @y);
+	   -moz-transform:translate(@x, @y);
+	    -ms-transform:translate(@x, @y);
+	     -o-transform:translate(@x, @y);
+	        transform:translate(@x, @y);
+}
+
+// Gradients <http://dev.w3.org/csswg/css3-images/#linear-gradients>, <http://dev.w3.org/csswg/css3-images/#radial-gradients>
 .linear-gradient(@angle, @startColor, @endColor) {
-	background:mix(@startColor, @endColor, 50%) repeat-x;
+	background:mix(@startColor, @endColor, 50%);
 	background-image:-webkit-linear-gradient(@angle, @startColor, @endColor);
 	background-image:   -moz-linear-gradient(@angle, @startColor, @endColor);
 	background-image:    -ms-linear-gradient(@angle, @startColor, @endColor);
@@ -48,10 +71,10 @@
 }
 
 // Transitions
-.transition(@property:all, @time:.25s, @easing:ease) {
-	-webkit-transition:@property @time @easing;
-	   -moz-transition:@property @time @easing;
-	    -ms-transition:@property @time @easing;
-	     -o-transition:@property @time @easing;
-	        transition:@property @time @easing;
+.transition(@property: all, @time: .25s, @easing: ease) {
+	-webkit-transition:@arguments;
+	   -moz-transition:@arguments;
+	    -ms-transition:@arguments;
+	     -o-transition:@arguments;
+	        transition:@arguments;
 }

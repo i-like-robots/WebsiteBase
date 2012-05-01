@@ -1,6 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    22/03/2012
+ * Modified:    24/04/2012
  * Description: Styling for default elements
  */
 
@@ -8,7 +8,7 @@ html {
 	font-size:62.5%; /* 10px, set in % for consistency in IE6/7 <http://clagnut.com/blog/348/#c790> and useful if you decide to use rem units */
 }
 body {
-	.em( @type-size, 10 );
+	.em( font-size, @type-size, 10 );
 	line-height:@type-leading;
 	font-family:@font-sans;
 }
@@ -29,7 +29,7 @@ blockquote, q, cite {
 		margin:0 40px;
 	}
 		blockquote .quotation { /* Defined using a class as citations must also be within a paragraph */
-			text-indent:-0.5em;
+			text-indent:-.5em;
 		}
 		blockquote .quotation:before, q:before {
 			content:'\201C';
@@ -66,16 +66,16 @@ abbr[title], acronym[title], dfn[title] {
 /* Links */
 a {
 	text-decoration:underline;
-	color:@colour-links;
+	color:@color-brand;
 }
 	a:visited {
-		color:desaturate(@colour-links, 15%);
+		color:desaturate(@color-brand, 15%);
 	}
 	a:hover, .selected a {
-		color:darken(@colour-links, 15%);
+		color:darken(@color-brand, 15%);
 	}
 	a:active, a:focus {
-		outline:1px dotted @colour-keyline;
+		outline:1px dotted @color-keyline;
 		outline-offset:1px;
 	}
 
@@ -85,7 +85,7 @@ hr {
 	padding:0;
 	margin:0 0 @type-blankline;
 	border:0;
-	background:@colour-keyline;
+	background:@color-keyline;
 }
 
 /* Tables */
