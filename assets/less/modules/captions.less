@@ -1,0 +1,22 @@
+/**
+ * Author:      Matt Hinchliffe <www.maketea.co.uk>
+ * Modified:    25/05/2012
+ * Description: Image captions
+ * Example: [class=captioned] > [class=caption] > span
+ */
+.captioned {
+	position:relative;
+	display:block;
+	text-decoration:none;
+}
+html .captioned { // overspecify a little if used for a link
+	color:@color-alpha;
+}
+	.caption {
+		position:absolute;
+		top:0;
+		right:0;
+		left:0;
+		padding:.5em 15px;
+		background:rgba(0, 0, 0, .75);
+	}

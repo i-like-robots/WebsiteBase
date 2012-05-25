@@ -53,7 +53,7 @@ h2,.h2{margin:0 0 0.3333333333333333em;font-size:2.25em;line-height:1.25;}
 h3,.h3{margin:0 0 0.25em;font-size:1.5em;line-height:1.25;}
 h4,.h4{margin:0 0 0.3em;font-size:1.25em;line-height:1.5;}
 h5,.h5{margin:0 0 0.5em;font-size:1.125em;line-height:1.3333333333333332;}
-h6,.h6{font-weight:bold;margin:0 0 0.375em;font-size:1em;line-height:1.125;}
+h6,.h6{margin:0 0 0.375em;font-size:1em;line-height:1.125;}
 @font-face{font-family:'';font-weight:normal;src:url('/assets/fonts/*.eot');src:url('/assets/fonts/*.eot?#iefix') format('eot'),url('/assets/fonts/*.woff') format('woff'),url('/assets/fonts/*.ttf') format('truetype');}.align-left{text-align:left;}
 .align-centre,.align-center{text-align:center;}
 .align-right{text-align:right;}
@@ -95,14 +95,14 @@ label{display:block;white-space:nowrap;}
 label dfn[title]{border:none;}
 input,select,button,textarea{font:normal 1em/normal sans-serif;}
 select{height:auto;}
-input,select,textarea{padding:4px;border:1px solid #888888;color:#888;background:#fff;}
+input,select,textarea{padding:4px;border:1px solid #888888;color:#888;background:#fff;-webkit-border-radius:0;}
 input[size]{width:auto !important;}
 select{padding:3px;}
 textarea{height:8em;}
 input[type=file],input[type=radio],input[type=checkbox]{width:auto;height:auto;padding:0;border:none;background:none;}
 input[disabled],select[disabled],textarea[disabled]{border-color:#a6a6a6;color:#a6a6a6;background:#cccccc;}
 input:focus,select:focus,textarea:focus{border-color:#000;color:#000;z-index:1;}
-button,input[type=button],input[type=submit],input[type=reset],a.button{padding:5px;text-decoration:none;color:#ffffff;background:#66cccc;}
+button,input[type=button],input[type=submit],input[type=reset],a.button{display:inline-block;padding:5px;text-decoration:none;color:#ffffff;background:#66cccc;}
 button:hover,input[type=button]:hover,input[type=submit]:hover,input[type=reset]:hover,a.button:hover{background:#39acac;}
 button:active,input[type=button]:active,input[type=submit]:active,input[type=reset]:active,a.button:active{-webkit-box-shadow:0 0 5px #cccccc;-moz-box-shadow:0 0 5px #cccccc;box-shadow:0 0 5px #cccccc;}
 button[disabled],input[type=button][disabled],input[type=submit][disabled],input[type=reset][disabled],a.button.disabled{color:#a6a6a6;background:#cccccc;}
@@ -114,15 +114,14 @@ button[disabled],input[type=button][disabled],input[type=submit][disabled],input
 .multi-field{margin:0;padding:0;list-style:none;overflow:hidden;}
 .multi-field li{float:left;padding-left:1em;}
 .multi-field li:first-child{padding-left:0;}
-.media{display:block;overflow:hidden;}
+.media,.media .body{display:block;overflow:hidden;}
 .media .img{float:left;margin-right:30px;}
 .media .img-ext{float:right;margin-left:30px;}
 .media .img img,.media .img-ext img{display:block;}
 .media .img .details{padding:10px;}
-.media .body{overflow:hidden;}
-.nameplate{line-height:4em;overflow:hidden;}
+.nameplate{overflow:hidden;}
 .nameplate .mast{float:right;}
-.nameplate .title{margin:0;line-height:inherit;font-size:1.125em;font-family:Helvetica,"Helvetica Neue",Arial,sans-serif;}
+.nameplate .title{margin:0;line-height:inherit;}
 .nameplate .mast+.title{float:left;}
 .left{float:left;}
 .right{float:right;}

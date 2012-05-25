@@ -1,12 +1,11 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    24/04/2012
+ * Modified:    22/05/2012
  * Description: The nameplate module for section headings <http://en.wikipedia.org/wiki/Nameplate_(publishing)>
  * Example:     div[class=nameplate] ( > div[class=mast]) > h1[class=title]
  */
 
 .nameplate {
-	line-height:4em;
 	overflow:hidden;
 }
 	.nameplate .mast {
@@ -15,10 +14,6 @@
 	.nameplate .title {
 		margin:0;
 		line-height:inherit;
-
-		// Define 'branding'
-		.em( font-size, 18 );
-		font-family:@font-branding;
 	}
 		.nameplate .mast + .title {
 			float:left;

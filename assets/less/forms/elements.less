@@ -1,6 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    28/02/2012
+ * Modified:    25/05/2012
  * Description: Styling for default form elements such as inputs, select boxes and buttons.
  *
  * A note on styling form elements:
@@ -42,6 +42,7 @@ textarea {
 	border:@input-borderwidth solid #888;
 	color:#888;
 	background:#fff;
+	-webkit-border-radius:0;
 }
 	/* Size attribute should always override width */
 	input[size] {
@@ -95,6 +96,7 @@ input[type=button],
 input[type=submit],
 input[type=reset],
 a.button {
+	display:inline-block;
 	padding:@input-padding + @input-borderwidth;
 	text-decoration:none;
 	color:@color-alpha;
@@ -123,3 +125,14 @@ a.button {
 		color:darken(@input-disabled, 15%);
 		background:@input-disabled;
 	}
+
+	// The anchor button style is overspecified to overwrite default link style. Styles below
+	// will also need to be overspecified but it's better than using !important.
+
+	/* sizes */
+	html .button-small {}
+	html .button-larger {}
+
+	/* colours */
+	html .button-subtle {}
+	html .button-reverse {}
