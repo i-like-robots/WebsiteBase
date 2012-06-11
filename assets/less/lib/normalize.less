@@ -1,6 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    20/03/2012
+ * Modified:    20/05/2012
  * Description: Element specific reset and mixed with sensible defaults from normalize.css <http://github.com/necolas/normalize.css>
  */
 
@@ -65,14 +65,14 @@ kbd,
 samp {
 	font-size:1em;
 }
-	/*
-	 * Improves readability of pre-formatted text in all browsers
-	 */
-	pre {
-		white-space:pre;
-		white-space:pre-wrap;
-		word-wrap:break-word;
-	}
+/*
+ * Improves readability of pre-formatted text in all browsers
+ */
+pre {
+	white-space:pre;
+	white-space:pre-wrap;
+	word-wrap:break-word;
+}
 
 /*
  * 1. Addresses CSS quotes not supported in IE6/7
@@ -83,11 +83,11 @@ samp {
 q {
 	quotes:none;
 }
-	/* 2 */
-	q:before, q:after {
-		content:'';
-		content:none;
-	}
+/* 2 */
+q:before, q:after {
+	content:'';
+	content:none;
+}
 
 small {
 	font-size:75%;
@@ -104,17 +104,18 @@ sup {
 	position:relative;
 	vertical-align:baseline;
 }
-	sup {
-		top:-.5em;
-	}
-	sub {
-		bottom:-.25em;
-	}
+sup {
+	top:-.5em;
+}
+sub {
+	bottom:-.25em;
+}
 
 /**
  * Lists
  */
-ul, ol {
+ul,
+ol {
 	margin:0;
 	padding:0 0 0 1.75em;
 }
@@ -207,57 +208,56 @@ textarea,
 button {
 	max-width:100%;
 	margin:0; /* 1 */
-	.box-sizing(border-box); /* 2 */
+	.box-sizing(content-box); /* 2 */
 	vertical-align:baseline; /* 3 */
 	*vertical-align:middle; /* 3 */
 	font-size:100%; /* 4 */
 	line-height:normal; /* 5 */
 	outline:none; /* 6 */
 }
-	/*
-	 * 1. Addresses box sizing set to content-box in IE8/9
-	 * 2. Removes excess padding in IE8/9
-	 */
-	input[type="checkbox"],
-	input[type="radio"] {
-		box-sizing:border-box; /* 1 */
-		padding:0; /* 2 */
-	}
+/*
+ * 1. Addresses box sizing set to content-box in IE8/9
+ * 2. Removes excess padding in IE8/9
+ */
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing:border-box; /* 1 */
+	padding:0; /* 2 */
+}
 
-	/*
-	 * 1. Removes default vertical scrollbar in IE6/7/8/9
-	 * 2. Improves readability and alignment in all browsers
-	 * 3. Remove mouse resizing
-	 */
-	textarea {
-		overflow:auto; /* 1 */
-		vertical-align:top; /* 2 */
-		resize:none; /* 3 */
-	}
+/*
+ * 1. Removes default vertical scrollbar in IE6/7/8/9
+ * 2. Improves readability and alignment in all browsers
+ * 3. Remove mouse resizing
+ */
+textarea {
+	overflow:auto; /* 1 */
+	vertical-align:top; /* 2 */
+	resize:none; /* 3 */
+}
 
-	/*
-	 * 1. Corrects inability to style clickable 'input' types in iOS
-	 * 2. Removes inner spacing in IE7 without affecting normal text inputs
-	 *    Known issue: inner spacing remains in IE6
-	 * 3. Improves usability and consistency of cursor style between image-type 'input' and others
-	 */
-	button,
-	input[type=button],
-	input[type=submit],
-	input[type=reset] {
-		width:auto;
-		border:none;
-		white-space:nowrap;
-		-webkit-appearance:normal; /* 1 */
-		*overflow:visible;  /* 2 */
-		cursor:pointer; /* 3 */
-	}
-		/*
-		 * Removes inner padding and border in FF3+
-		 * <http://www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/>
-		 */
-		button::-moz-focus-inner,
-		input::-moz-focus-inner {
-			padding:0;
-			border:0;
-		}
+/*
+ * 1. Corrects inability to style clickable 'input' types in iOS
+ * 2. Removes inner spacing in IE7 without affecting normal text inputs
+ *    Known issue: inner spacing remains in IE6
+ * 3. Improves usability and consistency of cursor style between image-type 'input' and others
+ */
+button,
+input[type=button],
+input[type=submit],
+input[type=reset] {
+	width:auto;
+	white-space:nowrap;
+	-webkit-appearance:normal; /* 1 */
+	*overflow:visible;  /* 2 */
+	cursor:pointer; /* 3 */
+}
+/*
+ * Removes inner padding and border in FF3+
+ * <http://www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/>
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	padding:0;
+	border:0;
+}

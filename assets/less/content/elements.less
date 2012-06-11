@@ -1,6 +1,6 @@
 /**
  * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    24/04/2012
+ * Modified:    11/06/2012
  * Description: Styling for default elements
  */
 
@@ -25,21 +25,21 @@ blockquote, q, cite {
 	font-style:italic;
 	font-family:@font-serif;
 }
-	blockquote {
-		margin:0 40px;
+blockquote {
+	margin:0 40px;
+}
+	blockquote .quotation { /* Defined using a class as citations must also be within a paragraph */
+		text-indent:-.5em;
 	}
-		blockquote .quotation { /* Defined using a class as citations must also be within a paragraph */
-			text-indent:-.5em;
-		}
-		blockquote .quotation:before, q:before {
-			content:'\201C';
-		}
-		blockquote .quotation:after, q:after {
-			content:'\201D';
-		}
-	cite {
-		font-weight:bold;
+	blockquote .quotation:before, q:before {
+		content:'\201C';
 	}
+	blockquote .quotation:after, q:after {
+		content:'\201D';
+	}
+cite {
+	font-weight:bold;
+}
 
 /* Font size */
 small, big {
@@ -50,12 +50,12 @@ small, big {
 pre, code, kbd, var {
 	font-family:@font-mono;
 }
-	pre {
-		overflow:auto;
-	}
-	code, kbd, var {
-		line-height:1;
-	}
+pre {
+	overflow:auto;
+}
+code, kbd, var {
+	line-height:1;
+}
 
 /* Help */
 abbr[title], acronym[title], dfn[title] {
@@ -68,16 +68,16 @@ a {
 	text-decoration:underline;
 	color:@color-brand;
 }
-	a:visited {
-		color:desaturate(@color-brand, 15%);
-	}
-	a:hover, .selected a {
-		color:darken(@color-brand, 15%);
-	}
-	a:active, a:focus {
-		outline:1px dotted @color-keyline;
-		outline-offset:1px;
-	}
+a:visited {
+	color:desaturate(@color-brand, 20%);
+}
+a:hover, .selected a {
+	color:darken(@color-brand, 20%);
+}
+a:active, a:focus {
+	outline:1px dotted @color-keyline;
+	outline-offset:1px;
+}
 
 /* Horizontal rules */
 hr {

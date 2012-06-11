@@ -1,7 +1,7 @@
 /**
  * @author Matt Hinchliffe <http://www.maketea.co.uk>
  * @created 12/01/2011
- * @modified 05/04/2012
+ * @modified 11/06/2012
  */
 
 // Replace no-js
@@ -18,7 +18,7 @@ if ( ! window.console)
 	};
 }
 
-// Get required views
+// Get required views ( E.G. <body data-views="homepage calendar"> )
 var _views = [], _autoload = function()
 {
 	var v = document.body.getAttribute('data-views');
