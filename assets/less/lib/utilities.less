@@ -1,17 +1,34 @@
 /**
  * Author:   Matt Hinchliffe <www.maketea.co.uk>
- * Modified: 23/04/2012
+ * Modified: 30/05/2012
  */
 
 // Em calculation
+// - Until LESS 1.4 properties cannot be passed as arguments so apologies for repetitiveness...
+
+@pow: 1000; // 3 decimal places: pow(10, 3) = 1000
+
 .em(font-size, @required, @context: @type-size) {
-	font-size:@required / @context + 0em;
+	@value: @required / @context;
+	@powup: @value * @pow;
+	@round: round(@powup);
+	@powdn: @round / @pow;
+	font-size:@powdn + 0em;
 }
+
 .em(height, @required, @context: @type-size) {
-	height:@required / @context + 0em;
+	@value: @required / @context;
+	@powup: @value * @pow;
+	@round: round(@powup);
+	@powdn: @round / @pow;
+	height:@powdn + 0em;
 }
 .em(line-height, @required, @context: @type-size) {
-	line-height:@required / @context;
+	@value: @required / @context;
+	@powup: @value * @pow;
+	@round: round(@powup);
+	@powdn: @round / @pow;
+	line-height:@powdn;
 }
 
 // Replace text

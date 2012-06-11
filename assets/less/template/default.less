@@ -3,12 +3,13 @@
  */
 
 body {
-	color:@color-delta;
+	color:@color-epsilon;
 	background:@color-keyline;
 }
 
 /* headers */
 h1, .h1 {
+	font-family:@font-brand;
 	letter-spacing:-1px;
 }
 h2, .h2 {
@@ -21,6 +22,10 @@ h6, .h6 {
 	letter-spacing:0;
 }
 
+a {
+	.transition(); // Make links awesome*
+}
+
 /* layout */
 #container {
 	margin-top:2em;
@@ -30,21 +35,23 @@ h6, .h6 {
 	.border-radius(16px);
 	.box-shadow(0, 3px, 12px, rgba(0, 0, 0, .15));
 }
+	.block-links a {
+		margin-right:.25em;
+		padding:0 .5em;
+		line-height:2;
+		text-decoration:none;
+		color:@color-alpha;
+		background:@color-brand;
+		.border-radius(5px);
+	}
+	.block-links a:hover {
+		background:darken(@color-brand, 20%);
+	}
 
-.block-links a {
-	margin-right:.25em;
-	padding:0 .5em;
-	line-height:2;
-	text-decoration:none;
-	color:@color-alpha;
-	background:@color-brand;
-	.border-radius(5px);
-}
-
-/* grid example */
-.grid-example [class|=span] {
-	min-height:2em;
-	margin-bottom:20px;
-	background-color:rgba(0, 0, 0, .1);
-	.border-radius(5px);
-}
+	/* grid example */
+	.grid-example [class|=span] {
+		min-height:2em;
+		margin-bottom:20px;
+		background-color:rgba(0, 0, 0, .1);
+		.border-radius(5px);
+	}

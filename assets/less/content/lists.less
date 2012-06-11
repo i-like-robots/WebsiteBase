@@ -40,9 +40,9 @@
 		clear:left;
 		padding-right:5px;
 	}
-		.inline-definitions dt:after {
-			content:':'
-		}
+	.inline-definitions dt:after {
+		content:':'
+	}
 
 /* Numbered definition lists */
 .numbered-definitions {
@@ -61,12 +61,12 @@
 	.tag-list li {
 		display:inline;
 	}
-		.tag-list li:after {
-			content:',\0000a0'; /* Non-breaking space */
-		}
-			.tag-list li:last-child:after {
-				content:normal;
-			}
+	.tag-list li:after {
+		content:',\0000a0'; /* Non-breaking space */
+	}
+	.tag-list li:last-child:after {
+		content:normal;
+	}
 
 /* Pipe separated list */
 .separated-list {
@@ -76,9 +76,9 @@
 		float:left;
 		display:block;
 	}
-		.separated-list li:before {
-			content:'\0000a0\0000a0|\0000a0\0000a0'; /* Non-breaking space */
-		}
-			.separated-list li:first-child:before {
-				content:normal;
-			}
+	.separated-list li:before {
+		content:'\0000a0\0000a0|\0000a0\0000a0'; /* Non-breaking space */
+	}
+	.separated-list li:first-child:before {
+		content:normal;
+	}
