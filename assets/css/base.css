@@ -150,7 +150,7 @@ img.base{display:block;}
 .span-11{width:860px;}
 .span-12{width:940px;}
 .row{margin-bottom:1em;}
-@media only screen and (min-width:768px) and (max-width:959px){}@media only screen and (max-width:767px){}body{color:#333333;background:#cccccc;}
+body{color:#333333;background:#cccccc;}
 h1,.h1{font-family:Helvetica,Arial,sans-serif;letter-spacing:-1px;}
 h2,.h2{letter-spacing:-0.5px;}
 h3,.h3,h4,.h4,h5,.h5,h6,.h6{letter-spacing:0;}
