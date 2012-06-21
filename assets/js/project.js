@@ -1,7 +1,7 @@
 /**
  * @author Matt Hinchliffe <http://www.maketea.co.uk>
  * @created 12/01/2011
- * @modified 11/06/2012
+ * @modified 21/06/2012
  */
 
 // Replace no-js
@@ -27,6 +27,7 @@ var _views = [], _autoload = function()
 
 
 // Execute methods registered within _views registered with _autoload.
+// This could be easily swapped out with a neat AMD loader ;)
 function _boot()
 {
 	for (var i = 0; i < _autoload.length; i++)
