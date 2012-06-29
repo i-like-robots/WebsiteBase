@@ -10,52 +10,61 @@
 // way to style native HTML form elements consistently.
 //
 
-// Legends - do not style the legend element directly
+//
+// Legends - do not style the legend element directly but its children
+//
 legend > span {
 	display:block;
 }
 
+//
 // Labels
+//
 label {
-	display:block;
 	white-space:nowrap;
 }
 	label dfn[title] {
 		border:none;
 	}
 
-// Form elements
-input, select, textarea, button {
+//
+// User inputs
+//
+input,
+select,
+textarea,
+button {
 	padding:@input-padding;
 	border:@input-borderwidth solid @color-gamma;
 	font:normal 1em/normal sans-serif;
 	color:@color-gamma;
 	background:@color-alpha;
-	-webkit-border-radius:0; // Remove default border radius from iOS devices
+	.border-radius(2px);
 }
 
 input:focus,
 select:focus,
 textarea:focus {
-	border-color:@color-epsilon;
 	color:@color-epsilon;
-	z-index:1; // For Opera
-}
-
-input[disabled],
-select[disabled],
-textarea[disabled],
-button[disabled] {
-	border-color:darken(@input-disabled, 20%);
-	color:darken(@input-disabled, 20%);
-	background:@input-disabled;
+	.box-shadow(0, 0, 8px, fadeout(@color-brand, 50%));
 }
 
 input[size] {
 	width:auto !important; // Size attribute should always override width
 }
 
-// Go native, else build a new input with a little JS <http://bit.ly/qM8FYC>
+select {
+	padding:@input-padding - 1px; // Extra height may be created by the button inside select boxes on Windows
+}
+
+textarea {
+	height:8em;
+}
+
+
+//
+// Go native else build a new input with a little JS <http://bit.ly/qM8FYC>
+//
 input[type=file],
 input[type=radio],
 input[type=checkbox] {
@@ -66,53 +75,30 @@ input[type=checkbox] {
 	background:none;
 }
 
-// Extra height may be created by the button inside select boxes in Firefox on Windows
-select {
-	height:auto;
-	padding:@input-padding - 1px;
-}
 
-textarea {
-	height:8em;
-}
-
+//
 // Buttons
-button,
+//
+button, a.button,
 input[type=button],
-input[type=submit],
-input[type=reset],
-a.button {
+input[type=submit] {
 	display:inline-block;
-	padding:@input-padding;
-	border-color:darken(@color-brand, 20%);
+	border-color:darken(@color-brand, 10%);
 	text-decoration:none;
 	color:@color-alpha;
 	background:@color-brand;
+	.inset-shadow(0, 1px, 0, rgba(255, 255, 255, .35));
 }
 
-button:hover,
-input[type=button]:hover,
-input[type=submit]:hover,
-input[type=reset]:hover,
-a.button:hover {
-	background:darken(@color-brand, 20%);
-}
-
-button:active,
+button:active, a.button:active,
 input[type=button]:active,
-input[type=submit]:active,
-input[type=reset]:active,
-a.button:active {
-	.box-shadow(0, 0, 5px, @color-beta);
+input[type=submit]:active {
+	.inset-shadow(0, 5px, 10px, rgba(0, 0, 0, .15));
 }
 
-// The anchor button style is overspecified to overwrite default link style. Styles below
-// will also need to be overspecified but it's better than using !important.
-
-// sizes
-// html .button-small {}
-// html .button-larger {}
-
-// colours
-// html .button-subtle {}
-// html .button-reverse {}
+button.alt, a.button.alt,
+input[type=button].alt,
+input[type=submit].alt {
+	border-color:darken(@color-highlight, 10%);
+	background:@color-highlight;
+}
