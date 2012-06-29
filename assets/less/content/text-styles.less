@@ -1,10 +1,12 @@
-/**
- * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    11/06/2012
- * Description: Classes for styling text content.
- */
+//
+// Author:      Matt Hinchliffe <www.maketea.co.uk>
+// Modified:    27/06/2012
+// Description: Classes for styling text content.
+//
 
-/* Webfonts */
+//
+// Webfonts
+//
 @font-face {
 	font-family:'';
 	font-weight:normal;
@@ -14,7 +16,10 @@
 	    url('/assets/fonts/*.ttf') format('truetype');
 }
 
-/* Text alignment */
+
+//
+// Text alignment
+//
 .align-left {
 	text-align:left;
 }
@@ -26,31 +31,32 @@
 	text-align:right;
 }
 
-/* Font size variations <http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/> */
+
+//
+// Font size variations <http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/>
+//
 .nano {
-	.em( font-size, 11 );
+	#calc > .font-size(11);
 }
 .milli {
-	.em( font-size, 12);
+	#calc > .font-size(12);
 }
 .kilo {
-	.em( font-size, 18);
+	#calc > .font-size(18);
 }
 .mega {
-	.em( font-size, 24 );
+	#calc > .font-size(24);
 	line-height:1;
 }
 .giga {
-	.em( font-size, 30 );
-	line-height:1;
-}
-.accent {
-	font-weight:bold;
-	.em( font-size, 18 );
-	text-transform:uppercase;
+	#calc > .font-size(30);
+	line-height:.75;
 }
 
-/* Colour variations */
+
+//
+// Colour variations
+//
 .alpha {
 	color:@color-alpha;
 }

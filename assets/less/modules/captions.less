@@ -1,9 +1,10 @@
-/**
- * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    25/05/2012
- * Description: Image captions
- * Example: [class=captioned] > [class=caption] > span
- */
+//
+// Author:      Matt Hinchliffe <www.maketea.co.uk>
+// Modified:    29/06/2012
+// Description: Images with caption overlays
+// Zen-coding:  a.captioned>img+span.caption
+//
+
 .captioned {
 	position:relative;
 	display:block;
@@ -15,7 +16,7 @@ html .captioned { // overspecify a little if used for a link
 	.captioned img {
 		display:block;
 	}
-	.caption {
+	.captioned .caption {
 		position:absolute;
 		top:0;
 		right:0;

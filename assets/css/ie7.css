@@ -1,9 +1,10 @@
-li{zoom:1;}
+
 blockquote{display:block;}
 input,select,textarea,button{vertical-align:middle;}
 select{height:27.2px;}
-button,input[type=button],input[type=submit],input[type=reset],a.button{display:inline;zoom:1;height:auto !important;overflow:visible;line-height:1;}
-.radio input{vertical-align:text-top;}
-.checkbox input{vertical-align:bottom;}
-.separated-list li,.tag-list li{margin-left:1em;}
+button,input[type=button],input[type=submit],input[type=reset],a.button{display:inline;zoom:1;overflow:visible;line-height:1;}
+input[type=radio]{vertical-align:text-top;}
+input[type=checkbox]{vertical-align:bottom;}
+blockquote q{text-indent:0;}
+.tag-list li,.separated-list li{margin-left:.5em;}
 .tag-list li:first-child,.separated-list li:first-child{margin-left:0;}

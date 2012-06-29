@@ -1,23 +1,31 @@
-/**
- * Author:   Matt Hinchliffe <www.maketea.co.uk>
- * Modified: 30/04/2012
- */
+//
+// Author:   Matt Hinchliffe <www.maketea.co.uk>
+// Modified: 30/04/2012
+//
 
+//
 // Box sizing
+//
 .box-sizing(@sizing) {
 	-webkit-box-sizing:@sizing;
 	   -moz-box-sizing:@sizing;
 	        box-sizing:@sizing;
 }
 
+
+//
 // Border radius
+//
 .border-radius(@radius) {
 	-webkit-border-radius:@radius;
 	   -moz-border-radius:@radius;
 	        border-radius:@radius;
 }
 
+
+//
 // Drop shadows
+//
 .box-shadow(@x, @y, @blur, @colour) {
 	-webkit-box-shadow:@arguments;
 	   -moz-box-shadow:@arguments;
@@ -29,7 +37,10 @@
 	        box-shadow:inset @arguments;
 }
 
+
+//
 // Transforms <http://www.w3.org/TR/css3-2d-transforms/#transform-functions>
+//
 .scale(@scale) {
 	-webkit-transform:scale(@scale);
 	   -moz-transform:scale(@scale);
@@ -52,7 +63,10 @@
 	        transform:translate(@x, @y);
 }
 
+
+//
 // Gradients <http://dev.w3.org/csswg/css3-images/#linear-gradients>, <http://dev.w3.org/csswg/css3-images/#radial-gradients>
+//
 .linear-gradient(@angle, @startColor, @endColor) {
 	background:mix(@startColor, @endColor, 50%);
 	background-image:-webkit-linear-gradient(@angle, @startColor, @endColor);
@@ -70,7 +84,10 @@
 	background-image:        radial-gradient(@origin, @shape, @startColor @from, @endColor @to);
 }
 
+
+//
 // Transitions
+//
 .transition(@property: all, @time: .25s, @easing: ease) {
 	-webkit-transition:@arguments;
 	   -moz-transition:@arguments;

@@ -1,64 +1,42 @@
-/**
- * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    14/06/2012
- * Description: based on Twitter Bootstrap grid. Allows nested grids, no first or last classes.
- *
- * Layout sizes:
- *     - Site width             = 960
- *         - Grid column        = 60  (+20 left margin)
- *             - Two columns    = 140
- *             - Twelve columns = 940
- *
- * Example:
- * <div class="container">
- *     <div class="grid">
- *         <div class="span-04>
- *             Column 1
- *         </div>
- *         <div class="span-04>
- *             Column 2
- *         </div>
- *         <div class="span-04>
- *             Column 3
- *             <div class="grid">
- *                 <div class="span-02">
- *                     Nested column 1
- *                 </div>
- *                 <div class="span-02">
- *                     Nested column 2
- *                 </div>
- *             </div>
- *         </div>
- *     </div>
- * </div>
- */
-
-.container {
-	.grid-container()
-}
-	.grid {
-		.grid-declaration()
-	}
-		.grid [class|="span"] {
-			.grid-column()
-		}
-		.span-01 { .grid-colwidth(01) }
-		.span-02 { .grid-colwidth(02) }
-		.span-03 { .grid-colwidth(03) }
-		.span-04 { .grid-colwidth(04) }
-		.span-05 { .grid-colwidth(05) }
-		.span-06 { .grid-colwidth(06) }
-		.span-07 { .grid-colwidth(07) }
-		.span-08 { .grid-colwidth(08) }
-		.span-09 { .grid-colwidth(09) }
-		.span-10 { .grid-colwidth(10) }
-		.span-11 { .grid-colwidth(11) }
-		.span-12 { .grid-colwidth(12) }
+//
+// Author:      Matt Hinchliffe <www.maketea.co.uk>
+// Modified:    28/06/2012
+// Description: The #grid utility mixin is based on the Twitter Bootstrap grid. Nested grids with no first/last classes.
+//
 
 .row { margin-bottom:@type-blankline; }
 
-// Small screen E.G. tablet or netbook
-// @media only screen and (min-width:768px) and (max-width:959px) {}
+//
+// 12 column, 960 grid
+// Zen-coding: div.container>div.grid>div.span-$$*12
+//
+.container {
 
+	#grid > .setup();
+
+	.span-01 { #grid > .column(01) }
+	.span-02 { #grid > .column(02) }
+	.span-03 { #grid > .column(03) }
+	.span-04 { #grid > .column(04) }
+	.span-05 { #grid > .column(05) }
+	.span-06 { #grid > .column(06) }
+	.span-07 { #grid > .column(07) }
+	.span-08 { #grid > .column(08) }
+	.span-09 { #grid > .column(09) }
+	.span-10 { #grid > .column(10) }
+	.span-11 { #grid > .column(11) }
+	.span-12 { #grid > .column(12) }
+
+}
+
+
+//
+// Small screen E.G. tablet or netbook
+//
+//@media only screen and (min-width:768px) and (max-width:959px) {}
+
+
+//
 // Narrow screen E.G. mobile phone
-// @media only screen and (max-width:767px) {}
+//
+//@media only screen and (max-width:767px) {}

@@ -1,37 +1,67 @@
-/**
- * Author:   Matt Hinchliffe <www.maketea.co.uk>
- * Modified: 30/05/2012
- */
+//
+// Author:   Matt Hinchliffe <www.maketea.co.uk>
+// Modified: 29/06/2012
+//
 
-// Em calculation
-// - Until LESS 1.4 properties cannot be passed as arguments so apologies for repetitiveness...
+//
+// Calculation mixins
+// - I decided to round results to 3 decimal places, otherwise it is wasteful. Until LESS 1.4 properties cannot be used as arguments.
+//
+#calc {
 
-@pow: 1000; // 3 decimal places: pow(10, 3) = 1000
+	@pow: 1000; // 3 decimal places: pow(10, 3) = 1000
 
-.em(font-size, @required, @context: @type-size) {
-	@value: @required / @context;
-	@powup: @value * @pow;
-	@round: round(@powup);
-	@powdn: @round / @pow;
-	font-size:@powdn + 0em;
+	.font-size(@size, @context: @type-size) {
+		@value: @size / @context;
+		@powup: @value * @pow;
+		@round: round(@powup);
+		@powdn: @round / @pow;
+		font-size:@powdn + 0em;
+	}
+	.height(@size, @context: @type-size) {
+		@value: @size / @context;
+		@powup: @value * @pow;
+		@round: round(@powup);
+		@powdn: @round / @pow;
+		height:@powdn + 0em;
+	}
+	.line-height(@size, @context: @type-size) {
+		@value: @size / @context;
+		@powup: @value * @pow;
+		@round: round(@powup);
+		@powdn: @round / @pow;
+		line-height:@powdn;
+	}
 }
 
-.em(height, @required, @context: @type-size) {
-	@value: @required / @context;
-	@powup: @value * @pow;
-	@round: round(@powup);
-	@powdn: @round / @pow;
-	height:@powdn + 0em;
-}
-.em(line-height, @required, @context: @type-size) {
-	@value: @required / @context;
-	@powup: @value * @pow;
-	@round: round(@powup);
-	@powdn: @round / @pow;
-	line-height:@powdn;
+//
+// Grid
+//
+#grid {
+	.setup( @columns: 12px, @colWidth: 60px, @gutterWidth: 20px ) {
+		width:@columns * ( @colWidth + @gutterWidth ) - @gutterWidth;
+		padding:0 ( @gutterWidth / 2 );
+		margin:0 auto;
+
+		.grid {
+			clear:both;
+			margin-left:-@gutterWidth;
+			.clearfix;
+			[class|="span"] {
+				float:left;
+				margin-left:@gutterWidth;
+			}
+		}
+	}
+
+	.column( @i, @colWidth: 60px, @gutterWidth: 20px ) {
+		width:(@i * @colWidth ) + ( @gutterWidth * ( @i - 1 ) );
+	}
 }
 
+//
 // Replace text
+//
 .replacetext() {
 	display:block;
 	overflow:hidden;
@@ -40,9 +70,11 @@
 	background:transparent no-repeat 0 0;
 }
 
+//
 // Clearfix
+//
 .clearfix() {
-	*zoom: 1;
+	*zoom:1;
 	&:before,
 	&:after {
 		display:table;

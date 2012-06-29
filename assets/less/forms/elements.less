@@ -1,21 +1,21 @@
-/**
- * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    11/06/2012
- * Description: Styling for default form elements such as inputs, select boxes and buttons.
- *
- * A note on styling form elements:
- * Form elements are a law unto themselves. Depending on their implementation they may be rendered from the underlying
- * OS, un-touchable interface components of the browser or (fingers crossed) implemented via the shadow DOM. Though
- * attempts are made within the reset to standardise inputs, select boxes, text areas and buttons behaviour there is no
- * way to style native HTML form elements consistently.
- */
+//
+// Author:      Matt Hinchliffe <www.maketea.co.uk>
+// Modified:    29/06/2012
+// Description: Styling for default form elements such as inputs, select boxes and buttons.
+//
+// A note on styling form elements:
+// Form elements are a law unto themselves. Depending on their implementation they may be rendered from the underlying
+// OS, un-touchable interface components of the browser or (fingers crossed) implemented via the shadow DOM. Though
+// attempts are made within the reset to standardise inputs, select boxes, text areas and buttons behaviour there is no
+// way to style native HTML form elements consistently.
+//
 
-/* Legends - do not style the legend element directly but inline children */
+// Legends - do not style the legend element directly
 legend > span {
 	display:block;
 }
 
-/* Labels */
+// Labels
 label {
 	display:block;
 	white-space:nowrap;
@@ -24,11 +24,8 @@ label {
 		border:none;
 	}
 
-/* Form elements */
-input,
-select,
-textarea,
-button {
+// Form elements
+input, select, textarea, button {
 	padding:@input-padding;
 	border:@input-borderwidth solid @color-gamma;
 	font:normal 1em/normal sans-serif;
@@ -79,7 +76,7 @@ textarea {
 	height:8em;
 }
 
-/* Buttons */
+// Buttons
 button,
 input[type=button],
 input[type=submit],
@@ -112,10 +109,10 @@ a.button:active {
 // The anchor button style is overspecified to overwrite default link style. Styles below
 // will also need to be overspecified but it's better than using !important.
 
-/* sizes */
+// sizes
 // html .button-small {}
 // html .button-larger {}
 
-/* colours */
+// colours
 // html .button-subtle {}
 // html .button-reverse {}

@@ -1,54 +1,63 @@
-/**
- * Author:      Matt Hinchliffe <www.maketea.co.uk>
- * Modified:    11/06/2012
- * Description: Styling for default elements
- */
+//
+// Author:      Matt Hinchliffe <www.maketea.co.uk>
+// Modified:    28/06/2012
+// Description: Styling for default elements
+//
 
+//
+// Document
+//
 html {
-	font-size:62.5%; /* 10px, set in % for consistency in IE6/7 <http://clagnut.com/blog/348/#c790> and useful if you decide to use rem units */
+	font-size:62.5%; // 10px, set in % for consistency in IE6/7 <http://clagnut.com/blog/348/#c790> and useful if you decide to use rem units
 }
-body {
-	.em( font-size, @type-size, 10 );
-	line-height:@type-leading;
-	font-family:@font-sans;
-}
+	body {
+		#calc > .font-size(@type-size, 10);
+		line-height:@type-baseline;
+		font-family:@type-sans;
+	}
 
-dl {
-	margin:0;
-}
-p, ul, ol, dd {
+
+//
+// Primary elements
+//
+p, ul, ol, dl {
 	margin:0 0 @type-blankline;
 }
+dt, dd {
+	margin:0;
+}
 
-/* Quotes */
+
+//
+// Quotations
+// Zen-Coding: blockquote>(p>q)+(p>cite)
+//
 blockquote, q, cite {
 	font-style:italic;
-	font-family:@font-serif;
+	font-family:@type-serif;
 }
 blockquote {
 	margin:0 40px;
 }
-	blockquote .quotation { /* Defined using a class as citations must also be within a paragraph */
+	blockquote q {
 		text-indent:-.5em;
 	}
-	blockquote .quotation:before, q:before {
+	blockquote q:before {
 		content:'\201C';
 	}
-	blockquote .quotation:after, q:after {
+	blockquote q:after {
 		content:'\201D';
 	}
-cite {
-	font-weight:bold;
-}
+	blockquote cite {
+		font-weight:bold;
+	}
 
-/* Font size */
-small, big {
-	line-height:1;
-}
 
-/* Monospace */
+//
+// Monospace
+//
 pre, code, kbd, var {
-	font-family:@font-mono;
+	font-family:@type-mono;
 }
 pre {
 	overflow:auto;
@@ -57,13 +66,19 @@ code, kbd, var {
 	line-height:1;
 }
 
-/* Help */
+
+//
+// Tooltips
+//
 abbr[title], acronym[title], dfn[title] {
 	border-bottom:1px dotted;
 	cursor:help;
 }
 
-/* Links */
+
+//
+// Links
+//
 a {
 	text-decoration:underline;
 	color:@color-brand;
@@ -71,7 +86,7 @@ a {
 a:visited {
 	color:desaturate(@color-brand, 20%);
 }
-a:hover, .selected a {
+a:hover {
 	color:darken(@color-brand, 20%);
 }
 a:active, a:focus {
@@ -79,7 +94,10 @@ a:active, a:focus {
 	outline-offset:1px;
 }
 
-/* Horizontal rules */
+
+//
+// Horizontal rules
+//
 hr {
 	height:1px;
 	padding:0;
@@ -88,7 +106,10 @@ hr {
 	background:@color-keyline;
 }
 
-/* Tables */
+
+//
+// Tables
+//
 table {
 	margin-bottom:@type-blankline;
 	border:none;

@@ -1,20 +1,30 @@
-/**
- * Author:   Matt Hinchliffe <www.maketea.co.uk>
- * Modified: 21/06/2012
- */
+//
+// Author:   Matt Hinchliffe <www.maketea.co.uk>
+// Modified: 29/06/2012
+//
 
+
+//
 // Typography
-@type-size:      16;
-@type-leading:   1.5;
-@type-baseline:  @type-size * @type-leading;
-@type-blankline: 1em;
+//
 
-// Font faces
-@font-sans:       Arial, sans-serif;
-@font-serif:      Cambria, Georgia, serif;
-@font-brand:      Helvetica, Arial, sans-serif;
-@font-mono:       Consolas, "Lucida Console", Monaco, monospace;
-@font-smallprint: Verdana, Geneva, Tahoma, sans-serif;
+// Baseline
+@type-size:      16;
+@type-baseline:  1.5;
+@type-blankline: 1.5em;
+
+// Font stacks
+@type-sans:  Arial, sans-serif;
+@type-serif: Cambria, Georgia, serif;
+@type-brand: Helvetica, Arial, sans-serif;
+@type-mono:  Consolas, "Lucida Console", Monaco, monospace;
+@type-small: Verdana, Geneva, Tahoma, sans-serif;
+
+
+//
+// Colour palette
+// - Uses the American spelling to avoid confusion.
+//
 
 // Shades
 @color-alpha:   #FFF;
@@ -26,19 +36,18 @@
 // etc...
 @color-omega:   #000;
 
-// Named accent colours
+// Accent colours
 @color-brand:     #40BFBF;
 @color-highlight: #EEE;
 @color-attention: #C81730;
 @color-keyline:   #CCC;
 
-// Form elements
+
+//
+// Forms
+//
+
+// Forms
 @input-padding:     4px;
 @input-borderwidth: 1px;
 @input-disabled:    #CCC;
-
-// Grid
-@grid-standard-width:    960px;
-@grid-standard-columns:  12;
-@grid-standard-colwidth: 60px;
-@grid-standard-gutter:   20px;

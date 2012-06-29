@@ -1,18 +1,23 @@
+//
+// Author:      Matt Hinchliffe <www.maketea.co.uk>
+// Modified:    29/06/2012
+// Description: Internet Explorer 7 and below adjustments.
+//
+
 @import "variables";
 @import "lib/utilities";
 
-// No 'inline-block' in < IE8 but applying 'layout' to an inline element contrives it
-.ie-inline-block() {
+//
+// No 'inline-block' in < IE8 'hasLayout' on an inline element contrives it
+//
+.inline-block() {
 	display:inline;
 	zoom:1;
 }
 
-/* Forcing hasLayout fixes the gaps between list-items bug */
-li {
-	zoom:1;
-}
-
-/* Blockquotes */
+//
+// element fixes
+//
 blockquote {
 	display:block;
 }
@@ -21,37 +26,61 @@ input, select, textarea, button {
 	vertical-align:middle;
 }
 
-/* Select boxes. Padding cannot be applied to a select box so add it to the height */
+//
+// select boxes. Padding cannot be applied to a select box so add it to the height
+//
 select {
-	height:(@type-size * 1.2) + (@input-padding * 2) + 0px; /* font size * 'normal' line-height + padding */
+	height:(@type-size * 1.2) + (@input-padding * 2) + 0px;
 }
 
-/* Buttons render terribly due to a forced border-box style layout */
-button,
-input[type=button],
-input[type=submit],
-input[type=reset],
-a.button {
-	.ie-inline-block();
-	height:auto !important;
+//
+// buttons render terribly due to a forced border-box style layout
+//
+button, input[type=button], input[type=submit], input[type=reset], a.button {
+	.inline-block();
 	overflow:visible;
 	line-height:1;
 }
 
-/* Form checkboxes and radio buttons alignment, align checkboxes, radios, text inputs with their label */
-.radio input {
+//
+// form checkboxes and radio buttons alignment, align checkboxes, radios, text inputs with their label
+//
+input[type=radio] {
 	vertical-align:text-top;
 }
-.checkbox input {
+input[type=checkbox] {
 	vertical-align:bottom;
 }
 
-/* No pseudo elements so just add extra spacing */
-.separated-list li,
-.tag-list li {
-	margin-left:1em;
+//
+// nested floats requiring specified width
+//
+
+//
+// overflow may require position relative
+//
+
+//
+// no pseudo-elements
+//
+blockquote q {
+	text-indent:0;
+}
+
+.tag-list li,
+.separated-list li {
+	margin-left:.5em;
 }
 	.tag-list li:first-child,
 	.separated-list li:first-child {
 		margin-left:0;
 	}
+
+//
+// inline elements affects layout
+//
+
+//
+// no support for CSS3 properties
+//
+
