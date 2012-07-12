@@ -4,7 +4,7 @@
 
 body {
 	color:@color-epsilon;
-	background:@color-keyline;
+	background:@color-subtle;
 }
 
 // headers
@@ -28,26 +28,11 @@ a {
 
 // layout
 #container {
-	margin-top:2em;
-	margin-bottom:2em;
-	padding:1.5em 30px;
+	min-height:100%;
+	padding:0 1em;
 	background:@color-alpha;
-	.border-radius(16px);
 	.box-shadow(0, 3px, 12px, rgba(0, 0, 0, .15));
 }
-	.block-links a {
-		margin-right:.25em;
-		padding:0 .5em;
-		line-height:2;
-		text-decoration:none;
-		color:@color-alpha;
-		background:@color-brand;
-		.border-radius(5px);
-	}
-	.block-links a:hover {
-		background:darken(@color-brand, 20%);
-	}
-
 	// grid example
 	.grid-example [class|=span] {
 		min-height:2em;

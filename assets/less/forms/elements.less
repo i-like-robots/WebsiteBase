@@ -36,7 +36,8 @@ textarea,
 button {
 	padding:@input-padding;
 	border:@input-borderwidth solid @color-gamma;
-	font:normal 1em/normal sans-serif;
+	font-weight:normal;
+	font-family:sans-serif;
 	color:@color-gamma;
 	background:@color-alpha;
 	.border-radius(2px);
@@ -46,7 +47,7 @@ input:focus,
 select:focus,
 textarea:focus {
 	color:@color-epsilon;
-	.box-shadow(0, 0, 8px, fadeout(@color-brand, 50%));
+	.box-shadow(0, 0, 5px, @color-beta);
 }
 
 input[size] {
@@ -82,23 +83,21 @@ input[type=checkbox] {
 button, a.button,
 input[type=button],
 input[type=submit] {
-	display:inline-block;
 	border-color:darken(@color-brand, 10%);
 	text-decoration:none;
 	color:@color-alpha;
-	background:@color-brand;
-	.inset-shadow(0, 1px, 0, rgba(255, 255, 255, .35));
+	.linear-gradient(270deg, fadeout(@color-brand, 10%), darken(@color-brand, 10%));
 }
 
 button:active, a.button:active,
 input[type=button]:active,
 input[type=submit]:active {
-	.inset-shadow(0, 5px, 10px, rgba(0, 0, 0, .15));
+	.inset-shadow(0, 0, 10px, rgba(0, 0, 0, .5));
 }
 
 button.alt, a.button.alt,
 input[type=button].alt,
 input[type=submit].alt {
 	border-color:darken(@color-highlight, 10%);
-	background:@color-highlight;
+	.linear-gradient(270deg, lighten(@color-highlight, 10%), @color-highlight);
 }

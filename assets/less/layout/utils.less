@@ -7,16 +7,16 @@
 //
 // Floats and clears (for content, not layout)
 //
-.left {
+.content-left {
 	float:left;
 }
 
-.right {
+.content-right {
 	float:right;
 }
 
-.clear {
-	clear:left; // clear:right may leave elements 'stranded' if your baseline or grid breaks. You cannot float + clear elements in IE6 and IE7 will not create a new 'row'.
+.content-clear {
+	clear:both;
 }
 
 

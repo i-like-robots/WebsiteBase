@@ -24,13 +24,23 @@
 .block-links {
 	padding-left:0;
 	list-style:none;
+	.clearfix;
 }
 	.block-links li {
-		display:inline;
+		float:left;
+		margin-left:5px;
+	}
+	.block-links li:first-child {
+		margin-left:0;
 	}
 		.block-links a {
-			float:left;
-			display:block;
+			padding:.5em 10px;
+			text-decoration:none;
+			color:@color-alpha;
+			background:@color-lowlight;
+		}
+		.block-links a:hover {
+			background:@color-highlight;
 		}
 
 
@@ -59,15 +69,15 @@
 //
 .separated-list {
 	padding-left:0;
+	white-space:nowrap;
 }
-	.separated-list > li {
-		float:left;
-		display:block;
+	.separated-list li {
+		display:inline;
 	}
-	.separated-list > li:before {
+	.separated-list li:before {
 		content:'\0000a0\0000a0|\0000a0\0000a0'; // Non-breaking space
 	}
-	.separated-list > li:first-child:before {
+	.separated-list li:first-child:before {
 		content:normal;
 	}
 

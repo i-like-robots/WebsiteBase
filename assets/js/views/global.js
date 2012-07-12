@@ -1,10 +1,10 @@
 /**
  * @author Matt Hinchliffe <http://www.maketea.co.uk>
  * @created 27/03/2012
- * @modified 29/03/2012
+ * @modified 12/07/2012
  * @package Your project
  */
-_views.global = {
+_base.views.global = {
 
 	/**
 	 * Retina

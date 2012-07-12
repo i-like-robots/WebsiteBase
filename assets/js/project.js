@@ -1,10 +1,10 @@
 /**
  * @author Matt Hinchliffe <http://www.maketea.co.uk>
  * @created 12/01/2011
- * @modified 21/06/2012
+ * @modified 12/07/2012
  */
 
-// Replace no-js
+// Replace no-js document class
 document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, '');
 
 // Quick wrapper for a missing console
@@ -18,31 +18,38 @@ if ( ! window.console)
 	};
 }
 
-// Get required views ( E.G. <body data-views="homepage calendar"> )
-var _views = [], _autoload = function()
-{
-	var v = document.body.getAttribute('data-views');
-	return ['global'].concat( v && v.length ? v.split(' ') : [] );
-}();
+// Load and execute views
+window._base = {
 
+	views: {},
 
-// Execute methods registered within _views registered with _autoload.
-// This could be easily swapped out with a neat AMD loader ;)
-function _boot()
-{
-	for (var i = 0; i < _autoload.length; i++)
+	// Execute methods within the given view
+	trigger: function(v)
 	{
-		if ( _views[ _autoload[i] ] )
+		if ( this.views[v] )
 		{
-			for (var method in _views[ _autoload[i] ])
+			for ( var m in this.views[v] )
 			{
-				if ( typeof _views[ _autoload[i] ][method] === 'function' )
+				if ( typeof this.views[v][m] === 'function' )
 				{
-					_views[ _autoload[i] ][method]();
+					this.views[v][m]();
 				}
 			}
 		}
-	}
-}
+	},
 
-jQuery(document).ready(_boot);
+	// Trigger required views (E.G. <body data-views="homepage calendar">)
+	// This could easily be swapped out with an AMD loader interface.
+	autoload: function()
+	{
+		var v = document.body.getAttribute('data-views'),
+		    auto = ['global'].concat( v && v.length ? v.split(' ') : [] );
+
+		for (var i = 0; i < auto.length; i++)
+		{
+			_base.trigger( auto[i] );
+		}
+	}
+};
+
+jQuery(document).ready(_base.autoload);
