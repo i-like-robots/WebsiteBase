@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    10/07/2012
+// Modified:    13/07/2012
 // Description: Layouts for consistent forms
 //
 
@@ -8,6 +8,7 @@
 // Form hints
 //
 form .hint {
+	margin:.5em 0 0;
 	font-style:italic;
 	#calc > .font-size(12);
 	color:@color-gamma;
@@ -33,7 +34,6 @@ form .hint {
 	width:1.5em;
 	line-height:1.5em;
 	content:'?';
-	font-weight:bold;
 	text-align:center;
 }
 	.field-tip span {
@@ -61,45 +61,46 @@ form .hint {
 	}
 
 //
-// Small form
+// Option lists
+// ul.option-list>(li>label>input[type=radio][name])*3
 //
+.option-list {
+	padding-left:0;
+	list-style:none;
+}
+	.option-list li {
+		margin-bottom:.5em;
+	}
 
 
 //
 // Collection of fields
-// Zen-coding: form>fieldset>ul.collection>(li>label+input)*3
+// Zen-coding: form>fieldset>ul.form-collection>(li>label.field-label+input[name][id])*3
 //
-.collection {
+.form-collection {
 	margin:0 0 @type-blankline;
 	padding:0 10px;
 	list-style:none;
 	border:1px solid @color-keyline;
 	.border-radius(5px);
 }
-	.collection > li {
-		padding:1em 0;
+	.form-collection > li {
+		position:relative;
+		padding:1em 0 1em 25%;
 		line-height:normal;
 		border-top:1px solid @color-keyline;
 	}
-	.collection > li:first-child {
+	.form-collection > li:first-child {
 		border:none;
 	}
-		.collection > li > label {
-			float:left;
-			display:block;
-			width:200px;
-			margin-right:20px;
+		.form-collection .field-label {
+			position:absolute;
+			left:0;
+			width:20%;
 			padding:(@input-padding + @input-borderwidth) 0;
 			line-height:normal;
 			text-align:right;
 		}
-		.collection > li > input[type=radio],
-		.collection > li > input[type=checkbox] {
-			vertical-align:middle;
-		}
-		.collection .hint {
-			margin:.5em 0 0 220px;
-		}
-	.collection .field-tip {
+	.form-collection .field-tip {
 		float:right;
 	}

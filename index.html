@@ -36,17 +36,16 @@
 				<li>Documented CSS caveats and code notes</li>
 				<li>Scalable project structure and conventions</li>
 				<li>Guidelines for HTML, CSS and JavaScript coding style</li>
-				<li>Full set of CSS3 LESS mixins</li>
-				<li>Neat typography out of the box</li>
-				<li>Useful layout classes to get stuff done</li>
-				<li>Cross-browser form elements</li>
-				<li>Nestable grid</li>
+				<li>A full set of CSS3 <a href="http://lesscss.org/">LESS mixins</a></li>
+				<li>Neat typography, baseline and text-variations out of the box</li>
+				<li>Re-usable layout classes with accompanying <a href="http://code.google.com/p/zen-coding/">Zen-Coding</a> formulas</li>
+				<li>Cross-browser forms elements and layouts with helpful user hints variations for buttons</li>
+				<li>A nestable grid structure with no first or last classes required</li>
 			</ul>
 
-			<h3>Get involved</h3>
-
 			<p>
-
+				Check out the examples below or <a href="https://github.com/i-like-robots/WebsiteBase">fork, clone and
+				get involved on Github</a>.
 			</p>
 
 		</section>
@@ -60,7 +59,11 @@
 			<!-- text content -->
 			<article id="text">
 
-				<h1 class="article-title">Text content</h1>
+				<h1 class="article-title">Typography</h1>
+
+				<p>
+					Neat typography, baseline and text-variations out of the box:
+				</p>
 
 				<p class="nano">
 					Bacon ipsum dolor sit amet incididunt magna shank consequat bacon capicola. Bresaola pig cow kielbasa
@@ -113,7 +116,11 @@
 			<!-- lists -->
 			<article id="lists">
 
-				<h1 class="article-title">Useful layout classes</h1>
+				<h1 class="article-title">Re-usable layout</h1>
+
+				<p>
+					Re-usable layout classes with accompanying <a href="http://code.google.com/p/zen-coding/">Zen-Coding</a> formulas:
+				</p>
 
 				<ul class="inline-list">
 					<li>List item 1</li>
@@ -185,7 +192,11 @@
 			<!-- forms -->
 			<article id="forms">
 
-				<h1 class="article-title">Forms</h1>
+				<h1 class="article-title">Form elements and layout</h1>
+
+				<p>
+					Cross-browser forms elements and layouts with helpful user hints variations for buttons:
+				</p>
 
 				<form method="post" action="">
 
@@ -193,13 +204,13 @@
 						<legend>
 							<span class="h6">Contact details</span>
 						</legend>
-						<ul class="collection">
+						<ul class="form-collection">
 							<li>
-								<label for="name">Name <dfn title="required">*</dfn></label>
+								<label class="field-label" for="name">Name <dfn title="required">*</dfn></label>
 								<input type="text" name="name" id="name" required />
 							</li>
 							<li>
-								<label for="email">Email <dfn title="required">*</dfn></label>
+								<label class="field-label" for="email">Email <dfn title="required">*</dfn></label>
 								<input type="email" name="e-mail" id="email" required />
 								<p class="field-tip">
 									<span>A helpful piece of text for those unsure how to proceed.</span>
@@ -212,14 +223,14 @@
 						<legend>
 							<span class="h6">Delivery details</span>
 						</legend>
-						<ul class="collection">
+						<ul class="form-collection">
 							<li>
-								<label for="postcode">Postcode</label>
+								<label class="field-label" for="postcode">Postcode</label>
 								<input type="text" name="postcode" id="postcode" size="7" />
 								<input type="button" name="postcode-lookup" value="Lookup" class="alt" />
 							</li>
 							<li>
-								<label for="country">Country</label>
+								<label class="field-label" for="country">Country</label>
 								<select name="country" id="country" disabled>
 									<option value="UK">United Kingdom</option>
 								</select>
@@ -234,41 +245,45 @@
 						<legend>
 							<span class="h6">The boring bits</span>
 						</legend>
-						<ul class="collection">
+						<ul class="form-collection">
 							<li>
-								<label for="message">Message</label>
+								<label class="field-label" for="message">Message</label>
 								<textarea name="message" id="message" rows="20" cols="85"></textarea>
 							</li>
 							<li>
-								<label for="agree">
-									<input type="checkbox" name="agree" id="agree" />
+								<p>
+									Some information about ticking the box below.
+								</p>
+								<label>
+									<input type="checkbox" name="agree" />
 									Agree
 								</label>
 							</li>
 							<li>
-								<ul class="multi-field">
+								<ul class="option-list">
 									<li>
-										<label for="radio1">
-											<input type="radio" name="radios" id="radio1" />
+										<label>
+											<input type="radio" name="radios" />
 											Radio 1
 										</label>
 									</li>
 									<li>
-										<label for="radio2">
-											<input type="radio" name="radios" id="radio2" />
+										<label>
+											<input type="radio" name="radios" />
 											Radio 2
 										</label>
 									</li>
 									<li>
-										<label for="radio3">
-											<input type="radio" name="radios" id="radio3" />
+										<label>
+											<input type="radio" name="radios" />
 											Radio 3
 										</label>
 									</li>
 								</ul>
 							</li>
 							<li class="button-field">
-								<input type="submit" name="submit" value="Send form" class="kilo" />
+								<input type="submit" name="submit" value="Form submit" class="kilo" />
+								<input type="button" name="disabled" value="Disabled button" class="kilo" disabled />
 							</li>
 						</ul>
 					</fieldset>
@@ -281,7 +296,11 @@
 			<!-- grid -->
 			<article id="grid">
 
-				<h1 class="article-title">Grid</h1>
+				<h1 class="article-title">Nestable grid</h1>
+
+				<p>
+					A nestable grid structure with no first or last classes required:
+				</p>
 
 				<div class="grid grid-example">
 
@@ -300,36 +319,30 @@
 					<div class="span-05"></div>
 					<div class="span-07"></div>
 
-					<div class="span-06"></div>
-					<div class="span-06"></div>
-				</div>
-
-				<h2>Nested grid</h2>
-
-				<div class="grid grid-example">
-					<div class="span-6">
-						<div class="grid">
-							<div class="span-02"></div>
-							<div class="span-02"></div>
-							<div class="span-02"></div>
-						</div>
-					</div>
 					<div class="span-6">
 						<div class="grid">
 							<div class="span-03"></div>
 							<div class="span-03"></div>
 						</div>
 					</div>
+
+					<div class="span-6">
+						<div class="grid">
+							<div class="span-03"></div>
+							<div class="span-03"></div>
+						</div>
+					</div>
+
 					<div class="span-8">
 						<div class="grid">
 							<div class="span-04"></div>
 							<div class="span-04"></div>
 						</div>
 					</div>
+
 					<div class="span-4">
 						<div class="grid">
-							<div class="span-01"></div>
-							<div class="span-01"></div>
+							<div class="span-02"></div>
 							<div class="span-02"></div>
 						</div>
 					</div>

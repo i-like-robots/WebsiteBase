@@ -1,6 +1,6 @@
 //
 // Author:   Matt Hinchliffe <www.maketea.co.uk>
-// Modified: 29/06/2012
+// Modified: 16/07/2012
 //
 
 //
@@ -34,23 +34,28 @@
 	}
 }
 
+
 //
 // Grid
 //
 #grid {
 	.setup( @columns: 12px, @colWidth: 60px, @gutterWidth: 20px ) {
-		width:@columns * ( @colWidth + @gutterWidth ) - @gutterWidth;
-		padding:0 ( @gutterWidth / 2 );
-		margin:0 auto;
+
+		.container {
+			max-width:@columns * ( @colWidth + @gutterWidth ) - @gutterWidth;
+			padding:0 ( @gutterWidth / 2 );
+			margin:0 auto;
+		}
 
 		.grid {
 			clear:both;
 			margin-left:-@gutterWidth;
 			.clearfix;
-			[class|="span"] {
-				float:left;
-				margin-left:@gutterWidth;
-			}
+		}
+
+		[class|="span"] {
+			float:left;
+			margin-left:@gutterWidth;
 		}
 	}
 

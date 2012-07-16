@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    29/06/2012
+// Modified:    13/07/2012
 // Description: Styling for default form elements such as inputs, select boxes and buttons.
 //
 // A note on styling form elements:
@@ -50,10 +50,17 @@ textarea:focus {
 	.box-shadow(0, 0, 5px, @color-beta);
 }
 
+input[disabled],
+select[disabled],
+textarea[disabled] {
+	background-color:@color-beta;
+}
+
+input
+
 input[size] {
 	width:auto !important; // Size attribute should always override width
 }
-
 select {
 	padding:@input-padding - 1px; // Extra height may be created by the button inside select boxes on Windows
 }
@@ -62,6 +69,11 @@ textarea {
 	height:8em;
 }
 
+input[disabled],
+select[disabled],
+button[disabled] {
+	cursor:not-allowed;
+}
 
 //
 // Go native else build a new input with a little JS <http://bit.ly/qM8FYC>
@@ -95,6 +107,17 @@ input[type=submit]:active {
 	.inset-shadow(0, 0, 10px, rgba(0, 0, 0, .5));
 }
 
+button[disabled],
+input[type=button][disabled],
+input[type=submit][disabled] {
+	border-color:@color-gamma;
+	color:@color-gamma;
+	background:@color-beta;
+}
+
+//
+// Button variations
+//
 button.alt, a.button.alt,
 input[type=button].alt,
 input[type=submit].alt {

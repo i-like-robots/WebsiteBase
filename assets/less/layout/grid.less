@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    28/06/2012
+// Modified:    16/07/2012
 // Description: The #grid utility mixin is based on the Twitter Bootstrap grid. Nested grids with no first/last classes.
 //
 
@@ -10,25 +10,20 @@
 // 12 column, 960 grid
 // Zen-coding: div.container>div.grid>div.span-$$*12
 //
-.container {
+#grid > .setup();
 
-	#grid > .setup();
-
-	.span-01 { #grid > .column(01) }
-	.span-02 { #grid > .column(02) }
-	.span-03 { #grid > .column(03) }
-	.span-04 { #grid > .column(04) }
-	.span-05 { #grid > .column(05) }
-	.span-06 { #grid > .column(06) }
-	.span-07 { #grid > .column(07) }
-	.span-08 { #grid > .column(08) }
-	.span-09 { #grid > .column(09) }
-	.span-10 { #grid > .column(10) }
-	.span-11 { #grid > .column(11) }
-	.span-12 { #grid > .column(12) }
-
-}
-
+.span-01 { #grid > .column(01) }
+.span-02 { #grid > .column(02) }
+.span-03 { #grid > .column(03) }
+.span-04 { #grid > .column(04) }
+.span-05 { #grid > .column(05) }
+.span-06 { #grid > .column(06) }
+.span-07 { #grid > .column(07) }
+.span-08 { #grid > .column(08) }
+.span-09 { #grid > .column(09) }
+.span-10 { #grid > .column(10) }
+.span-11 { #grid > .column(11) }
+.span-12 { #grid > .column(12) }
 
 //
 // Small screen E.G. tablet or netbook
