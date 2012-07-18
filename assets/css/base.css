@@ -573,11 +573,12 @@ form .hint {
   border-left-color: #333333;
 }
 .option-list {
+  margin: 0;
   padding-left: 0;
   list-style: none;
 }
 .option-list li {
-  margin-bottom: .5em;
+  padding: 5px 0;
 }
 .form-collection {
   margin: 0 0 1.5em;
@@ -784,15 +785,19 @@ a {
   min-height: 100%;
   padding: 0 1em;
   background: #ffffff;
-  -webkit-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-  -moz-box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 3px 100px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 3px 100px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 3px 100px rgba(0, 0, 0, 0.15);
 }
 .grid-example [class|=span] {
-  min-height: 2em;
+  height: 2em;
   margin-bottom: 20px;
-  background-color: rgba(0, 0, 0, 0.1);
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+  background: rgba(60, 100, 80, 0.25);
+  opacity: .5;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.grid-example [class|=span]:hover {
+  opacity: 1;
 }

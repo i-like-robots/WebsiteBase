@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    29/06/2012
+// Modified:    18/07/2012
 // Description: Internet Explorer 7 and below adjustments.
 //
 
@@ -16,7 +16,7 @@
 }
 
 //
-// element fixes
+// Element fixes
 //
 blockquote {
 	display:block;
@@ -26,25 +26,19 @@ input, select, textarea, button {
 	vertical-align:middle;
 }
 
-//
 // select boxes. Padding cannot be applied to a select box so add it to the height
-//
 select {
 	height:(@type-size * 1.2) + (@input-padding * 2) + 0px;
 }
 
-//
 // buttons render terribly due to a forced border-box style layout
-//
 button, input[type=button], input[type=submit], input[type=reset], a.button {
-	.inline-block();
+	.inline-block;
 	overflow:visible;
 	line-height:1;
 }
 
-//
 // form checkboxes and radio buttons alignment, align checkboxes, radios, text inputs with their label
-//
 input[type=radio] {
 	vertical-align:text-top;
 }
@@ -53,15 +47,15 @@ input[type=checkbox] {
 }
 
 //
-// nested floats requiring specified width
+// Nested floats requiring specified width
 //
 
 //
-// overflow may require position relative
+// Overflow may require position relative
 //
 
 //
-// no pseudo-elements
+// No pseudo-elements
 //
 blockquote q {
 	text-indent:0;
@@ -77,10 +71,13 @@ blockquote q {
 	}
 
 //
-// inline elements affects layout
+// Inline elements affects layout
 //
 
 //
-// no support for CSS3 properties
+// No support for CSS3 properties
 //
 
+//
+// Small layout quirks
+//

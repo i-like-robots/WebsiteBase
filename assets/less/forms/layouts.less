@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    13/07/2012
+// Modified:    18/07/2012
 // Description: Layouts for consistent forms
 //
 
@@ -65,13 +65,13 @@ form .hint {
 // ul.option-list>(li>label>input[type=radio][name])*3
 //
 .option-list {
+	margin:0;
 	padding-left:0;
 	list-style:none;
 }
 	.option-list li {
-		margin-bottom:.5em;
+		padding:(@input-padding + @input-borderwidth) 0;
 	}
-
 
 //
 // Collection of fields

@@ -23,7 +23,7 @@ h6, .h6 {
 }
 
 a {
-	.transition(); // Make links awesome
+	.transition; // Make links awesome
 }
 
 // layout
@@ -31,12 +31,16 @@ a {
 	min-height:100%;
 	padding:0 1em;
 	background:@color-alpha;
-	.box-shadow(0, 3px, 12px, rgba(0, 0, 0, .15));
+	.box-shadow(0, 3px, 100px, rgba(0, 0, 0, .15));
 }
-	// grid example
+
 	.grid-example [class|=span] {
-		min-height:2em;
+		height:2em;
 		margin-bottom:20px;
-		background-color:rgba(0, 0, 0, .1);
-		.border-radius(5px);
+		background:rgba(60, 100, 80, .25);
+		opacity:.5;
+		.border-radius(3px);
 	}
+		.grid-example [class|=span]:hover {
+			opacity:1;
+		}
