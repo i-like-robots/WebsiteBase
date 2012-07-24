@@ -1,0 +1,25 @@
+//
+// Author:      Matt Hinchliffe <www.maketea.co.uk>
+// Modified:    24/07/2012
+// Description: Images with caption overlays.
+// Zen-coding:  ul.nav.tabs>(li>a)*3
+//
+
+.tabs {
+	border-bottom:1px solid @color-keyline;
+}
+	.tabs li {
+		padding-left:5px;
+	}
+	.tabs li:first-child {
+		padding-left:0;
+	}
+		.tabs a {
+			color:@color-delta
+			border:1px solid @color-subtle;
+			border-bottom:0;
+		}
+		.tabs a:hover {
+			color:@color-brand;
+			background-color:@color-alpha;
+		}

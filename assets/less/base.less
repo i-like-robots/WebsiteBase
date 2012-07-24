@@ -1,14 +1,14 @@
 //
 // Author:   Matt Hinchliffe <www.maketea.co.uk>
-// Modified: 10/07/2012
+// Modified: 24/07/2012
 //
 
 // Global vars
-@import "variables";
+@import "_variables";
 
 // Base libraries
-@import "lib/utilities";
-@import "lib/css3";
+@import "lib/_mixins";
+@import "lib/_css3";
 @import "lib/normalize";
 
 // Content styles
@@ -21,15 +21,18 @@
 @import "forms/elements";
 @import "forms/layouts";
 
-// Modules
-@import "modules/media";
-@import "modules/nameplate";
-
-// Plugins
+// Abstracts
+@import "abstracts/nav.less";
+@import "abstracts/media.less";
+@import "abstracts/nameplate.less";
 
 // Layout
 @import "layout/utils";
 @import "layout/grid";
+
+// Modules
+@import "modules/tabs";
+@import "modules/captions";
 
 // Site skin
 @import "template/default";

@@ -1,48 +1,8 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    28/06/2012
+// Modified:    24/07/2012
 // Description: Useful classes for formatting lists
 //
-
-//
-// Inline list
-// Zen-coding: ul.inline-list>li*3
-//
-.inline-list {
-	padding-left:0;
-	list-style:none;
-}
-	.inline-list li {
-		display:inline;
-	}
-
-
-//
-// Block links
-// Zen-coding: ul.block-links>(li>a)*3
-//
-.block-links {
-	padding-left:0;
-	list-style:none;
-	.clearfix;
-}
-	.block-links li {
-		float:left;
-		margin-left:5px;
-	}
-	.block-links li:first-child {
-		margin-left:0;
-	}
-		.block-links a {
-			padding:.5em 10px;
-			text-decoration:none;
-			color:@color-alpha;
-			background:@color-lowlight;
-		}
-		.block-links a:hover {
-			background:@color-highlight;
-		}
-
 
 //
 // Comma separated list
