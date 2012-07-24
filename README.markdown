@@ -1,6 +1,6 @@
 # WebsiteBase
 
-[WebsiteBase](http://i-like-robots.github.com/WebsiteBase) is more than a boilerplate. It combines ideas from [OOCSS](http://oocss.org/), [Pears](http://pea.rs/) and [SMACSS](http://smacss.com) to help create a maintainable code base for large scale websites.
+[WebsiteBase](http://i-like-robots.github.com/WebsiteBase) is more than a boilerplate. It combines ideas from [OOCSS](http://oocss.org/), [Pears](http://pea.rs/) and [SMACSS](http://smacss.com) to help create a maintainable code base for scalable and performant websites.
 
 * Documented CSS caveats and code notes
 * Guidelines for HTML, CSS and JavaScript coding style
