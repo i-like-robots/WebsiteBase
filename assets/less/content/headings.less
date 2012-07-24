@@ -1,13 +1,13 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    29/06/2012
+// Modified:    24/07/2012
 // Description: OOCSS style headings allow markup to define document structure when the design does not.
 //
 
 .heading(@size, @leading: @type-baseline, @margin: @type-blankline) {
 	margin:0 0 (@margin / @size + 0em);
 	#calc > .font-size(@size);
-	line-height:@leading / @size;
+	#calc > .line-height(@size);
 }
 
 h1, .h1,

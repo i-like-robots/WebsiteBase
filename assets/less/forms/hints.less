@@ -1,0 +1,62 @@
+//
+// Author:      Matt Hinchliffe <www.maketea.co.uk>
+// Modified:    24/07/2012
+// Description: Layouts for consistent forms
+//
+
+//
+// Form hints
+// Zen-coding: p.hint
+//
+.field-hint {
+	margin:.5em 0 0;
+	font-style:italic;
+	#calc > .font-size(12);
+	color:@color-gamma;
+}
+
+//
+// Field tip <http://jsfiddle.net/i_like_robots/qrXyE/>
+// Zen-coding: p.field-tip>span
+//
+.field-tip {
+	position:relative;
+	margin:0;
+	cursor:help;
+	.border-radius(100%);
+}
+.field-tip,
+.field-tip span {
+	color:@color-alpha;
+	background:@color-epsilon;
+}
+.field-tip:before {
+	display:block;
+	width:1.5em;
+	line-height:1.5em;
+	content:'?';
+	text-align:center;
+}
+	.field-tip span {
+		position:absolute;
+		display:none;
+		width:240px;
+		padding:.25em .5em;
+		line-height:1.5;
+	}
+	.field-tip:hover span {
+		display:block;
+		top:-.25em;
+		right:2.5em;
+	}
+	.field-tip span:after {
+		content:' '; // Some content is required to have any layout
+		position:absolute;
+		top:1em;
+		right:-1em;
+		width:0;
+		height:0;
+		margin-top:-.5em;
+		border:.5em solid transparent;
+		border-left-color:@color-epsilon;
+	}
