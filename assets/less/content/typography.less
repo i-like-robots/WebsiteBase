@@ -1,0 +1,125 @@
+//
+// Author:      Matt Hinchliffe <www.maketea.co.uk>
+// Modified:    27/07/2012
+// Description: Classes for styling text content.
+//
+
+//
+// Webfonts
+//
+/*@font-face {
+	font-family:'';
+	font-weight:normal;
+	src:url('/assets/fonts/*.eot');
+	src:url('/assets/fonts/*.eot?#iefix') format('eot'),
+	    url('/assets/fonts/*.woff') format('woff'),
+	    url('/assets/fonts/*.ttf') format('truetype');
+}*/
+
+
+//
+// Document
+//
+html {
+	font-size:62.5%; // 10px, set in % for consistency in IE6/7 <http://clagnut.com/blog/348/#c790>
+}
+	body {
+		#calc > .font-size(@type-size, 10);
+		line-height:@type-baseline;
+		font-family:@type-sans;
+	}
+
+
+//
+// Primary text elements
+//
+p, ul, ol, dl {
+	margin:0 0 @type-blankline;
+}
+dt, dd {
+	margin:0;
+}
+
+
+//
+// Headings
+// - OOCSS style headings allow markup to define document structure when the design does not.
+//
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	font-weight:bold;
+}
+
+h1, .h1 {
+	margin:0 0 .25em;
+	#calc > .font-size(48);
+	#calc > .line-height(64, 48);
+
+}
+h2, .h2 {
+	margin:0 0 .5em;
+	#calc > .font-size(32);
+	#calc > .line-height(48, 36);
+}
+h3, .h3 {
+	margin:0 0 .666em;
+	#calc > .font-size(24);
+	#calc > .line-height(32, 24);
+}
+h4, .h4 {
+	margin:0 0 .8em;
+	#calc > .font-size(20);
+	#calc > .line-height(24, 20);
+}
+h5, .h5 {
+	margin:0 0 .888em;
+	#calc > .font-size(18);
+	#calc > .line-height(24, 18);
+}
+h6, .h6 {
+	margin:0 0 .5em;
+	font-size:1em;
+	line-height:@type-baseline;
+}
+
+
+//
+// Text alignment
+//
+.text-left {
+	text-align:left;
+}
+.text-centre,
+.text-center {
+	text-align:center;
+}
+.text-right {
+	text-align:right;
+}
+
+
+//
+// Font size variations <http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/>
+//
+.nano {
+	#calc > .font-size(11);
+	font-family:@type-small;
+}
+.milli {
+	#calc > .font-size(13);
+}
+.kilo {
+	#calc > .font-size(18);
+}
+.mega {
+	#calc > .font-size(24);
+	line-height:1;
+}
+.giga {
+	#calc > .font-size(30);
+	line-height:1;
+}

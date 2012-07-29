@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    24/07/2012
+// Modified:    27/07/2012
 // Description: Layouts for consistent forms
 //
 
@@ -14,7 +14,7 @@
 	list-style:none;
 }
 	.option-list li {
-		padding:(@input-padding + @input-borderwidth) 0;
+		padding:@input-padding 0;
 	}
 
 //
@@ -31,7 +31,7 @@
 	.form-collection > li {
 		position:relative;
 		padding:1em 0 1em 25%;
-		line-height:normal;
+		line-height:@input-baseline;
 		border-top:1px solid @color-keyline;
 	}
 	.form-collection > li:first-child {
@@ -41,8 +41,8 @@
 			position:absolute;
 			left:0;
 			width:20%;
-			padding:(@input-padding + @input-borderwidth) 0;
-			line-height:normal;
+			margin:1px 0; // match input border width
+			padding:@input-padding 0; // match input padding
 			text-align:right;
 		}
 	.form-collection .field-tip {

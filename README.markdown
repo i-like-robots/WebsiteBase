@@ -8,7 +8,7 @@
 * Scalable project structure and conventions, encouraging seperation of layout and style
 * Documented with accompanying [Zen-Coding](http://code.google.com/p/zen-coding/) formulas
 * Neat typography, baseline and text-variations out of the box
-* Cross-browser forms elements and layouts with helpful user hints variations for buttons
+* Cross-browser form elements and layouts with helpful user hints and button variations
 * Abstracted, re-usable layout components and nestable grid structure
 
 Check out the example file or [fork, clone and get involved on Github](http://github.com/i-like-robots/WebsiteBase).

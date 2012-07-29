@@ -91,15 +91,15 @@ input,
 select,
 textarea,
 button {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
   margin: 0;
+  font-size: 100%;
   vertical-align: baseline;
   *vertical-align: middle;
-  font-size: 100%;
-  line-height: normal;
   outline: none;
+}
+button,
+input {
+  line-height: normal;
 }
 input[type=checkbox],
 input[type=radio] {
@@ -125,24 +125,6 @@ button::-moz-focus-inner,
 input::-moz-focus-inner {
   padding: 0;
   border: 0;
-}
-html {
-  font-size: 62.5%;
-}
-body {
-  font-size: 1.6em;
-  line-height: 1.5;
-  font-family: Arial, sans-serif;
-}
-p,
-ul,
-ol,
-dl {
-  margin: 0 0 1.5em;
-}
-dt,
-dd {
-  margin: 0;
 }
 blockquote,
 q,
@@ -212,12 +194,12 @@ a:focus {
 hr {
   height: 1px;
   padding: 0;
-  margin: 0 0 1.5em;
+  margin: 0 0 1em;
   border: 0;
   background: #eeeeee;
 }
 table {
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
   border: none;
 }
 caption,
@@ -226,6 +208,32 @@ td {
   text-align: left;
   vertical-align: top;
   padding: 5px 10px;
+}
+/*@font-face {
+	font-family:'';
+	font-weight:normal;
+	src:url('/assets/fonts/*.eot');
+	src:url('/assets/fonts/*.eot?#iefix') format('eot'),
+	    url('/assets/fonts/*.woff') format('woff'),
+	    url('/assets/fonts/*.ttf') format('truetype');
+}*/
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6em;
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+}
+p,
+ul,
+ol,
+dl {
+  margin: 0 0 1em;
+}
+dt,
+dd {
+  margin: 0;
 }
 h1,
 .h1,
@@ -243,56 +251,48 @@ h6,
 }
 h1,
 .h1 {
-  margin: 0 0 0.25em;
+  margin: 0 0 .25em;
   font-size: 3em;
-  line-height: 3;
+  line-height: 1.333;
 }
 h2,
 .h2 {
-  margin: 0 0 0.3333333333333333em;
-  font-size: 2.25em;
-  line-height: 2.25;
+  margin: 0 0 .5em;
+  font-size: 2em;
+  line-height: 1.333;
 }
 h3,
 .h3 {
-  margin: 0 0 0.25em;
+  margin: 0 0 .666em;
   font-size: 1.5em;
-  line-height: 1.5;
+  line-height: 1.333;
 }
 h4,
 .h4 {
-  margin: 0 0 0.3em;
+  margin: 0 0 .8em;
   font-size: 1.25em;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 h5,
 .h5 {
-  margin: 0 0 0.5em;
+  margin: 0 0 .888em;
   font-size: 1.125em;
-  line-height: 1.125;
+  line-height: 1.333;
 }
 h6,
 .h6 {
-  margin: 0 0 0.375em;
+  margin: 0 0 .5em;
   font-size: 1em;
-  line-height: 1;
+  line-height: 1.5;
 }
-/*@font-face {
-	font-family:'';
-	font-weight:normal;
-	src:url('/assets/fonts/*.eot');
-	src:url('/assets/fonts/*.eot?#iefix') format('eot'),
-	    url('/assets/fonts/*.woff') format('woff'),
-	    url('/assets/fonts/*.ttf') format('truetype');
-}*/
-.align-left {
+.text-left {
   text-align: left;
 }
-.align-centre,
-.align-center {
+.text-centre,
+.text-center {
   text-align: center;
 }
-.align-right {
+.text-right {
   text-align: right;
 }
 .nano {
@@ -312,33 +312,6 @@ h6,
 .giga {
   font-size: 1.875em;
   line-height: 1;
-}
-.alpha {
-  color: #ffffff;
-}
-.beta {
-  color: #dddddd;
-}
-.gamma {
-  color: #999999;
-}
-.delta {
-  color: #666666;
-}
-.epsilon {
-  color: #333333;
-}
-.zeta {
-  color: #252525;
-}
-.brand {
-  color: #0ca5b0;
-}
-.highlight {
-  color: #4e3f30;
-}
-.attention {
-  color: #c81730;
 }
 .tag-list {
   padding-left: 0;
@@ -368,7 +341,7 @@ h6,
 }
 .inline-definitions {
   overflow: hidden;
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 .inline-definitions dt,
 .inline-definitions dd {
@@ -399,60 +372,73 @@ label dfn[title] {
   border: none;
 }
 input,
-select,
 textarea,
+select,
 button {
-  padding: 4px;
+  padding: 0.25em;
   border: 1px solid #999999;
   font-weight: normal;
   font-family: sans-serif;
-  color: #999999;
-  background: #ffffff;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
 }
+input[disabled],
+textarea[disabled],
+select[disabled],
+button[disabled] {
+  border-color: #999999 !important;
+  color: #999999 !important;
+  background: #dddddd !important;
+  cursor: not-allowed;
+}
+input,
+textarea,
+select {
+  color: #999999;
+  background: #ffffff;
+}
 input:focus,
-select:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
   color: #333333;
   -webkit-box-shadow: 0 0 5px #dddddd;
   -moz-box-shadow: 0 0 5px #dddddd;
   box-shadow: 0 0 5px #dddddd;
 }
-input[disabled],
-select[disabled],
-textarea[disabled] {
-  background-color: #dddddd;
-}
-inputinput[size] {
+input[size] {
   width: auto !important;
 }
-select {
-  padding: 3px;
+input[type=file],
+input[type=radio],
+input[type=checkbox] {
+  padding: 0;
+  border: none;
+  background: none;
 }
 textarea {
   width: 90%;
   height: 8em;
 }
-input[disabled],
-select[disabled],
-button[disabled] {
-  cursor: not-allowed;
+select,
+input[type=file] {
+  height: 1.5;
+  /* In IE7, the height of the select element cannot be changed by height, only font-size */
+
+  line-height: 1.5;
 }
-input[type=file],
-input[type=radio],
-input[type=checkbox] {
-  width: auto;
+select {
+  height: 1.7em;
+}
+select[size],
+select[multiple] {
   height: auto;
-  padding: 0;
-  border: none;
-  background: none;
 }
 button,
 a.button,
 input[type=button],
 input[type=submit] {
+  height: auto;
   border-color: #097880;
   text-decoration: none;
   color: #ffffff;
@@ -470,13 +456,6 @@ input[type=submit]:active {
   -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
   box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-}
-button[disabled],
-input[type=button][disabled],
-input[type=submit][disabled] {
-  border-color: #999999;
-  color: #999999;
-  background: #dddddd;
 }
 button.alt,
 a.button.alt,
@@ -496,10 +475,10 @@ input[type=submit].alt {
   list-style: none;
 }
 .option-list li {
-  padding: 5px 0;
+  padding: 0.25em 0;
 }
 .form-collection {
-  margin: 0 0 1.5em;
+  margin: 0 0 1em;
   padding: 0 10px;
   list-style: none;
   border: 1px solid #eeeeee;
@@ -510,7 +489,7 @@ input[type=submit].alt {
 .form-collection > li {
   position: relative;
   padding: 1em 0 1em 25%;
-  line-height: normal;
+  line-height: 1.2em;
   border-top: 1px solid #eeeeee;
 }
 .form-collection > li:first-child {
@@ -520,8 +499,8 @@ input[type=submit].alt {
   position: absolute;
   left: 0;
   width: 20%;
-  padding: 5px 0;
-  line-height: normal;
+  margin: 1px 0;
+  padding: 0.25em 0;
   text-align: right;
 }
 .form-collection .field-tip {
@@ -532,6 +511,9 @@ input[type=submit].alt {
   font-style: italic;
   font-size: 0.75em;
   color: #999999;
+}
+.field-error {
+  color: #c81730;
 }
 .field-tip {
   position: relative;
@@ -679,7 +661,7 @@ img.base {
   clear: both;
 }
 .row {
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
 }
 .container {
   max-width: 940px;
@@ -740,22 +722,30 @@ img.base {
   width: 940px;
 }
 .tabs {
+  margin-bottom: 1em;
   border-bottom: 1px solid #eeeeee;
 }
 .tabs li {
-  padding-left: 5px;
+  padding-left: .25em;
 }
 .tabs li:first-child {
   padding-left: 0;
 }
 .tabs a {
-  border: 1px solid #f8f4ee;
-  border-bottom: 0;
+  margin-bottom: -1px;
+  padding: .25em .5em;
+  border: 1px solid #eeeeee;
+  text-decoration: none;
   color: #666666;
+  background: #eeeeee;
 }
-.tabs a:hover {
+.tabs a:hover,
+.tabs .selected a {
   color: #0ca5b0;
-  background-color: #ffffff;
+  background: #ffffff;
+}
+.tabs .selected a {
+  border-bottom-color: #ffffff;
 }
 .captioned {
   position: relative;
@@ -775,6 +765,33 @@ html .captioned {
   left: 0;
   padding: .5em 15px;
   background: rgba(0, 0, 0, 0.75);
+}
+.alpha {
+  color: #ffffff;
+}
+.beta {
+  color: #dddddd;
+}
+.gamma {
+  color: #999999;
+}
+.delta {
+  color: #666666;
+}
+.epsilon {
+  color: #333333;
+}
+.zeta {
+  color: #252525;
+}
+.brand {
+  color: #0ca5b0;
+}
+.highlight {
+  color: #4e3f30;
+}
+.attention {
+  color: #c81730;
 }
 body {
   color: #333333;

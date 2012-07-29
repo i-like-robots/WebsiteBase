@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    24/07/2012
+// Modified:    29/07/2012
 // Description: Styling for default form elements
 //
 
@@ -10,6 +10,7 @@
 legend > span {
 	display:block;
 }
+
 
 //
 // Labels
@@ -21,42 +22,60 @@ label {
 		border:none;
 	}
 
+
 //
-// User inputs
+// Shared properties
 //
 input,
-select,
 textarea,
+select,
 button {
 	padding:@input-padding;
-	border:@input-borderwidth solid @color-gamma;
+	border:1px solid @color-gamma;
 	font-weight:normal;
 	font-family:sans-serif;
-	color:@color-gamma;
-	background:@color-alpha;
 	.border-radius(2px);
 }
 
+input[disabled],
+textarea[disabled],
+select[disabled],
+button[disabled] {
+	border-color:@color-gamma !important;
+	color:@color-gamma !important;
+	background:@color-beta !important;
+	cursor:not-allowed;
+}
+
+
+//
+// Text inputs and select boxes
+//
+input,
+textarea,
+select {
+	color:@color-gamma;
+	background:@color-alpha;
+}
+
 input:focus,
-select:focus,
-textarea:focus {
+textarea:focus,
+select:focus {
 	color:@color-epsilon;
 	.box-shadow(0, 0, 5px, @color-beta);
 }
 
-input[disabled],
-select[disabled],
-textarea[disabled] {
-	background-color:@color-beta;
-}
-
-input
-
 input[size] {
 	width:auto !important; // Size attribute should always override width
 }
-select {
-	padding:@input-padding - 1px; // Extra height may be created by the button inside select boxes on Windows
+
+// Go native else build a new input with a little JS <http://bit.ly/qM8FYC>
+input[type=file],
+input[type=radio],
+input[type=checkbox] {
+	padding:0;
+	border:none;
+	background:none;
 }
 
 textarea {
@@ -64,25 +83,21 @@ textarea {
 	height:8em;
 }
 
-input[disabled],
-select[disabled],
-button[disabled] {
-	cursor:not-allowed;
+// Set the height of select and file controls to match text inputs
+select,
+input[type=file] {
+  height:@type-baseline; /* In IE7, the height of the select element cannot be changed by height, only font-size */
+  line-height:@type-baseline;
 }
 
-//
-// Go native else build a new input with a little JS <http://bit.ly/qM8FYC>
-//
-input[type=file],
-input[type=radio],
-input[type=checkbox] {
-	width:auto;
+select {
+	height:@input-baseline + ( @input-padding * 2 ); // Set a height
+}
+
+select[size],
+select[multiple] {
 	height:auto;
-	padding:0;
-	border:none;
-	background:none;
 }
-
 
 //
 // Buttons
@@ -90,6 +105,7 @@ input[type=checkbox] {
 button, a.button,
 input[type=button],
 input[type=submit] {
+	height:auto;
 	border-color:darken(@color-brand, 10%);
 	text-decoration:none;
 	color:@color-alpha;
@@ -100,14 +116,6 @@ button:active, a.button:active,
 input[type=button]:active,
 input[type=submit]:active {
 	.inset-shadow(0, 0, 10px, rgba(0, 0, 0, .5));
-}
-
-button[disabled],
-input[type=button][disabled],
-input[type=submit][disabled] {
-	border-color:@color-gamma;
-	color:@color-gamma;
-	background:@color-beta;
 }
 
 //

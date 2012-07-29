@@ -180,21 +180,25 @@ legend {
 	}
 
 //
-// 1. Force content box for consistant sizing
-// 2. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
+// 1. Addresses margins set differently in IE6/7, FF3+, S5, Chrome
+// 2. Corrects font size not being inherited in all browsers
 // 3. Improves appearance and consistency in all browsers
-// 4. Corrects font size not being inherited in all browsers
-// 5. Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
-// 6. Remove unwanted highlights from Chrome/S3+
+// 4. Remove unwanted highlights from Chrome/S3+
 //
 input, select, textarea, button {
-	.box-sizing(content-box); // 1
-	margin:0; // 2
+	margin:0; // 1
+	font-size:100%; // 2
 	vertical-align:baseline; // 3
 	*vertical-align:middle; // 3
-	font-size:100%; // 4
-	line-height:normal; // 5
-	outline:none; // 6
+	outline:none; // 4
+}
+
+//
+// Addresses FF3/4 setting `line-height` on `input` using `!important` in the
+// UA stylesheet.
+//
+button, input {
+    line-height: normal;
 }
 
 //
