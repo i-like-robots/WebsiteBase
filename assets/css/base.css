@@ -254,36 +254,42 @@ h1,
   margin: 0 0 .25em;
   font-size: 3em;
   line-height: 1.333;
+  letter-spacing: -1px;
 }
 h2,
 .h2 {
   margin: 0 0 .5em;
   font-size: 2em;
   line-height: 1.333;
+  letter-spacing: -1px;
 }
 h3,
 .h3 {
   margin: 0 0 .666em;
   font-size: 1.5em;
   line-height: 1.333;
+  letter-spacing: 0;
 }
 h4,
 .h4 {
   margin: 0 0 .8em;
   font-size: 1.25em;
   line-height: 1.2;
+  letter-spacing: 0;
 }
 h5,
 .h5 {
   margin: 0 0 .888em;
   font-size: 1.125em;
   line-height: 1.333;
+  letter-spacing: 0;
 }
 h6,
 .h6 {
   margin: 0 0 .5em;
   font-size: 1em;
   line-height: 1.5;
+  letter-spacing: 0;
 }
 .text-left {
   text-align: left;
@@ -760,6 +766,34 @@ html .captioned {
   padding: .5em 15px;
   background: rgba(0, 0, 0, 0.75);
 }
+.pagination {
+  margin: 1em 0;
+  text-align: center;
+}
+.pagination a {
+  width: 1.5em;
+  border: 1px solid #eeeeee;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  color: #666666;
+  background: #eeeeee;
+}
+.pagination a:hover,
+.pagination .selected a {
+  color: #0ca5b0;
+  background: #ffffff;
+}
+.pagination a[rel] {
+  width: auto;
+  padding: 0 5px;
+}
+.pagination [rel=next]:after {
+  content: ' >';
+}
+.pagination [rel=prev]:before {
+  content: '< ';
+}
 .alpha {
   color: #ffffff;
 }
@@ -787,27 +821,18 @@ html .captioned {
 .attention {
   color: #c81730;
 }
-body {
+body,
+.theme-default {
   color: #333333;
   background: #f8f4ee;
 }
-h1,
-.h1 {
-  letter-spacing: -1px;
+.theme-reverse {
+  color: #ffffff;
+  background: #252525;
 }
-h2,
-.h2 {
-  letter-spacing: -0.5px;
-}
-h3,
-.h3,
-h4,
-.h4,
-h5,
-.h5,
-h6,
-.h6 {
-  letter-spacing: 0;
+.theme-brand {
+  color: #ffffff;
+  background: #0ca5b0;
 }
 a {
   -webkit-transition: all 0.25s ease;

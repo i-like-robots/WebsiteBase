@@ -1,0 +1,35 @@
+//
+// Author:      Matt Hinchliffe <www.maketea.co.uk>
+// Modified:    30/07/2012
+// Description: Pagination lists
+// Zen-coding:  ol.nav.pagination>(li>a[rel=prev])+(li>a)*3+(li>a[rel=next])
+//
+
+.pagination {
+	margin:1em 0;
+	text-align:center;
+}
+	.pagination a {
+		width:1.5em;
+		border:1px solid @color-keyline;
+		line-height:1.5;
+		text-align:center;
+		text-decoration:none;
+		color:@color-delta;
+		background:@color-keyline;
+	}
+	.pagination a:hover,
+	.pagination .selected a {
+		color:@color-brand;
+		background:@color-alpha;
+	}
+	.pagination a[rel] {
+		width:auto;
+		padding:0 5px;
+	}
+	.pagination [rel=next]:after {
+		content:' >';
+	}
+	.pagination [rel=prev]:before {
+		content:'< ';
+	}
