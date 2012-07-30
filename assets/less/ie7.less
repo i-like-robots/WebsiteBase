@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    24/07/2012
+// Modified:    30/07/2012
 // Description: Internet Explorer 7 and below adjustments.
 //
 
@@ -27,11 +27,6 @@ blockquote {
 //
 input, select, textarea, button {
 	vertical-align:middle;
-}
-
-// Padding cannot be applied to select box so add it to the height <http://blogs.msdn.com/b/ie/archive/2006/01/17/514076.aspx>
-select {
-	height:(@type-size * 1.2) + (@input-padding * 2) + 0px;
 }
 
 // Buttons render terribly due to a forced border-box layout

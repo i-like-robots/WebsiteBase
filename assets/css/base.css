@@ -420,15 +420,9 @@ textarea {
   width: 90%;
   height: 8em;
 }
-select,
-input[type=file] {
-  height: 1.5;
-  /* In IE7, the height of the select element cannot be changed by height, only font-size */
-
-  line-height: 1.5;
-}
 select {
-  height: 1.7em;
+  height: 29px;
+  padding: 2px;
 }
 select[size],
 select[multiple] {
@@ -750,9 +744,9 @@ img.base {
 .captioned {
   position: relative;
   display: block;
-  text-decoration: none;
 }
 html .captioned {
+  text-decoration: none;
   color: #ffffff;
 }
 .captioned img {
@@ -760,8 +754,8 @@ html .captioned {
 }
 .captioned .caption {
   position: absolute;
-  top: 0;
   right: 0;
+  bottom: 0;
   left: 0;
   padding: .5em 15px;
   background: rgba(0, 0, 0, 0.75);
@@ -829,6 +823,9 @@ a {
   -webkit-box-shadow: 0 3px 100px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0 3px 100px rgba(0, 0, 0, 0.15);
   box-shadow: 0 3px 100px rgba(0, 0, 0, 0.15);
+}
+article {
+  padding: 0 0 1em;
 }
 .grid-example [class|=span] {
   height: 2em;

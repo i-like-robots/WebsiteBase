@@ -57,14 +57,15 @@ a {
 	.transition; // Make links awesome
 }
 
-// layout
 #container {
 	min-height:100%;
 	padding:0 1em;
 	background:@color-alpha;
 	.box-shadow(0, 3px, 100px, rgba(0, 0, 0, .15));
 }
-
+	article {
+		padding:0 0 @type-blankline;
+	}
 	.grid-example [class|=span] {
 		height:2em;
 		margin-bottom:20px;
@@ -72,6 +73,6 @@ a {
 		opacity:.5;
 		.border-radius(3px);
 	}
-		.grid-example [class|=span]:hover {
-			opacity:1;
-		}
+	.grid-example [class|=span]:hover {
+		opacity:1;
+	}

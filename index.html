@@ -34,13 +34,12 @@
 			<h2 class="h3">Features</h2>
 
 			<ul>
-				<li>Documented CSS caveats and code notes</li>
-				<li>Guidelines for HTML, CSS and JavaScript coding style</li>
-				<li>A full set of CSS3 <a href="http://lesscss.org/">LESS mixins</a></li>
 				<li>Scalable project structure and conventions, encouraging seperation of layout and style</li>
-				<li>Documented with accompanying <a href="http://code.google.com/p/zen-coding/">Zen-Coding</a> formulas</li>
-				<li>Neat typography, baseline and text-variations out of the box</li>
-				<li>Cross-browser form elements and layouts with helpful user hints and button variations</li>
+				<li>A full set of CSS3 <a href="http://lesscss.org/">LESS</a> mixins</li>
+				<li>Guidelines for HTML, CSS and JavaScript coding style</li>
+				<li>Fully documented including CSS caveats and <a href="http://code.google.com/p/zen-coding/">Zen-Coding</a> formulas</li>
+				<li>Neat typography and text-variations out of the box</li>
+				<li>Normalised form elements, graceful form layouts and user hints</li>
 				<li>Abstracted, re-usable layout components and nestable grid structure</li>
 			</ul>
 
@@ -63,7 +62,7 @@
 				<h1 class="article-title">Typography</h1>
 
 				<p class="article-intro">
-					Neat typography, baseline and text-variations out of the box:
+					Neat typography and text-variations out of the box:
 				</p>
 
 				<blockquote>
@@ -130,7 +129,7 @@
 			<!-- lists -->
 			<article id="lists">
 
-				 <h1 class="article-title">Useful lists and definitions</h1>
+				 <h1 class="article-title">Useful lists</h1>
 
 				 <p class="article-intro">
 				 	Lists and definitions are often the most appropriate way of marking up simple structures.
@@ -187,6 +186,7 @@
 				<h1 class="article-title">Modular interface components</h1>
 
 				<p class="article-intro">
+					Keep components in self-contained, namespaced files to chop-and-change when necessary.
 				</p>
 
 				<ul class="nav tabs">
@@ -195,6 +195,11 @@
 					<li><a href="#">Tab C</a></li>
 					<li><a href="#">Tab D</a></li>
 				</ul>
+
+				<div class="captioned">
+					<img src="http://placekitten.com/940/220" alt="" width="940" height="220" />
+					<span class="caption">Image caption</span>
+				</div>
 
 			</article>
 
@@ -206,7 +211,7 @@
 				<h1 class="article-title">Form elements and layout</h1>
 
 				<p class="article-intro">
-					Cross-browser forms elements and layouts with helpful user hints variations for buttons:
+					Normalised form elements, graceful form layouts and user hints:
 				</p>
 
 				<form method="post" action="">
@@ -242,8 +247,11 @@
 							</li>
 							<li>
 								<label class="field-label" for="country">Country</label>
-								<select name="country" id="country" disabled>
-									<option value="UK">United Kingdom</option>
+								<select name="country" id="country">
+									<option>Belgium</option>
+									<option>France</option>
+									<option>Germany</option>
+									<option>United Kingdom</option>
 								</select>
 								<p class="field-hint">
 									A small hint to help users along a little.
@@ -311,7 +319,7 @@
 				<h1 class="article-title">Nestable grid</h1>
 
 				<p>
-					A nestable grid structure with no first or last classes required:
+					Abstracted, re-usable layout components and nestable grid structure:
 				</p>
 
 				<div class="grid grid-example">

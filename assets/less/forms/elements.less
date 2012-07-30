@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    29/07/2012
+// Modified:    30/07/2012
 // Description: Styling for default form elements
 //
 
@@ -83,15 +83,10 @@ textarea {
 	height:8em;
 }
 
-// Set the height of select and file controls to match text inputs
-select,
-input[type=file] {
-  height:@type-baseline; /* In IE7, the height of the select element cannot be changed by height, only font-size */
-  line-height:@type-baseline;
-}
-
+// Select boxes obey a border-box layout
 select {
-	height:@input-baseline + ( @input-padding * 2 ); // Set a height
+	height:29px; // Set a height to match text inputs
+	padding:2px;
 }
 
 select[size],
