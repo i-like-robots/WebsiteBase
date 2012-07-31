@@ -11,3 +11,13 @@
 * Abstracted, re-usable layout components and nestable grid structure
 
 Check out the example file or [fork, clone and get involved on Github](http://github.com/i-like-robots/WebsiteBase).
+
+## Versioning
+
+The current version is `0.9.0`. Releases will be numbered in following format:
+
+`<major>.<minor>.<patch>`
+
+## License
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/).

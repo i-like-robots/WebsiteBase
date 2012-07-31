@@ -39,28 +39,28 @@
 // Grid
 //
 #grid {
-	.setup( @columns: 12px, @colWidth: 60px, @gutterWidth: 20px ) {
+	.setup( @columns: 12, @colWidth: 60, @gutterWidth: 20 ) {
 
 		.container {
-			max-width:@columns * ( @colWidth + @gutterWidth ) - @gutterWidth;
-			padding:0 ( @gutterWidth / 2 );
+			max-width:@columns * (@colWidth + @gutterWidth) - @gutterWidth + 0px;
+			padding:0 (@gutterWidth / 2) + 0px;
 			margin:0 auto;
 		}
 
 		.grid {
 			clear:both;
-			margin-left:-@gutterWidth;
+			margin-left:-@gutterWidth + 0px;
 			.clearfix;
 		}
 
 		[class|="span"] {
 			float:left;
-			margin-left:@gutterWidth;
+			margin-left:@gutterWidth + 0px;
 		}
 	}
 
-	.column( @i, @colWidth: 60px, @gutterWidth: 20px ) {
-		width:(@i * @colWidth ) + ( @gutterWidth * ( @i - 1 ) );
+	.column( @i, @colWidth: 60, @gutterWidth: 20 ) {
+		width:(@i * @colWidth ) + ( @gutterWidth * ( @i - 1 ) ) + 0px;
 	}
 }
 
