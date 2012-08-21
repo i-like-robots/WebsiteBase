@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    27/07/2012
+// Modified:    15/08/2012
 // Description: Classes for styling text content.
 //
 
@@ -11,7 +11,7 @@
 	font-family:'';
 	font-weight:normal;
 	src:url('/assets/fonts/*.eot');
-	src:url('/assets/fonts/*.eot?#iefix') format('eot'),
+	src:url('/assets/fonts/*.eot?#iefix') format('embedded-opentype'),
 	    url('/assets/fonts/*.woff') format('woff'),
 	    url('/assets/fonts/*.ttf') format('truetype');
 }*/
@@ -39,7 +39,9 @@ p, ul, ol, dl {
 dt, dd {
 	margin:0;
 }
-
+ul, ol, dl {
+	padding:0 0 0 1.75em;
+}
 
 //
 // Headings
