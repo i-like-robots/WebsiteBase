@@ -1,6 +1,6 @@
 //
 // Author:   Matt Hinchliffe <www.maketea.co.uk>
-// Modified: 30/04/2012
+// Modified: 17/09/2012
 //
 
 //
@@ -26,15 +26,10 @@
 //
 // Drop shadows
 //
-.box-shadow(@x, @y, @blur, @colour) {
-	-webkit-box-shadow:@arguments;
-	   -moz-box-shadow:@arguments;
-	        box-shadow:@arguments;
-}
-.inset-shadow(@x, @y, @blur, @colour) {
-	-webkit-box-shadow:inset @arguments;
-	   -moz-box-shadow:inset @arguments;
-	        box-shadow:inset @arguments;
+.box-shadow(@shadow) {
+	-webkit-box-shadow:@shadow;
+	   -moz-box-shadow:@shadow;
+	        box-shadow:@shadow;
 }
 
 

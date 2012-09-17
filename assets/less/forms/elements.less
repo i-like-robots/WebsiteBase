@@ -62,7 +62,7 @@ input:focus,
 textarea:focus,
 select:focus {
 	color:@color-epsilon;
-	.box-shadow(0, 0, 5px, @color-beta);
+	.box-shadow(0 0 5px @color-beta);
 }
 
 input[size] {
@@ -111,7 +111,7 @@ input[type=submit] {
 button:active, a.button:active,
 input[type=button]:active,
 input[type=submit]:active {
-	.inset-shadow(0, 0, 10px, rgba(0, 0, 0, .5));
+	.box-shadow(inset 0 0 10px rgba(0, 0, 0, .5));
 }
 
 // Variations

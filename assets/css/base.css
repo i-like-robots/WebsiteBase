@@ -1,16 +1,4 @@
-/*
-.media.mini .img {
-	margin-right:0;
-}
-.media.mini .img-ext {
-	margin-left:0;
-}
-	.media.mini .bd {
-		padding:5px;
-	}
- */
 @import "lib/normalize.css";
-@charset "UTF-8";
 blockquote,
 q,
 cite {
@@ -142,21 +130,21 @@ h1,
 .h1 {
   margin: 0 0 .25em;
   font-size: 3em;
-  line-height: 1.333;
+  line-height: 1.33333;
   letter-spacing: -1px;
 }
 h2,
 .h2 {
   margin: 0 0 .5em;
   font-size: 2em;
-  line-height: 1.333;
+  line-height: 1.33333;
   letter-spacing: -1px;
 }
 h3,
 .h3 {
   margin: 0 0 .666em;
   font-size: 1.5em;
-  line-height: 1.333;
+  line-height: 1.33333;
   letter-spacing: 0;
 }
 h4,
@@ -170,7 +158,7 @@ h5,
 .h5 {
   margin: 0 0 .888em;
   font-size: 1.125em;
-  line-height: 1.333;
+  line-height: 1.33333;
   letter-spacing: 0;
 }
 h6,
@@ -191,11 +179,11 @@ h6,
   text-align: right;
 }
 .nano {
-  font-size: 0.688em;
+  font-size: 0.6875em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .milli {
-  font-size: 0.813em;
+  font-size: 0.8125em;
 }
 .kilo {
   font-size: 1.125em;
@@ -212,26 +200,26 @@ h6,
   padding-left: 0;
   text-transform: capitalize;
 }
-.tag-list li {
+.tag-list > li {
   display: inline;
 }
-.tag-list li:after {
+.tag-list > li:after {
   content: ',\0000a0';
 }
-.tag-list li:last-child:after {
+.tag-list > li:last-child:after {
   content: normal;
 }
 .separated-list {
   padding-left: 0;
   white-space: nowrap;
 }
-.separated-list li {
+.separated-list > li {
   display: inline;
 }
-.separated-list li:before {
+.separated-list > li:before {
   content: '\0000a0\0000a0|\0000a0\0000a0';
 }
-.separated-list li:first-child:before {
+.separated-list > li:first-child:before {
   content: normal;
 }
 .inline-definitions {
@@ -570,7 +558,7 @@ img.base {
 .grid:after {
   clear: both;
 }
-[class|="span"] {
+[class|=span] {
   float: left;
   margin-left: 20px;
 }
@@ -753,5 +741,3 @@ article {
 .grid-example [class|=span]:hover {
   opacity: 1;
 }
-
-/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

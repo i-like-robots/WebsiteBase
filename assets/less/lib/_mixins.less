@@ -1,37 +1,25 @@
 //
 // Author:   Matt Hinchliffe <www.maketea.co.uk>
-// Modified: 16/07/2012
+// Modified: 17/09/2012
 //
 
 //
 // Calculation mixins
 // - I decided to round results to 3 decimal places, otherwise it is wasteful. Until LESS 1.4 properties cannot be used as arguments.
 //
-#calc {
-
-	@pow: 1000; // 3 decimal places: pow(10, 3) = 1000
-
-	.font-size(@size, @context: @type-size) {
-		@value: @size / @context;
-		@powup: @value * @pow;
-		@round: round(@powup);
-		@powdn: @round / @pow;
-		font-size:@powdn + 0em;
-	}
-	.height(@size, @context: @type-size) {
-		@value: @size / @context;
-		@powup: @value * @pow;
-		@round: round(@powup);
-		@powdn: @round / @pow;
-		height:@powdn + 0em;
-	}
-	.line-height(@size, @context: @type-size) {
-		@value: @size / @context;
-		@powup: @value * @pow;
-		@round: round(@powup);
-		@powdn: @round / @pow;
-		line-height:@powdn;
-	}
+.font-size(@size, @context: @type-size) {
+	@value: @size / @context;
+	@powup: @value * @precision;
+	@round: round(@powup);
+	@powdn: @round / @precision;
+	font-size:@powdn + 0em;
+}
+.line-height(@size, @context: @type-size) {
+	@value: @size / @context;
+	@powup: @value * @precision;
+	@round: round(@powup);
+	@powdn: @round / @precision;
+	line-height:@powdn;
 }
 
 
@@ -53,7 +41,7 @@
 			.clearfix;
 		}
 
-		[class|="span"] {
+		[class|=span] {
 			float:left;
 			margin-left:@gutterWidth + 0px;
 		}
@@ -63,6 +51,7 @@
 		width:(@i * @colWidth ) + ( @gutterWidth * ( @i - 1 ) ) + 0px;
 	}
 }
+
 
 //
 // Replace text
@@ -74,6 +63,7 @@
 	text-indent:-9999px;
 	background:transparent no-repeat 0 0;
 }
+
 
 //
 // Clearfix

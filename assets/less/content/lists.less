@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    24/07/2012
+// Modified:    17/09/2012
 // Description: Useful classes for formatting lists
 //
 
@@ -12,13 +12,13 @@
 	padding-left:0;
 	text-transform:capitalize;
 }
-	.tag-list li {
+	.tag-list > li {
 		display:inline;
 	}
-	.tag-list li:after {
+	.tag-list > li:after {
 		content:',\0000a0'; // Non-breaking space
 	}
-	.tag-list li:last-child:after {
+	.tag-list > li:last-child:after {
 		content:normal;
 	}
 
@@ -31,13 +31,13 @@
 	padding-left:0;
 	white-space:nowrap;
 }
-	.separated-list li {
+	.separated-list > li {
 		display:inline;
 	}
-	.separated-list li:before {
+	.separated-list > li:before {
 		content:'\0000a0\0000a0|\0000a0\0000a0'; // Non-breaking space
 	}
-	.separated-list li:first-child:before {
+	.separated-list > li:first-child:before {
 		content:normal;
 	}
 
