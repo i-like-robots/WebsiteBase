@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    17/09/2012
+// Modified:    26/09/2012
 // Description: Useful classes for formatting lists
 //
 
@@ -11,16 +11,18 @@
 .tag-list {
 	padding-left:0;
 	text-transform:capitalize;
-}
-	.tag-list > li {
+
+	& > li {
 		display:inline;
+
+		&:after {
+			content:',\0000a0'; // Non-breaking space
+		}
+		&:last-child:after {
+			content:normal;
+		}
 	}
-	.tag-list > li:after {
-		content:',\0000a0'; // Non-breaking space
-	}
-	.tag-list > li:last-child:after {
-		content:normal;
-	}
+}
 
 
 //
@@ -30,16 +32,18 @@
 .separated-list {
 	padding-left:0;
 	white-space:nowrap;
-}
-	.separated-list > li {
+
+	& > li {
 		display:inline;
+
+		&:before {
+			content:'\0000a0\0000a0|\0000a0\0000a0'; // Non-breaking space
+		}
+		&:first-child:before {
+			content:normal;
+		}
 	}
-	.separated-list > li:before {
-		content:'\0000a0\0000a0|\0000a0\0000a0'; // Non-breaking space
-	}
-	.separated-list > li:first-child:before {
-		content:normal;
-	}
+}
 
 
 //
@@ -49,19 +53,21 @@
 .inline-definitions {
 	overflow:hidden;
 	margin-bottom:@type-blankline;
-}
-	.inline-definitions dt,
-	.inline-definitions dd {
+
+	dt,
+	dd {
 		margin:0;
 	}
-	.inline-definitions dt {
+	dt {
 		float:left;
 		clear:left;
 		padding-right:5px;
+
+		&:after {
+			content:':'
+		}
 	}
-	.inline-definitions dt:after {
-		content:':'
-	}
+}
 
 
 //
@@ -70,8 +76,9 @@
 //
 .numbered-definitions {
 	counter-reset:numbered;
-}
-	.numbered-definitions dt:before {
+
+	dt:before {
 		counter-increment:numbered;
 		content:counter(numbered) '. ';
 	}
+}

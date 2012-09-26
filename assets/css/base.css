@@ -537,33 +537,37 @@ h6,
   line-height: 1;
 }
 .giga {
-  font-size: 1.875em;
+  font-size: 2em;
   line-height: 1;
+}
+.tera {
+  font-size: 2.5em;
+  line-height: 2;
 }
 .tag-list {
   padding-left: 0;
   text-transform: capitalize;
 }
-.tag-list > li {
+.tag-list  > li {
   display: inline;
 }
-.tag-list > li:after {
+.tag-list  > li:after {
   content: ',\0000a0';
 }
-.tag-list > li:last-child:after {
+.tag-list  > li:last-child:after {
   content: normal;
 }
 .separated-list {
   padding-left: 0;
   white-space: nowrap;
 }
-.separated-list > li {
+.separated-list  > li {
   display: inline;
 }
-.separated-list > li:before {
+.separated-list  > li:before {
   content: '\0000a0\0000a0|\0000a0\0000a0';
 }
-.separated-list > li:first-child:before {
+.separated-list  > li:first-child:before {
   content: normal;
 }
 .inline-definitions {
@@ -707,13 +711,13 @@ input[type=submit].alt {
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-.form-collection > li {
+.form-collection  > li {
   position: relative;
   padding: 1em 0 1em 25%;
   line-height: normal;
   border-top: 1px solid #eeeeee;
 }
-.form-collection > li:first-child {
+.form-collection  > li:first-child {
   border: none;
 }
 .form-collection .field-label {
@@ -783,10 +787,10 @@ input[type=submit].alt {
   padding-left: 0;
   margin-bottom: 0;
 }
-.nav > li {
+.nav  > li {
   display: inline;
 }
-.nav > li > a {
+.nav  > li  > a {
   display: inline-block;
 }
 .media,
@@ -972,10 +976,6 @@ img.base {
   position: relative;
   display: block;
 }
-html .captioned {
-  text-decoration: none;
-  color: #ffffff;
-}
 .captioned img {
   display: block;
 }
@@ -986,6 +986,10 @@ html .captioned {
   left: 0;
   padding: .5em 15px;
   background: rgba(0, 0, 0, 0.75);
+}
+html .captioned {
+  text-decoration: none;
+  color: #ffffff;
 }
 .pagination {
   margin: 1em 0;

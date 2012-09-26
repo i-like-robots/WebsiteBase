@@ -67,15 +67,16 @@ abbr[title], acronym[title], dfn[title] {
 a {
 	text-decoration:underline;
 	color:@color-brand;
-}
-a:visited {
-	color:desaturate(@color-brand, 20%);
-}
-a:hover {
-	color:darken(@color-brand, 20%);
-}
-a:active, a:focus {
-	outline-offset:1px;
+
+	&:visited {
+		color:desaturate(@color-brand, 20%);
+	}
+	&:hover {
+		color:darken(@color-brand, 20%);
+	}
+	&:active, &:focus {
+		outline-offset:1px;
+	}
 }
 
 
