@@ -8,8 +8,8 @@
 .pagination {
 	margin:1em 0;
 	text-align:center;
-}
-	.pagination a {
+
+	a {
 		width:1.5em;
 		border:1px solid @color-keyline;
 		line-height:1.5;
@@ -18,18 +18,19 @@
 		color:@color-delta;
 		background:@color-keyline;
 	}
-	.pagination a:hover,
-	.pagination .selected a {
+	a:hover,
+	.selected a {
 		color:@color-brand;
 		background:@color-alpha;
 	}
-	.pagination a[rel] {
+	a[rel] {
 		width:auto;
 		padding:0 5px;
 	}
-	.pagination [rel=next]:after {
+	[rel=next]:after {
 		content:' >';
 	}
-	.pagination [rel=prev]:before {
+	[rel=prev]:before {
 		content:'< ';
 	}
+}

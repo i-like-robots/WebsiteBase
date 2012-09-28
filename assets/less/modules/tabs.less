@@ -9,13 +9,14 @@
 	margin-bottom:@type-blankline;
 	border-bottom:1px solid @color-keyline;
 }
-	.tabs li {
+	li {
 		padding-left:.25em;
+
+		&:first-child {
+			padding-left:0;
+		}
 	}
-	.tabs li:first-child {
-		padding-left:0;
-	}
-		.tabs a {
+		a {
 			margin-bottom:-1px;
 			padding:.25em .5em;
 			border:1px solid @color-keyline;
@@ -23,11 +24,12 @@
 			color:@color-delta;
 			background:@color-keyline;
 		}
-		.tabs a:hover,
-		.tabs .selected a {
+		a:hover,
+		.selected a {
 			color:@color-brand;
 			background:@color-alpha;
 		}
-		.tabs .selected a {
+		.selected a {
 			border-bottom-color:@color-alpha;
 		}
+}

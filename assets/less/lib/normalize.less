@@ -23,12 +23,14 @@
  *    `em` units.
  * 2. Prevents iOS text size adjust after orientation change, without disabling
  *    user zoom.
+ * 3. Prevent subpixel aliasing rendering overly bold text.
  */
 
 html {
     font-size: 100%; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
     -ms-text-size-adjust: 100%; /* 2 */
+    -webkit-font-smoothing:antialiased;
 }
 
 /*

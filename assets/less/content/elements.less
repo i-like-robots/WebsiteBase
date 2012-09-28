@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    11/07/2012
+// Modified:    27/09/2012
 // Description: Styling for default elements
 //
 
@@ -17,25 +17,28 @@ blockquote {
 	margin-left:5%;
 	padding:.5em 1.5em;
 	border-left:1px solid @color-keyline;
-}
-	blockquote p {
+
+	p {
 		margin-bottom:.5em;
+
+		&:first-of-type {
+			text-indent:-.5em;
+
+			&:before {
+				content:open-quote;
+			}
+			&:after {
+				content:close-quote;
+			}
+		}
 	}
-	blockquote p:first-of-type {
-		text-indent:-.5em;
-	}
-	blockquote p:first-of-type:before {
-		content:open-quote;
-	}
-	blockquote p:last-of-type:after {
-		content:close-quote;
-	}
-	blockquote footer:before {
+	footer:before {
 		content:"—"; // U+2014 or &mdash;
 	}
-	blockquote cite {
+	cite {
 		font-weight:bold;
 	}
+}
 
 
 //
