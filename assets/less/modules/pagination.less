@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    30/07/2012
+// Modified:    01/10/2012
 // Description: Pagination lists
 // Zen-coding:  ol.nav.pagination>(li>a[rel=prev])+(li>a)*3+(li>a[rel=next])
 //
@@ -11,21 +11,21 @@
 
 	a {
 		width:1.5em;
-		border:1px solid @color-keyline;
+		border:1px solid @color-lowlight;
 		line-height:1.5;
 		text-align:center;
 		text-decoration:none;
-		color:@color-delta;
+		color:@color-text;
 		background:@color-keyline;
 	}
 	a:hover,
 	.selected a {
-		color:@color-brand;
-		background:@color-alpha;
+		color:@color-highlight;
+		background:@color-background;
 	}
 	a[rel] {
 		width:auto;
-		padding:0 5px;
+		padding:0 .35em;
 	}
 	[rel=next]:after {
 		content:' >';

@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    28/09/2012
+// Modified:    01/10/2012
 // Description: Styling for default form elements
 //
 
@@ -32,16 +32,16 @@ textarea,
 select,
 button {
 	padding:@input-padding;
-	border:1px solid @color-gamma;
+	border:1px solid;
 	font-weight:normal;
 	font-family:sans-serif;
 	.border-radius(2px);
 
 	&[disabled] {
-		border-color:@color-gamma !important;
-		color:@color-gamma !important;
-		background:@color-beta !important;
-		cursor:not-allowed;
+		border-color:darken(@input-disabled, 20%) !important;
+		color:darken(@input-disabled, 20%) !important;
+		background:@input-disabled !important;
+		cursor:not-allowed !important;
 	}
 }
 
@@ -52,12 +52,12 @@ button {
 input,
 textarea,
 select {
-	color:@color-gamma;
-	background:@color-alpha;
+	color:@input-blurred;
+	background:@input-background;
 
 	&:focus {
-		color:@color-epsilon;
-		.box-shadow(0 0 5px @color-beta);
+		color:@input-focused;
+		.box-shadow(0 0 5px hsla(hue(@input-focused), saturation(@input-focused), lightness(@input-focused), .25));
 	}
 }
 
@@ -84,9 +84,9 @@ textarea {
 	height:8em;
 }
 
-// Select boxes obey a border-box layout
+// Select boxes obey a border-box layout (mostly)
 select {
-	height:29px; // Set a height to match text inputs
+	height:29px; // Set a height to match text inputs (roughly font size * 'normal' + border width E.G. 16 * 1.222 + 2)
 	padding:2px;
 
 	&[size],
@@ -105,7 +105,7 @@ input[type=submit] {
 	height:auto;
 	border-color:darken(@color-brand, 10%);
 	text-decoration:none;
-	color:@color-alpha;
+	color:@color-reverse;
 	.linear-gradient(270deg, fadeout(@color-brand, 10%), darken(@color-brand, 10%));
 
 	&:active {

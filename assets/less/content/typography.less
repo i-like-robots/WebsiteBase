@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    26/09/2012
+// Modified:    01/10/2012
 // Description: Base typography and classes for adjusting text content.
 //
 
@@ -26,7 +26,7 @@ html {
 	body {
 		.font-size(@type-size, 10);
 		line-height:@type-baseline;
-		font-family:@type-sans;
+		font-family:@type-body;
 	}
 
 
@@ -55,6 +55,7 @@ h4, .h4,
 h5, .h5,
 h6, .h6 {
 	font-weight:bold;
+	font-family:@type-headline;
 }
 
 h1, .h1 {

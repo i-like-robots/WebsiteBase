@@ -1,2 +1,0 @@
-/* WebsiteBase Friday, September 28th, 2012, 15:47:58 */
-window._base={views:{},trigger:function(e){if(this.views[e])for(var t in this.views[e])typeof this.views[e][t]=="function"&&this.views[e][t]()}},_base.views.global={retina:function(){window.devicePixelRatio&&window.devicePixelRatio===2}},jQuery(document).ready(function(){var e=["global"].concat(window._JSViews?_JSViews.split(","):[]);for(var t=0;t<e.length;t++)_base.trigger(e[t])}),document.documentElement.className=document.documentElement.className.replace(/\bno-js\b/,"");

@@ -1,6 +1,6 @@
 //
 // Author:   Matt Hinchliffe <www.maketea.co.uk>
-// Modified: 17/09/2012
+// Modified: 01/10/2012
 //
 
 //
@@ -15,7 +15,7 @@
 // Typography
 //
 
-// Baseline (no units, it's all relative)
+// Baseline (no units here, it's all relative)
 @type-size:      16;
 @type-baseline:  1.5;
 
@@ -23,40 +23,35 @@
 @type-blankline: 1em;
 
 // Font stacks
-@type-sans:  Arial, sans-serif;
-@type-serif: Cambria, Georgia, serif;
-@type-brand: Helvetica, Arial, sans-serif;
-@type-mono:  Consolas, "Lucida Console", Monaco, monospace;
-@type-small: Verdana, Geneva, Tahoma, sans-serif;
+@type-body:     Arial, sans-serif;
+@type-headline: Helvetica, Arial, sans-serif;
+@type-mono:     Consolas, "Lucida Console", Monaco, monospace;
+@type-small:    Verdana, Geneva, Tahoma, sans-serif;
 
 
 //
 // Colour palette
-// - Uses the American spelling to avoid confusion ( color:@colour-* ?! )
 //
 
-// Shades
-@color-alpha:   #FFF;
-@color-beta:    #DDD;
-@color-gamma:   #999;
-@color-delta:   #666;
-@color-epsilon: #333;
-@color-zeta:    #252525;
-// etc...
-@color-omega:   #000;
+// Prefix uses the American spelling to avoid confusion ( color:@colour-* ?! )
+@color-text:       #333;
+@color-reverse:    #FFF;
+@color-background: #FFF;
+@color-brand:      #006666;
 
 // Accent colours
-@color-brand:     #0CA5B0;
-@color-highlight: #4E3F30;
-@color-lowlight:  #A5B3AA;
-@color-keyline:   #EEE;
-@color-subtle:    #F8F4EE;
-@color-attention: #C81730;
+@color-highlight:  #008584;
+@color-lowlight:   #CCC;
+@color-keyline:    #E9E9E9;
+@color-attention:  #C81730;
 
 
 //
-// Forms
+// Form inputs
 //
 
-@input-baseline: 1.2em;
-@input-padding:  .25em;
+@input-padding:    .25em;
+@input-background: #FFF;
+@input-blurred:    #999;
+@input-focused:    #333;
+@input-disabled:   #DDD;

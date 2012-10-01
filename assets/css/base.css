@@ -21,6 +21,7 @@
  *    `em` units.
  * 2. Prevents iOS text size adjust after orientation change, without disabling
  *    user zoom.
+ * 3. Prevent subpixel aliasing rendering overly bold text.
  */
 html {
   font-size: 100%;
@@ -32,6 +33,7 @@ html {
   -ms-text-size-adjust: 100%;
   /* 2 */
 
+  -webkit-font-smoothing: antialiased;
 }
 /*
  * Addresses `font-family` inconsistency between `textarea` and other form
@@ -347,13 +349,11 @@ blockquote,
 q,
 cite {
   font-style: italic;
-  font-family: Cambria, Georgia, serif;
 }
 blockquote {
   width: 70%;
   margin-left: 5%;
   padding: .5em 1.5em;
-  border-left: 1px solid #eeeeee;
 }
 blockquote p {
   margin-bottom: .5em;
@@ -364,7 +364,7 @@ blockquote p:first-of-type {
 blockquote p:first-of-type:before {
   content: open-quote;
 }
-blockquote p:last-of-type:after {
+blockquote p:first-of-type:after {
   content: close-quote;
 }
 blockquote footer:before {
@@ -395,13 +395,13 @@ dfn[title] {
 }
 a {
   text-decoration: underline;
-  color: #0ca5b0;
+  color: #008584;
 }
 a:visited {
-  color: #1f959d;
+  color: #0d7877;
 }
 a:hover {
-  color: #054b51;
+  color: #001f1f;
 }
 a:active,
 a:focus {
@@ -412,7 +412,7 @@ hr {
   padding: 0;
   margin: 0 0 1em;
   border: 0;
-  background: #eeeeee;
+  background: #e9e9e9;
 }
 table {
   margin-bottom: 1em;
@@ -469,6 +469,7 @@ h5,
 h6,
 .h6 {
   font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
 }
 h1,
 .h1 {
@@ -607,7 +608,7 @@ textarea,
 select,
 button {
   padding: 0.25em;
-  border: 1px solid #999999;
+  border: 1px solid;
   font-weight: normal;
   font-family: sans-serif;
   -webkit-border-radius: 2px;
@@ -618,10 +619,10 @@ input[disabled],
 textarea[disabled],
 select[disabled],
 button[disabled] {
-  border-color: #999999 !important;
-  color: #999999 !important;
+  border-color: #aaaaaa !important;
+  color: #aaaaaa !important;
   background: #dddddd !important;
-  cursor: not-allowed;
+  cursor: not-allowed !important;
 }
 input,
 textarea,
@@ -633,9 +634,9 @@ input:focus,
 textarea:focus,
 select:focus {
   color: #333333;
-  -webkit-box-shadow: 0 0 5px #dddddd;
-  -moz-box-shadow: 0 0 5px #dddddd;
-  box-shadow: 0 0 5px #dddddd;
+  -webkit-box-shadow: 0 0 5px rgba(51, 51, 51, 0.25);
+  -moz-box-shadow: 0 0 5px rgba(51, 51, 51, 0.25);
+  box-shadow: 0 0 5px rgba(51, 51, 51, 0.25);
 }
 input[size] {
   width: auto !important;
@@ -664,15 +665,15 @@ a.button,
 input[type=button],
 input[type=submit] {
   height: auto;
-  border-color: #097880;
+  border-color: #003333;
   text-decoration: none;
   color: #ffffff;
-  background: rgba(10, 140, 150, 0.95);
-  background-image: -webkit-linear-gradient(270deg, rgba(12, 165, 176, 0.9), #097880);
-  background-image: -moz-linear-gradient(270deg, rgba(12, 165, 176, 0.9), #097880);
-  background-image: -ms-linear-gradient(270deg, rgba(12, 165, 176, 0.9), #097880);
-  background-image: -o-linear-gradient(270deg, rgba(12, 165, 176, 0.9), #097880);
-  background-image: linear-gradient(270deg, rgba(12, 165, 176, 0.9), #097880);
+  background: rgba(0, 74, 74, 0.95);
+  background-image: -webkit-linear-gradient(270deg, rgba(0, 102, 102, 0.9), #003333);
+  background-image: -moz-linear-gradient(270deg, rgba(0, 102, 102, 0.9), #003333);
+  background-image: -ms-linear-gradient(270deg, rgba(0, 102, 102, 0.9), #003333);
+  background-image: -o-linear-gradient(270deg, rgba(0, 102, 102, 0.9), #003333);
+  background-image: linear-gradient(270deg, rgba(0, 102, 102, 0.9), #003333);
 }
 button:active,
 a.button:active,
@@ -686,13 +687,13 @@ button.alt,
 a.button.alt,
 input[type=button].alt,
 input[type=submit].alt {
-  border-color: #2e261d;
-  background: #5e4c3a;
-  background-image: -webkit-linear-gradient(270deg, #6e5943, #4e3f30);
-  background-image: -moz-linear-gradient(270deg, #6e5943, #4e3f30);
-  background-image: -ms-linear-gradient(270deg, #6e5943, #4e3f30);
-  background-image: -o-linear-gradient(270deg, #6e5943, #4e3f30);
-  background-image: linear-gradient(270deg, #6e5943, #4e3f30);
+  border-color: #005251;
+  background: #009f9d;
+  background-image: -webkit-linear-gradient(270deg, #00b8b7, #008584);
+  background-image: -moz-linear-gradient(270deg, #00b8b7, #008584);
+  background-image: -ms-linear-gradient(270deg, #00b8b7, #008584);
+  background-image: -o-linear-gradient(270deg, #00b8b7, #008584);
+  background-image: linear-gradient(270deg, #00b8b7, #008584);
 }
 .option-list {
   margin: 0;
@@ -706,7 +707,7 @@ input[type=submit].alt {
   margin: 0 0 1em;
   padding: 0 10px;
   list-style: none;
-  border: 1px solid #eeeeee;
+  border: 1px solid #e9e9e9;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -715,7 +716,7 @@ input[type=submit].alt {
   position: relative;
   padding: 1em 0 1em 25%;
   line-height: normal;
-  border-top: 1px solid #eeeeee;
+  border-top: 1px solid #e9e9e9;
 }
 .form-collection  > li:first-child {
   border: none;
@@ -735,7 +736,7 @@ input[type=submit].alt {
   margin: .5em 0 0;
   font-style: italic;
   font-size: 0.75em;
-  color: #999999;
+  color: #cccccc;
 }
 .field-error {
   color: #c81730;
@@ -813,17 +814,7 @@ input[type=submit].alt {
 .media .img .details {
   padding: 10px;
 }
-/*
-.media.mini .img {
-	margin-right:0;
-}
-.media.mini .img-ext {
-	margin-left:0;
-}
-	.media.mini .bd {
-		padding:5px;
-	}
- */.nameplate {
+.nameplate {
   overflow: hidden;
 }
 .nameplate .mast {
@@ -948,7 +939,7 @@ img.base {
 }
 .tabs {
   margin-bottom: 1em;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #cccccc;
 }
 .tabs li {
   padding-left: .25em;
@@ -959,14 +950,14 @@ img.base {
 .tabs a {
   margin-bottom: -1px;
   padding: .25em .5em;
-  border: 1px solid #eeeeee;
+  border: 1px solid #cccccc;
   text-decoration: none;
-  color: #666666;
-  background: #eeeeee;
+  color: #333333;
+  background: #e9e9e9;
 }
 .tabs a:hover,
 .tabs .selected a {
-  color: #0ca5b0;
+  color: #006666;
   background: #ffffff;
 }
 .tabs .selected a {
@@ -984,12 +975,9 @@ img.base {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: .5em 15px;
-  background: rgba(0, 0, 0, 0.75);
-}
-html .captioned {
-  text-decoration: none;
+  padding: .5em .65em;
   color: #ffffff;
+  background: rgba(51, 51, 51, 0.75);
 }
 .pagination {
   margin: 1em 0;
@@ -997,21 +985,21 @@ html .captioned {
 }
 .pagination a {
   width: 1.5em;
-  border: 1px solid #eeeeee;
+  border: 1px solid #cccccc;
   line-height: 1.5;
   text-align: center;
   text-decoration: none;
-  color: #666666;
-  background: #eeeeee;
+  color: #333333;
+  background: #e9e9e9;
 }
 .pagination a:hover,
 .pagination .selected a {
-  color: #0ca5b0;
+  color: #008584;
   background: #ffffff;
 }
 .pagination a[rel] {
   width: auto;
-  padding: 0 5px;
+  padding: 0 .35em;
 }
 .pagination [rel=next]:after {
   content: ' >';
@@ -1019,45 +1007,21 @@ html .captioned {
 .pagination [rel=prev]:before {
   content: '< ';
 }
-.alpha {
-  color: #ffffff;
-}
-.beta {
-  color: #dddddd;
-}
-.gamma {
-  color: #999999;
-}
-.delta {
-  color: #666666;
-}
-.epsilon {
-  color: #333333;
-}
-.zeta {
-  color: #252525;
-}
 .brand {
-  color: #0ca5b0;
+  color: #006666;
 }
 .highlight {
-  color: #4e3f30;
+  color: #008584;
+}
+.lowlight {
+  color: #cccccc;
 }
 .attention {
   color: #c81730;
 }
-body,
-.theme-default {
+body {
   color: #333333;
-  background: #f8f4ee;
-}
-.theme-reverse {
-  color: #ffffff;
-  background: #252525;
-}
-.theme-brand {
-  color: #ffffff;
-  background: #0ca5b0;
+  background: #FFF;
 }
 a {
   -webkit-transition: all 0.25s ease;
