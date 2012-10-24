@@ -7,7 +7,7 @@ jQuery(window).load(function()
 {
     var auto = ['global'].concat( window._JSViews ? window._JSViews.split(',') : [] );
 
-    for (var i = 0; i < auto.length; i++)
+    for (var i = 0, len = auto.length; i < len; i++)
     {
         window._base.trigger( auto[i] );
     }
