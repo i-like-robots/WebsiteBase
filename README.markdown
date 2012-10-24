@@ -1,14 +1,14 @@
 # WebsiteBase
 
-[WebsiteBase](http://i-like-robots.github.com/WebsiteBase) is more than a boilerplate. It combines ideas from[OOCSS](http://oocss.org/), [Pears](http://pea.rs/) and [SMACSS](http://smacss.com) to help create an opinionated code base for scalable and maintainable website development.
+[WebsiteBase](http://i-like-robots.github.com/WebsiteBase) is more than a boilerplate. It combines ideas from [OOCSS](http://oocss.org/), [Pears](http://pea.rs/) and [SMACSS](http://smacss.com) to help create an opinionated code base for scalable and maintainable website development.
 
-* Scalable project structure and conventions, encouraging seperation of layout and style
-* A full set of CSS3 [LESS](http://lesscss.org/) mixins
-* Guidelines for HTML, CSS and JavaScript coding style
-* Fully documented CSS caveats and [Zen-Coding](http://code.google.com/p/zen-coding/) formulas
-* Normalised form elements, graceful form layouts and user hints
-* Abstracted, re-usable layout components and nestable grid structure
-* [Grunt-powered](http://gruntjs.com/) JavaScript
+* Scalable and maintainable structure and conventions, encouraging abstraction and code re-use.
+* A full set of CSS3 [LESS](http://lesscss.org/) mixins.
+* Guidelines for HTML, CSS and JavaScript coding style.
+* Fully documented CSS caveats and [Zen-Coding](http://code.google.com/p/zen-coding/) formulas.
+* Normalised form elements, graceful form layouts and user hints.
+* Abstracted, re-usable layout components and nestable grid structure.
+* [Grunt-powered](http://gruntjs.com/) JavaScript.
 
 Check out the example file or [fork, clone and get involved on Github](http://github.com/i-like-robots/WebsiteBase).
 
