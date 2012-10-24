@@ -762,11 +762,6 @@ a.button {
   padding: .25em .5em;
   line-height: 1.5;
 }
-.field-tip:hover span {
-  display: block;
-  top: -0.25em;
-  right: 2.5em;
-}
 .field-tip span:after {
   content: ' ';
   position: absolute;
@@ -777,6 +772,11 @@ a.button {
   margin-top: -0.5em;
   border: .5em solid transparent;
   border-left-color: #333333;
+}
+.field-tip:hover span {
+  display: block;
+  top: -0.25em;
+  right: 2.5em;
 }
 .nav {
   padding-left: 0;
@@ -800,13 +800,6 @@ a.button {
 .media .img-ext {
   float: right;
   margin-left: 30px;
-}
-.media .img img,
-.media .img-ext img {
-  display: block;
-}
-.media .img .details {
-  padding: 10px;
 }
 .nameplate {
   overflow: hidden;

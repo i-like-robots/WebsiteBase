@@ -6,13 +6,13 @@
  */
 _base.views.global = {
 
-	/**
-	 * Retina
-	 * @description Swap out template images for scalable vectors
-	 */
-	retina: function()
-	{
-		if ( window.devicePixelRatio && window.devicePixelRatio === 2 ){}
-	}
+    /**
+     * Retina
+     * @description Swap out template images for scalable vectors
+     */
+    retina: function()
+    {
+        if ( window.devicePixelRatio && window.devicePixelRatio === 2 ){}
+    }
 
 };

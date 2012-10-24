@@ -1,28 +1,23 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    28/09/2012
+// Modified:    11/10/2012
 // Description: The media object by Nicole Sullivan.
 // Source:      <http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/>
 // Zen-coding:  div.media>(div.img>img)+div.bd
 //
 
-.media,
-.media .bd {
-	display:block;
-	overflow:hidden;
-}
-	.media .img {
+.media {
+	&, .bd {
+		display:block;
+		overflow:hidden;
+	}
+
+	.img {
 		float:left;
 		margin-right:30px;
 	}
-	.media .img-ext {
+	.img-ext {
 		float:right;
 		margin-left:30px;
 	}
-		.media .img img,
-		.media .img-ext img {
-			display:block;
-		}
-		.media .img .details {
-			padding:10px;
-		}
+}

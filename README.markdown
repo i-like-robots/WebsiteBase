@@ -1,12 +1,12 @@
 # WebsiteBase
 
-[WebsiteBase](http://i-like-robots.github.com/WebsiteBase) is more than a boilerplate. It combines ideas from [OOCSS](http://oocss.org/), [Pears](http://pea.rs/) and [SMACSS](http://smacss.com) to help create an opinionated code base for scalable and maintainable website development.
+[WebsiteBase](http://i-like-robots.github.com/WebsiteBase) is more than a boilerplate, less than a framework and great place for front-end developers to start new projects. It combines ideas from [OOCSS](http://oocss.org/) and [SMACSS](http://smacss.com) to help create an opinionated code base for scalable and maintainable website development.
 
 * Scalable and maintainable structure and conventions, encouraging abstraction and code re-use.
-* A full set of CSS3 [LESS](http://lesscss.org/) mixins.
+* Utilizes the power of [LESS](http://lesscss.com) to reduce development type, including CSS3 mixins
 * Guidelines for HTML, CSS and JavaScript coding style.
 * Fully documented CSS caveats and [Zen-Coding](http://code.google.com/p/zen-coding/) formulas.
-* Normalised form elements, graceful form layouts and user hints.
+* Normalised form elements and graceful form layouts.
 * Abstracted, re-usable layout components and nestable grid structure.
 * [Grunt-powered](http://gruntjs.com/) JavaScript.
 
