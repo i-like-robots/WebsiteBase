@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    17/09/2012
+// Modified:    31/10/2012
 // Description: Internet Explorer 7 and below adjustments.
 //
 
@@ -50,11 +50,11 @@ button, input[type=button], input[type=submit], input[type=reset], a.button {
 .tag-list > li,
 .separated-list > li {
 	margin-left:.5em;
-}
-	.tag-list > li:first-child,
-	.separated-list > li:first-child {
+
+	&:first-child {
 		margin-left:0;
 	}
+}
 
 //
 // Inline elements with no content not collapsing and affecting layout

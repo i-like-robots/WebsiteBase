@@ -1,22 +1,21 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    23/07/2012
-// Description: The nameplate module for section headings. Layout rules only.
+// Modified:    31/10/2012
+// Description: The nameplate module for titles
 // Source:      <http://en.wikipedia.org/wiki/Nameplate_(publishing)>
-// Zen-coding:  div.nameplate>div.mast+h1.title
+// Zen-coding:  .nameplate>.nameplate__mast+h1.nameplate__title
 //
 
 .nameplate {
 	overflow:hidden;
-
-	.mast {
+}
+	.nameplate__mast {
 		float:right;
 	}
-	.title {
+	.nameplate__title {
 		margin:0;
 		line-height:inherit; // inherit is not supported as a value for any property in <= IE7
 	}
-	.mast + .title {
+	.nameplate__mast + .nameplate__title {
 		float:left;
 	}
-}

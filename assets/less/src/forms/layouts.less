@@ -1,36 +1,21 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    26/09/2012
+// Modified:    31/10/2012
 // Description: Layouts for consistent forms
 //
 
 //
-// Option lists
-// ul.option-list>(li>label>input[type=radio][name])*3
+// Set of form fields
+// Zen-coding: form>fieldset>ul.formset>(li.formset__row>label.formset__label+input)*3
 //
-.option-list {
-	margin:0;
-	padding-left:0;
-	list-style:none;
-
-	li {
-		padding:@input-padding 0;
-	}
-}
-
-
-//
-// Collection of fields
-// Zen-coding: form>fieldset>ul.form-collection>(li>label.field-label+input[name][id])*3
-//
-.form-collection {
+.formset {
 	margin:0 0 @type-blankline;
 	padding:0 10px;
 	list-style:none;
 	border:1px solid @color-keyline;
 	.border-radius(5px);
-
-	& > li {
+}
+	.formset__row {
 		position:relative;
 		padding:1em 0 1em 25%;
 		line-height:normal;
@@ -39,8 +24,11 @@
 		&:first-child {
 			border:none;
 		}
+		.field-tip {
+			float:right; // forms/hints.less
+		}
 	}
-		.field-label {
+		.formset__label {
 			position:absolute;
 			left:0;
 			width:20%;
@@ -48,7 +36,18 @@
 			padding:@input-padding 0; // match input padding
 			text-align:right;
 		}
-	.field-tip {
-		float:right;
+
+
+//
+// Set of checkbox/radio buttons
+// ul.optionset>(li>label>input[type=checkbox])*3
+//
+.optionset {
+	margin:0;
+	padding-left:0;
+	list-style:none;
+
+	> li {
+		padding:@input-padding 0;
 	}
 }

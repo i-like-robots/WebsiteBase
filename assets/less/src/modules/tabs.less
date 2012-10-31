@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    01/10/2012
+// Modified:    31/10/2012
 // Description: Images with caption overlays.
 // Zen-coding:  ul.nav.tabs>(li>a)*3
 //
@@ -23,13 +23,14 @@
 			text-decoration:none;
 			color:@color-text;
 			background:@color-keyline;
-		}
-		a:hover,
-		.selected a {
-			color:@color-brand;
-			background:@color-background;
-		}
-		.selected a {
-			border-bottom-color:@color-background;
+
+			&:hover,
+			&.is-selected {
+				color:@color-brand;
+				background:@color-background;
+			}
+			&.is-selected {
+				border-bottom-color:@color-background;
+			}
 		}
 }
