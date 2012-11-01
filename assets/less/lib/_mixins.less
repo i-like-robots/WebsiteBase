@@ -1,25 +1,16 @@
 //
 // Author:   Matt Hinchliffe <www.maketea.co.uk>
-// Modified: 17/09/2012
+// Modified: 01/11/2012
 //
 
 //
 // Calculation mixins
-// - I decided to round results to 3 decimal places, otherwise it is wasteful. Until LESS 1.4 (maybe) properties cannot be used as arguments.
 //
 .font-size(@size, @context: @type-size) {
-	@value: @size / @context;
-	@powup: @value * @precision;
-	@round: round(@powup);
-	@powdn: @round / @precision;
-	font-size:@powdn + 0em;
+	font-size:round((@size / @context), 5) + 0em;
 }
 .line-height(@size, @context: @type-size) {
-	@value: @size / @context;
-	@powup: @value * @precision;
-	@round: round(@powup);
-	@powdn: @round / @precision;
-	line-height:@powdn;
+	line-height:round((@size / @context), 5);
 }
 
 
