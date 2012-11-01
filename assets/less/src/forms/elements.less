@@ -28,8 +28,8 @@ label {
 // Shared properties
 //
 input,
-textarea,
 select,
+textarea,
 button {
 	padding:@input-padding;
 	border:1px solid;
@@ -50,8 +50,8 @@ button {
 // Text inputs and select boxes
 //
 input,
-textarea,
-select {
+select,
+textarea {
 	color:@input-blurred;
 	background:@input-background;
 
@@ -60,7 +60,6 @@ select {
 		.box-shadow(0 0 5px hsla(hue(@input-focused), saturation(@input-focused), lightness(@input-focused), .25));
 	}
 }
-
 
 input {
 
@@ -79,11 +78,6 @@ input {
 	}
 }
 
-textarea {
-	width:90%;
-	height:8em;
-}
-
 // Select boxes obey a border-box layout (mostly)
 select {
 	height:29px; // Set a height to match text inputs (roughly font size * 'normal' + border width E.G. 16 * 1.222 + 2)
@@ -95,11 +89,21 @@ select {
 	}
 }
 
+textarea {
+	width:90%;
+	height:8em;
+
+	&[rows] {
+		height:auto;
+	}
+}
+
 
 //
 // Buttons
 //
-button, a.button,
+button,
+a.button,
 input[type=button],
 input[type=submit] {
 	height:auto;
