@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    31/10/2012
+// Modified:    15/11/2012
 // Description: Internet Explorer 7 and below adjustments.
 //
 
@@ -25,12 +25,19 @@ blockquote {
 //
 // Form elements
 //
-input, select, textarea, button {
+input,
+select,
+textarea,
+button {
 	vertical-align:middle;
 }
 
 // Buttons render terribly due to a forced border-box layout
-button, input[type=button], input[type=submit], input[type=reset], a.button {
+button,
+a.button,
+input[type=button],
+input[type=submit],
+input[type=reset] {
 	.inline-block;
 	overflow:visible;
 	line-height:1;

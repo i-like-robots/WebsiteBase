@@ -16,7 +16,7 @@ Check out the example file or [fork, clone and get involved on Github](http://gi
 
 ## Versioning
 
-The current version is `1.0.0b`. Releases will be numbered in following format:
+The current version is `1.0.0`. Releases are numbered in following format:
 
 `<major>.<minor>.<patch>`
 

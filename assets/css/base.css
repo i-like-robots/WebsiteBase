@@ -45,12 +45,12 @@ a{text-decoration:underline;color:#008584;}a:visited{color:#0d7877;}
 a:hover{color:#001f1f;}
 a:active,a:focus{outline-offset:1px;}
 hr{height:1px;padding:0;margin:0 0 1em;border:0;background:#e9e9e9;}
-table{margin-bottom:1em;border:none;}
-caption,th,td{text-align:left;vertical-align:top;padding:5px 10px;}
+table{margin:0 auto 1em;border-collapse:collapse;border:1px solid #e9e9e9;}
+th{font-weight:normal;text-align:left;background:#f6f6f6;}
+th,td{padding:.25em .5em;border-right:1px solid #e9e9e9;border-bottom:1px solid #e9e9e9;}
 html{font-size:62.5%;}
 body{font-size:1.6em;line-height:1.5;font-family:Arial,sans-serif;}
-p,ul,ol,dl{margin:0 0 1em;}
-dt,dd{margin:0;}
+p,ul,ol,dd{margin:0 0 1em;}
 ul,ol,dl{padding:0 0 0 1.75em;}
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{font-weight:bold;font-family:Helvetica,Arial,sans-serif;}
 h1,.h1{margin:0 0 .25em;font-size:3em;line-height:1.33333;letter-spacing:-1px;}
@@ -88,15 +88,15 @@ button.alt,a.button.alt,input[type=button].alt,input[type=submit].alt{border-col
 a.button{display:inline-block;}
 .formset{margin:0 0 1em;padding:0 10px;list-style:none;border:1px solid #e9e9e9;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}
 .formset__row{position:relative;padding:1em 0 1em 25%;line-height:normal;border-top:1px solid #e9e9e9;}.formset__row:first-child{border:none;}
-.formset__row .field-tip{float:right;}
+.formset__row .sign{float:right;}
 .formset__label{position:absolute;left:0;width:20%;margin:1px 0;padding:0.25em 0;text-align:right;}
 .optionset{margin:0;padding-left:0;list-style:none;}.optionset>li{padding:0.25em 0;}
-.field-hint{margin:.5em 0 0;font-style:italic;font-size:0.75em;color:#cccccc;}
-.field-error{color:#c81730;}
-.field-tip{position:relative;margin:0;cursor:help;-webkit-border-radius:100%;-moz-border-radius:100%;border-radius:100%;}.field-tip,.field-tip span{color:#ffffff;background:#333333;}
-.field-tip:before{display:block;width:1.5em;line-height:1.5em;content:'?';text-align:center;}
-.field-tip span{position:absolute;display:none;width:240px;padding:.25em .5em;line-height:1.5;}.field-tip span:after{content:' ';position:absolute;top:1em;right:-1em;width:0;height:0;margin-top:-0.5em;border:.5em solid transparent;border-left-color:#333333;}
-.field-tip:hover span{display:block;top:-0.25em;right:2.5em;}
+.hint{margin:.5em 0 0;font-style:italic;font-size:0.75em;color:#cccccc;}
+.hint--error{color:#c81730;}
+.sign{position:relative;margin:0;cursor:help;-webkit-border-radius:100%;-moz-border-radius:100%;border-radius:100%;}.sign,.sign span{color:#ffffff;background:#333333;}
+.sign:before{display:block;width:1.5em;line-height:1.5em;content:'?';text-align:center;}
+.sign span{position:absolute;display:none;width:240px;padding:.25em .5em;line-height:1.5;}.sign span:after{content:' ';position:absolute;top:1em;right:-1em;width:0;height:0;margin-top:-0.5em;border:.5em solid transparent;border-left-color:#333333;}
+.sign:hover span{display:block;top:-0.25em;right:2.5em;}
 .nav{padding-left:0;margin-bottom:0;}.nav>li{display:inline;}.nav>li>a{display:inline-block;}
 .media,.media__body{display:block;overflow:hidden;}
 .media__img{float:left;margin-right:30px;}
@@ -110,15 +110,13 @@ a.button{display:inline-block;}
 .content-clear{clear:both;}
 .replace{display:block;overflow:hidden;direction:ltr;text-indent:-9999px;background:transparent no-repeat 0 0;}
 .hidden{position:absolute;left:-9999px;}
-.js-hide{display:none;}
-.no-js .js-hide{display:block;display:initial;}
-.base{margin:0;padding:0;}
-ul.base,ol.base{list-style:none;}
+.js-hide{display:none;}.no-js .js-hide{display:block;display:initial;}
+.base{margin:0;padding:0;}ul.base,ol.base{list-style:none;}
 img.base{display:block;}
 .cf{*zoom:1;}.cf:before,.cf:after{display:table;content:"";}
 .cf:after{clear:both;}
 .row{margin-bottom:1em;}
-.container{max-width:940px;padding:0 10px;margin:0 auto;}
+.container{width:940px;padding:0 10px;margin:0 auto;}
 .grid{clear:both;margin-left:-20px;*zoom:1;}.grid:before,.grid:after{display:table;content:"";}
 .grid:after{clear:both;}
 [class|=span]{float:left;margin-left:20px;}

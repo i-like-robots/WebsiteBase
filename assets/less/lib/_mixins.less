@@ -1,6 +1,6 @@
 //
 // Author:   Matt Hinchliffe <www.maketea.co.uk>
-// Modified: 01/11/2012
+// Modified: 15/11/2012
 //
 
 //
@@ -21,7 +21,7 @@
 	.setup( @columns: 12, @colWidth: 60, @gutterWidth: 20 ) {
 
 		.container {
-			max-width:@columns * (@colWidth + @gutterWidth) - @gutterWidth + 0px;
+			width:@columns * (@colWidth + @gutterWidth) - @gutterWidth + 0px;
 			padding:0 (@gutterWidth / 2) + 0px;
 			margin:0 auto;
 		}
@@ -61,6 +61,7 @@
 //
 .clearfix() {
 	*zoom:1;
+
 	&:before,
 	&:after {
 		display:table;

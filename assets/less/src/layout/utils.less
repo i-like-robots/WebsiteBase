@@ -42,10 +42,11 @@
 //
 .js-hide {
 	display:none;
-}
-.no-js .js-hide {
-	display:block; // Default value for all elements is 'inline', it is up to UA stylesheet to define other values
-	display:initial; // CSS3 <http://www.w3.org/TR/css3-cascade/>
+
+	.no-js & {
+		display:block; // Default value for all elements is 'inline', it is up to UA stylesheet to define other values
+		display:initial; // CSS3 <http://www.w3.org/TR/css3-cascade/>
+	}
 }
 
 
@@ -55,18 +56,19 @@
 .base {
 	margin:0;
 	padding:0;
-}
-ul.base,
-ol.base {
-	list-style:none;
-}
-img.base {
-	display:block;
+
+	ul&,
+	ol& {
+		list-style:none;
+	}
+	img& {
+		display:block;
+	}
 }
 
 
 //
-// Clearfix
+// Clearfix - don't abuse this!
 //
 .cf {
 	.clearfix;

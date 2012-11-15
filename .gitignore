@@ -3,5 +3,6 @@
 .bak
 .DS_Store
 Thumbs.db
+codekit-config.json
 *.sublime-project
 *.sublime-workspace
