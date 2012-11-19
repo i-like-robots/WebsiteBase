@@ -1,10 +1,8 @@
 /**
  * @author Matt Hinchliffe <http://www.maketea.co.uk>
- * @created 27/03/2012
- * @modified 12/07/2012
- * @package Your project
+ * @modified 19/11/2012
  */
-_base.views.global = {
+base.register('global', {
 
     /**
      * Retina
@@ -15,4 +13,4 @@ _base.views.global = {
         if ( window.devicePixelRatio && window.devicePixelRatio === 2 ){}
     }
 
-};
+});

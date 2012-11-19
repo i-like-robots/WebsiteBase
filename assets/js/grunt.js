@@ -7,7 +7,7 @@ module.exports = function(grunt) {
     min: {
       dist: {
         src: ['<banner>', 'src/start.js', 'src/utils/*.js', 'src/components/*.js', 'src/views/*.js', 'src/end.js'],
-        dest: 'compiled.js'
+        dest: 'compiled.min.js'
       }
     },
     lint: {
