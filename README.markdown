@@ -4,19 +4,17 @@
 
 * Scalable and maintainable structure and conventions, encouraging abstraction and code re-use.
 * Utilizes the power of [LESS](http://lesscss.com) to reduce development type, including CSS3 mixins
-* Guidelines for HTML, CSS and JavaScript coding style.
 * Fully documented CSS caveats and [Zen-Coding](http://code.google.com/p/zen-coding/) formulas.
 * Normalised form elements and graceful form layouts.
 * Abstracted, re-usable layout components and nestable grid structure.
-* [Grunt-powered](http://gruntjs.com/) JavaScript.
 
-Check out the example file or [fork, clone and get involved on Github](http://github.com/i-like-robots/WebsiteBase).
+[Fork, clone and get involved on Github](http://github.com/i-like-robots/WebsiteBase).
 
 *WebsiteBase requires LESS 1.3.1*
 
 ## Versioning
 
-The current version is `1.0.0`. Releases are numbered in following format:
+The current version is `1.1.0`. Releases are numbered in following format:
 
 `<major>.<minor>.<patch>`
 

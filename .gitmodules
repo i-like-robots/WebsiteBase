@@ -1,9 +1,0 @@
-[submodule "style guide/html"]
-	path = "style guide/html"
-	url = git://gist.github.com/2490258.git
-[submodule "style guide/css"]
-	path = "style guide/css"
-	url = git://gist.github.com/1226272.git
-[submodule "style guide/javascript"]
-	path = "style guide/javascript"
-	url = git://gist.github.com/1633966.git
