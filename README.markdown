@@ -14,7 +14,7 @@
 
 ## Versioning
 
-The current version is `1.1.0`. Releases are numbered in following format:
+The current version is `1.1.1`. Releases are numbered in following format:
 
 `<major>.<minor>.<patch>`
 

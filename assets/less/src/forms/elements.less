@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    15/11/2012
+// Modified:    08/01/2013
 // Description: Styling for default form elements
 //
 
@@ -35,7 +35,7 @@ button {
 	border:1px solid;
 	font-weight:normal;
 	font-family:sans-serif;
-	.border-radius(2px);
+	border-radius:2px;
 
 	&[disabled] {
 		border-color:darken(@input-disabled, 20%) !important;
@@ -57,7 +57,7 @@ textarea {
 
 	&:focus {
 		color:@input-focused;
-		.box-shadow(0 0 5px hsla(hue(@input-focused), saturation(@input-focused), lightness(@input-focused), .25));
+		box-shadow:0 0 5px rgba(red(@input-focused), green(@input-focused), blue(@input-focused), .25);
 	}
 }
 
@@ -113,7 +113,7 @@ input[type=submit] {
 	.linear-gradient(270deg, fadeout(@color-brand, 10%), darken(@color-brand, 10%));
 
 	&:active {
-		.box-shadow(inset 0 0 10px rgba(0, 0, 0, .5));
+		box-shadow:inset 0 0 10px rgba(0, 0, 0, .5);
 	}
 
 	// Variations
