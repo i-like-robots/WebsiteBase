@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    08/01/2013
+// Modified:    15/01/2013
 // Description: Images with caption overlays.
 // Zen-coding:  .captioned>img+.captioned__caption
 //
@@ -21,4 +21,8 @@
 		padding:.5em .65em;
 		color:@color-reverse;
 		background:rgba(red(@color-text), green(@color-text), blue(@color-text), .75);
+	}
+	.captioned__caption--top {
+		top:0;
+		bottom:auto;
 	}

@@ -10,11 +10,11 @@
 
 [Fork, clone and get involved on Github](http://github.com/i-like-robots/WebsiteBase).
 
-*WebsiteBase requires LESS 1.3.1*
+*WebsiteBase requires LESS 1.3.1 or above*
 
 ## Versioning
 
-The current version is `1.1.1`. Releases are numbered in following format:
+The current version is `1.1.2`. Releases are numbered in following format:
 
 `<major>.<minor>.<patch>`
 

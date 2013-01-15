@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    15/11/2012
+// Modified:    15/01/2013
 // Description: Base typography and classes for adjusting text content.
 //
 
@@ -20,14 +20,11 @@
 //
 // Document
 //
-html {
-	font-size:62.5%; // 10px, set in % for consistency in IE6/7 <http://clagnut.com/blog/348/#c790>
+body {
+	.font-size(@type-size, 16);
+	line-height:@type-baseline;
+	font-family:@type-body;
 }
-	body {
-		.font-size(@type-size, 10);
-		line-height:@type-baseline;
-		font-family:@type-body;
-	}
 
 
 //
