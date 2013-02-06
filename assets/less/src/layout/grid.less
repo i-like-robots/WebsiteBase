@@ -12,14 +12,14 @@
 // Zen-coding: div.container>div.grid>div.span-$$*12
 //
 .container {
-	.grid-fixed-container();
+	.grid-fixed-container;
 }
 	.colgroup {
-		.grid-fixed-colgroup();
+		.grid-fixed-colgroup;
 	}
 
 		[class|=span] {
-			.grid-fixed-column();
+			.grid-fixed-column;
 		}
 
 		.span-01 { .grid-fixed-column(01) }
@@ -35,14 +35,7 @@
 		.span-11 { .grid-fixed-column(11) }
 		.span-12 { .grid-fixed-column(12) }
 
-
 //
-// Small screen E.G. tablet or netbook
+// Small screen E.G. mobile phone
 //
-//@media only screen and (min-width:768px) and (max-width:959px) {}
-
-
-//
-// Narrow screen E.G. mobile phone
-//
-//@media only screen and (max-width:767px) {}
+//@media only screen and (max-width:@grid-fluid-min) {}

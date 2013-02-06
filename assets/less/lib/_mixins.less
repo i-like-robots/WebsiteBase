@@ -7,10 +7,10 @@
 // Relative text size
 //
 .font-size(@size, @context: @type-size) {
-	font-size:unit(round((@size / @context), 5), em);
+	font-size:round(unit(@size / @context, em), 3);
 }
 .line-height(@size, @context: @type-size) {
-	line-height:round((@size / @context), 5);
+	line-height:round((@size / @context), 3);
 }
 
 
@@ -24,7 +24,6 @@
 }
 
 .grid-fixed-colgroup() {
-	margin-left:unit(-@grid-gutter-width, px);
 	margin-left:unit(-@grid-gutter-width, px);
 	.clearfix;
 }
