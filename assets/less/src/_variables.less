@@ -1,9 +1,4 @@
 //
-// Author:   Matt Hinchliffe <www.maketea.co.uk>
-// Modified: 14/11/2012
-//
-
-//
 // Typography
 //
 
@@ -19,6 +14,18 @@
 @type-headline: Helvetica, Arial, sans-serif;
 @type-mono:     Consolas, "Lucida Console", Monaco, monospace;
 @type-small:    Verdana, Geneva, Tahoma, sans-serif;
+
+
+//
+// Grid
+//
+
+// No units here, the .grid-fixed-* or .grid-fluid-* mixins deal with it
+@grid-column-width: 60;
+@grid-gutter-width: 20;
+@grid-columns:      12;
+@grid-fluid-max:    1440;
+@grid-fluid-min:    768;
 
 
 //
@@ -41,7 +48,6 @@
 //
 // Form inputs
 //
-
 @input-padding:    .25em;
 @input-background: #FFF;
 @input-blurred:    #999;

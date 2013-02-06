@@ -1,13 +1,13 @@
 //
 // Author:   Matt Hinchliffe <www.maketea.co.uk>
-// Modified: 15/11/2012
+// Modified: 06/02/2013
 //
 
 //
-// Calculation mixins
+// Relative text size
 //
 .font-size(@size, @context: @type-size) {
-	font-size:round((@size / @context), 5) + 0em;
+	font-size:unit(round((@size / @context), 5), em);
 }
 .line-height(@size, @context: @type-size) {
 	line-height:round((@size / @context), 5);
@@ -15,37 +15,63 @@
 
 
 //
-// Grid
+// Fixed grid
 //
-#grid {
-	.setup( @columns: 12, @colWidth: 60, @gutterWidth: 20 ) {
+.grid-fixed-container() {
+	width:unit(@grid-columns * (@grid-column-width + @grid-gutter-width) - @grid-column-width, px);
+	margin-right:auto;
+	margin-left:auto;
+}
 
-		.container {
-			width:@columns * (@colWidth + @gutterWidth) - @gutterWidth + 0px;
-			padding:0 (@gutterWidth / 2) + 0px;
-			margin:0 auto;
-		}
+.grid-fixed-colgroup() {
+	margin-left:unit(-@grid-gutter-width, px);
+	margin-left:unit(-@grid-gutter-width, px);
+	.clearfix;
+}
 
-		.grid {
-			clear:both;
-			margin-left:-@gutterWidth + 0px;
-			.clearfix;
-		}
+.grid-fixed-column() {
+	float:left;
+	margin-left:unit(@grid-gutter-width, px);
+}
 
-		[class|=span] {
-			float:left;
-			margin-left:@gutterWidth + 0px;
-		}
-	}
-
-	.column( @i, @colWidth: 60, @gutterWidth: 20 ) {
-		width:(@i * @colWidth ) + ( @gutterWidth * ( @i - 1 ) ) + 0px;
-	}
+.grid-fixed-column(@i) {
+	width:unit((@i * @grid-column-width) + (@grid-gutter-width * (@i - 1)), px);
 }
 
 
 //
-// Replace text
+// Fluid grid
+//
+
+@grid-fluid-target: @grid-columns * (@grid-column-width + @grid-gutter-width);
+@grid-fluid-gutter: @grid-gutter-width / @grid-fluid-target;
+@grid-fluid-column: @grid-column-width / @grid-fluid-target;
+
+.grid-fluid-container() {
+	max-width:unit(@grid-fluid-max - @grid-gutter-width, px);
+	min-width:unit(@grid-fluid-min - @grid-gutter-width, px);
+	margin-right:auto;
+	margin-left:auto;
+}
+
+.grid-fluid-colgroup() {
+	margin-left:round(percentage(-@grid-fluid-gutter), 3);
+	.clearfix;
+}
+
+.grid-fluid-column() {
+	float:left;
+	margin-left:round(percentage(@grid-fluid-gutter), 3);
+}
+
+.grid-fluid-column(@i) {
+	@width: (@grid-column-width * @i) + (@grid-gutter-width * (@i - 1));
+	width: round(percentage(@width / @grid-fluid-target), 3);
+}
+
+
+//
+// Text replacement
 //
 .replacetext() {
 	display:block;
@@ -57,7 +83,7 @@
 
 
 //
-// Clearfix
+// Micro clearfix <http://nicolasgallagher.com/micro-clearfix-hack/>
 //
 .clearfix() {
 	*zoom:1;

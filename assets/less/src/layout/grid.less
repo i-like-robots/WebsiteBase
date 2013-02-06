@@ -1,30 +1,39 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    16/07/2012
-// Description: The #grid utility mixin is based on the Twitter Bootstrap grid. Nested grids with no first/last classes.
+// Modified:    06/02/2013
+// Description: Nested grids with no first/last classes.
 //
 
 .row { margin-bottom:@type-blankline; }
 
 
 //
-// 12 column, 960 grid
+// Fixed grid
 // Zen-coding: div.container>div.grid>div.span-$$*12
 //
-#grid > .setup();
+.container {
+	.grid-fixed-container();
+}
+	.colgroup {
+		.grid-fixed-colgroup();
+	}
 
-.span-01 { #grid > .column(01) }
-.span-02 { #grid > .column(02) }
-.span-03 { #grid > .column(03) }
-.span-04 { #grid > .column(04) }
-.span-05 { #grid > .column(05) }
-.span-06 { #grid > .column(06) }
-.span-07 { #grid > .column(07) }
-.span-08 { #grid > .column(08) }
-.span-09 { #grid > .column(09) }
-.span-10 { #grid > .column(10) }
-.span-11 { #grid > .column(11) }
-.span-12 { #grid > .column(12) }
+		[class|=span] {
+			.grid-fixed-column();
+		}
+
+		.span-01 { .grid-fixed-column(01) }
+		.span-02 { .grid-fixed-column(02) }
+		.span-03 { .grid-fixed-column(03) }
+		.span-04 { .grid-fixed-column(04) }
+		.span-05 { .grid-fixed-column(05) }
+		.span-06 { .grid-fixed-column(06) }
+		.span-07 { .grid-fixed-column(07) }
+		.span-08 { .grid-fixed-column(08) }
+		.span-09 { .grid-fixed-column(09) }
+		.span-10 { .grid-fixed-column(10) }
+		.span-11 { .grid-fixed-column(11) }
+		.span-12 { .grid-fixed-column(12) }
 
 
 //
