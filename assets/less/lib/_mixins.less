@@ -25,7 +25,7 @@
 
 .grid-fixed-colgroup() {
 	margin-left:unit(-@grid-gutter-width, px);
-	.clearfix;
+	.cf;
 }
 
 .grid-fixed-column() {
@@ -55,7 +55,7 @@
 
 .grid-fluid-colgroup() {
 	margin-left:round(percentage(-@grid-fluid-gutter), 3);
-	.clearfix;
+	.cf;
 }
 
 .grid-fluid-column() {
@@ -66,33 +66,4 @@
 .grid-fluid-column(@i) {
 	@width: (@grid-column-width * @i) + (@grid-gutter-width * (@i - 1));
 	width: round(percentage(@width / @grid-fluid-target), 3);
-}
-
-
-//
-// Text replacement
-//
-.replacetext() {
-	display:block;
-	overflow:hidden;
-	direction:ltr;
-	text-indent:-9999px;
-	background:transparent no-repeat 0 0;
-}
-
-
-//
-// Micro clearfix <http://nicolasgallagher.com/micro-clearfix-hack/>
-//
-.clearfix() {
-	*zoom:1;
-
-	&:before,
-	&:after {
-		display:table;
-		content:"";
-	}
-	&:after {
-		clear:both;
-	}
 }
