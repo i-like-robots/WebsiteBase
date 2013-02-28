@@ -1,0 +1,82 @@
+//
+// Author:      Matt Hinchliffe <www.maketea.co.uk>
+// Modified:    28/02/2013
+// Description: Skeleton layout. You can add fractions, yeah?
+// Zen-coding:  .container>.composition>.desktop:1of2.mobile:1of1+.desktop:1of2.mobile:1of1
+//
+
+.row { margin-bottom:@type-blankline; }
+
+.container {
+	.grid-fluid-container;
+}
+	.composition {
+		.grid-fluid-colgroup;
+	}
+		.slice {
+			.grid-fluid-column;
+
+			// Order columns right-to-left modifier
+			.composition--reverse & {
+				float:right;
+			}
+		}
+
+
+//
+// Desktop layouts
+//
+
+	.desktop\:1of1 {
+		clear:left;
+		.grid-fluid-column(24);
+	}
+	.desktop\:1of2 {
+		.grid-fluid-column(12);
+	}
+
+	.desktop\:1of3 {
+		.grid-fluid-column(08);
+	}
+	.desktop\:2of3 {
+		.grid-fluid-column(16);
+	}
+
+	.desktop\:1of4 {
+		.grid-fluid-column(06);
+	}
+	.desktop\:3of4 {
+		.grid-fluid-column(18);
+	}
+
+//
+// Handheld layouts
+//
+@media only screen and (max-width:unit(@grid-fluid-min, px)) {
+
+	.container {
+		min-width:300px;
+	}
+
+	.handheld\:1of1 {
+		clear:left;
+		.grid-fluid-column(24);
+	}
+
+	.handheld\:1of2 {
+		.grid-fluid-column(12);
+
+		&:nth-of-type(3n) {
+			clear:left;
+		}
+	}
+
+	.handheld\:1of3 {
+		.grid-fluid-column(08);
+
+		&:nth-of-type(4n) {
+			clear:left;
+		}
+	}
+
+}
