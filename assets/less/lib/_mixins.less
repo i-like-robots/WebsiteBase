@@ -47,8 +47,8 @@
 @grid-fluid-column: @grid-column-width / @grid-fluid-target;
 
 .grid-fluid-container() {
-	max-width:unit(@grid-fluid-max - @grid-gutter-width, px);
-	min-width:unit(@grid-fluid-min - @grid-gutter-width, px);
+	max-width:@grid-fluid-max;
+	min-width:@grid-fluid-min;
 	margin-right:auto;
 	margin-left:auto;
 }

@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    28/02/2013
+// Modified:    05/03/2013
 // Description: Skeleton layout. You can add fractions, yeah?
 // Zen-coding:  .container>.composition>.desktop:1of2.mobile:1of1+.desktop:1of2.mobile:1of1
 //
@@ -9,6 +9,7 @@
 
 .container {
 	.grid-fluid-container;
+	padding:0 1em;
 }
 	.composition {
 		.grid-fluid-colgroup;
@@ -52,7 +53,7 @@
 //
 // Handheld layouts
 //
-@media only screen and (max-width:unit(@grid-fluid-min, px)) {
+@media only screen and (max-width:@grid-fluid-min) {
 
 	.container {
 		min-width:300px;
