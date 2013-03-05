@@ -1,18 +1,14 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    27/02/2013
+// Modified:    05/03/2013
 // Description: Image sizing and alignment
 //
 
 img {
 	max-width:100%;
-
-	&[width],
-	&[height]{
-		max-width:none;
-	}
 }
 
+// Variations
 .img--left {
 	float:left;
 	margin-right:1em;
@@ -31,8 +27,16 @@ img {
 	margin:0 auto @type-blankline;
 }
 
-.img--fluid {
+.img--fit {
 	display:block;
 	min-width:100%;
-	max-width:100%;
+}
+
+// Min/max width attributes (will override .img--fit modifier)
+img[data-min-width] {
+	max-width:attr(data-img-min-width);
+}
+
+img[data-max-width] {
+	max-width:attr(data-img-max-width);
 }
