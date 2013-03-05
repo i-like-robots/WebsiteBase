@@ -1,14 +1,14 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    11/10/2012
+// Modified:    05/03/2013
 // Description: Useful classes for formatting lists
 //
 
 //
 // Comma separated list
-// Zen-coding: ul.tag-list>li*3
+// Zen-coding: ul.list--tag>li*3
 //
-.tag-list {
+.list--tag {
 	padding-left:0;
 	text-transform:capitalize;
 
@@ -27,9 +27,9 @@
 
 //
 // Pipe separated list
-// Zen-coding: ul.separated-list>li*3
+// Zen-coding: ul.list--separated>li*3
 //
-.separated-list {
+.list--separated {
 	padding-left:0;
 	white-space:nowrap;
 
@@ -48,9 +48,9 @@
 
 //
 // Inline definition list
-// Zen-coding: dl.inline-definitions>(dt+dd)*3
+// Zen-coding: dl.definition--inline>(dt+dd)*3
 //
-.inline-definitions {
+.definition--inline {
 	overflow:hidden;
 	margin-bottom:@type-blankline;
 
@@ -72,9 +72,9 @@
 
 //
 // Numbered definition lists
-// Zen-coding: dl.numbered-definitions>(dt+dd)*3
+// Zen-coding: dl.definition--numbered>(dt+dd)*3
 //
-.numbered-definitions {
+.definition--numbered {
 	counter-reset:numbered;
 
 	dt:before {
