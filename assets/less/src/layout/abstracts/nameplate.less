@@ -1,21 +1,24 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    31/10/2012
+// Modified:    11/03/2013
 // Description: The nameplate module for titles
 // Source:      <http://en.wikipedia.org/wiki/Nameplate_(publishing)>
-// Zen-coding:  .nameplate>.nameplate__mast+h1.nameplate__title
+// Zen-coding:  .nameplate>h1.nameplate__title+.nameplate__mast
 //
 
 .nameplate {
-	overflow:hidden;
+	display:table;
+	width:100%;
+	border-collapse:collapse;
 }
+	.nameplate__title,
 	.nameplate__mast {
-		float:right;
+		display:table-cell;
+		vertical-align:middle;
 	}
 	.nameplate__title {
-		margin:0;
-		line-height:inherit; // inherit is not supported as a value for any property in <= IE7
+		margin-bottom:0;
 	}
-	.nameplate__mast + .nameplate__title {
-		float:left;
+	.nameplate__mast {
+		text-align:right;
 	}
