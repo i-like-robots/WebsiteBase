@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    31/10/2012
+// Modified:    27/03/2013
 // Description: Pagination lists
 // Zen-coding:  ol.nav.pagination>(li>a[rel=prev])+(li>a)*3+(li>a[rel=next])
 //
@@ -28,10 +28,10 @@
 			padding:0 .35em;
 		}
 		&[rel=next]:after {
-			content:' >';
+			content:'\2009\2192'; // thin space and right arrow (&thinsp;&rarr;)
 		}
 		&[rel=prev]:before {
-			content:'< ';
+			content:'\2190\2009'; // left arrow and thin space (&larr;&thinsp;)
 		}
 	}
 }

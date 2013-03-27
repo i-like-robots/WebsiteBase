@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    15/02/2013
+// Modified:    27/03/2013
 // Description: Unified link or form buttons
 //
 
@@ -34,35 +34,35 @@
 	&:active {
 		box-shadow:inset 0 2px 0 rgba(0, 0, 0, .25);
 	}
+}
 
-	// Colours
-	&.btn--brand {
-		background:@color-brand;
+// Colours
+.btn--brand {
+	background:@color-brand;
 
-		&:hover {
-			background:mix(@color-brand, #FFF, 80%);
-		}
+	&:hover {
+		background:mix(@color-brand, #FFF, 80%);
 	}
+}
 
-	&.btn--accent {
-		background:@color-accent;
+.btn--accent {
+	background:@color-accent;
 
-		&:hover {
-			background:mix(@color-accent, #FFF, 80%);
-		}
+	&:hover {
+		background:mix(@color-accent, #FFF, 80%);
 	}
+}
 
-	&.btn--lowlight {
-		background:@color-lowlight;
+.btn--lowlight {
+	background:@color-lowlight;
 
-		&:hover {
-			background:mix(@color-lowlight, #FFF, 80%);
-		}
+	&:hover {
+		background:mix(@color-lowlight, #FFF, 80%);
 	}
+}
 
-	// Sizes
-	&.btn--large {
-		padding:.65em 1.5em;
-		.font-size(14);
-	}
+// Sizes
+.btn--large {
+	padding:.65em 1.5em;
+	.font-size(14);
 }
