@@ -1,0 +1,69 @@
+//
+// Author:      Matt Hinchliffe <www.maketea.co.uk>
+// Modified:    28/03/2013
+// Description: Unified link or form buttons
+//
+
+.btn {
+	display:inline-block;
+	padding:.35em 1em;
+	.font-size(12);
+	text-transform:uppercase;
+	color:@color-reverse;
+	border-radius:.35em;
+	background:mix(@color-highlight, #FFF, 50%);
+
+
+	input&,
+	button& {
+		border:0;
+		font-family:@type-body; // Ensure form elements get the intended font family
+	}
+
+	a& {
+		text-decoration:none;
+
+		&:hover {
+			color:@color-reverse;
+		}
+	}
+
+	&:hover {
+		background:mix(@color-lowlight, #FFF, 40%);
+	}
+
+	&:active {
+		box-shadow:inset 0 2px 0 rgba(0, 0, 0, .25);
+	}
+}
+
+// Colours
+.btn--brand {
+	background:@color-brand;
+
+	&:hover {
+		background:mix(@color-brand, #FFF, 80%);
+	}
+}
+
+.btn--accent {
+	background:@color-accent;
+
+	&:hover {
+		background:mix(@color-accent, #FFF, 80%);
+	}
+}
+
+.btn--lowlight {
+	background:@color-lowlight;
+
+	&:hover {
+		background:mix(@color-lowlight, #FFF, 80%);
+	}
+}
+
+// Sizes
+.btn--large {
+	padding:.65em 1.5em;
+	.font-size(14);
+}

@@ -1,14 +1,15 @@
 // Global vars
-@import "src/_variables";
+@import "src/_palette";
 
-// Base libraries
-@import "lib/_mixins";
+// Libraries
 @import "lib/_css3";
+@import "lib/_mixins";
 @import "lib/normalize";
 
-// Content styles
-@import "src/content/elements";
+// Base content styles
 @import "src/content/typography";
+@import "src/content/elements";
+@import "src/content/images";
 @import "src/content/lists";
 
 // Forms
@@ -16,20 +17,25 @@
 @import "src/forms/layouts";
 @import "src/forms/hints";
 
-// Abstracts
-@import "src/abstracts/nav";
-@import "src/abstracts/media";
-@import "src/abstracts/nameplate";
+// Layout abstracts
+@import "src/layout/abstracts/nameplate";
+@import "src/layout/abstracts/media";
+@import "src/layout/abstracts/nav";
 
 // Layout
+@import "src/layout/skeleton";
 @import "src/layout/utils";
-@import "src/layout/grid";
 
-// Modules
-@import "src/modules/tabs";
-@import "src/modules/captions";
-@import "src/modules/pagination";
+// Interface objects
+@import "src/interface/objects/buttons";
+@import "src/interface/objects/links";
+@import "src/interface/objects/icons";
 
-// Site skin
-//@import "src/template/*";
-//@import "src/sections/*";
+// Interface modules
+@import "src/interface/modules/pagination";
+@import "src/interface/modules/captions";
+@import "src/interface/modules/tabs";
+
+// Interface
+@import "src/interface/site-header";
+@import "src/interface/site-footer";

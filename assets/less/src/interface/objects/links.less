@@ -1,0 +1,22 @@
+//
+// Author:      Matt Hinchliffe <www.maketea.co.uk>
+// Modified:    27/03/2013
+// Description: Modifier classes for anchor elements
+//
+
+// Unstyled link
+.link--unstyled {
+	&, &:hover {
+		color:@color-text;
+		text-decoration:none;
+	}
+}
+
+// Link with thin space and right arrow (&thinsp;&rarr;)
+.link--cta {
+	white-space:nowrap; // Prevent orphan arrows
+
+	&:after {
+		content:'\2009\2192';
+	}
+}

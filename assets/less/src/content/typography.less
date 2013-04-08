@@ -1,8 +1,20 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    15/01/2013
+// Modified:    14/03/2013
 // Description: Base typography and classes for adjusting text content.
 //
+
+// Baseline
+@type-size:      16;  // px
+@type-baseline:  1.5; // no unit
+@type-blankline: 1em; // any unit
+
+// Font stacks
+@type-body:     Arial, sans-serif;
+@type-headline: Helvetica, Arial, sans-serif;
+@type-mono:     Consolas, "Lucida Console", Monaco, monospace;
+@type-small:    Verdana, Geneva, Tahoma, sans-serif;
+
 
 //
 // Webfonts
@@ -130,4 +142,24 @@ h6, .h6 {
 .tera {
 	.font-size(40);
 	line-height:2;
+}
+
+
+//
+// Text colours
+//
+.brand {
+	color:@color-brand;
+}
+.accent {
+	color:@color-accent;
+}
+.highlight {
+	color:@color-highlight;
+}
+.lowlight {
+	color:@color-lowlight;
+}
+.reverse {
+	color:@color-reverse;
 }

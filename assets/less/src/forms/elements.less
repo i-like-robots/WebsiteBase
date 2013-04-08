@@ -1,8 +1,15 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    23/01/2013
+// Modified:    26/03/2013
 // Description: Styling for default form elements
 //
+
+@input-padding:    .25em;
+@input-background: #FFF;
+@input-blurred:    #999;
+@input-focused:    #333;
+@input-disabled:   #DDD;
+
 
 //
 // Legends - don't bother styling the legend element directly
@@ -29,9 +36,7 @@ label {
 //
 input,
 select,
-textarea,
-button,
-a.button {
+textarea {
 	padding:@input-padding;
 	border:1px solid;
 	font-weight:normal;
@@ -98,33 +103,3 @@ textarea {
 		height:auto;
 	}
 }
-
-
-//
-// Buttons
-//
-button,
-a.button,
-input[type=button],
-input[type=submit] {
-	height:auto;
-	border-color:darken(@color-brand, 10%);
-	text-decoration:none;
-	color:@color-reverse;
-	.linear-gradient(270deg, fadeout(@color-brand, 10%), darken(@color-brand, 10%));
-
-	&:active {
-		box-shadow:inset 0 0 10px rgba(0, 0, 0, .5);
-	}
-
-	// Variations
-	&.alt {
-		border-color:darken(@color-highlight, 10%);
-		.linear-gradient(270deg, lighten(@color-highlight, 10%), @color-highlight);
-	}
-}
-a.button {
-	display:inline-block;
-}
-
-// .button--variation {}

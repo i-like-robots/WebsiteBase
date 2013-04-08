@@ -1,0 +1,24 @@
+//
+// Author:      Matt Hinchliffe <www.maketea.co.uk>
+// Modified:    11/03/2013
+// Description: The nameplate module for titles
+// Source:      <http://en.wikipedia.org/wiki/Nameplate_(publishing)>
+// Zen-coding:  .nameplate>h1.nameplate__title+.nameplate__mast
+//
+
+.nameplate {
+	display:table;
+	width:100%;
+	border-collapse:collapse;
+}
+	.nameplate__title,
+	.nameplate__mast {
+		display:table-cell;
+		vertical-align:middle;
+	}
+	.nameplate__title {
+		margin-bottom:0;
+	}
+	.nameplate__mast {
+		text-align:right;
+	}

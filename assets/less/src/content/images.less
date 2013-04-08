@@ -1,0 +1,32 @@
+//
+// Author:      Matt Hinchliffe <www.maketea.co.uk>
+// Modified:    11/03/2013
+// Description: Image sizing and alignment
+//
+
+img {
+	max-width:100%;
+}
+
+.img--left {
+	float:left;
+	margin-right:1em;
+	margin-bottom:@type-blankline;
+}
+
+.img--right {
+	float:right;
+	margin-bottom:@type-blankline;
+	margin-left:1em;
+}
+
+.img--center,
+.img--centre {
+	display:block;
+	margin:0 auto @type-blankline;
+}
+
+.img--fit {
+	display:block;
+	min-width:100%;
+}

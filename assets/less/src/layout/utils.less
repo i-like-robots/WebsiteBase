@@ -1,14 +1,19 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    06/02/2013
+// Modified:    07/02/2013
 // Description: Useful classes for repetitive jobs
 //
+
 
 //
 // Text replacement
 //
 .replace {
-	.replacetext;
+	display:block;
+	overflow:hidden;
+	direction:ltr;
+	text-indent:-9999px;
+	background:transparent no-repeat 0 0;
 }
 
 
@@ -52,8 +57,17 @@
 
 
 //
-// Clearfix - don't abuse this!
+// Micro clearfix <http://nicolasgallagher.com/micro-clearfix-hack/>
 //
 .cf {
-	.clearfix;
+	*zoom:1;
+
+	&:before,
+	&:after {
+		display:table;
+		content:"";
+	}
+	&:after {
+		clear:both;
+	}
 }
