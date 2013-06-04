@@ -1,11 +1,8 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    15/11/2012
+// Modified:    04/06/2013
 // Description: Internet Explorer 7 and below adjustments.
 //
-
-@import "src/_palette";
-@import "lib/_mixins";
 
 //
 // No 'inline-block' in <= IE7 but applying 'hasLayout' to an inline element contrives it
@@ -15,15 +12,18 @@
 	zoom:1;
 }
 
+
 //
-// Elements
+// Sensible defaults
 //
 blockquote {
 	display:block;
 }
 
+
 //
 // Form elements
+// <http://www.456bereastreet.com/archive/200409/styling_form_controls/>
 //
 input,
 select,
@@ -34,7 +34,6 @@ button {
 
 // Buttons render terribly due to a forced border-box layout
 button,
-a.button,
 input[type=button],
 input[type=submit],
 input[type=reset] {
@@ -43,34 +42,84 @@ input[type=reset] {
 	line-height:1;
 }
 
-//
-// Issues with floating elements <http://css-class.com/articles/explorer/floats/floatandcleartest1.htm>
-//
+// Select boxes. Padding cannot be applied to a select box so add it to the height
+select {
+	height:28px;
+}
+
+// Buttons aquire black border on form focus. Chroma filter will make it transparent (useless if a button uses black text or background)
+// <http://markmintoff.com/2012/01/remove-internet-explorer-black-border-around-button/>
+// button {
+// 	filter:~"chroma(color=#000000)";
+// }
 
 //
-// Overflow may require position relative <http://snook.ca/archives/html_and_css/position_relative_overflow_ie>
+// Issues with floating elements
+// <http://css-class.com/articles/explorer/floats/floatandcleartest1.htm>
 //
+
+// Nested floats or positioned elements requiring width
+
+// Cannot use float and clear on an element
+
+
+//
+// Overflow may require position relative
+// <http://snook.ca/archives/html_and_css/position_relative_overflow_ie>
+//
+
+
 
 //
 // No pseudo-elements
 //
-.tag-list > li,
-.separated-list > li {
-	margin-left:.5em;
+.tag-list > li {
+	margin-left:1em;
 
 	&:first-child {
 		margin-left:0;
 	}
 }
 
+.separated-list > li {
+	padding:0 .5em;
+	border-left:1px solid;
+
+	&:first-child {
+		padding-left:0;
+		border-left:0;
+	}
+}
+
+
 //
 // Inline elements with no content not collapsing and affecting layout
 //
 
-//
-// No support for CSS3 properties
-//
 
 //
-// Small layout quirks and 'magic margins' <http://archivist.incutio.com/viewlist/css-discuss/97064>
+// No CSS3 background and border properties or 2.1 opacity
+//
+// .foo {
+// 	zoom:1;
+// 	filter:~"progid:DXImageTransform.Microsoft.Shadow(color='#666666', Direction=135, Strength=3))";
+// }
+// .bar {
+// 	filter:~"alpha(Opacity=50)";
+// }
+
+//
+// Small layout quirks and 'magic margins'
+// <http://archivist.incutio.com/viewlist/css-discuss/97064>
+//
+
+// Phantom gaps (possibly due to line-height of list items affecting layout)
+// <http://www.456bereastreet.com/archive/200610/closing_the_gap_between_list_items_in_ie/>
+// .foo li {
+// 	display:inline;
+// }
+
+
+//
+// No support for 'inherit' value on any property
 //

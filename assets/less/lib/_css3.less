@@ -1,6 +1,6 @@
 //
 // Author:   Matt Hinchliffe <www.maketea.co.uk>
-// Modified: 08/01/2013
+// Modified: 04/06/2013
 //
 
 //
@@ -18,30 +18,22 @@
 //
 .scale(@scale) {
 	-webkit-transform:scale(@scale);
-	   -moz-transform:scale(@scale);
 	    -ms-transform:scale(@scale);
-	     -o-transform:scale(@scale);
 	        transform:scale(@scale);
 }
 .rotate(@angle:90deg) {
 	-webkit-transform:rotate(@angle);
-	   -moz-transform:rotate(@angle);
 	    -ms-transform:rotate(@angle);
-	     -o-transform:rotate(@angle);
 	        transform:rotate(@angle);
 }
 .translate(@x, @y) {
 	-webkit-transform:translate(@x, @y);
-	   -moz-transform:translate(@x, @y);
 	    -ms-transform:translate(@x, @y);
-	     -o-transform:translate(@x, @y);
 	        transform:translate(@x, @y);
 }
 .translate(@x, @y, @z) {
 	-webkit-transform:translate3d(@x, @y, @z);
-	   -moz-transform:translate3d(@x, @y, @z);
 	    -ms-transform:translate3d(@x, @y, @z);
-	     -o-transform:translate3d(@x, @y, @z);
 	        transform:translate3d(@x, @y, @z);
 }
 
@@ -52,17 +44,11 @@
 .linear-gradient(@angle, @startColor, @endColor) {
 	background:mix(@startColor, @endColor, 50%);
 	background-image:-webkit-linear-gradient(@angle, @startColor, @endColor);
-	background-image:   -moz-linear-gradient(@angle, @startColor, @endColor);
-	background-image:    -ms-linear-gradient(@angle, @startColor, @endColor);
-	background-image:     -o-linear-gradient(@angle, @startColor, @endColor);
 	background-image:        linear-gradient(@angle, @startColor, @endColor);
 }
 .radial-gradient(@startColor, @endColor, @from: 0, @to: 100%, @shape: circle, @origin: center) {
 	background:mix(@startColor, @endColor, 50%) repeat-x;
 	background-image:-webkit-radial-gradient(@origin, @shape, @startColor @from, @endColor @to);
-	background-image:   -moz-radial-gradient(@origin, @shape, @startColor @from, @endColor @to);
-	background-image:    -ms-radial-gradient(@origin, @shape, @startColor @from, @endColor @to);
-	background-image:     -o-radial-gradient(@origin, @shape, @startColor @from, @endColor @to);
 	background-image:        radial-gradient(@origin, @shape, @startColor @from, @endColor @to);
 }
 
@@ -72,8 +58,5 @@
 //
 .transition(@property: all, @time: .25s, @easing: ease) {
 	-webkit-transition:@arguments;
-	   -moz-transition:@arguments;
-	    -ms-transition:@arguments;
-	     -o-transition:@arguments;
 	        transition:@arguments;
 }
