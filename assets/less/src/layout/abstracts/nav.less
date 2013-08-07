@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    15/03/2013
+// Modified:    07/08/2013
 // Description: The nav abstraction by Harry Roberts
 // Source:      <http://csswizardry.com/2011/09/the-nav-abstraction/>
 // Zen-coding:  ul.nav>(li>a)*3
@@ -26,9 +26,12 @@
 @media only screen and (max-width:@grid-fluid-min) {
 
 	.nav--collapsible {
-		> li,
-		> li > a {
+		> li {
 			display:block;
+
+			> a {
+				display:inherit;
+			}
 		}
 	}
 

@@ -1,6 +1,6 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    08/01/2013
+// Modified:    07/08/2013
 // Description: Layouts for consistent forms
 //
 
@@ -26,12 +26,14 @@
 .sign {
 	position:relative;
 	margin:0;
-	cursor:help;
+	color:@color-reverse;
+	background:@color-text;
 	border-radius:100%;
+	cursor:help;
 
-	&, span {
-		color:@color-reverse;
-		background:@color-text;
+	span {
+		color: inherit;
+		background: inherit;
 	}
 	&:before {
 		display:block;
