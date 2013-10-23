@@ -18,7 +18,6 @@
 		left:0;
 		width:100%;
 		padding:.5em .65em;
-		background-color:#FFF;
 	}
 
 	a&, a {
@@ -31,20 +30,32 @@
 	&.caption--top > span {
 		top:0;
 	}
+
 	&.caption--bottom > span {
 		bottom:0;
+	}
+
+	&.caption--title > span {
+		top: 10%;
+		left: 10%;
+		max-width: 50%;
 	}
 
 	//
 	// Colour variations
 	//
 	&.caption--dark > span {
-		color:#FFF;
+		color:@color-reverse;
 		background-color:rgba(0, 0, 0, .75);
 	}
 
 	&.caption--light > span {
-		color:#333;
+		color:@color-text;
 		background-color:rgba(255, 255, 255, .5);
+	}
+
+	&.caption--overlay > span {
+		color:@color-reverse;
+		text-shadow: 0 0 10px rgba(0, 0, 0, .5);
 	}
 }

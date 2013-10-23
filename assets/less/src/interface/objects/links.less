@@ -52,19 +52,16 @@
 //
 // Style variations
 //
-
-// Unstyled link
 .link--unstyled {
 	&, &:hover {
 		text-decoration:none;
 	}
 }
 
-// Link with thin space and right arrow (&thinsp;&rarr;)
 .link--cta {
 	white-space:nowrap; // Prevent orphan arrows
 
 	&:after {
-		content:'\2009\2192';
+		content:'\2009\2192'; // thin space and right arrow (&thinsp;&rarr;)
 	}
 }
