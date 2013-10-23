@@ -1,9 +1,12 @@
+node_modules/
 assets/css/
+
+.DS_Store
 .idea
 .svn
-.bak
-.DS_Store
-Thumbs.db
-codekit-config.json
+
+*.db
+*.log
+*.bak
 *.sublime-project
 *.sublime-workspace

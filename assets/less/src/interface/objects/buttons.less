@@ -1,17 +1,15 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    28/03/2013
+// Modified:    23/10/2013
 // Description: Unified link or form buttons
 //
 
 .btn {
 	display:inline-block;
 	padding:.35em 1em;
-	.font-size(12);
+	.font-size(14);
 	text-transform:uppercase;
-	color:@color-reverse;
 	border-radius:.35em;
-	background:mix(@color-highlight, #FFF, 50%);
 
 
 	input&,
@@ -22,14 +20,6 @@
 
 	a& {
 		text-decoration:none;
-
-		&:hover {
-			color:@color-reverse;
-		}
-	}
-
-	&:hover {
-		background:mix(@color-lowlight, #FFF, 40%);
 	}
 
 	&:active {
@@ -37,33 +27,71 @@
 	}
 }
 
-// Colours
+//
+// Colour variations
+//
 .btn--brand {
+	color:@color-reverse;
 	background:@color-brand;
 
 	&:hover {
-		background:mix(@color-brand, #FFF, 80%);
+		color:@color-reverse;
+		background:darken(@color-brand, 10%);
 	}
 }
 
 .btn--accent {
+	color:@color-reverse;
 	background:@color-accent;
 
 	&:hover {
-		background:mix(@color-accent, #FFF, 80%);
+		color:@color-reverse;
+		background:darken(@color-accent, 10%);
+	}
+}
+
+.btn--highlight {
+	color:@color-reverse;
+	background:@color-highlight;
+
+	&:hover {
+		color:@color-reverse;
+		background:darken(@color-highlight, 10%);
 	}
 }
 
 .btn--lowlight {
+	color:@color-reverse;
 	background:@color-lowlight;
 
 	&:hover {
-		background:mix(@color-lowlight, #FFF, 80%);
+		color:@color-reverse;
+		background:darken(@color-lowlight, 10%);
 	}
 }
 
-// Sizes
-.btn--large {
-	padding:.65em 1.5em;
-	.font-size(14);
+.btn--reverse {
+	color:@color-brand;
+	background:@color-reverse;
+
+	&:hover {
+		color:@color-reverse;
+		background:darken(@color-reverse, 10%);
+	}
+}
+
+//
+// Size variations
+//
+.btn--milli {
+	padding:.5em 1em;
+	.font-size(13);
+}
+.btn--kilo {
+	padding:.35em 1em;
+	.font-size(18);
+}
+.btn--mega {
+	padding:.25em .5em;
+	.font-size(24);
 }

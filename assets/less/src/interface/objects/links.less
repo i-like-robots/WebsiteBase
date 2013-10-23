@@ -1,13 +1,61 @@
 //
 // Author:      Matt Hinchliffe <www.maketea.co.uk>
-// Modified:    27/03/2013
+// Modified:    23/10/2013
 // Description: Modifier classes for anchor elements
+//
+
+
+//
+// Colour variations
+//
+.link--brand {
+	color:@color-brand;
+
+	&:hover {
+		color:darken(@color-brand, 10%);
+	}
+}
+
+.link--accent {
+	color:@color-accent;
+
+	&:hover {
+		color:darken(@color-accent, 10%);
+	}
+}
+
+.link--highlight {
+	color:@color-highlight;
+
+	&:hover {
+		color:darken(@color-highlight, 10%);
+	}
+}
+
+.link--lowlight {
+	color:@color-lowlight;
+
+	&:hover {
+		color:darken(@color-lowlight, 10%);
+	}
+}
+
+.link--reverse {
+	color:@color-reverse;
+
+	&:hover {
+		color:darken(@color-reverse, 10%);
+	}
+}
+
+
+//
+// Style variations
 //
 
 // Unstyled link
 .link--unstyled {
 	&, &:hover {
-		color:@color-text;
 		text-decoration:none;
 	}
 }
